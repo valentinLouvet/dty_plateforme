@@ -1,7 +1,7 @@
 (function () {
     var app = angular.module('dty_plateforme', []);
 
-    app.directive('inscriptionForm', ['$http', function(){
+    app.directive('inscriptionForm', function(){
         return{
             restrict: 'E',
             templateUrl: '../../html/templates/inscription.html',
@@ -19,8 +19,12 @@
                         return false;
                     }
                 };
+                
+                this.inscrire= function () {
+                    
+                }
             },
             controllerAs: 'logInCtrl'
         };
-    }]);
+    });
 })();

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Profil</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-resource.js"></script>
+    <script src="../../js/profile.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+</head>
+<body ng-app="profileApp">
+
+<div class="container">
+    <!-- NAV BAR -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="javascript:void(0);"><font color="4F405D">CS</font> <font color="87102C">Digital Lab</font> - Online Lessons</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="javascript:void(0);">Home</a></li>
+                    <li><a href="#about">Cours</a></li>
+                    <li><a href="#contact">Historique</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+
+
+    <h3>Here is your correction</h3>
+
+    <!-- STATISTICS -->
+    <div class="row">
+        <div class="col-sm-6">
+
+        </div><!-- /.col-sm-4 -->
+        <div class="col-sm-6">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Today</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="lesson-statistics-line">
+                        <div style="float:left;">Your score</div>
+                        <div style="float: right;">50%</div>
+                        <div class="clear-both">&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.col-sm-4 -->
+    </div>
+
+    <!-- STORY -->
+    <div class="page-header">
+        <h1>1. Story</h1>
+    </div>
+
+    <div class="story">
+        <h1>The slippery slope</h1>
+        <br/>
+        <div style="text-align:center">
+            <img src="characters/director-0.png"/>
+        </div>
+        <br/>
+        <p><b> Principal : </b>As the school principal, I decided that students must have an online access to their class calendar.<br/>
+            So I took a lot of times to configure "Google Calendar", I created a calendar for each class.<br/>
+            Now I will send to you the URL of these calendars.</p>
+    </div>
+
+    <h3>Lesson</h3>
+
+
+    <!-- AFFICHAGE DES DIFFERENTS COURS -->
+
+    <div ng-controller="CourseController as courseCtrl">
+        <div ng-repeat="course in courseCtrl.courses">
+            <div class="col-md-4">{{course.name}}<br/>{{course.level}}<br/>{{course.description}}<br/>{{course.coursesToDo}}<br/>
+            </div>
+        </div>
+    </div>
+
+    <!-- VOCABULARY -->
+    <div class="page-header">
+        <h1>2. Vocabulary</h1>
+    </div>
+
+    <div class="vocabulary">
+        <div class="vocabulary-word">
+            <div style="float:left;"><b>DevOps</b>&nbsp;</div>
+            <div id="V1-A">is a movement or practice that emphasizes the collaboration and communication of both software developers and other information-technology (IT) professionals while automating the process of software delivery and infrastructure changes</div>
+            <div id="V1-R" style="float: right">
+                <input type="radio" id="V1-0" name="V1" value="ok" checked="checked"><label for="V1-0">&nbsp;I knew it&nbsp;</label>
+                <input type="radio" id="V1-1" name="V1" value="almost"><label for="V1-1">&nbsp;I was almost right&nbsp;</label>
+                <input type="radio" id="V1-2" name="V1" value="ko"><label for="V1-2">&nbsp;I did not know&nbsp;</label>
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <div class="vocabulary-word">
+            <div style="float:left;">Well-known code named to be used and recognized between developers are&nbsp;</div>
+            <div id="V2-A"><b>Design Patterns</b></div>
+            <div id="V2-R" style="float: right">
+                <input type="radio" id="V2-0" name="V2" value="ok"><label for="V2-0">&nbsp;I knew it&nbsp;</label>
+                <input type="radio" id="V2-1" name="V2" value="almost" checked="checked"><label for="V2-1">&nbsp;I was almost right&nbsp;</label>
+                <input type="radio" id="V2-2" name="V2" value="ko"><label for="V2-2">&nbsp;I did not know&nbsp;</label>
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <div class="vocabulary-word">
+            <div style="float:left;"><b>URL</b>&nbsp;</div>
+            <div id="V3-A">is a reference to a web resource that specifies its location on a computer network and a mechanism for retrieving it<br/><br/><u>Exemple</u> : a sort of URL is web address like http://www.example.com/index.html</div>
+            <div id="V3-R" style="float: right">
+                <input type="radio" id="V3-0" name="V3" value="ok" checked="checked"><label for="V3-0">&nbsp;I knew it&nbsp;</label>
+                <input type="radio" id="V3-1" name="V3" value="almost"><label for="V3-1">&nbsp;I was almost right&nbsp;</label>
+                <input type="radio" id="V3-2" name="V3" value="ko"><label for="V3-2">&nbsp;I did not know&nbsp;</label>
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <div class="vocabulary-word">
+            <div style="float:left;"><b>URI</b>&nbsp;</div>
+            <div id="V4-A">is a string of characters used to identify a resource<br/><br/><u>Exemple</u> : a sort of URI can be an URL for web address, an ISBN for a book, etc… </div>
+            <div id="V4-R" style="float: right">
+                <input type="radio" id="V4-0" name="V4" value="ok"><label for="V4-0">&nbsp;I knew it&nbsp;</label>
+                <input type="radio" id="V4-1" name="V4" value="almost"><label for="V4-1">&nbsp;I was almost right&nbsp;</label>
+                <input type="radio" id="V4-2" name="V4" value="ko" checked="checked"><label for="V4-2">&nbsp;I did not know&nbsp;</label>
+            </div>
+        </div>
+        <br>
+    </div>
+
+    <!-- ExerciseS -->
+    <div class="page-header">
+        <h1>3. Exercise</h1>
+    </div>
+    Choose the right technology to do the job.
+
+    <div class="Exercise">
+        <ul class="list-group">
+            <li class="list-group-item">I want a framework to simplify both the development and the testing of a client-side. I will use <span class="question-bad">Spring</span> <span class="question-good">AngularJS</span> <span class="question-badge-bad">1</span></li>
+            <li class="list-group-item">I want a JVM-based language. I will use <span class="question-good">Groovy</span> <span class="question-badge-good">2</span></li>
+            <li class="list-group-item">I want a command to extract a column of my CSV file. I will use <span class="question-good">Cut</span> <span class="question-badge-good">3</span></li>
+            <li class="list-group-item">I have a Raspberry PI 2, what Operating System I can<b>NOT</b> use <span class="question-bad">Windows</span> <span class="question-good">Mac OS X</span> <span class="question-badge-bad">4</span></li>
+        </ul>
+        <br/>
+        <span class="question-badge-bad">1</span> <span class="question-bad">Spring</span> : Spring can simplify both the development and the testing but it's a Server side framework<br/>
+        <span class="question-badge-bad">1</span> <span class="question-good">AngularJS</span> : Made by Google, it's the most used client side framework
+        <br/>
+        <br/>
+        <span class="question-badge-good">2</span> <span class="question-good">Groovy</span> : As Java or Scala, Groovy is a language made for JVM, it purpose is to be more concise and powerful  that java
+        <br/>
+        <br/>
+        <span class="question-badge-good">3</span> <span class="question-good">Cut</span> : Cut is command line to cut out selected portions of each line of a file
+        <br/>
+        <br/>
+        <span class="question-badge-bad">4</span> <span class="question-bad">Windows</span> : Windows 10 IoT was design to be compatible with raspberry pi<br/>
+        <span class="question-badge-bad">4</span> <span class="question-good">Mac OS X</span> : Apple forbids use of their system on other material than Apple computers
+
+    </div>
+
+
+    <!-- SEND -->
+    <div class="page-header">
+        <h1>4. End</h1>
+    </div>
+    Corrections reviewed, work finished for today
+    <br/>
+    <br/>
+
+    <div style="text-align:center">
+        <button type="button" class="btn btn-lg btn-primary" onclick="alert('End of the example 1')">Mark as finished work</button>
+    </div>
+</div>
+
+</body>
+</html>

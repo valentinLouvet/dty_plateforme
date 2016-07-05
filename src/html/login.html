@@ -1,30 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <title>Mon super site</title>
-</head>
+    <head>
+        <meta charset="utf-8" />
+        <title>Login</title>
+        <script type="text/javascript" src="../../node_modules/angular/angular.min.js"></script>
+        <script type="text/javascript" src="../js/inscription.js"></script>
+    </head>
 
-<body>
+    <body>
 
-<?php include("entete.php"); ?>
+    <?php include("entete.php"); ?>
 
-<?php include("menus.php"); ?>
+    <!--formulaire d'inscription-->
+    <inscription-form></inscription-form>
 
-<!-- Le corps -->
 
-<div id="corps">
-    <h1>Mon super site</h1>
+    <!-- Le pied de page -->
 
-    <p>
-        Bienvenue sur mon super site !<br />
-        Vous allez adorer ici, c'est un site génial qui va parler de... euh... Je cherche encore un peu le thème de mon site. :-D
-    </p>
-</div>
+    <?php include("pied_de_page.php"); ?>
 
-<!-- Le pied de page -->
-
-<?php include("pied_de_page.php"); ?>
-
-</body>
+    </body>
 </html>

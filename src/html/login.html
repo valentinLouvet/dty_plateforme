@@ -13,8 +13,28 @@
 
     <!--entête-->
 
-    <!--formulaire d'inscription-->
-    <inscription-form></inscription-form>
+    <!--formulaire d'inscription<inscription-form></inscription-form>-->
+    <form role="form" id="logIn" class="form-inline" method="post">
+        <div class="form-group">
+            <p>
+                <label class="control-label" for="username">Votre pseudo </label> :
+                <input type="text" name="username" id="username" class="form-control" placeholder="Ex : Ouemelette" ng-model="logInCtrl.username" required />
+            </p>
+            <p>
+                <label class="control-label" for="password">Votre mot de passe </label> :
+                <input type="password" name="password" id="password" class="form-control" placeholder="Ex : *******" ng-model="logInCtrl.password" required ng-class="{pwdvalid: logInCtrl.checkpwd(), pwdinvalid: !formCtrl.checkpwd()}" />
+            </p>
+            <p>
+                <label class="control-label" for="confirmpwd">Confirmez votre mot de passe </label> :
+                <input type="password" name="confirmpwd" id="confirmpwd" class="form-control" placeholder="Ex : *******" ng-model="formCtrl.confirmpwd"  ng-class="{pwdvalid: logInCtrl.checkpwd(), pwdinvalid: !formCtrl.checkpwd()}" required>
+            </p>
+            <p>
+                <label class="control-label" for="email">Votre adresse mail </label> :
+                <input type="email" name="email" id="email" class="form-control" placeholder="Ex : truc@machin.fr" ng-model="logInCtrl.email" required />
+            </p>
+            <input class="btn btn-default" type="submit" value="S'inscrire" ng-click="logInCtrl.inscrire()"/>
+        </div>
+    </form>
 
 
     <!-- Le pied de page -->

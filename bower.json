@@ -1,0 +1,7 @@
+{
+  "name": "plateforme_dty",
+  "dependencies":{
+    "jquery": "latest",
+    "bootstrap": "latest"
+  }
+}

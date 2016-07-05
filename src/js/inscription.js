@@ -27,4 +27,15 @@
             controllerAs: 'logInCtrl'
         };
     });
+
+    app.directive('dtyHeader', function () {
+        return{
+            restrict: 'E',
+            templateUrl: '../../html/templates/nav-bar.html',
+            controller: function(){
+
+            },
+            controllerAs: 'headerCtrl'
+        }
+    })
 })();

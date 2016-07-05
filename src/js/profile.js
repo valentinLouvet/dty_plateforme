@@ -13,6 +13,7 @@
     });
 
     var courses = [
+        //TODO : Créer des thumbnails !!!
         {
             name: "AngularJS",
             level: 10,
@@ -25,7 +26,7 @@
             level: 38,
             description: "Back-End Javascript",
             coursesToDo: 8,
-            image:"../images/nodejs.png"
+            image:"/../images/nodejs.png"
         },
         {
             name: "Python",

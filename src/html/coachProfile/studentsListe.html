@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Profil coach</title>
+
+    <!--Bootstrap minifié-->
+    <link rel = "stylesheet" href = "../../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+
+<!--Ici commencera la navbar--->
+
+<!-- Fin de la navbar --->
+
+
+<div class="container">
+    <label for = "select1">Choisissez quels élèves afficher</label>
+    <select id = "select1" name="e1">
+        <option value = "allStudents">Tous les élèves</option>
+        <option value = "yourStudents">Les élèves dont vous êtes le référent</option>
+    </select>
+
+    <div class = "page-header">
+        <h1>Liste des élèves <small>Informations sur la liste choisie</small></h1>
+    </div>
+
+    <div class = "panel panel-default">
+        <div class = "panel-heading">
+            <h3>Nom de l'élève 1</h3>
+        </div>
+        <div class = "panel-body">
+            Infos diverses sur l'élève 1 (dernières leçons suivies...)
+        </div>
+    </div>
+
+    <div class = "panel panel-default">
+        <div class = "panel-heading">
+            <h3>Nom de l'élève 2</h3>
+        </div>
+        <div class = "panel-body">
+            <span class="label label-success">100% d'assiduité</span>
+            <span class="label label-success">Disponible</span>
+        </div>
+    </div>
+
+    <div class = "panel panel-default">
+        <div class = "panel-heading">
+            <h3>Nom de l'élève 4</h3>
+        </div>
+        <div class = "panel-body">
+            <span class="label label-info">74% d'assiduité</span>
+            <span class="label label-danger">Indisponible jusqu'au 21/12/5678 (partiels)</span>
+        </div>
+    </div>
+</div>
+
+</body>
+
+
+</html>

@@ -9,12 +9,66 @@
         <link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
     </head>
 
-    <body>
+    <body class="container">
 
     <!--entête-->
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href><font color="4F405D">CS</font> <font color="87102C">Digital Lab</font> - Online Lessons</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href>Home</a></li>
+                    <li><a href>History</a></li>
+                    <li><a href>Statistics</a></li>
+                    <li class="dropdown">
+                        <a href class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lessons <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href>General</a></li>
+                            <li><a href>Mongoose/MongoDB</a></li>
+                            <li><a href>Express</a></li>
+                            <li><a href>Angular.js</a></li>
+                            <li><a href>Node.js</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Nav header</li>
+                            <li><a href>Separated link</a></li>
+                            <li><a href>One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
 
-    <!--formulaire d'inscription-->
-    <inscription-form></inscription-form>
+    <!--formulaire d'inscription<inscription-form></inscription-form>-->
+    <form role="form" id="logIn" class="form-inline" method="post">
+        <div class="form-group">
+            <p>
+                <label class="control-label" for="username">Votre pseudo </label> :
+                <input type="text" name="username" id="username" class="form-control" placeholder="Ex : Ouemelette" ng-model="logInCtrl.username" required />
+            </p>
+            <p>
+                <label class="control-label" for="password">Votre mot de passe </label> :
+                <input type="password" name="password" id="password" class="form-control" placeholder="Ex : *******" ng-model="logInCtrl.password" required ng-class="{pwdvalid: logInCtrl.checkpwd(), pwdinvalid: !formCtrl.checkpwd()}" />
+            </p>
+            <p>
+                <label class="control-label" for="confirmpwd">Confirmez votre mot de passe </label> :
+                <input type="password" name="confirmpwd" id="confirmpwd" class="form-control" placeholder="Ex : *******" ng-model="formCtrl.confirmpwd"  ng-class="{pwdvalid: logInCtrl.checkpwd(), pwdinvalid: !formCtrl.checkpwd()}" required>
+            </p>
+            <p>
+                <label class="control-label" for="email">Votre adresse mail </label> :
+                <input type="email" name="email" id="email" class="form-control" placeholder="Ex : truc@machin.fr" ng-model="logInCtrl.email" required />
+            </p>
+            <input class="btn btn-default" type="submit" value="S'inscrire" ng-click="logInCtrl.inscrire()"/>
+        </div>
+    </form>
 
 
     <!-- Le pied de page -->

@@ -24,79 +24,79 @@
 
 
 
-    <div class="container">
-        <!-- NAV BAR -->
+<div class="container">
+    <!-- NAV BAR -->
 
-        <div ng-controller = "ProfileController as profilCtrl">
+    <div ng-controller = "ProfileController as profilCtrl">
 
-            <div ng-show="profilCtrl.isSelected(1)">
+        <div ng-show="profilCtrl.isSelected(1)">
 
-                <!-- LESSONS -->
-                <!-- List of lessons and different parameters (level, description) -->
+            <!-- LESSONS -->
+            <!-- List of lessons and different parameters (level, description) -->
 
-                <div class="row">
-                    <div class="col-md-offset-1 col-md-11">
+            <div class="row">
+                <div class="col-md-offset-1 col-md-11">
 
-                        <h1 class="page-header" style="color: #e00432">
-                            Your courses :
-                        </h1>
+                    <h1 class="page-header" style="color: #e00432">
+                        Your courses :
+                    </h1>
 
-                        <p>We strongly advise you to do the lesson of the day before doing any other lesson.</p>
-                        <a class="btn btn-primary" href="#">Go to today's lesson !  <span class="glyphicon glyphicon-chevron-right"></span></a>
+                    <p>We strongly advise you to do the lesson of the day before doing any other lesson.</p>
+                    <a class="btn btn-primary" href="#">Go to today's lesson !  <span class="glyphicon glyphicon-chevron-right"></span></a>
 
-                        <hr>
+                    <hr>
 
-                        <!-- Second Blog Post -->
-                        <h3 style="color:#ec971f">
-                            List of your courses :
-                        </h3>
-                        <hr>
+                    <!-- Second Blog Post -->
+                    <h3 style="color:#ec971f">
+                        List of your courses :
+                    </h3>
+                    <hr>
 
-                    </div>
-
-
-                    <!-- AFFICHAGE DES DIFFERENTS COURS -->
+                </div>
 
 
-                    <div ng-controller="CourseController as courseCtrl">
-                        <div ng-repeat="course in courseCtrl.courses">
-                            <div class="col-md-offset-1 col-md-3" id="courses">
-                                <img ng-src={{course.image}}>
-                                <p>
-                                <h3>{{course.name}}</h3>Your level : {{course.level}} %<br/>{{course.description}}<br/>Remaining courses : {{course.coursesToDo}}
-                                </p>
-                            </div>
+                <!-- AFFICHAGE DES DIFFERENTS COURS -->
+
+
+                <div ng-controller="CourseController as courseCtrl">
+                    <div ng-repeat="course in courseCtrl.courses">
+                        <div class="col-md-offset-1 col-md-3" id="courses">
+                            <img ng-src={{course.image}}>
+                            <p>
+                            <h3>{{course.name}}</h3>Your level : {{course.level}} %<br/>{{course.description}}<br/>Remaining courses : {{course.coursesToDo}}
+                            </p>
                         </div>
                     </div>
-
                 </div>
 
             </div>
 
-
-            <!-- GRAPHS DON'T WORK ! -->
-            <div ng-show="profilCtrl.isSelected(1)">
-                <!-- HISTORY -->
-                <!-- different graphs and charts that show the assiduousness of the student -->
-                <!-- TODO changer isSelected(1) en isSelected(2)-->
-                <!--see examples/bubble.html for random bubbles source code-->
-                <div ng-controller="LineCtrl">
-                    <canvas id="line" class="chart chart-line ng-isolate-scope" chart-data="data" chart-labels="labels" chart-click="onClick" chart-hover="onHover" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" style="display: block; width: 523px; height: 261px;" width="523" height="261"></canvas>
-
-                </div>
+        </div>
 
 
-                <p>TEXTTEXTTEXTTEXTTEXT</p>
-
-
+        <!-- GRAPHS DON'T WORK ! -->
+        <div ng-show="profilCtrl.isSelected(1)">
+            <!-- HISTORY -->
+            <!-- different graphs and charts that show the assiduousness of the student -->
+            <!-- TODO changer isSelected(1) en isSelected(2)-->
+            <!--see examples/bubble.html for random bubbles source code-->
+            <div ng-controller="LineCtrl">
+                <canvas id="line" class="chart chart-line ng-isolate-scope" chart-data="data" chart-labels="labels" chart-click="onClick" chart-hover="onHover" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" style="display: block; width: 523px; height: 261px;" width="523" height="261"></canvas>
 
             </div>
+
+
+            <p>TEXTTEXTTEXTTEXTTEXT</p>
 
 
 
         </div>
 
+
+
     </div>
+
+</div>
 
 </body>
 </html>

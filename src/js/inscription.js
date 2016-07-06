@@ -89,42 +89,48 @@
             level: 10,
             description: "Front-End Javascript",
             coursesToDo: 5,
-            image:'../../images/angularjs.png'
+            image:'../../images/angularjs.png',
+            link:'#'
         },
         {
             name: "NodeJS",
             level: 38,
             description: "Back-End Javascript",
             coursesToDo: 8,
-            image:"../../images/nodejs.png"
+            image:"../../images/nodejs.png",
+            link:'#'
         },
         {
             name: "Python",
             level: 0,
             description: "Langage déjà vu en prépa !",
             coursesToDo: 2,
-            image:"../../images/python.png"
+            image:"../../images/python.png",
+            link:'#'
         },
         {
             name: "HTML 5",
             level: 56,
             description: "Website Skeleton",
             coursesToDo: 0,
-            image:"../../images/html5.png"
+            image:"../../images/html5.png",
+            link:'#'
         },
         {
             name: "Android",
             level: 32,
             description: "Smartphone Applications",
             coursesToDo: 5,
-            image:"../../images/android-studio.png"
+            image:"../../images/android-studio.png",
+            link:'#'
         },
         {
             name:"Git",
             level: 67,
             description: "Versioning",
             coursesToDo: 1,
-            image:"../../images/git.png"
+            image:"../../images/git.png",
+            link:'coursSuivi.html'
         }
     ];
     

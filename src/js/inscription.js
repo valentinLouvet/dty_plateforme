@@ -1,6 +1,18 @@
 (function () {
     var app = angular.module('dty_plateform', []);
 
+    app.controller('viewController',function () {
+        this.tab=1;
+
+        this.isSelected = function (checkTab) {
+            return this.tab === checkTab
+        };
+
+        this.selectTab = function (setTab) {
+            this.tab = setTab;
+        }
+    });
+
     app.directive('inscriptionForm', function () {
         return {
             restrict: 'E',
@@ -45,7 +57,7 @@
             restrict: 'E',
             templateUrl: '/html/templates/nav-bar.html',
             controller: function () {
-
+                panelselected="";
             },
             controllerAs: 'headerCtrl'
         }

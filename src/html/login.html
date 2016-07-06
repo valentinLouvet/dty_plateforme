@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="dty_plateform">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Log In</title>
-    <script type="text/javascript" src="../../node_modules/angular/angular.min.js"></script>
-    <script type="text/javascript" src="../../bower_components/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../js/inscription.js"></script>
-    <link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/main.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Log In</title>
+        <script type="text/javascript" src="../../node_modules/angular/angular.min.js"></script>
+        <script type="text/javascript" src="../../bower_components/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../js/inscription.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/main.css">
+    </head>
 
-<dty-header></dty-header>
-<body class="container">
-<div class="jumbotron jumbotronlogin">
-    <connexion-form></connexion-form>
-</div>
-</body>
+
+    <body class="container" ng-controller="viewController as views" ng-init="views.selectTab(4)">
+        <dty-header></dty-header>
+        <div class="jumbotron jumbotronlogin">
+            <connexion-form></connexion-form>
+        </div>
+    </body>
 </html>

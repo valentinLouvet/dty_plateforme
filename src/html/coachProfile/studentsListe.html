@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <title>Profil coach</title>
 
-    <!--Bootstrap minifié-->
+    <!--Bootstrap minifié--->
     <link rel="stylesheet" href="../../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!--Css Perso-->
+    <link rel="stylesheet" href="../../css/main.css">
 </head>
 
 <body>
-
+<!-- NAVBAR --->
 <nav class="navbar navbar-default">
     <div class="container">
         <div class="navbar-header">
@@ -19,7 +21,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href><font color="4F405D">CS</font> <font color="87102C">Digital Lab</font> - Online Lessons</a>
+            <a class="navbar-brand" href><font color="4F405D">CS</font> <font color="87102C">Digital Lab</font> - Online
+                Lessons</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -27,7 +30,8 @@
                 <li><a href>History</a></li>
                 <li><a href>Statistics</a></li>
                 <li class="dropdown">
-                    <a href class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lessons <span class="caret"></span></a>
+                    <a href class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Lessons <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href>General</a></li>
                         <li><a href>Mongoose/MongoDB</a></li>
@@ -81,6 +85,7 @@
                     <h3>Nom de l'élève 2</h3>
                 </div>
                 <div class="panel-body">
+                    <span class="label label-info">Dernière leçon : AngularJS, installation des modules</span>
                     <span class="label label-success">100% d'assiduité</span>
                     <span class="label label-success">Disponible</span>
                 </div>
@@ -92,8 +97,12 @@
                     <h3>Nom de l'élève 4</h3>
                 </div>
                 <div class="panel-body">
-                    <span class="label label-info">74% d'assiduité</span>
-                    <span class="label label-danger">Indisponible jusqu'au 21/12/5678 (partiels)</span>
+                    <div class="lesson-statistics-line">
+                            <span class="label label-info">Dernière leçon : Javascript, les boucles</span>
+                            <span class="label label-info">74% d'assiduité</span>
+                            <span class="label label-danger">Indisponible</span>
+                            <span class ="label label-primary">Stastistiques (lien vers la page élève)</span>
+                    </div>
                 </div>
             </div>
         </div>

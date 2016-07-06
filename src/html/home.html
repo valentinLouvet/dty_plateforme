@@ -6,40 +6,75 @@
 
     <!--Bootstrap minifié--->
     <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <script type="text/javascript" src="../../node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../../bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-resource.js"></script>
+
+    <script src="../js/inscription.js"></script>
 </head>
 
-<body>
+<body ng-app="dty_plateforme">
+
 <!-- NAVBAR --->
-    <nav class="navbar navbar-default">
+<dty-header></dty-header>
+
+<header class="header-image">
+    <div class="headline">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href><font color="4F405D">DTY</font> <font color="87102C">Plateforme</font> - Online Lessons</a>
-            </div>
-            <div class="navbar-collapse collapse">
-
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href><span class="glyphicon glyphicon-user"></span> S'inscrire</a></li>
-                    <li><a href><span class="glyphicon glyphicon-log-in"></span> Se connecter</a></li>
-
-                </ul>
-            </div><!--/.nav-collapse -->
+            <h1>Get Ready for DTY</h1>
+            <h2>With Daily Online Courses</h2>
         </div>
-    </nav>
+    </div>
+</header>
 
 
-    <main class ="panel-body">
-        <section class = "container" id="home-body-frame">
+<div class="container">
+
+    <hr class="featurette-divider">
 
 
-        </section>
+    <div class="featurette" id="about">
+        <img class="featurette-image img-responsive pull-right" src="../images/LogoCS.jpg" width ="400 " height="200">
+        <h2 class="featurette-heading">Online Courses To Prepare For
+            <span class="text-muted">Digital Tech Year</span>
+        </h2>
+        <p class="lead">Digital Tech Year is a one year program focused on providing an extensive </p>
+    </div>
 
-    </main>
+    <hr class="featurette-divider">
+
+    <!-- Second Featurette -->
+    <div class="featurette" id="services">
+        <img class="featurette-image img-circle img-responsive pull-left" src="http://placehold.it/500x500">
+        <h2 class="featurette-heading">The Second Heading
+            <span class="text-muted">Is Pretty Cool Too.</span>
+        </h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- Third Featurette -->
+    <div class="featurette" id="contact">
+        <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/500x500">
+        <h2 class="featurette-heading">The Third Heading
+            <span class="text-muted">Will Seal the Deal.</span>
+        </h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    </div>
+
+
+
+    <!-- Footer -->
+    <dty-footer></dty-footer>
+
+</div>
+
+
 </body>
 </html>

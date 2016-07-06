@@ -26,6 +26,19 @@
             controllerAs: 'signInCtrl'
         };
     });
+    
+    app.directive('connexionForm', function(){
+        return{
+            restrict: 'E',
+            templateUrl: '../html/templates/connexion.html',
+            controller: function () {
+                this.username="";
+                this.password="";
+                this.email="";
+            },
+            controllerAs:"logInCtrl"
+        }
+    });
 
     app.directive('dtyHeader', function () {
         return{

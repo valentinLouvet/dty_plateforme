@@ -1,0 +1,13 @@
+<form class="form-inline" role="form" id="log-in" method="post" ng-submit="" novalidate>
+    <div class="form-group">
+        <p>
+            <label class="control-label" for="pseudo">Username </label> :
+            <input type="text" name="pseudo" id="pseudo" class="form-control" placeholder="Ex : Ouemelette" ng-model="logInCtrl.username" required />
+        </p>
+        <p>
+            <label class="control-label" for="pwd">Password </label> :
+            <input type="password" name="pwd" id="pwd" class="form-control" placeholder="Ex : *******" ng-model="logInCtrl.password" required />
+        </p>
+        <input class="btn btn-default" type="submit" value="Log In" ng-click="logInCtrl.isValid()"/>
+    </div>
+</form>

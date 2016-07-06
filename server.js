@@ -15,5 +15,10 @@ app.get('/cours', function (req,res) {
 
 app.get('/', function (req,res) {
     res.sendFile(__dirname+'/src/html/home.html')
-})
+});
+
+app.get('/login', function (req,res) {
+    res.sendFile(__dirname+'/src/html/login.html')
+});
+
 app.listen(3333);

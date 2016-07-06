@@ -1,12 +1,10 @@
-body {
-    margin-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-}
+
 
 .header-image {
     display: block;
     width: 100%;
     text-align: center;
-
+    background: url('../images/coding2.jpg') no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -14,7 +12,7 @@ body {
 }
 
 .headline {
-    padding: 120px 0;
+    padding: 100px 0;
 }
 
 .headline h1 {

@@ -1,18 +1,29 @@
 <!DOCTYPE html>
 <!-- Pierre D--->
-<html lang="en" >
+<html lang="en" ng-app = "dty_plateforme">
 <head>
     <meta charset="UTF-8">
     <title>Profil coach</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Template Navbar/Footer --->
+    <script type="text/javascript" src="../../js/inscription.js"></script>
+
+    <!-- Scripts bootstrap --->
+    <script type="text/javascript" src="../../../bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Angular --->
+    <script type="text/javascript" src="../../../node_modules/angular/angular.min.js"></script>
+
+    <!-- Bootstrap --->
     <link rel = "stylesheet" href = "../../../bower_components/bootstrap/dist/css/bootstrap.min.css">
 </head>
 
 <body>
 
-<!--Ici commencera la navbar--->
-
-<!-- Fin de la navbar --->
+<!-- Navbar --->
+<dty-header></dty-header>
 
 <div class = "container">
     <div class = "col-sm-2">
@@ -26,6 +37,8 @@
     <div class = "col-sm-10"> <!--ui-view---></div>
 </div>
 
+<!-- Footer --->
+<dty-footer></dty-footer>
 
 </body>
 

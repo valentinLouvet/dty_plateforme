@@ -1,18 +1,30 @@
 <!DOCTYPE html>
+
+<!-- Vincent Houlbreque -->
+
 <html lang="en">
 <head>
     <meta charset="utf-8">
+
+    <!-- Compatibilité avec Internet Explorer -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Profil</title>
 
+    <title>Profile</title>
+
+    <!-- ANGULAR -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-route.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-resource.js"></script>
+
+    <!-- Script de la page -->
     <script src="../../js/inscription.js"></script>
+
+    <!-- BOOTSTRAP -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <!-- CSS de la page -->
     <link rel="stylesheet" type="text/css" href="../../css/profile.css">
 
 
@@ -22,81 +34,103 @@
 
 <body ng-app="dty_plateforme">
 
+    <!-- NAVBAR --->
+
+    <dty-header></dty-header>
 
 
-<div class="container">
-    <!-- NAV BAR -->
-
-    <div ng-controller = "ProfileController as profilCtrl">
-
-        <div ng-show="profilCtrl.isSelected(1)">
-
-            <!-- LESSONS -->
-            <!-- List of lessons and different parameters (level, description) -->
-
-            <div class="row">
-                <div class="col-md-offset-1 col-md-11">
-
-                    <h1 class="page-header" style="color: #e00432">
-                        Your courses :
-                    </h1>
-
-                    <p>We strongly advise you to do the lesson of the day before doing any other lesson.</p>
-                    <a class="btn btn-primary" href="#">Go to today's lesson !  <span class="glyphicon glyphicon-chevron-right"></span></a>
-
-                    <hr>
-
-                    <!-- Second Blog Post -->
-                    <h3 style="color:#ec971f">
-                        List of your courses :
-                    </h3>
-                    <hr>
-
-                </div>
+    <!-- PROFILE -->
 
 
-                <!-- AFFICHAGE DES DIFFERENTS COURS -->
+    <div class="container">
+        <!-- NAV BAR -->
+
+        <div ng-controller = "ProfileController as profilCtrl">
+
+            <div ng-show="profilCtrl.isSelected(1)">
+
+                <!-- LESSONS -->
+                <!-- List of lessons and different parameters (level, description) -->
+
+                <div class="row">
+                    <div class="col-md-offset-1 col-md-11">
+                        <h1 class="page-header" style="color: #e00432">
+                            Your courses :
+                        </h1>
+                        <p>We strongly advise you to do the lesson of the day before doing any other lesson.</p>
+                        <a class="btn btn-primary" href="#">Go to today's lesson !  <span class="glyphicon glyphicon-chevron-right"></span></a>
+
+                        <hr>
+
+                        <h3 style="color:#ec971f">
+                            List of your courses :
+                        </h3>
+
+                        <hr>
+                    </div>
 
 
-                <div ng-controller="CourseController as courseCtrl">
-                    <div ng-repeat="course in courseCtrl.courses">
-                        <div class="col-md-offset-1 col-md-3" id="courses">
-                            <img ng-src={{course.image}}>
-                            <p>
-                            <h3>{{course.name}}</h3>Your level : {{course.level}} %<br/>{{course.description}}<br/>Remaining courses : {{course.coursesToDo}}
-                            </p>
+                    <!-- AFFICHAGE DES DIFFERENTS COURS -->
+
+
+                    <div ng-controller="CourseController as courseCtrl">
+                        <div ng-repeat="course in courseCtrl.courses">
+                            <div class="col-md-offset-1 col-md-3" id="courses">
+                                <img ng-src={{course.image}}>
+                                    <p>
+                                        <h3>{{course.name}}</h3>Your level : {{course.level}} %<br/>{{course.description}}<br/>Remaining courses : {{course.coursesToDo}}
+                                    </p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
             </div>
 
-        </div>
+
+            <!-- GRAPHS DON'T WORK ! -->
+            <div ng-show="profilCtrl.isSelected(1)">
+
+                <!-- HISTORY -->
+                <!-- different graphs and charts that show the assiduousness of the student -->
+                <!-- TODO changer isSelected(1) en isSelected(2)-->
+                <!--see examples/bubble.html for random bubbles source code-->
+
+                <div ng-controller="LineCtrl">
+                    <canvas id="line" class="chart chart-line ng-isolate-scope" chart-data="data" chart-labels="labels" chart-click="onClick" chart-hover="onHover" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" style="display: block; width: 523px; height: 261px;" width="523" height="261"></canvas>
+
+                </div>
 
 
-        <!-- GRAPHS DON'T WORK ! -->
-        <div ng-show="profilCtrl.isSelected(1)">
-            <!-- HISTORY -->
-            <!-- different graphs and charts that show the assiduousness of the student -->
-            <!-- TODO changer isSelected(1) en isSelected(2)-->
-            <!--see examples/bubble.html for random bubbles source code-->
-            <div ng-controller="LineCtrl">
-                <canvas id="line" class="chart chart-line ng-isolate-scope" chart-data="data" chart-labels="labels" chart-click="onClick" chart-hover="onHover" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" style="display: block; width: 523px; height: 261px;" width="523" height="261"></canvas>
+                <div class="row">
+                    <div class="col-md-offset-1 col-md-11">
+
+                        <h1 class="page-header" style="color: #e00432">
+                            Your statistics :
+                        </h1>
+
+                        <p> You can see on this page your statistics, your assiduousness, your levels, your goals, your profile data and many other things with graphs and colors !
+                            <br/>
+                            Sadly, graphs don't work yet... :(
+                        </p>
+
+                        <hr>
+
+                    </div>
+
+                </div>
+
 
             </div>
 
 
-            <p>TEXTTEXTTEXTTEXTTEXT</p>
-
-
-
         </div>
-
-
 
     </div>
 
-</div>
+    <!-- FOOTER -->
+    <dty-footer></dty-footer>
 
 </body>
+
 </html>

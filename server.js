@@ -4,7 +4,7 @@ var express = require('express'),
 app.use(express.static(__dirname));
 app.use(express.static(__dirname + '/src'));
 
-app.get('/signin', function (req, res) {
+app.get('/signup', function (req, res) {
     res.sendFile(__dirname + '/src/html/signup.html')
 });
 

@@ -37,5 +37,12 @@
             },
             controllerAs: 'headerCtrl'
         }
+    });
+
+    app.directive('dtyFooter', function () {
+            return{
+                restrict: 'E',
+                templateUrl: '../html/templates/footer.html'
+            }
     })
 })();

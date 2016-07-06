@@ -5,7 +5,7 @@ app.use(express.static(__dirname));
 app.use(express.static(__dirname+'/src'));
 
 app.get('/', function (req,res) {
-    res.sendFile(__dirname+'/src/html/login.html')
+    res.sendFile(__dirname+'/src/html/signin.html')
 });
 
 

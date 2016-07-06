@@ -50,6 +50,9 @@
     font-size: 50px;
 }
 
+.text-muted{
+    color: #87102C;
+}
 footer {
     margin: 50px 0;
 }

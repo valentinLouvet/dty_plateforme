@@ -30,11 +30,11 @@
 <!-- Corps de la page --->
 <div class="container">
     <!-- Statistiques par leçons --->
-    <div class="page-header">
+    <div class="page-header-dty">
         <h1>1. Statistiques par leçons</h1>
     </div>
     <div class="row">
-        <label for="select1">Choisissez le bloc de leçons qui vous intéresse</label>
+        <label for="select1">Choose a group of lessons</label>
         <select id="select1">
             <option value="bloc1">Bloc 1</option>
             <option value="bloc2">Bloc 2</option>
@@ -43,52 +43,65 @@
     </div>
 
     <div class="row">
-        <label for="select21">Choisissez la leçon qui vous intéresse</label>
+        <label for="select21">Choose a lesson</label>
         <select id="select21">
-            <option value="lecon11">Leçon11</option>
-            <option value="leçon12">Leçon12</option>
-            <option value="leçon13">Leçon13</option>
-            <option value="leçon14">Leçon14</option>
+            <option value="lecon11">Lesson11</option>
+            <option value="leçon12">Lesson12</option>
+            <option value="leçon13">Lesson13</option>
+            <option value="leçon14">Lesson14</option>
         </select>
     </div>
 
-    <div class="lesson">
-        <h3>AngularJS, installation des modules</h3>
-        <br>
-        <div class="lesson-statistics-line">
-            <div style="float:left;">Réussite moyenne :</div>
-            <div style="float:right;">95%</div>
-            <div class="clear-both">&nbsp;</div>
+    <div class="panel panel-dty">
+        <div class="panel-heading">
+            <h3>AngularJS, setting up your environment</h3>
         </div>
-        <div class="lesson-statistics-line">
-            <div style="float:left;">Plus haut taux de réussite :</div>
-            <div style="float:right;">100%</div>
-            <div class="clear-both">&nbsp;</div>
-        </div>
-        <div class="lesson-statistics-line">
-            <div style="float:left;">Plus bas taux de réussite :</div>
-            <div style="float:right;">40%</div>
-            <div class="clear-both">&nbsp;</div>
+        <div class="panel-body">
+            <div class="lesson-statistics-line">
+                <strong>
+                    <div style="float:left;">Average success rate :</div>
+                </strong>
+                <div style="float:right;">95%</div>
+                <div class="clear-both">&nbsp;</div>
+            </div>
+
+            <div class="lesson-statistics-line">
+                <strong>
+                    <div style="float:left;">Highest success rate :</div>
+                </strong>
+                <div style="float:right;">100%</div>
+                <div class="clear-both">&nbsp;</div>
+            </div>
+            <div class="lesson-statistics-line">
+                <strong>
+                    <div style="float:left;">Lowest success rate :</div>
+                </strong>
+                <div style="float:right;">40%</div>
+                <div class="clear-both">&nbsp;</div>
+            </div>
         </div>
     </div>
 
     <!-- Statistiques du jour --->
-    <div class="page-header">
-        <h1>2. Statistiques du jour</h1>
+    <div class="page-header-dty">
+        <h1>2. Daily Statistics</h1>
     </div>
 
-    <div class="story">
-        <h3>Vos élèves ayant effectué une leçon aujourd'hui :</h3>
-        <br>
-        <div class="lesson-statistics-line">
-            <div style="float:left;">Elève 1 :</div>
-            <div style="float:right;">AngularJS, installation des modules</div>
-            <div class="clear-both">&nbsp;</div>
+    <div class="panel panel-dty">
+        <div class="panel-heading">
+            <h3>Lessons done by your students today :</h3>
         </div>
-        <div class="lesson-statistics-line">
-            <div style="float:left;">Elève 2 :</div>
-            <div style="float:right;">MongoDB, faire une recherche</div>
-            <div class="clear-both">&nbsp;</div>
+        <div class="panel-body">
+            <div class="lesson-statistics-line">
+                <strong><div style="float:left;">Student 1 :</div></strong>
+                <div style="float:right;">AngularJS, setting up your environment</div>
+                <div class="clear-both">&nbsp;</div>
+            </div>
+            <div class="lesson-statistics-line">
+                <strong><div style="float:left;">Student 2 :</div></strong>
+                <div style="float:right;">MongoDB, data research</div>
+                <div class="clear-both">&nbsp;</div>
+            </div>
         </div>
     </div>
 

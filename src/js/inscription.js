@@ -4,7 +4,7 @@
     app.directive('inscriptionForm', function(){
         return{
             restrict: 'E',
-            templateUrl: '../../html/templates/inscription.html',
+            templateUrl: '../html/templates/inscription.html',
             controller: function(){
                 this.username="";
                 this.password="";
@@ -31,7 +31,7 @@
     app.directive('dtyHeader', function () {
         return{
             restrict: 'E',
-            templateUrl: '../../html/templates/nav-bar.html',
+            templateUrl: '../html/templates/nav-bar.html',
             controller: function(){
 
             },

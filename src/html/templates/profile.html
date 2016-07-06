@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Profil</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-resource.js"></script>
+    <script src="../../js/profile.js"></script>
+    <script src="../../js/inscription.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
+
+</head>
+
+
+<body ng-app="profileApp">
+
+
+
+<!-- Insérer navbar  -->
+
+
+<div class="container"> <!-- ng-app="dty_plateforme"> -->
+    <div> <!-- ng-controller="headerCtrl as headerCtrl"> -->
+        <!-- NAV BAR -->
+        <dty-header></dty-header>
+
+
+        <h3>Courses : </h3>
+
+
+        <!-- AFFICHAGE DES DIFFERENTS COURS -->
+
+        <div ng-controller="CourseController as courseCtrl">
+            <div ng-repeat="course in courseCtrl.courses">
+                <div class="col-md-4"><img ng-src={{course.image}}>
+                    <p>
+                        <b>{{course.name}}</b><br/>Your level : {{course.level}}<br/>{{course.description}}<br/>Remaining courses : {{course.coursesToDo}}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

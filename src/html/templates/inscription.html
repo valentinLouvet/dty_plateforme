@@ -1,21 +1,21 @@
-<form role="form" id="logIn" class="form-inline" method="post">
+<form role="form" id="signIn" class="form-inline" method="post">
     <div class="form-group">
         <p>
-            <label class="control-label" for="username">Votre pseudo </label> :
-            <input type="text" name="username" id="username" class="form-control" placeholder="Ex : Ouemelette" ng-model="logInCtrl.username" required />
+            <label class="control-label" for="username">Your username </label> :
+            <input type="text" name="username" id="username" class="form-control" placeholder="Ex : Ouemelette" ng-model="signInCtrl.username" required />
         </p>
         <p>
-            <label class="control-label" for="password">Votre mot de passe </label> :
-            <input type="password" name="password" id="password" class="form-control" placeholder="Ex : *******" ng-model="logInCtrl.password" required ng-class="{pwdvalid: logInCtrl.checkpwd(), pwdinvalid: !formCtrl.checkpwd()}" />
+            <label class="control-label" for="password">Your password </label> :
+            <input type="password" name="password" id="password" class="form-control" placeholder="Ex : *******" ng-model="signInCtrl.password" ng-class="{pwdvalid: signInCtrl.checkpwd(), pwdinvalid: !signInCtrl.checkpwd()}" required/>
         </p>
         <p>
-            <label class="control-label" for="confirmpwd">Confirmez votre mot de passe </label> :
-            <input type="password" name="confirmpwd" id="confirmpwd" class="form-control" placeholder="Ex : *******" ng-model="formCtrl.confirmpwd"  ng-class="{pwdvalid: logInCtrl.checkpwd(), pwdinvalid: !formCtrl.checkpwd()}" required>
+            <label class="control-label" for="confirmpwd">Confirm your password </label> :
+            <input type="password" name="confirmpwd" id="confirmpwd" class="form-control" placeholder="Ex : *******" ng-model="signInCtrl.confirmpwd" ng-class="{pwdvalid: signInCtrl.checkpwd(), pwdinvalid: !signInCtrl.checkpwd()}" required>
         </p>
         <p>
-            <label class="control-label" for="email">Votre adresse mail </label> :
-            <input type="email" name="email" id="email" class="form-control" placeholder="Ex : truc@machin.fr" ng-model="logInCtrl.email" required />
+            <label class="control-label" for="email">Your e-mail address </label> :
+            <input type="email" name="email" id="email" class="form-control" placeholder="Ex : truc@machin.fr" ng-model="signInCtrl.email" required />
         </p>
-        <input class="btn btn-default" type="submit" value="S'inscrire" ng-click="logInCtrl.inscrire()"/>
+        <input class="btn btn-default" type="submit" value="Register" ng-click="signInCtrl.inscrire()"/>
     </div>
 </form>

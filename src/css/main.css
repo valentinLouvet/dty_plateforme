@@ -7,7 +7,13 @@
     padding-right: 15px;
 }
 
+.form-control.pwdinvalid{
+    border-color: #FA787E;
+}
 
+.form-control.pwdvalid{
+    border-color: #78FA89;
+}
 
 .rtl .a9-body .a9-form, .rtl .a9-body .a9-form {
     text-align: right

@@ -23,7 +23,7 @@
                     
                 }
             },
-            controllerAs: 'logInCtrl'
+            controllerAs: 'signInCtrl'
         };
     });
 

@@ -1,7 +1,10 @@
 body {
     padding-top: 10px;
 }
-[class*="col-"] {
+.page-header{
+
+}
+#courses {
     padding-top: 5%;
     /*
     padding-left:5%;

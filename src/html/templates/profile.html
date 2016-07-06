@@ -30,19 +30,36 @@
         <!-- NAV BAR -->
         <dty-header></dty-header>
 
+        <div class="row">
+            <div class="col-md-offset-1 col-md-11">
 
-        <h3>Courses : </h3>
+                <h1 class="page-header" style="color: #e00432">
+                    Your courses :
+                </h1>
+
+                <p>We strongly advise you to do the lesson of the day before doing any other lesson.</p>
+                <a class="btn btn-primary" href="#">Go to today's lesson !  <span class="glyphicon glyphicon-chevron-right"></span></a>
+
+                <hr>
+
+                <!-- Second Blog Post -->
+                <h3 style="color:#ec971f">
+                    List of your courses :
+                </h3>
+                <hr>
+
+            </div>
 
 
         <!-- AFFICHAGE DES DIFFERENTS COURS -->
 
-        <div class="row">
+
             <div ng-controller="CourseController as courseCtrl">
                 <div ng-repeat="course in courseCtrl.courses">
-                    <div class="col-md-offset-1 col-md-3">
+                    <div class="col-md-offset-1 col-md-3" id="courses">
                         <img ng-src={{course.image}}>
                         <p>
-                            <b>{{course.name}}</b><br/>Your level : {{course.level}}<br/>{{course.description}}<br/>Remaining courses : {{course.coursesToDo}}
+                            <h3>{{course.name}}</h3>Your level : {{course.level}} %<br/>{{course.description}}<br/>Remaining courses : {{course.coursesToDo}}
                         </p>
                     </div>
                 </div>

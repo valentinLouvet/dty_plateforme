@@ -27,7 +27,12 @@ app.get('/coach/profile/stats', function (req, res) {
 
 app.get('/coach/profile/students', function (req, res) {
     res.sendFile(__dirname + '/src/html/coachProfile/studentsListe.html')
-})
+});
+
+app.get('/user/profile', function(req,res){
+    res.sendFile(__dirname + '/src/html/templates/profile.html')
+});
+
 app.listen(3333, function () {
     console.log("serveur lancé");
 });

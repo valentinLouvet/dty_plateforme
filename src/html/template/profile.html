@@ -7,25 +7,15 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Profil</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-route.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-resource.js"></script>
     <script src="../../js/profile.js"></script>
+    <script src="../../js/inscription.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
 
 </head>
 
@@ -33,43 +23,31 @@
 <body ng-app="profileApp">
 
 
+
 <!-- Insérer navbar  -->
 
 
-<div class="container">
-    <!-- NAV BAR -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="javascript:void(0);"><font color="4F405D">CS</font> <font color="87102C">Digital Lab</font> - Online Lessons</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="javascript:void(0);">Home</a></li>
-                    <li><a href="#about">Cours</a></li>
-                    <li><a href="#contact">Historique</a></li>
-                </ul>
-            </div><!--/.nav-collapse -->
-        </div>
-    </nav>
+<div class="container"> <!-- ng-app="dty_plateforme"> -->
+    <div> <!-- ng-controller="headerCtrl as headerCtrl"> -->
+        <!-- NAV BAR -->
+        <dty-header></dty-header>
 
 
-    <h3>Courses : </h3>
+        <h3>Courses : </h3>
 
 
-    <!-- AFFICHAGE DES DIFFERENTS COURS -->
+        <!-- AFFICHAGE DES DIFFERENTS COURS -->
 
-    <div ng-controller="CourseController as courseCtrl">
-        <div ng-repeat="course in courseCtrl.courses">
-            <div class="col-md-12"><img ng-source="{{course.image}}">{{course.name}}<br/>{{course.level}}<br/>{{course.description}}<br/>{{course.coursesToDo}}<br/>
+        <div ng-controller="CourseController as courseCtrl">
+            <div ng-repeat="course in courseCtrl.courses">
+                <div class="col-md-4"><img ng-src={{course.image}}>
+                    <p>
+                        <b>{{course.name}}</b><br/>Your level : {{course.level}}<br/>{{course.description}}<br/>Remaining courses : {{course.coursesToDo}}
+                    </p>
+                </div>
             </div>
         </div>
+
     </div>
 
 </div>

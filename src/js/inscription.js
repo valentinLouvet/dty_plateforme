@@ -43,7 +43,7 @@
     app.directive('dtyHeader', function () {
         return{
             restrict: 'E',
-            templateUrl: '../html/templates/nav-bar.html',
+            templateUrl: '/html/templates/nav-bar.html',
             controller: function(){
 
             },
@@ -54,7 +54,7 @@
     app.directive('dtyFooter', function () {
             return{
                 restrict: 'E',
-                templateUrl: '../html/templates/footer.html'
+                templateUrl: '/html/templates/footer.html'
             }
     })
 })();

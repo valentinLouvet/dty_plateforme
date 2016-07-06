@@ -17,6 +17,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-route.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-resource.js"></script>
 
+    <link rel="stylesheet" href="../../../node_modules/angular-chart/dist/angular-chart.css" />
+    <script src="../../../node_modules/angular-chart/dist/Chart.js"></script>
+    <script src="../../../node_modules/angular-chart/dist/angular-chart.min.js"></script>
+
+
     <!-- Script de la page -->
     <script src="../../js/inscription.js"></script>
 
@@ -58,7 +63,8 @@
                             Your courses :
                         </h1>
                         <p>We strongly advise you to do the lesson of the day before doing any other lesson.</p>
-                        <a class="btn btn-primary" href="#">Go to today's lesson !  <span class="glyphicon glyphicon-chevron-right"></span></a>
+                        <a class="btn btn-primary" href="#">Go to today's lesson !
+                            <span class="glyphicon glyphicon-chevron-right"></span></a>
 
                         <hr>
 
@@ -78,7 +84,8 @@
                             <div class="col-md-offset-1 col-md-3" id="courses">
                                 <img ng-src={{course.image}}>
                                     <p>
-                                        <h3>{{course.name}}</h3>Your level : {{course.level}} %<br/>{{course.description}}<br/>Remaining courses : {{course.coursesToDo}}
+                                        <h3>{{course.name}}</h3>Your level : {{course.level}} %<br/>
+                                {{course.description}}<br/>Remaining courses : {{course.coursesToDo}}
                                     </p>
                             </div>
                         </div>
@@ -97,8 +104,8 @@
                 <!--see examples/bubble.html for random bubbles source code-->
 
                 <div ng-controller="LineCtrl">
-                    <canvas id="line" class="chart chart-line ng-isolate-scope" chart-data="data" chart-labels="labels" chart-click="onClick" chart-hover="onHover" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" style="display: block; width: 523px; height: 261px;" width="523" height="261"></canvas>
-
+                    <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels"
+                            chart-legend="true" chart-series="series" chart-click="onClick"></canvas>
                 </div>
 
 
@@ -109,10 +116,13 @@
                             Your statistics :
                         </h1>
 
-                        <p> You can see on this page your statistics, your assiduousness, your levels, your goals, your profile data and many other things with graphs and colors !
+                        <p> You can see on this page your statistics, your assiduousness, your levels, your goals, your
+                            profile data and many other things with graphs and colors !
                             <br/>
                             Sadly, graphs don't work yet... :(
                         </p>
+
+
 
                         <hr>
 

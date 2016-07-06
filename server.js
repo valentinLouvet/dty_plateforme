@@ -5,7 +5,7 @@ app.use(express.static(__dirname));
 app.use(express.static(__dirname + '/src'));
 
 app.get('/signin', function (req, res) {
-    res.sendFile(__dirname + '/src/html/signin.html')
+    res.sendFile(__dirname + '/src/html/signup.html')
 });
 
 app.get('/cours', function (req, res) {

@@ -64,18 +64,18 @@
     });
 
     app.directive('dtyFooter', function () {
-            return{
-                restrict: 'E',
-                templateUrl: '/html/templates/footer.html'
-            }
+        return{
+            restrict: 'E',
+            templateUrl: '/html/templates/footer.html'
+        }
     });
-    
-    
+
+
     ///////////////////////////
     // CONTROLLER FOR PROFILE//
     ///////////////////////////
-    
-    
+
+
     app.controller("ProfileController", function(){
         this.tab = 1;
 
@@ -91,9 +91,9 @@
         this.courses = courses;
 
     });
-    
+
     // variables for tests only (displaying the courses)
-    
+
     var courses = [
         //TODO : Créer des thumbnails !!!
         {
@@ -145,6 +145,6 @@
             link:'coursSuivi.html'
         }
     ];
-    
-    
+
+
 })();

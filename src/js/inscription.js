@@ -4,7 +4,7 @@
     app.directive('inscriptionForm', function(){
         return{
             restrict: 'E',
-            templateUrl: '../html/templates/inscription.html',
+            templateUrl: '/html/templates/inscription.html',
             controller: function(){
                 this.username="";
                 this.password="";
@@ -30,7 +30,7 @@
     app.directive('connexionForm', function(){
         return{
             restrict: 'E',
-            templateUrl: '../html/templates/connexion.html',
+            templateUrl: '/html/templates/connexion.html',
             controller: function () {
                 this.username="";
                 this.password="";

@@ -10,7 +10,6 @@
                 this.password="";
                 this.confirmpwd="";
                 this.email="";
-
                 this.checkpwd= function(){
                     if(this.password!="" && this.confirmpwd!=""){
                         return (this.password==this.confirmpwd)

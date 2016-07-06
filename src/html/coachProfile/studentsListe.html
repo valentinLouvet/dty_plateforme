@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Pierre D --->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -54,7 +55,7 @@
     </div>
 </nav>
 
-
+<!-- Présentation de la liste des élèves --->
 <div class="container">
     <label for="select1">Choisissez quels élèves afficher</label>
     <select id="select1" name="e1">
@@ -75,7 +76,15 @@
                     <h3>Nom de l'élève 1</h3>
                 </div>
                 <div class="panel-body">
-                    Infos diverses sur l'élève 1 (dernières leçons suivies...)
+                    <div style="float:left;">
+                        <span class="label label-info">Dernière leçon : Git</span>
+                        <span class="label label-warning">47% d'assiduité</span>
+                        <span class="label label-default">Abandon</span>
+                    </div>
+                    <div style="float:right;">
+                        <span class="label label-primary">Ne plus suivre l'élève</span>
+                    </div>
+                    <div class="clear-both">&nbsp;</div>
                 </div>
             </div>
         </div>
@@ -85,28 +94,38 @@
                     <h3>Nom de l'élève 2</h3>
                 </div>
                 <div class="panel-body">
-                    <span class="label label-info">Dernière leçon : AngularJS, installation des modules</span>
-                    <span class="label label-success">100% d'assiduité</span>
-                    <span class="label label-success">Disponible</span>
+                    <div style="float:left;">
+                        <span class="label label-info">Dernière leçon : AngularJS, installation des modules</span>
+                        <span class="label label-success">100% d'assiduité</span>
+                        <span class="label label-success">Disponible</span>
+                    </div>
+                    <div style="float:right;">
+                        <span class="label label-primary">Statistiques</span>
+                    </div>
+                    <div class="clear-both">&nbsp;</div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="panel panel-info">
                 <div class="panel-heading">
-                    <h3>Nom de l'élève 4</h3>
+                    <h3>Nom de l'élève 3</h3>
                 </div>
                 <div class="panel-body">
-                    <div class="lesson-statistics-line">
-                            <span class="label label-info">Dernière leçon : Javascript, les boucles</span>
-                            <span class="label label-info">74% d'assiduité</span>
-                            <span class="label label-danger">Indisponible</span>
-                            <span class ="label label-primary">Stastistiques (lien vers la page élève)</span>
+                    <div style="float:left;">
+                        <span class="label label-info">Dernière leçon : Javascript, les boucles</span>
+                        <span class="label label-info">74% d'assiduité</span>
+                        <span class="label label-danger">Indisponible</span>
                     </div>
+                    <div style="float:right;">
+                        <span class="label label-primary">Stastistiques</span>
+                    </div>
+                    <div class="clear-both">&nbsp;</div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 </div>
 

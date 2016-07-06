@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!-- Pierre D --->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Statistics</title>
+
+    <!--Bootstrap minifié--->
+    <link rel="stylesheet" href="../../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!--Css Perso-->
+    <link rel="stylesheet" href="../../css/main.css">
+    <!-- Css Benoit --->
+    <link rel="stylesheet" href="../../css/dlonlinelessons.css">
+</head>
+<body>
+<!-- NAVBAR --->
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href><font color="4F405D">CS</font> <font color="87102C">Digital Lab</font> - Online
+                Lessons</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href>Home</a></li>
+                <li><a href>History</a></li>
+                <li><a href>Statistics</a></li>
+                <li class="dropdown">
+                    <a href class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Lessons <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href>General</a></li>
+                        <li><a href>Mongoose/MongoDB</a></li>
+                        <li><a href>Express</a></li>
+                        <li><a href>Angular.js</a></li>
+                        <li><a href>Node.js</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li class="dropdown-header">Nav header</li>
+                        <li><a href>Separated link</a></li>
+                        <li><a href>One more separated link</a></li>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href><span class="glyphicon glyphicon-user"></span> S'inscrire</a></li>
+                            <li><a href><span class="glyphicon glyphicon-log-in"></span> Se connecter</a></li>
+                            <!--<li><a href><span class="glyphicon glyphicon-remove"></span> Se déconnecter</a></li>-->
+                        </ul>
+                    </ul>
+                </li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+<!-- Corps de la page --->
+<div class="container">
+    <!-- Statistiques par leçons --->
+    <div class="page-header">
+        <h1>1. Statistiques par leçons</h1>
+    </div>
+    <div class="row">
+        <label for="select1">Choisissez le bloc de leçons qui vous intéresse</label>
+        <select id="select1">
+            <option value="bloc1">Bloc 1</option>
+            <option value="bloc2">Bloc 2</option>
+            <option value="bloc3">Bloc 3</option>
+        </select>
+    </div>
+
+    <div class="row">
+        <label for="select21">Choisissez la leçon qui vous intéresse</label>
+        <select id="select21">
+            <option value="lecon11">Leçon11</option>
+            <option value="leçon12">Leçon12</option>
+            <option value="leçon13">Leçon13</option>
+            <option value="leçon14">Leçon14</option>
+        </select>
+    </div>
+
+    <div class="lesson">
+        <h3>AngularJS, installation des modules</h3>
+        <br>
+        <div class="lesson-statistics-line">
+            <div style="float:left;">Réussite moyenne :</div>
+            <div style="float:right;">95%</div>
+            <div class="clear-both">&nbsp;</div>
+        </div>
+        <div class="lesson-statistics-line">
+            <div style="float:left;">Plus haut taux de réussite :</div>
+            <div style="float:right;">100%</div>
+            <div class="clear-both">&nbsp;</div>
+        </div>
+        <div class="lesson-statistics-line">
+            <div style="float:left;">Plus bas taux de réussite :</div>
+            <div style="float:right;">40%</div>
+            <div class="clear-both">&nbsp;</div>
+        </div>
+    </div>
+
+    <!-- Statistiques du jour --->
+    <div class="page-header">
+        <h1>2. Statistiques du jour</h1>
+    </div>
+
+    <div class="story">
+        <h3>Vos élèves ayant effectué une leçon aujourd'hui :</h3>
+        <br>
+        <div class="lesson-statistics-line">
+            <div style="float:left;">Elève 1 :</div>
+            <div style="float:right;">AngularJS, installation des modules</div>
+            <div class="clear-both">&nbsp;</div>
+        </div>
+        <div class="lesson-statistics-line">
+            <div style="float:left;">Elève 2 :</div>
+            <div style="float:right;">MongoDB, faire une recherche</div>
+            <div class = "clear-both">&nbsp;</div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,7 +1,8 @@
 {
   "name": "plateforme_dty",
-  "dependencies":{
+  "dependencies": {
     "jquery": "latest",
-    "bootstrap": "latest"
+    "bootstrap": "latest",
+    "angular-chart.js": "^0.10.2"
   }
 }

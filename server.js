@@ -32,7 +32,6 @@ app.get('/user/profile', function (req, res) {
     res.sendFile(__dirname + '/src/html/templates/profile.html')
 });
 
-
 app.listen(3333, function () {
     console.log("serveur lancé");
 });

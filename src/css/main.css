@@ -30,3 +30,16 @@ nav.navbar.navbar-default.container > div > ul.nav.navbar-nav > li > a.activeDTY
     color: white;
 }
 
+.page-header-dty{
+    padding-bottom: 9px;
+    margin: 40px 0px 20px;
+    border-bottom:1px solid #87102c;
+}
+
+.page-header-dty > h1 {
+    color: #87102c;
+}
+
+.page-header-dty > h1 > small {
+    color: #b7123a;
+}

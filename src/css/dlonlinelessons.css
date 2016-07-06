@@ -1,0 +1,89 @@
+.lesson {
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: #f7f6ec;
+    border: 1px solid #feeb77;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+}
+.links {
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: #f6f7ec;
+    border: 1px solid #cffe77;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+}
+.vocabulary {
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: #f9f3ef;
+    border: 1px solid #f9dfce;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+}
+.exercise {
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: #f0f7f9;
+    border: 1px solid #c2ecf9;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+}
+.story {
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: #fff9fe;
+    border: 1px solid #faddf5;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.question-bad {
+  color : red;
+  text-decoration : line-through;
+}
+
+.question-good {
+  color : green;
+}
+
+
+.question-badge-bad {
+    border-radius: 50%;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    font-size: 11px;
+    color: #fff;
+    text-align: center;
+    line-height: 16px;
+    font-weight: 400;
+    background:red;
+    color:white;
+    top:-5px;
+}
+
+.question-badge-good {
+    border-radius: 50%;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    font-size: 11px;
+    color: #fff;
+    text-align: center;
+    line-height: 16px;
+    font-weight: 400;
+    background:green;
+    color:white;
+}

@@ -1,5 +1,5 @@
 (function () {
-    var app = angular.module('dty_plateform', ['chart.js']);
+    var app = angular.module('dty_plateform', []);
 
     app.config(['ChartJsProvider', function (ChartJsProvider) {
         // Configure all charts

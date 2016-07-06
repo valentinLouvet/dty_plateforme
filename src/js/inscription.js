@@ -1,5 +1,5 @@
 (function () {
-    var app = angular.module('dty_plateforme', []);
+    var app = angular.module('dty_plateform', []);
 
     app.directive('inscriptionForm', function () {
         return {

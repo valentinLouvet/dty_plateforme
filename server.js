@@ -8,4 +8,9 @@ app.get('/', function (req,res) {
     res.sendFile(__dirname+'/src/html/login.html')
 });
 
+
+app.get('/cours', function (req,res) {
+    res.sendFile(__dirname+'/src/html/templates/coursSuivi.html')
+});
+
 app.listen(3333);

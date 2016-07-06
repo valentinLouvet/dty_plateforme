@@ -1,59 +1,104 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Profil coach</title>
 
     <!--Bootstrap minifié-->
-    <link rel = "stylesheet" href = "../../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../bower_components/bootstrap/dist/css/bootstrap.min.css">
 </head>
 
 <body>
 
-<!--Ici commencera la navbar--->
-
-<!-- Fin de la navbar --->
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href><font color="4F405D">CS</font> <font color="87102C">Digital Lab</font> - Online Lessons</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href>Home</a></li>
+                <li><a href>History</a></li>
+                <li><a href>Statistics</a></li>
+                <li class="dropdown">
+                    <a href class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lessons <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href>General</a></li>
+                        <li><a href>Mongoose/MongoDB</a></li>
+                        <li><a href>Express</a></li>
+                        <li><a href>Angular.js</a></li>
+                        <li><a href>Node.js</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li class="dropdown-header">Nav header</li>
+                        <li><a href>Separated link</a></li>
+                        <li><a href>One more separated link</a></li>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href><span class="glyphicon glyphicon-user"></span> S'inscrire</a></li>
+                            <li><a href><span class="glyphicon glyphicon-log-in"></span> Se connecter</a></li>
+                            <!--<li><a href><span class="glyphicon glyphicon-remove"></span> Se déconnecter</a></li>-->
+                        </ul>
+                    </ul>
+                </li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
 
 
 <div class="container">
-    <label for = "select1">Choisissez quels élèves afficher</label>
-    <select id = "select1" name="e1">
-        <option value = "allStudents">Tous les élèves</option>
-        <option value = "yourStudents">Les élèves dont vous êtes le référent</option>
+    <label for="select1">Choisissez quels élèves afficher</label>
+    <select id="select1" name="e1">
+        <option value="allStudents">Tous les élèves</option>
+        <option value="dtyStudents">Les élèves de la DTY</option>
+        <option value="yourStudents">Les élèves dont vous êtes le référent</option>
     </select>
+    <div class="page-header">
+        <h1>Liste des élèves
+            <small>Informations sur la liste choisie</small>
+        </h1>
+    </div>
+    <div class="col-sm-10 col-sm-offset-1">
 
-    <div class = "page-header">
-        <h1>Liste des élèves <small>Informations sur la liste choisie</small></h1>
+        <div class="row">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3>Nom de l'élève 1</h3>
+                </div>
+                <div class="panel-body">
+                    Infos diverses sur l'élève 1 (dernières leçons suivies...)
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3>Nom de l'élève 2</h3>
+                </div>
+                <div class="panel-body">
+                    <span class="label label-success">100% d'assiduité</span>
+                    <span class="label label-success">Disponible</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3>Nom de l'élève 4</h3>
+                </div>
+                <div class="panel-body">
+                    <span class="label label-info">74% d'assiduité</span>
+                    <span class="label label-danger">Indisponible jusqu'au 21/12/5678 (partiels)</span>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class = "panel panel-default">
-        <div class = "panel-heading">
-            <h3>Nom de l'élève 1</h3>
-        </div>
-        <div class = "panel-body">
-            Infos diverses sur l'élève 1 (dernières leçons suivies...)
-        </div>
-    </div>
-
-    <div class = "panel panel-default">
-        <div class = "panel-heading">
-            <h3>Nom de l'élève 2</h3>
-        </div>
-        <div class = "panel-body">
-            <span class="label label-success">100% d'assiduité</span>
-            <span class="label label-success">Disponible</span>
-        </div>
-    </div>
-
-    <div class = "panel panel-default">
-        <div class = "panel-heading">
-            <h3>Nom de l'élève 4</h3>
-        </div>
-        <div class = "panel-body">
-            <span class="label label-info">74% d'assiduité</span>
-            <span class="label label-danger">Indisponible jusqu'au 21/12/5678 (partiels)</span>
-        </div>
-    </div>
 </div>
 
 </body>

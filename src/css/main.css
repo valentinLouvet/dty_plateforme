@@ -261,3 +261,32 @@ nav.navbar.navbar-default.container > div > ul.nav.navbar-nav > li > a.activeDTY
     height:400px;
     text-align: center;
 }
+
+.list-group-item {
+    background-color: lightgray;
+}
+
+.pager > .previous > a {
+    color:#87102c;
+}
+
+.pager > .next > a {
+    color:#87102c;
+}
+
+.btn-primary-dty {
+    color: #87102c;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+}
+.btn-primary-dty:focus,
+.btn-primary-dty.focus {
+    color: #87102c;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+}
+.btn-primary-dty:hover {
+    color: #87102c;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+}

@@ -3,7 +3,7 @@
  */
 
 
-(function(){
+(function () {
     var profileApp = angular.module('profileApp', []);
     console.log('debug1');
     

@@ -1,50 +1,50 @@
 (function () {
     var app = angular.module('dty_plateforme', []);
 
-    app.directive('inscriptionForm', function(){
-        return{
+    app.directive('inscriptionForm', function () {
+        return {
             restrict: 'E',
             templateUrl: '/html/templates/inscription.html',
-            controller: function(){
-                this.username="";
-                this.password="";
-                this.confirmpwd="";
-                this.email="";
-                this.checkpwd= function(){
-                    if(this.password!="" && this.confirmpwd!=""){
-                        return (this.password==this.confirmpwd)
+            controller: function () {
+                this.username = "";
+                this.password = "";
+                this.confirmpwd = "";
+                this.email = "";
+                this.checkpwd = function () {
+                    if (this.password != "" && this.confirmpwd != "") {
+                        return (this.password == this.confirmpwd)
                     }
-                    else{
+                    else {
                         return false;
                     }
                 };
-                
-                this.inscrire= function () {
-                    
+
+                this.inscrire = function () {
+
                 }
             },
             controllerAs: 'signInCtrl'
         };
     });
-    
-    app.directive('connexionForm', function(){
-        return{
+
+    app.directive('connexionForm', function () {
+        return {
             restrict: 'E',
             templateUrl: '/html/templates/connexion.html',
             controller: function () {
-                this.username="";
-                this.password="";
-                this.email="";
+                this.username = "";
+                this.password = "";
+                this.email = "";
             },
-            controllerAs:"logInCtrl"
+            controllerAs: "logInCtrl"
         }
     });
 
     app.directive('dtyHeader', function () {
-        return{
+        return {
             restrict: 'E',
             templateUrl: '/html/templates/nav-bar.html',
-            controller: function(){
+            controller: function () {
 
             },
             controllerAs: 'headerCtrl'

@@ -1,7 +1,7 @@
 (function () {
-    var app = angular.module('dty_plateform', ['chart.js']);
+    var app = angular.module('dty_plateform', []);
 
-    app.config(['ChartJsProvider', function (ChartJsProvider) {
+    /*app.config(['ChartJsProvider', function (ChartJsProvider) {
         // Configure all charts
         ChartJsProvider.setOptions({
             colours: ['#FF5252', '#FF8A80'],
@@ -11,7 +11,7 @@
         ChartJsProvider.setOptions('Line', {
             datasetFill: false
         });
-    }]);
+    }]);*/
     
     app.controller("LineCtrl", ['$scope', '$timeout', function ($scope, $timeout) {
 

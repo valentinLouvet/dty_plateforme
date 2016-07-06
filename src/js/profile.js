@@ -31,7 +31,7 @@
         {
             name: "Python",
             level: 0,
-            description: "",
+            description: "Langage déjà vu en prépa !",
             coursesToDo: 2,
             image:"../../images/python.png"
         },

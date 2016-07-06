@@ -14,6 +14,7 @@
     <script src="../../js/inscription.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/profile.css">
 
 
 
@@ -24,11 +25,8 @@
 
 
 
-<!-- Insérer navbar  -->
-
-
-<div class="container"> <!-- ng-app="dty_plateforme"> -->
-    <div> <!-- ng-controller="headerCtrl as headerCtrl"> -->
+<div class="container" ng-app="dty_plateforme">
+    <div>
         <!-- NAV BAR -->
         <dty-header></dty-header>
 
@@ -38,15 +36,20 @@
 
         <!-- AFFICHAGE DES DIFFERENTS COURS -->
 
-        <div ng-controller="CourseController as courseCtrl">
-            <div ng-repeat="course in courseCtrl.courses">
-                <div class="col-md-4"><img ng-src={{course.image}}>
-                    <p>
-                        <b>{{course.name}}</b><br/>Your level : {{course.level}}<br/>{{course.description}}<br/>Remaining courses : {{course.coursesToDo}}
-                    </p>
+        <div class="row">
+            <div ng-controller="CourseController as courseCtrl">
+                <div ng-repeat="course in courseCtrl.courses">
+                    <div class="col-md-offset-1 col-md-3">
+                        <img ng-src={{course.image}}>
+                        <p>
+                            <b>{{course.name}}</b><br/>Your level : {{course.level}}<br/>{{course.description}}<br/>Remaining courses : {{course.coursesToDo}}
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
+
+
 
     </div>
 

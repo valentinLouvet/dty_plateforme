@@ -1,9 +1,20 @@
 <!DOCTYPE html>
 <!-- Pierre D --->
-<html lang="en">
+<html lang="en" ng-app="dty_plateforme">
 <head>
     <meta charset="UTF-8">
     <title>Statistics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Template Navbar/Footer --->
+    <script type="text/javascript" src="../../js/inscription.js"></script>
+
+    <!-- Scripts bootstrap --->
+    <script type="text/javascript" src="../../../bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Angular --->
+    <script type="text/javascript" src="../../../node_modules/angular/angular.min.js"></script>
 
     <!--Bootstrap minifié--->
     <link rel="stylesheet" href="../../../bower_components/bootstrap/dist/css/bootstrap.min.css">
@@ -14,47 +25,7 @@
 </head>
 <body>
 <!-- NAVBAR --->
-<nav class="navbar navbar-default">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href><font color="4F405D">CS</font> <font color="87102C">Digital Lab</font> - Online
-                Lessons</a>
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href>Home</a></li>
-                <li><a href>History</a></li>
-                <li><a href>Statistics</a></li>
-                <li class="dropdown">
-                    <a href class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">Lessons <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href>General</a></li>
-                        <li><a href>Mongoose/MongoDB</a></li>
-                        <li><a href>Express</a></li>
-                        <li><a href>Angular.js</a></li>
-                        <li><a href>Node.js</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li class="dropdown-header">Nav header</li>
-                        <li><a href>Separated link</a></li>
-                        <li><a href>One more separated link</a></li>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href><span class="glyphicon glyphicon-user"></span> S'inscrire</a></li>
-                            <li><a href><span class="glyphicon glyphicon-log-in"></span> Se connecter</a></li>
-                            <!--<li><a href><span class="glyphicon glyphicon-remove"></span> Se déconnecter</a></li>-->
-                        </ul>
-                    </ul>
-                </li>
-            </ul>
-        </div><!--/.nav-collapse -->
-    </div>
-</nav>
+<dty-header></dty-header>
 
 <!-- Corps de la page --->
 <div class="container">
@@ -122,5 +93,7 @@
     </div>
 
 </div>
+
+<dty-footer></dty-footer>
 </body>
 </html>

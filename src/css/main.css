@@ -120,6 +120,11 @@ nav.navbar.navbar-default.container > div > ul.nav.navbar-nav > li > a.activeDTY
     color: #87102C;
 }
 
+.btn-primary.btn-lg{
+    background-color: #87102C;
+    width: 40%;
+}
+
 
 footer {
     margin: 50px 0;

@@ -7,19 +7,11 @@
     padding-right: 15px;
 }
 
-.form-control.pwdvalid.ng-dirty{
+.form-control.pwdvalid{
     border-color: #78FA89;
 }
 
-.form-control.pwdinvalid.ng-dirty{
-    border-color: #FA787E;
-}
-
-#email.ng-dirty.ng-valid{
-    border-color: #78FA89;
-}
-
-#email.ng-dirty.ng-invalid{
+.form-control.pwdinvalid{
     border-color: #FA787E;
 }
 
@@ -265,14 +257,9 @@ nav.navbar.navbar-default.container > div > ul.nav.navbar-nav > li > a.activeDTY
 }
 #courses {
     padding-top: 5%;
-    /*
-    padding-left:5%;
-    padding-right:5%;
-    padding-bottom: 5%;
-    */
     margin-bottom:5%;
     background-color: #ffffff;
-    border: 2px solid #000000;
+    border: 2px solid #87102c;
     border-radius: 6px;
     line-height: 40px;
     height:400px;
@@ -314,33 +301,6 @@ nav.navbar.navbar-default.container > div > ul.nav.navbar-nav > li > a.activeDTY
     border-color: #ddd;
 }
 
-.btn-primary-dty-inverse:hover {
-    color: white;
-    background-color: #87102c;
-    border-color: cornflowerblue;
+.graph-assiduousness {
+    text-align: center;
 }
-
-.label-default-dty {
-    background-color: black;
-}
-
-.label-success-dty {
-    background-color: #72aa5f;
-    color: white;
-}
-
-.label-info-dty {
-    background-color: #479dac;
-    color: white;
-}
-
-.label-warning-dty{
-    background-color: #ce9336;
-    color:white;
-}
-
-.label-danger-dty{
-    background-color: #ae1919;
-    color: white;
-}
-

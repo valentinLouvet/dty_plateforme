@@ -2,7 +2,7 @@
 
 <!-- Vincent Houlbreque -->
 
-<html lang="en">
+<html lang="en" ng-app="dty_plateform">
 <head>
     <meta charset="utf-8">
 
@@ -38,6 +38,7 @@
 </head>
 
 
+<body>
 <body ng-app="dty_plateform" ng-controller="viewController as views" ng-init="views.selectTab(5)">
 
     <!-- NAVBAR --->
@@ -95,21 +96,15 @@
                             </div>
                         </div>
                     </div>
+
+
                 </div>
 
             </div>
 
-
-            <!-- GRAPHS DON'T WORK ! -->
+            <!-- AFFICHAGE DES STATISTIQUES -->
             <div ng-show="viewCtrl.isSelected(1)">
-
-                <!-- HISTORY -->
-                <!-- different graphs and charts that show the assiduousness of the student -->
-                <!-- TODO changer isSelected(1) en isSelected(2)-->
-                <!--see examples/bubble.html for random bubbles source code-->
-
-
-
+            <!-- TODO changer isSelected(1) en isSelected(2)-->
 
                 <div class="row">
                     <div class="col-md-offset-1 col-md-11">
@@ -118,10 +113,15 @@
                             Your statistics :
                         </h1>
 
-                        <div ng-controller="LineCtrl">
-                            <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels"
-                                    chart-legend="true" chart-series="series" chart-click="onClick"></canvas>
+                        <!-- AFFICHAGE DES GRAPHES -->
+
+                        <div class="graph-assiduousness">
+                            <div ng-controller="LineCtrl">
+                                <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels"
+                                        chart-legend="false" chart-series="series" chart-click="onClick"></canvas>
+                            </div>
                         </div>
+
 
                         <p> You can see on this page your statistics, your assiduousness, your levels, your goals, your
                             profile data and many other things with graphs and colors !

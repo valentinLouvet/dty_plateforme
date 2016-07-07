@@ -122,7 +122,7 @@
         {
             name: "Python",
             level: 0,
-            description: "Langage déjà vu en prépa !",
+            description: "Already learned in prepa !",
             coursesToDo: 2,
             image: "../../images/python2.png",
             link: '#'

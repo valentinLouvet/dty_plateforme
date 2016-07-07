@@ -52,10 +52,17 @@
     <div ng-controller="CourseController as courseCtrl">
         <div ng-repeat="course in courseCtrl.courses">
             <div class="col-md-offset-1 col-md-3" id="courses">
-                <img ng-src={{course.image}}>
+                <a data-toggle="collapse" data-parrent="courses" ng-href={{'#'+course.name}}> <img ng-src={{course.image}}>
+                </a>
                 <p>
-                <h2>{{course.name}}</h2>
+                    <h2>{{course.name}}</h2>
                 </p>
+                <div ng-attr-id={{course.name}} class="panel-collapse collapse">
+                    <div class="panel-body">
+                        Test {{course.name}}
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>

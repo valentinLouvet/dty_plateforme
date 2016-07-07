@@ -21,7 +21,6 @@
             $cookies.putObject('authenticated', true);
             $cookies.put('userType', $scope.userType);
             console.log('logged in');
-            $location.path('/');
         };
         $scope.logout = function () {
             $cookies.remove('authenticated', false);

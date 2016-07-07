@@ -1,5 +1,8 @@
 (function () {
-    var app = angular.module('dty_plateform', ["chart.js"]); // chart.js included to use angular-charts
+    var app = angular.module('dty_plateform', ["chart.js"]).run(function($rootScope) {
+        $rootScope.authenticated = true;
+        $rootScope.loggedAs = "coach";
+    }); // chart.js included to use angular-charts
 
     ////////////////////
     // DISPLAY GRAPHS //
@@ -38,7 +41,7 @@
         }, 3000);
     }]);
 
-    app.controller('viewController',function () {
+    app.controller('viewController',function ($scope, $rootScope) {
         this.tab=1;
 
         this.isSelected = function (checkTab) {
@@ -47,7 +50,11 @@
 
         this.selectTab = function (setTab) {
             this.tab = setTab;
-        }
+        };
+
+
+
+
     });
 
     app.directive('inscriptionForm', function () {

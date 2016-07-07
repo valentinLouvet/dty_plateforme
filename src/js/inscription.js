@@ -6,7 +6,7 @@
     }); // chart.js included to use angular-charts
     
 
-    app.controller('viewController', ["$scope", "$cookies", "$location", function ($scope, $cookies, $location) {
+    app.controller('viewController', ["$scope", "$cookies", "$location","$window", function ($scope, $cookies, $location,$window) {
         this.tab=1;
 
         this.isSelected = function (checkTab) {
@@ -21,11 +21,15 @@
             $cookies.putObject('authenticated', true);
             $cookies.put('userType', $scope.userType);
             console.log('logged in');
+
+            console.log($window.location.href);
+            $window.location.href="/";
         };
         $scope.logout = function () {
             $cookies.remove('authenticated', false);
             $cookies.remove('userType', '');
             console.log('logged out');
+            $window.location.href="/";
         };
 
 

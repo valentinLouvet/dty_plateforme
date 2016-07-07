@@ -2,16 +2,24 @@
     display: inline-block;
 }
 
-.footer{
+.footer > p{
     text-align: right;
     padding-right: 15px;
 }
 
-.form-control.pwdvalid{
+.form-control.pwdvalid.ng-dirty{
     border-color: #78FA89;
 }
 
-.form-control.pwdinvalid{
+.form-control.pwdinvalid.ng-dirty{
+    border-color: #FA787E;
+}
+
+#email.ng-dirty.ng-valid{
+    border-color: #78FA89;
+}
+
+#email.ng-dirty.ng-invalid{
     border-color: #FA787E;
 }
 
@@ -304,6 +312,12 @@ nav.navbar.navbar-default.container > div > ul.nav.navbar-nav > li > a.activeDTY
     color: white;
     background-color: #87102c;
     border-color: #ddd;
+}
+
+.btn-primary-dty-inverse:hover {
+    color: white;
+    background-color: #87102c;
+    border-color: cornflowerblue;
 }
 
 .label-default-dty {

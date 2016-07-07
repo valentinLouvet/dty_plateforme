@@ -7,12 +7,20 @@
     padding-right: 15px;
 }
 
-.form-control.pwdvalid{
+.form-control.pwdvalid.ng-dirty{
     border-color: #78FA89;
 }
 
-.form-control.pwdinvalid{
+.form-control.pwdinvalid.ng-dirty{
     border-color: #FA787E;
+}
+
+#email.ng-invalid.ng-dirty{
+    border-color: #FA787E;
+}
+
+#email.ng-valid.ng-dirty{
+    border-color: #78FA89;
 }
 
 .rtl .a9-body .a9-form, .rtl .a9-body .a9-form {

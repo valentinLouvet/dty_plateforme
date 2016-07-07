@@ -7,7 +7,10 @@
         <script type="text/javascript" src="../../node_modules/angular/angular.min.js"></script>
         <script type="text/javascript" src="../../bower_components/jquery/dist/jquery.min.js"></script>
         <script type="text/javascript" src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="../../bower_components/Chart.js/Chart.js"></script>
+        <script src="../../bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
         <script type="text/javascript" src="../js/inscription.js"></script>
+        <link rel="stylesheet" href="../../bower_components/angular-chart.js/dist/angular-chart.css" />
         <link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../css/main.css">
     </head>
@@ -15,8 +18,16 @@
 
     <body class="container" ng-controller="viewController as views" ng-init="views.selectTab(4)">
         <dty-header></dty-header>
+        <div class="page-header-dty">
+            <h1>Welcome back!</h1>
+        </div>
+        <p style="margin-bottom: 20px">
+            We're happy to see you again and hope you will learn new awesome stuff today!
+        </p>
         <div class="jumbotron jumbotronlogin">
             <connexion-form></connexion-form>
         </div>
+
+        <dty-footer></dty-footer>
     </body>
 </html>

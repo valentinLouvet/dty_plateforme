@@ -33,7 +33,7 @@
     border-color: #e7e7e7;
 }
 
-nav.navbar.navbar-default.container > div > ul.nav.navbar-nav > li > a.activeDTY{
+a.activeDTY{
     background-color: #87102C;
     color: white;
 }

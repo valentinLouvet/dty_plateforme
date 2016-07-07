@@ -6,7 +6,7 @@
     }); // chart.js included to use angular-charts
     
 
-    app.controller('viewController',function ($scope, $cookies,$location) {
+    app.controller('viewController', ["$scope", "$cookies", "$location", function ($scope, $cookies, $location) {
         this.tab=1;
 
         this.isSelected = function (checkTab) {
@@ -29,7 +29,7 @@
         };
 
 
-    });
+    }]);
 
     app.directive('inscriptionForm', function () {
         return {

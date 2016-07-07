@@ -23,9 +23,9 @@
                         <li><a href>Node.js</a></li>
                     </ul>
                 </li>
-                <li><a href="/user/profile" ng-show="authenticated && loggedAs == 'student'" ng-class="{activeDTY : views.isSelected(5)}" ng-click="views.selectTab(5)">History</a></li>
-                <li><a href="/coach/profile/students" ng-show="authenticated && loggedAs == 'coach'" ng-class="{activeDTY : views.isSelected(6)}" ng-click="views.selectTab(6)">Students</a></li>
-                <li><a href="/coach/profile/stats" ng-show="authenticated && loggedAs == 'coach'" ng-class="{activeDTY : views.isSelected(7)}" ng-click="views.selectTab(7)">Statistics</a></li>
+                <li><a href="/userProfile" ng-show="authenticated && loggedAs == 'student'" ng-class="{activeDTY : views.isSelected(5)}" ng-click="views.selectTab(5)">History</a></li>
+                <li><a href="/coachStudents" ng-show="authenticated && loggedAs == 'coach'" ng-class="{activeDTY : views.isSelected(6)}" ng-click="views.selectTab(6)">Students</a></li>
+                <li><a href="/coachStats" ng-show="authenticated && loggedAs == 'coach'" ng-class="{activeDTY : views.isSelected(7)}" ng-click="views.selectTab(7)">Statistics</a></li>
 
             </ul>
             <ul class="nav navbar-nav navbar-right">

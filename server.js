@@ -20,15 +20,15 @@ app.get('/login', function (req, res) {
     res.sendFile(__dirname + '/src/html/login.html')
 });
 
-app.get('/coach/profile/stats', function (req, res) {
+app.get('/coachStats', function (req, res) {
     res.sendFile(__dirname + '/src/html/coachProfile/Statistics.html')
 });
 
-app.get('/coach/profile/students', function (req, res) {
+app.get('/coachStudents', function (req, res) {
     res.sendFile(__dirname + '/src/html/coachProfile/studentsListe.html')
 });
 
-app.get('/user/profile', function (req, res) {
+app.get('/userProfile', function (req, res) {
     res.sendFile(__dirname + '/src/html/templates/profile.html')
 });
 

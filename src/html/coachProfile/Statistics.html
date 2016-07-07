@@ -38,24 +38,25 @@
     <div class="page-header-dty">
         <h1>1. Statistics per lesson</h1>
     </div>
-    <div class="row">
-        <label for="select1">Choose a group of lessons</label>
-        <select id="select1">
-            <option value="bloc1">Bloc 1</option>
-            <option value="bloc2">Bloc 2</option>
-            <option value="bloc3">Bloc 3</option>
-        </select>
+
+    <div><h2>Choose a lesson :</h2></div>
+
+    <hr>
+
+    <div ng-controller="CourseController as courseCtrl">
+        <div ng-repeat="course in courseCtrl.courses">
+            <div class="col-md-offset-1 col-md-3" id="courses">
+                <img ng-src={{course.image}}>
+                <p>
+                <h2>{{course.name}}</h2>
+                </p>
+            </div>
+        </div>
     </div>
 
-    <div class="row">
-        <label for="select21">Choose a lesson</label>
-        <select id="select21">
-            <option value="lecon11">Lesson11</option>
-            <option value="leçon12">Lesson12</option>
-            <option value="leçon13">Lesson13</option>
-            <option value="leçon14">Lesson14</option>
-        </select>
-    </div>
+    <div><h2>Lesson chosen :</h2></div>
+
+    <hr>
 
     <div class="panel panel-dty">
         <div class="panel-heading">

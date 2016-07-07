@@ -305,3 +305,28 @@ nav.navbar.navbar-default.container > div > ul.nav.navbar-nav > li > a.activeDTY
     background-color: #87102c;
     border-color: #ddd;
 }
+
+.label-default-dty {
+    background-color: black;
+}
+
+.label-success-dty {
+    background-color: #72aa5f;
+    color: white;
+}
+
+.label-info-dty {
+    background-color: #479dac;
+    color: white;
+}
+
+.label-warning-dty{
+    background-color: #ce9336;
+    color:white;
+}
+
+.label-danger-dty{
+    background-color: #ae1919;
+    color: white;
+}
+

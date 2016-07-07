@@ -101,13 +101,14 @@
     // variables for tests only (displaying the courses)
 
     var courses = [
-        //TODO : Create thumbnails !!!
+        // TODO : Create thumbnails !!!
+        // TODO : delete useless images
         {
             name: "AngularJS",
             level: 10,
             description: "Front-End Javascript",
             coursesToDo: 5,
-            image: '../../images/angularjs.png',
+            image: '../../images/angularjs2.png',
             link: '#'
         },
         {
@@ -115,7 +116,7 @@
             level: 38,
             description: "Back-End Javascript",
             coursesToDo: 8,
-            image: "../../images/nodejs.png",
+            image: "../../images/nodejs2.png",
             link: '#'
         },
         {
@@ -123,7 +124,7 @@
             level: 0,
             description: "Langage déjà vu en prépa !",
             coursesToDo: 2,
-            image: "../../images/python.png",
+            image: "../../images/python2.png",
             link: '#'
         },
         {
@@ -131,7 +132,7 @@
             level: 56,
             description: "Website Skeleton",
             coursesToDo: 0,
-            image: "../../images/html5.png",
+            image: "../../images/html5_2.png",
             link: '#'
         },
         {
@@ -139,7 +140,7 @@
             level: 32,
             description: "Smartphone Applications",
             coursesToDo: 5,
-            image: "../../images/android-studio.png",
+            image: "../../images/android-studio2.png",
             link: '#'
         },
         {
@@ -147,7 +148,7 @@
             level: 67,
             description: "Versioning",
             coursesToDo: 1,
-            image: "../../images/git.png",
+            image: "../../images/git2.png",
             link: '/cours'
         }
     ];

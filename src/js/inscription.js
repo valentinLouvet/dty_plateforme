@@ -1,5 +1,9 @@
 (function () {
-    var app = angular.module('dty_plateform', ["chart.js"]);
+    var app = angular.module('dty_plateform', ["chart.js"]); // chart.js included to use angular-charts
+
+    ////////////////////
+    // DISPLAY GRAPHS //
+    ////////////////////
 
     app.config(['ChartJsProvider', function (ChartJsProvider) {
         // Configure all charts
@@ -108,18 +112,6 @@
     // CONTROLLER FOR PROFILE//
     ///////////////////////////
 
-
-    app.controller("ProfileController", function(){
-        this.tab = 1;
-
-        this.selectedTab = function(setTab){
-            this.tab = setTab;
-        };
-        this.isSelected = function(checkTab){
-            return this.tab === checkTab;
-        };
-    });
-
     app.controller('CourseController', function(){
         this.courses = courses;
 
@@ -175,7 +167,7 @@
             description: "Versioning",
             coursesToDo: 1,
             image:"../../images/git.png",
-            link:'coursSuivi.html'
+            link:'/cours'
         }
     ];
 

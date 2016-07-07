@@ -51,9 +51,9 @@
     <div class="container">
         <!-- NAV BAR -->
 
-        <div ng-controller = "ProfileController as profilCtrl">
+        <div ng-controller = "viewController as viewCtrl">
 
-            <div ng-show="profilCtrl.isSelected(1)">
+            <div ng-show="viewCtrl.isSelected(1)">
 
                 <!-- LESSONS -->
                 <!-- List of lessons and different parameters (level, description) -->
@@ -87,7 +87,7 @@
                     <div ng-controller="CourseController as courseCtrl">
                         <div ng-repeat="course in courseCtrl.courses">
                             <div class="col-md-offset-1 col-md-3" id="courses">
-                                <img ng-src={{course.image}}>
+                                <a href={{course.link}}><img ng-src={{course.image}}></a>
                                     <p>
                                         <h2>{{course.name}}</h2>Your level : {{course.level}} %<br/>
                                 {{course.description}}<br/>Remaining courses : {{course.coursesToDo}}
@@ -101,7 +101,7 @@
 
 
             <!-- GRAPHS DON'T WORK ! -->
-            <div ng-show="profilCtrl.isSelected(1)">
+            <div ng-show="viewCtrl.isSelected(1)">
 
                 <!-- HISTORY -->
                 <!-- different graphs and charts that show the assiduousness of the student -->

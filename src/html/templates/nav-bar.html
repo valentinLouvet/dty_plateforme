@@ -24,9 +24,9 @@
                     </ul>
                 </li>
                 <li><a href ng-show="authenticated && loggedAs == 'student'">History</a></li>
-                <li><a href="/user/profile" ng-show="authenticated && loggedAs == 'student'">Statistics</a></li>
-                <li><a href="/coach/profile/students" ng-show="authenticated && loggedAs == 'coach'">Students</a></li>
-                <li><a href="/coach/profile/stats" ng-show="authenticated && loggedAs == 'coach'">Statistics</a></li>
+                <li><a href="/user/profile" ng-show="authenticated && loggedAs == 'student'" ng-class="{activeDTY : views.isSelected(5)}" ng-click="views.selectTab(5)">Statistics</a></li>
+                <li><a href="/coach/profile/students" ng-show="authenticated && loggedAs == 'coach'" ng-class="{activeDTY : views.isSelected(6)}" ng-click="views.selectTab(6)">Students</a></li>
+                <li><a href="/coach/profile/stats" ng-show="authenticated && loggedAs == 'coach'" ng-class="{activeDTY : views.isSelected(7)}" ng-click="views.selectTab(7)">Statistics</a></li>
 
             </ul>
             <ul class="nav navbar-nav navbar-right">

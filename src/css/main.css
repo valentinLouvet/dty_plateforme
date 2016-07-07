@@ -301,6 +301,12 @@ nav.navbar.navbar-default.container > div > ul.nav.navbar-nav > li > a.activeDTY
     border-color: #ddd;
 }
 
+.btn-primary-dty-inverse:hover {
+    color: white;
+    background-color: #87102c;
+    border-color: cornflowerblue;
+}
+
 .graph-assiduousness {
     text-align: center;
 }

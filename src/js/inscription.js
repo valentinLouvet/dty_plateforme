@@ -109,7 +109,7 @@
         // TODO : delete useless images
         {
             name: "AngularJS",
-            level: 10,
+            level: "10",
             description: "Front-End Javascript",
             coursesToDo: 5,
             image: '../../images/angularjs2.png',
@@ -117,7 +117,7 @@
         },
         {
             name: "NodeJS",
-            level: 38,
+            level: "38",
             description: "Back-End Javascript",
             coursesToDo: 8,
             image: "../../images/nodejs2.png",
@@ -125,7 +125,7 @@
         },
         {
             name: "Python",
-            level: 0,
+            level: "0",
             description: "Already learned in prepa !",
             coursesToDo: 2,
             image: "../../images/python2.png",
@@ -133,7 +133,7 @@
         },
         {
             name: "HTML 5",
-            level: 56,
+            level: "56",
             description: "Website Skeleton",
             coursesToDo: 0,
             image: "../../images/html5_2.png",
@@ -141,7 +141,7 @@
         },
         {
             name: "Android",
-            level: 32,
+            level: "32",
             description: "Smartphone Applications",
             coursesToDo: 5,
             image: "../../images/android-studio2.png",
@@ -149,9 +149,53 @@
         },
         {
             name: "Git",
-            level: 67,
+            level: "67",
             description: "Versioning",
             coursesToDo: 1,
+            image: "../../images/git2.png",
+            link: '/cours'
+        }
+    ];
+    
+    app.controller('BadgeController', function(){
+        this.badges = badges;
+    });
+    
+    var badges = [
+        // TODO : Mettre d'autres images à la place
+        {
+            name: "AngularJS",
+            description: "You succesfully finished the course on AngularJS",
+            image: '../../images/angularjs2.png',
+            link: '#'
+        },
+        {
+            name: "NodeJS",
+            description: "NodeJS has no secret for you anymore !",
+            image: "../../images/nodejs2.png",
+            link: '#'
+        },
+        {
+            name: "Python",
+            description: "You're a god in Python !",
+            image: "../../images/python2.png",
+            link: '#'
+        },
+        {
+            name: "HTML 5",
+            description: "You know HTML5 so perfectly !",
+            image: "../../images/html5_2.png",
+            link: '#'
+        },
+        {
+            name: "Android",
+            description: "",
+            image: "../../images/android-studio2.png",
+            link: '#'
+        },
+        {
+            name: "Git",
+            description: "Teamwork is know a REAL quality you can put on your CV",
             image: "../../images/git2.png",
             link: '/cours'
         }

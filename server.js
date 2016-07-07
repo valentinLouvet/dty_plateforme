@@ -32,6 +32,10 @@ app.get('/userProfile', function (req, res) {
     res.sendFile(__dirname + '/src/html/templates/profile.html')
 });
 
+app.get('/userBadges', function(req, res){
+    res.sendFile(__dirname + '/src/html/templates/rewards.html')
+});
+
 app.listen(3333, function () {
     console.log("Server launched on port 3333");
 });

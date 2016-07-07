@@ -32,7 +32,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/signup" ng-hide="authenticated" ng-class="{activeDTY : views.isSelected(3)}" ng-click="views.selectTab(3)"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                 <li><a href="/login" style="padding-right: 30px" ng-hide="authenticated" ng-class="{activeDTY : views.isSelected(4)}" ng-click="views.selectTab(4)"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
-                <li><a href ng-show="authenticated" ng-click="logout()"><span class="glyphicon glyphicon-remove"></span>Log out</a></li>
+                <li><a href ng-show="authenticated" ng-click="logout()"><span class="glyphicon glyphicon-remove"></span>{{authenticated}}</a></li>
             </ul>
         </div><!--/.nav-collapse -->
 </nav>

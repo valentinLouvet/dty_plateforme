@@ -1,11 +1,12 @@
 (function () {
-    var app = angular.module('dty_plateform', ["chart.js"]).run(function($rootScope) {
-        $rootScope.authenticated = true;
-        $rootScope.loggedAs = "coach";
+    var app = angular.module('dty_plateform', ["chart.js", "ngCookies"]).run(function ($rootScope, $cookies) {
+        $rootScope.authenticated = $cookies.getObject('authenticated');
+        console.log($rootScope.authenticated)
+        $rootScope.loggedAs = $cookies.get('userType');
     }); // chart.js included to use angular-charts
     
 
-    app.controller('viewController',function ($scope, $rootScope) {
+    app.controller('viewController',function ($scope, $cookies,$location) {
         this.tab=1;
 
         this.isSelected = function (checkTab) {
@@ -15,8 +16,18 @@
         this.selectTab = function (setTab) {
             this.tab = setTab;
         };
-
-
+        $scope.userType = '';
+        $scope.login = function () {
+            $cookies.putObject('authenticated', true);
+            $cookies.put('userType', $scope.userType);
+            console.log('logged in');
+            $location.path('/');
+        };
+        $scope.logout = function () {
+            $cookies.remove('authenticated', false);
+            $cookies.remove('userType', '');
+            console.log('logged out');
+        };
 
 
     });
@@ -65,14 +76,14 @@
             restrict: 'E',
             templateUrl: '/html/templates/nav-bar.html',
             controller: function () {
-                panelselected="";
+                panelselected = "";
             },
             controllerAs: 'headerCtrl'
         }
     });
 
     app.directive('dtyFooter', function () {
-        return{
+        return {
             restrict: 'E',
             templateUrl: '/html/templates/footer.html'
         }
@@ -83,7 +94,7 @@
     // CONTROLLER FOR PROFILE//
     ///////////////////////////
 
-    app.controller('CourseController', function(){
+    app.controller('CourseController', function () {
         this.courses = courses;
 
     });
@@ -97,48 +108,48 @@
             level: 10,
             description: "Front-End Javascript",
             coursesToDo: 5,
-            image:'../../images/angularjs.png',
-            link:'#'
+            image: '../../images/angularjs.png',
+            link: '#'
         },
         {
             name: "NodeJS",
             level: 38,
             description: "Back-End Javascript",
             coursesToDo: 8,
-            image:"../../images/nodejs.png",
-            link:'#'
+            image: "../../images/nodejs.png",
+            link: '#'
         },
         {
             name: "Python",
             level: 0,
             description: "Langage déjà vu en prépa !",
             coursesToDo: 2,
-            image:"../../images/python.png",
-            link:'#'
+            image: "../../images/python.png",
+            link: '#'
         },
         {
             name: "HTML 5",
             level: 56,
             description: "Website Skeleton",
             coursesToDo: 0,
-            image:"../../images/html5.png",
-            link:'#'
+            image: "../../images/html5.png",
+            link: '#'
         },
         {
             name: "Android",
             level: 32,
             description: "Smartphone Applications",
             coursesToDo: 5,
-            image:"../../images/android-studio.png",
-            link:'#'
+            image: "../../images/android-studio.png",
+            link: '#'
         },
         {
-            name:"Git",
+            name: "Git",
             level: 67,
             description: "Versioning",
             coursesToDo: 1,
-            image:"../../images/git.png",
-            link:'/cours'
+            image: "../../images/git.png",
+            link: '/cours'
         }
     ];
 

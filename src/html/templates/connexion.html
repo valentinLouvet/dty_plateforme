@@ -1,8 +1,8 @@
-<form class="form-inline" role="form" id="log-in" method="post" ng-submit="" novalidate>
+<form class="form-inline" role="form" id="log-in" method="post" ng-submit="login()" novalidate>
     <div class="form-group">
         <p>
             <label class="control-label" for="pseudo">Username </label> :
-            <input type="text" name="pseudo" id="pseudo" class="form-control" placeholder="Ex : Ouemelette" ng-model="logInCtrl.username" required />
+            <input type="text" name="pseudo" id="pseudo" class="form-control" ng-model="userType" placeholder="Ex : Ouemelette" ng-model="logInCtrl.username" required />
         </p>
         <p>
             <label class="control-label" for="pwd">Password </label> :

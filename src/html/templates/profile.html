@@ -10,11 +10,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Profile</title>
-
     <!-- ANGULAR -->
     <script src="../../../node_modules/angular/angular.min.js"></script>
 
+    <!-- Affichage des graphes -->
     <link rel="stylesheet" href="../../../bower_components/angular-chart.js/dist/angular-chart.css" />
     <script src="../../../bower_components/Chart.js/Chart.js"></script>
     <script src="../../../bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
@@ -28,8 +27,11 @@
     <link rel="stylesheet" href="../../../bower_components/bootstrap/dist/css/bootstrap.min.css">
     <script type="text/javascript" src="../../../bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="../../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
     <!-- CSS de la page -->
     <link rel="stylesheet" type="text/css" href="../../css/main.css">
+
+    <title>User Profile</title>
 
 
 
@@ -57,21 +59,25 @@
                 <!-- List of lessons and different parameters (level, description) -->
 
                 <div class="row">
-                    <div class="col-md-offset-1 col-md-11">
-                        <h1 class="page-header" style="color: #e00432">
-                            Your courses :
-                        </h1>
+                    <div class="col-md-offset-1 col-md-10">
+                        <div class = "page-header-dty">
+                            <h1>
+                                Your courses :
+                            </h1>
+                        </div>
                         <p>We strongly advise you to do the lesson of the day before doing any other lesson.</p>
-                        <a class="btn btn-primary" href="#">Go to today's lesson !
-                            <span class="glyphicon glyphicon-chevron-right"></span></a>
+                        <a class="btn btn-primary-dty" href="#">Go to today's lesson !
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
 
                         <hr>
 
-                        <h3 style="color:#ec971f">
+                        <h2>
                             List of your courses :
-                        </h3>
+                        </h2>
 
                         <hr>
+
                     </div>
 
 
@@ -83,7 +89,7 @@
                             <div class="col-md-offset-1 col-md-3" id="courses">
                                 <img ng-src={{course.image}}>
                                     <p>
-                                        <h3>{{course.name}}</h3>Your level : {{course.level}} %<br/>
+                                        <h2>{{course.name}}</h2>Your level : {{course.level}} %<br/>
                                 {{course.description}}<br/>Remaining courses : {{course.coursesToDo}}
                                     </p>
                             </div>
@@ -103,17 +109,19 @@
                 <!--see examples/bubble.html for random bubbles source code-->
 
 
-                <div ng-controller="LineCtrl">
-                    <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels"
-                            chart-legend="true" chart-series="series" chart-click="onClick"></canvas>
-                </div>
+
 
                 <div class="row">
                     <div class="col-md-offset-1 col-md-11">
 
-                        <h1 class="page-header" style="color: #e00432">
+                        <h1 class="page-header-dty">
                             Your statistics :
                         </h1>
+
+                        <div ng-controller="LineCtrl">
+                            <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels"
+                                    chart-legend="true" chart-series="series" chart-click="onClick"></canvas>
+                        </div>
 
                         <p> You can see on this page your statistics, your assiduousness, your levels, your goals, your
                             profile data and many other things with graphs and colors !

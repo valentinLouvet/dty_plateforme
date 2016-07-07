@@ -299,3 +299,9 @@ nav.navbar.navbar-default.container > div > ul.nav.navbar-nav > li > a.activeDTY
     background-color: #f5f5f5;
     border-color: #ddd;
 }
+
+.btn-primary-dty-inverse {
+    color: white;
+    background-color: #87102c;
+    border-color: #ddd;
+}

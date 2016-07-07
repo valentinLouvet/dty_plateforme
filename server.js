@@ -33,6 +33,6 @@ app.get('/user/profile', function (req, res) {
 });
 
 app.listen(3333, function () {
-    console.log("serveur lancé");
+    console.log("Server launched on port 3333");
 });
 

@@ -3,44 +3,6 @@
         $rootScope.authenticated = true;
         $rootScope.loggedAs = "coach";
     }); // chart.js included to use angular-charts
-
-    ////////////////////
-    // DISPLAY GRAPHS //
-    ////////////////////
-
-    app.config(['ChartJsProvider', function (ChartJsProvider) {
-        // Configure all charts
-        ChartJsProvider.setOptions({
-            colours: ['#FF5252', '#FF8A80'],
-            responsive: false
-        });
-        // Configure all line charts
-        ChartJsProvider.setOptions('Line', {
-            datasetFill: false
-        });
-    }]);
-    
-    app.controller("LineCtrl", ['$scope', '$timeout', function ($scope, $timeout) {
-
-        $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
-        $scope.series = ['Series A', 'Series B'];
-        $scope.data = [
-            [65, 59, 80, 81, 56, 55, 40],
-            [28, 48, 40, 19, 86, 27, 90]
-        ];
-        $scope.scale = 
-        $scope.onClick = function (points, evt) {
-            console.log(points, evt);
-        };
-
-        // Simulate async data update
-        $timeout(function () {
-            $scope.data = [
-                [28, 48, 40, 19, 86, 27, 90],
-                [65, 59, 80, 81, 56, 55, 40]
-            ];
-        }, 3000);
-    }]);
     
 
     app.controller('viewController',function ($scope, $rootScope) {
@@ -129,7 +91,7 @@
     // variables for tests only (displaying the courses)
 
     var courses = [
-        //TODO : Créer des thumbnails !!!
+        //TODO : Create thumbnails !!!
         {
             name: "AngularJS",
             level: 10,
@@ -179,6 +141,44 @@
             link:'/cours'
         }
     ];
+
+    ////////////////////
+    // DISPLAY GRAPHS //
+    ////////////////////
+
+    app.config(['ChartJsProvider', function (ChartJsProvider) {
+        // Configure all charts
+        ChartJsProvider.setOptions({
+            colours: ['#FF5252', '#FF8A80'],
+            responsive: false
+        });
+        // Configure all line charts
+        ChartJsProvider.setOptions('Line', {
+            datasetFill: false
+        });
+    }]);
+
+    app.controller("LineCtrl", ['$scope', '$timeout', function ($scope, $timeout) {
+
+        $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
+        $scope.series = ['Series A', 'Series B'];
+        $scope.data = [
+            [65, 59, 80, 81, 56, 55, 40],
+            [28, 48, 40, 19, 86, 27, 90]
+        ];
+        $scope.scale =
+            $scope.onClick = function (points, evt) {
+                console.log(points, evt);
+            };
+
+        // Simulate async data update
+        $timeout(function () {
+            $scope.data = [
+                [28, 48, 40, 19, 86, 27, 90],
+                [65, 59, 80, 81, 56, 55, 40]
+            ];
+        }, 3000);
+    }]);
 
 
 })();

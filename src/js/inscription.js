@@ -1,7 +1,7 @@
 (function () {
-    var app = angular.module('dty_plateform', ["chart.js", "ngCookies", "$locationProvider"]).run(function ($rootScope, $cookies) {
+    var app = angular.module('dty_plateform', ["chart.js", "ngCookies", "ngRoute"]).run(function ($rootScope, $cookies) {
         $rootScope.authenticated = $cookies.getObject('authenticated');
-        console.log($rootScope.authenticated)
+        console.log($rootScope.authenticated);
         $rootScope.loggedAs = $cookies.get('userType');
     }); // chart.js included to use angular-charts
     

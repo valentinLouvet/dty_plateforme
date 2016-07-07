@@ -351,3 +351,8 @@ nav.navbar.navbar-default.container > div > ul.nav.navbar-nav > li > a.activeDTY
 .graph-assiduousness{
     text-align:center;
 }
+
+ul > li>.pager-dty:hover{
+    color: white;
+    background-color: #87102c;
+}

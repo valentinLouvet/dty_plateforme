@@ -35,7 +35,15 @@ function replaceByValue(a,b){
     while(b.length>0){
         b.pop();
     }
+    var tempValue;
+    var tempArray = [];
     while(a.length>0){
-        b.unshift(a.pop());
+        tempValue = a.pop();
+        tempArray.unshift(tempValue);
+        b.unshift(tempValue);
+    }
+
+    while(tempArray.length>0){
+        a.unshift(tempArray.pop());
     }
 }

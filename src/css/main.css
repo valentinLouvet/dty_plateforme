@@ -345,7 +345,7 @@ nav.navbar.navbar-default.container > div > ul.nav.navbar-nav > li > a.activeDTY
 }
 
 .progress{
-    width:216.31px;
+    width:216px;
 }
 
 .graph-assiduousness{
@@ -355,4 +355,22 @@ nav.navbar.navbar-default.container > div > ul.nav.navbar-nav > li > a.activeDTY
 ul > li>.pager-dty:hover{
     color: white;
     background-color: #87102c;
+}
+
+body{
+    padding-top: 0;
+}
+
+.row-dty > div > h3 {
+    color: #87102c;
+}
+
+.pagination-dty >li > a{
+    color: #87102c;
+    background-color: #f8f8f8;
+}
+
+.pagination-dty > .active >a{
+    background-color: #87102c;
+    border-color: #87102c;
 }

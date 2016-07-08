@@ -121,7 +121,7 @@
             level: 38,
             description: "Back-End Javascript",
             coursesToDo: 8,
-            image: "../../images/nodejs2.png",
+            image: "../../images/nodejs4.png",
             link: '#'
         },
         {

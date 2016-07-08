@@ -3,11 +3,12 @@
         $rootScope.authenticated = $cookies.getObject('authenticated');
         console.log($rootScope.authenticated);
         $rootScope.loggedAs = $cookies.get('userType');
+        $rootScope.currentCourse = -1;
     }); // chart.js included to use angular-charts
-    
 
-    app.controller('viewController', ["$scope", "$cookies", "$location","$window", function ($scope, $cookies, $location,$window) {
-        this.tab=1;
+
+    app.controller('viewController', ["$scope", "$cookies", "$location", "$window", function ($scope, $cookies, $location, $window) {
+        this.tab = 1;
 
         this.isSelected = function (checkTab) {
             return this.tab === checkTab
@@ -23,13 +24,13 @@
             console.log('logged in');
 
             console.log($window.location.href);
-            $window.location.href="/";
+            $window.location.href = "/";
         };
         $scope.logout = function () {
             $cookies.remove('authenticated', false);
             $cookies.remove('userType', '');
             console.log('logged out');
-            $window.location.href="/";
+            $window.location.href = "/";
         };
 
 
@@ -97,9 +98,24 @@
     // CONTROLLER FOR PROFILE//
     ///////////////////////////
 
-    app.controller('CourseController', function () {
+
+    app.controller('CourseController', function ($rootScope) {
+
         this.courses = courses;
         this.allLessons = allLessons;
+        this.currentLessons = currentLessons;
+        var cont = this;
+        this.setCurrentCourse = function (currentCourse, event) {
+            var change = $rootScope.currentCourse === currentCourse;
+            $rootScope.currentCourse = currentCourse;
+            scrollTo("#courseLessons", event, !change);
+            // cont.currentLessons = cont.allLessons[currentCourse].lessons;
+            // cont.lessonList =(cont.allLessons[currentCourse].lessons).slice();
+            replaceByValue((cont.allLessons[currentCourse]).lessons,cont.currentLessons);
+            // cont.currentLessons.push('thing');
+            
+
+        }
 
     });
 
@@ -158,21 +174,52 @@
         }
     ];
 
-    var allLessons =[
-        {blockName : "AngularJS",
-        lessons :[
-            {number:1,
-                date: new Date()},
-            {number:2,
-            date: new Date()}
-        ],
+    var allLessons = [
+        {
+            blockName: "AngularJS",
+            lessons: [
+                {
+                    number: 1,
+                    name: "Angular 1"
+                },
+                {
+                    number: 2,
+                    name: "Angular 2"
+                }
+            ],
+        },
+        {
+            blockName: "NodesJS",
+            lessons: [
+                {
+                    number: 1,
+                    name: "Node 1"
+                },
+                {
+                    number: 2,
+                    name: "Node 2"
+                }
+            ],
         }
     ]
 
-    app.controller('BadgeController', function(){
+    var currentLessons =
+        [
+            {
+                number: 1,
+                name: "default 1"
+            },
+            {
+                number: 2,
+                name: "default 2"
+            }
+        ]
+
+
+    app.controller('BadgeController', function () {
         this.badges = badges;
     });
-    
+
     var badges = [
         // TODO : Mettre d'autres images à la place
         {

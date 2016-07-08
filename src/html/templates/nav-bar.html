@@ -15,14 +15,16 @@
                 <li class="dropdown" ng-show="authenticated">
                     <a href class="dropdown-toggle" ng-class="{activeDTY : views.isSelected(2)}" ng-click="views.selectTab(2)" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lessons <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href>General</a></li>
+                        <li><a href>Presentation</a></li>
                         <li><a href="/cours">Git</a></li>
+                        <li><a href>HTML/CSS</a></li>
                         <li><a href>Mongoose/MongoDB</a></li>
-                        <li><a href>Express</a></li>
+                        <li><a href>Express.js</a></li>
                         <li><a href>Angular.js</a></li>
                         <li><a href>Node.js</a></li>
                     </ul>
                 </li>
+                <li><a href="/codingTests">Coding tests</a> </li>
                 <li><a href="/userProfile" ng-show="authenticated && loggedAs == 'student'" ng-class="{activeDTY : views.isSelected(5)}" ng-click="views.selectTab(5)">History</a></li>
                 <li><a href="/coachStudents" ng-show="authenticated && loggedAs == 'coach'" ng-class="{activeDTY : views.isSelected(6)}" ng-click="views.selectTab(6)">Students</a></li>
                 <li><a href="/coachStats" ng-show="authenticated && loggedAs == 'coach'" ng-class="{activeDTY : views.isSelected(7)}" ng-click="views.selectTab(7)">Statistics</a></li>

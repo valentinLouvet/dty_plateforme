@@ -28,12 +28,16 @@ app.get('/coachStudents', function (req, res) {
     res.sendFile(__dirname + '/src/html/coachProfile/studentsListe.html')
 });
 
-app.get('/userProfile', function (req, res) {
-    res.sendFile(__dirname + '/src/html/templates/profile.html')
+app.get('/userCourses', function (req, res) {
+    res.sendFile(__dirname + '/src/html/userProfile/userCourses.html')
+});
+
+app.get('/userStats', function(req, res){
+    res.sendFile(__dirname + '/src/html/userProfile/userStats.html')
 });
 
 app.get('/userBadges', function(req, res){
-    res.sendFile(__dirname + '/src/html/templates/rewards.html')
+    res.sendFile(__dirname + '/src/html/userProfile/rewards.html')
 });
 
 app.get('/codingTests', function (req,res) {

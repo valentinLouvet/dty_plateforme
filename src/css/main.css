@@ -265,6 +265,11 @@ nav.navbar.navbar-default.container > div > ul.nav.navbar-nav > li > a.activeDTY
 }
 #courses {
     padding-top: 5%;
+    /*
+    padding-left:5%;
+    padding-right:5%;
+    padding-bottom: 5%;
+    */
     margin-bottom:5%;
     background-color: #f5f5f5;
     border: 2px solid #87102c;
@@ -381,4 +386,11 @@ body{
 .pagination-dty > .active >a{
     background-color: #87102c;
     border-color: #87102c;
+}
+
+.lesson-section {
+    height: 100%;
+    padding-top: 150px;
+    text-align: center;
+    background: #eee;
 }

@@ -33,6 +33,14 @@
 
     <!-- Template Navbar/Footer --->
     <script type="text/javascript" src="../../js/inscription.js"></script>
+
+    <!-- jQuery -->
+    <script src="../../../bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="../../../bower_components/jquery.easing/js/jquery.easing.min.js"></script>
+    <script src="../../js/scrolling-nav.js"></script>
+
 </head>
 <body ng-controller="viewController as views" ng-init="views.selectTab(7)">
 <!-- NAVBAR --->
@@ -49,29 +57,39 @@
 
     <hr>
 
+
     <div ng-controller="CourseController as courseCtrl">
         <div ng-repeat="course in courseCtrl.courses">
             <div class="col-md-offset-1 col-md-3" id="courses">
-                <a data-toggle="collapse" data-parrent="courses" ng-href={{'#'+course.name}}> <img ng-src={{course.image}}>
+                <a class= "page-scroll show-lesson" href = "#courseLessons2"  > <img ng-src={{course.image}}>
                 </a>
-                <p>
-                    <h2>{{course.name}}</h2>
-                </p>
-                <div ng-attr-id={{course.name}} class="panel-collapse collapse">
-                    <div class="panel-body">
-                        Test {{course.name}}
-                    </div>
+                <h2>{{course.name}}</h2>
 
-                </div>
+
             </div>
         </div>
+
     </div>
+    <p style="color:white">
+        -
+    </p>
+    <div >
+        <div id = "courseLessons2"  class="lesson-section collapse">
+            Test
+        </div>
+
+    </div>
+    <hr>
+
 
     <div><h2>Lesson chosen :</h2></div>
 
     <hr>
 
-    <div class="panel panel-dty">
+
+
+
+    <div  class="panel panel-dty">
         <div class="panel-heading">
             <h3>AngularJS, setting up your environment</h3>
         </div>

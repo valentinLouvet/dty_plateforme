@@ -361,6 +361,15 @@ nav.navbar.navbar-default.container > div > ul.nav.navbar-nav > li > a.activeDTY
     width:216px;
 }
 
+.percent{
+    /*position: absolute;
+    color: black;*/
+    color: #000000;
+    position: absolute;
+
+    left: 35%;
+}
+
 .graph-assiduousness{
     text-align:center;
 }

@@ -109,7 +109,7 @@
         // TODO : delete useless images
         {
             name: "AngularJS",
-            level: "10",
+            level: 10,
             description: "Front-End Javascript",
             coursesToDo: 5,
             image: '../../images/angularjs2.png',
@@ -117,7 +117,7 @@
         },
         {
             name: "NodeJS",
-            level: "38",
+            level: 38,
             description: "Back-End Javascript",
             coursesToDo: 8,
             image: "../../images/nodejs2.png",
@@ -125,7 +125,7 @@
         },
         {
             name: "Python",
-            level: "0",
+            level: 0,
             description: "Already learned in prepa !",
             coursesToDo: 2,
             image: "../../images/python2.png",
@@ -133,7 +133,7 @@
         },
         {
             name: "HTML 5",
-            level: "56",
+            level: 56,
             description: "Website Skeleton",
             coursesToDo: 0,
             image: "../../images/html5_2.png",
@@ -141,7 +141,7 @@
         },
         {
             name: "Android",
-            level: "32",
+            level: 32,
             description: "Smartphone Applications",
             coursesToDo: 5,
             image: "../../images/android-studio2.png",
@@ -149,7 +149,7 @@
         },
         {
             name: "Git",
-            level: "67",
+            level: 67,
             description: "Versioning",
             coursesToDo: 1,
             image: "../../images/git2.png",

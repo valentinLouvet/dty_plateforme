@@ -90,11 +90,21 @@
                     <div ng-controller="CourseController as courseCtrl">
                         <div ng-repeat="course in courseCtrl.courses">
                             <div class="col-md-offset-1 col-md-3" id="courses">
-                                <a href={{course.link}}><img ng-src={{course.image}}></a>
+                                <div class="col-md-12">
+                                    <a href={{course.link}}><img ng-src={{course.image}}></a>
                                     <p>
-                                        <h2>{{course.name}}</h2>Your level : {{course.level}} %<br/>
-                                {{course.description}}<br/>Remaining courses : {{course.coursesToDo}}
+                                    <h2>{{course.name}}</h2>
                                     </p>
+                                    <div style="float:right;" class="progress">
+
+                                        <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar"
+                                             aria-valuenow="{{course.level}}" aria-valuemin="0" aria-valuemax="100"
+                                             style="min-width: 2em; width: {{course.level}}%;">
+                                            <span class="percent">Your level : {{course.level}} %</span>
+                                        </div>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
                     </div>

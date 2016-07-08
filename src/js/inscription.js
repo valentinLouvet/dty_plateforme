@@ -166,38 +166,38 @@
         {
             name: "AngularJS",
             description: "You succesfully finished the course on AngularJS",
-            image: '../../images/angularjs2.png',
+            image: '../../images/angularjs3.png',
             link: '#'
         },
         {
             name: "NodeJS",
             description: "NodeJS has no secret for you anymore !",
-            image: "../../images/nodejs2.png",
+            image: "../../images/nodejs3.png",
             link: '#'
         },
         {
             name: "Python",
             description: "You're a god in Python !",
-            image: "../../images/python2.png",
+            image: "../../images/python3.png",
             link: '#'
         },
         {
             name: "HTML 5",
             description: "You know HTML5 so perfectly !",
-            image: "../../images/html5_2.png",
+            image: "../../images/html5_3.png",
             link: '#'
         },
         {
             name: "Android",
             description: "",
-            image: "../../images/android-studio2.png",
+            image: "../../images/android-studio3.png",
             link: '#'
         },
         {
             name: "Git",
             description: "Teamwork is know a REAL quality you can put on your CV",
-            image: "../../images/git2.png",
-            link: '/cours'
+            image: "../../images/git3.png",
+            link: '#'
         }
     ];
 

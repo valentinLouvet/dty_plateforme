@@ -40,6 +40,10 @@ app.get('/codingTests', function (req,res) {
     res.sendFile(__dirname+'/src/html/coding_tests.html')
 });
 
+app.get('/intro', function (req,res) {
+    res.sendFile(__dirname+'/src/html/intro.html')
+})
+
 app.listen(3333, function () {
     console.log("Server launched on port 3333");
 });

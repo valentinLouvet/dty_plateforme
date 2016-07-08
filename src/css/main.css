@@ -44,7 +44,7 @@ nav.navbar.navbar-default.container > div > ul.nav.navbar-nav > li > a.activeDTY
     border-bottom:1px solid #87102c;
 }
 
-.page-header-dty > h1 {
+.page-header-dty > h1, .page-header-dty >div> h2, .page-header-dty > div > h3 {
     color: #87102c;
 }
 

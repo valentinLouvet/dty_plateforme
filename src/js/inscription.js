@@ -99,6 +99,7 @@
 
     app.controller('CourseController', function () {
         this.courses = courses;
+        this.allLessons = allLessons;
 
     });
 
@@ -156,7 +157,18 @@
             link: '/cours'
         }
     ];
-    
+
+    var allLessons =[
+        {blockName : "AngularJS",
+        lessons :[
+            {number:1,
+                date: new Date()},
+            {number:2,
+            date: new Date()}
+        ],
+        }
+    ]
+
     app.controller('BadgeController', function(){
         this.badges = badges;
     });

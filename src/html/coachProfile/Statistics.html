@@ -9,6 +9,9 @@
     <!-- Angular --->
     <script type="text/javascript" src="../../../node_modules/angular/angular.min.js"></script>
 
+    <!-- jQuery -->
+    <script src="../../../bower_components/jquery/dist/jquery.min.js"></script>
+
     <!-- Scripts bootstrap --->
     <script type="text/javascript" src="../../../bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="../../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -23,7 +26,7 @@
     <!-- Angular chart --->
     <script src="../../../bower_components/Chart.js/Chart.js"></script>
     <script src="../../../bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
-    <link rel="stylesheet" href="../../../bower_components/angular-chart.js/dist/angular-chart.css" />
+    <link rel="stylesheet" href="../../../bower_components/angular-chart.js/dist/angular-chart.css"/>
 
     <!-- Angular Cookies -->
     <script src="../../../node_modules/angular-cookies/angular-cookies.js"></script>
@@ -34,8 +37,6 @@
     <!-- Template Navbar/Footer --->
     <script type="text/javascript" src="../../js/inscription.js"></script>
 
-    <!-- jQuery -->
-    <script src="../../../bower_components/jquery/dist/jquery.min.js"></script>
 
     <!-- Scrolling Nav JavaScript -->
     <script src="../../../bower_components/jquery.easing/js/jquery.easing.min.js"></script>
@@ -61,7 +62,7 @@
     <div ng-controller="CourseController as courseCtrl">
         <div ng-repeat="course in courseCtrl.courses">
             <div class="col-md-offset-1 col-md-3" id="courses">
-                <a class= "page-scroll show-lesson" href = "#courseLessons2"  > <img ng-src={{course.image}}>
+                <a class="page-scroll" href={{"#courseLessons"+course.name}}> <img ng-src={{course.image}}>
                 </a>
                 <h2>{{course.name}}</h2>
 
@@ -73,12 +74,18 @@
     <p style="color:white">
         -
     </p>
-    <div >
-        <div id = "courseLessons2"  class="lesson-section collapse">
-            Test
-        </div>
+    <div ng-controller="CourseController as courseCtrl">
+        <div ng-repeat="course in courseCtrl.courses">
+            <div hg-attr-id={{"courseLessons"+course.name}} class="lesson-section collapse">
 
+                <div ng-repeat="lesson in courseCtrl.allLessons[0].lessons">
+                    <span> {{lesson.number}} : {{lesson.date}}</span>
+                </div>
+            </div>
+        </div>
     </div>
+
+
     <hr>
 
 
@@ -87,9 +94,7 @@
     <hr>
 
 
-
-
-    <div  class="panel panel-dty">
+    <div class="panel panel-dty">
         <div class="panel-heading">
             <h3>AngularJS, setting up your environment</h3>
         </div>
@@ -130,12 +135,16 @@
         </div>
         <div class="panel-body">
             <div class="lesson-statistics-line">
-                <strong><div style="float:left;">Student 1 :</div></strong>
+                <strong>
+                    <div style="float:left;">Student 1 :</div>
+                </strong>
                 <div style="float:right;">AngularJS, setting up your environment</div>
                 <div class="clear-both">&nbsp;</div>
             </div>
             <div class="lesson-statistics-line">
-                <strong><div style="float:left;">Student 2 :</div></strong>
+                <strong>
+                    <div style="float:left;">Student 2 :</div>
+                </strong>
                 <div style="float:right;">MongoDB, data research</div>
                 <div class="clear-both">&nbsp;</div>
             </div>

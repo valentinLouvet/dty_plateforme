@@ -265,17 +265,25 @@ nav.navbar.navbar-default.container > div > ul.nav.navbar-nav > li > a.activeDTY
 }
 #courses {
     padding-top: 5%;
-    /*
-    padding-left:5%;
-    padding-right:5%;
-    padding-bottom: 5%;
-    */
     margin-bottom:5%;
     background-color: #f5f5f5;
     border: 2px solid #87102c;
     border-radius: 6px;
     line-height: 40px;
     height:400px;
+    text-align: center;
+}
+
+#badges {
+
+    padding-top: 7.5%;
+    /*padding-bottom: -2.5%;*/
+    margin-bottom:5%;
+    background-color: #f5f5f5;
+    border-radius: 250px;
+    border: 2px solid #87102c;
+    height: 250px;
+    width: 250px;
     text-align: center;
 }
 
@@ -345,7 +353,7 @@ nav.navbar.navbar-default.container > div > ul.nav.navbar-nav > li > a.activeDTY
 }
 
 .progress{
-    width:216.31px;
+    width:216px;
 }
 
 .graph-assiduousness{
@@ -355,4 +363,22 @@ nav.navbar.navbar-default.container > div > ul.nav.navbar-nav > li > a.activeDTY
 ul > li>.pager-dty:hover{
     color: white;
     background-color: #87102c;
+}
+
+body{
+    padding-top: 0;
+}
+
+.row-dty > div > h3 {
+    color: #87102c;
+}
+
+.pagination-dty >li > a{
+    color: #87102c;
+    background-color: #f8f8f8;
+}
+
+.pagination-dty > .active >a{
+    background-color: #87102c;
+    border-color: #87102c;
 }

@@ -43,7 +43,7 @@
 </head>
 
 
-<body>
+<body ng-controller="viewController as views">
 
     <!-- NAVBAR --->
     <dty-header></dty-header>
@@ -51,7 +51,7 @@
     <div class="container">
 
         <div class="row">
-            <div class="col-md-offset-1 col-md-10">
+            <div class="col-sm-offset-1 col-sm-10">
                 <div class = "page-header-dty">
                     <h1>
                         Your rewards :
@@ -63,11 +63,11 @@
 
             <div ng-controller="BadgeController as badgeCtrl">
                 <div ng-repeat="badge in badgeCtrl.badges">
-                    <div class="col-md-offset-1 col-md-3" id="courses">
-                        <a href={{badge.link}} title={{badge.description}}><img ng-src={{badge.image}}></a>
-                        <p>
-                            <h2>{{badge.name}}</h2>
-                        </p>
+                    <div class="col-sm-offset-1 col-sm-3" id="badges">
+                            <a href={{badge.link}} title={{badge.description}}><img ng-src={{badge.image}}></a>
+                            <p>
+                                <!--<h2>{{badge.name}}</h2>-->
+                            </p>
                     </div>
                 </div>
             </div>

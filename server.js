@@ -42,6 +42,10 @@ app.get('/codingTests', function (req,res) {
 
 app.get('/intro', function (req,res) {
     res.sendFile(__dirname+'/src/html/intro.html')
+});
+
+app.get('/test', function (req, res){
+    res.sendFile(__dirname+'/src/html/templates/test_beginning.html')
 })
 
 app.listen(3333, function () {

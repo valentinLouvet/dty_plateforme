@@ -9,8 +9,7 @@
     <!-- Angular --->
     <script type="text/javascript" src="../../../node_modules/angular/angular.min.js"></script>
 
-    <!-- jQuery -->
-    <script src="../../../bower_components/jquery/dist/jquery.min.js"></script>
+
 
     <!-- Scripts bootstrap --->
     <script type="text/javascript" src="../../../bower_components/jquery/dist/jquery.min.js"></script>
@@ -26,7 +25,7 @@
     <!-- Angular chart --->
     <script src="../../../bower_components/Chart.js/Chart.js"></script>
     <script src="../../../bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
-    <link rel="stylesheet" href="../../../bower_components/angular-chart.js/dist/angular-chart.css"/>
+    <link rel="stylesheet" href="../../../bower_components/angular-chart.js/dist/angular-chart.css" />
 
     <!-- Angular Cookies -->
     <script src="../../../node_modules/angular-cookies/angular-cookies.js"></script>
@@ -60,9 +59,9 @@
 
 
     <div ng-controller="CourseController as courseCtrl">
-        <div ng-repeat="course in courseCtrl.courses">
+        <div ng-repeat="course in courseCtrl.courses track by $index">
             <div class="col-md-offset-1 col-md-3" id="courses">
-                <a class="page-scroll" href={{"#courseLessons"+course.name}}> <img ng-src={{course.image}}>
+                <a  class="page-scroll" href = "#courseLessons" ng-click="courseCtrl.setCurrentCourse($index,$event)" > <img ng-src={{course.image}}>
                 </a>
                 <h2>{{course.name}}</h2>
 
@@ -74,18 +73,25 @@
     <p style="color:white">
         -
     </p>
-    <div ng-controller="CourseController as courseCtrl">
-        <div ng-repeat="course in courseCtrl.courses">
-            <div hg-attr-id={{"courseLessons"+course.name}} class="lesson-section collapse">
 
-                <div ng-repeat="lesson in courseCtrl.allLessons[0].lessons">
-                    <span> {{lesson.number}} : {{lesson.date}}</span>
+
+    <accordion>
+
+
+    </accordion>
+    <div >
+        <div id = "courseLessons"  class="lesson-section collapse">
+            <div ng-controller="CourseController as courseCtrl">
+
+                <div>{{courseCtrl.courses[currentCourse].name}}</div>
+                <div ng-repeat="lesson in courseCtrl.currentLessons">
+
+                    <span> {{lesson.number}} : {{lesson.name}} </span>
                 </div>
             </div>
         </div>
+
     </div>
-
-
     <hr>
 
 
@@ -94,7 +100,9 @@
     <hr>
 
 
-    <div class="panel panel-dty">
+
+
+    <div  class="panel panel-dty">
         <div class="panel-heading">
             <h3>AngularJS, setting up your environment</h3>
         </div>
@@ -135,16 +143,12 @@
         </div>
         <div class="panel-body">
             <div class="lesson-statistics-line">
-                <strong>
-                    <div style="float:left;">Student 1 :</div>
-                </strong>
+                <strong><div style="float:left;">Student 1 :</div></strong>
                 <div style="float:right;">AngularJS, setting up your environment</div>
                 <div class="clear-both">&nbsp;</div>
             </div>
             <div class="lesson-statistics-line">
-                <strong>
-                    <div style="float:left;">Student 2 :</div>
-                </strong>
+                <strong><div style="float:left;">Student 2 :</div></strong>
                 <div style="float:right;">MongoDB, data research</div>
                 <div class="clear-both">&nbsp;</div>
             </div>

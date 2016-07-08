@@ -78,6 +78,49 @@
 
     </div>
 
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Introduction Row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Rewards
+                    <small></small>
+                </h1>
+                <p>Because your fidelity and your progression are important, we congratulate you for your hard-won
+                    badges !</p>
+            </div>
+        </div>
+
+        <!-- Team Members Row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Your badges</h2>
+            </div>
+
+            <div ng-controller="BadgeController as badgeCtrl">
+                <div ng-repeat="badge in badgeCtrl.badges">
+                    <div class="col-lg-4 col-sm-6 text-center">
+                        <img class="img-circle img-responsive img-center" src={{badge.image}} alt="">
+                        <h3>{{badge.name}}
+                            <small></small>
+                        </h3>
+                        <p>{{badge.description}}</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
 
     <!-- FOOTER -->
     <dty-footer></dty-footer>

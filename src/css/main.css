@@ -403,3 +403,7 @@ body{
     text-align: center;
     background: #eee;
 }
+
+.img-center {
+    margin: 0 auto;
+}

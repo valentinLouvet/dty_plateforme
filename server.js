@@ -44,6 +44,7 @@ app.get('/intro', function (req,res) {
     res.sendFile(__dirname+'/src/html/intro.html')
 });
 
+// test de départ
 app.get('/test', function (req, res){
     res.sendFile(__dirname+'/src/html/templates/test_beginning.html')
 })

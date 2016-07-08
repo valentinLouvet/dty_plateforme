@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DTY Platform - User Courses</title>
+</head>
+<body>
+    <!-- LESSONS -->
+    <!-- List of lessons and different parameters (level, description) -->
+
+    <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+            <div class = "page-header-dty">
+                <h1>
+                    Your courses
+                </h1>
+            </div>
+            <p>We strongly advise you to do the lesson of the day before doing any other lesson.</p>
+            <a class="btn btn-primary-dty" href="#">Go to today's lesson !
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+
+            <hr>
+
+            <h2>
+                List of your courses :
+            </h2>
+
+            <hr>
+
+        </div>
+
+
+        <!-- AFFICHAGE DES DIFFERENTS COURS -->
+
+
+        <div ng-controller="CourseController as courseCtrl">
+            <div ng-repeat="course in courseCtrl.courses">
+                <div class="col-lg-offset-1 col-lg-3 col-md-offset-1 col-md-5" id="courses">
+                    <div class="col-md-12">
+                        <a href={{course.link}}><img ng-src={{course.image}}></a>
+                        <p>
+                        <h2>{{course.name}}</h2>
+                        </p>
+                    </div>
+                    <div class="col-md-12">
+                        <div style="margin-left: auto; margin-right: auto;" class="progress">
+
+                            <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar"
+                                 aria-valuenow="{{course.level}}" aria-valuemin="0" aria-valuemax="100"
+                                 style="min-width: 2em; width: {{course.level}}%;">
+                                <span class="percent">Your level : {{course.level}} %</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+</html>

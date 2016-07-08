@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DTY Platform - User Statistics</title>
+</head>
+<body>
+<div class="row">
+    <div class="col-md-offset-1 col-md-11">
+
+        <h1 class="page-header-dty">
+            Your statistics :
+        </h1>
+
+        <!-- AFFICHAGE DES GRAPHES -->
+
+        <div class="graph-assiduousness">
+            <div ng-controller="LineCtrl">
+                <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels"
+                        chart-legend="false" chart-series="series" chart-click="onClick"></canvas>
+            </div>
+        </div>
+
+
+        <p> You can see on this page your statistics, your assiduousness, your levels, your goals, your
+            profile data and many other things with graphs and colors !
+            <br/>
+            As you can see, it takes the form of graphs just like the one above.
+        </p>
+
+
+
+        <hr>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -34,7 +34,7 @@
                 <li><a ui-sref="userCourses" ng-show="authenticated && loggedAs == 'student'" ng-class="{activeDTY : views.isSelected(5)}" ng-click="views.selectTab(5)">History</a></li>
                 <li><a ui-sref="coachStudents" ng-show="authenticated && loggedAs == 'coach'" ng-class="{activeDTY : views.isSelected(6)}" ng-click="views.selectTab(6)">Students</a></li>
                 <li><a ui-sref="coachStats" ng-show="authenticated && loggedAs == 'coach'" ng-class="{activeDTY : views.isSelected(7)}" ng-click="views.selectTab(7)">Statistics</a></li>
-                <li><a href="/codingTests">Coding tests</a></li>
+                <li><a ui-sref="codingTests">Coding tests</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a ui-sref="signup" ng-hide="authenticated" ng-class="{activeDTY : views.isSelected(3)}" ng-click="views.selectTab(3)"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

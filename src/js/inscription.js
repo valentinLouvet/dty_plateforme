@@ -329,6 +329,11 @@
                 url: "/userCourses",
                 templateUrl: "src/html/userProfile/userCourses.html"
             })
+
+            .state("codingTests", {
+                url: "/codingTests",
+                templateUrl: "src/html/coding_tests.html"
+            })
     }]);
 
     app.controller("LineCtrl", ['$scope', '$timeout', function ($scope, $timeout) {

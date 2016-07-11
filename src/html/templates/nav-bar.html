@@ -36,7 +36,7 @@
                 <li><a ui-sref="coachStats" ng-show="authenticated && loggedAs == 'coach'" ng-class="{activeDTY : views.isSelected(7)}" ng-click="views.selectTab(7)">Statistics</a></li>
                 <li><a ui-sref="codingTests">Coding tests</a></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right" ng-controller = "loginController">
                 <li><a ui-sref="signup" ng-hide="authenticated" ng-class="{activeDTY : views.isSelected(3)}" ng-click="views.selectTab(3)"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                 <li><a ui-sref="login" style="padding-right: 30px" ng-hide="authenticated" ng-class="{activeDTY : views.isSelected(4)}" ng-click="views.selectTab(4)"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
                 <li><a ui-sref="home" ng-show="authenticated" ng-click="logout()"><span class="glyphicon glyphicon-remove"></span>Log out</a></li>

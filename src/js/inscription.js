@@ -21,13 +21,7 @@
             this.tab = setTab;
         };
 
-        $scope.logout = function () {
-            $cookies.remove('authenticated');
-            $cookies.remove('userType');
-            console.log('logged out');
-            $window.location.href = "/";
-            $rootScope.authenticated = '';
-        };
+
 
 
     }]);
@@ -42,6 +36,14 @@
 
             console.log($window.location.href);
             $window.location.href="/";
+        };
+
+        $scope.logout = function () {
+            $cookies.remove('authenticated');
+            $cookies.remove('userType');
+            console.log('logged out');
+            $window.location.href = "/";
+            $rootScope.authenticated = '';
         };
 
     }]);

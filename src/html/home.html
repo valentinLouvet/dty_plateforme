@@ -1,41 +1,3 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="dty_plateform">
-<head>
-    <meta charset="UTF-8">
-    <title>DTY Platform</title>
-
-    <!--Bootstrap minifié--->
-    <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/main.css">
-
-
-    <script type="text/javascript" src="../../node_modules/angular/angular.min.js"></script>
-    <script type="text/javascript" src="../../bower_components/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-    <!-- Script de la page -->
-    <script src="../js/inscription.js"></script>
-
-    <!-- Angular-charts -->
-
-    <link rel="stylesheet" href="../../bower_components/angular-chart.js/dist/angular-chart.css" />
-    <script src="../../bower_components/Chart.js/Chart.js"></script>
-    <script src="../../bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
-
-    <!-- Angular Cookies -->
-    <script src="../../node_modules/angular-cookies/angular-cookies.js"></script>
-
-    <!-- Angular Route -->
-    <script src="../../node_modules/angular-route/angular-route.min.js"></script>
-</head>
-
-<!-- NAVBAR --->
-<dty-header></dty-header>
-
-<body ng-controller="viewController as views" ng-init="views.selectTab(1)">
-
-
-
 <header class="header-image">
     <div class="headline">
         <div class="container">
@@ -90,7 +52,7 @@
 
     <hr class="featurette-divider" ng-hide="authenticated">
 
-    <div ng-hide="authenticated"    class="featurette" id="getstarted" align="center">
+    <div ng-hide="authenticated" class="featurette" id="getstarted" align="center">
         <h2 class="featurette-heading">Get Started
             <span class="text-muted">Now</span>
         </h2>
@@ -98,12 +60,4 @@
         <a href="/signup" class="btn btn-primary btn-lg"> Sign Up</a>
 
     </div>
-
-    <!-- Footer -->
-    <dty-footer></dty-footer>
-
 </div>
-
-
-</body>
-</html>

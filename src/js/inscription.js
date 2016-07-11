@@ -1,14 +1,17 @@
 (function () {
-    var app = angular.module('dty_plateform', ["chart.js", "ngCookies", "ngRoute"]).run(function ($rootScope, $cookies) {
+    var app = angular.module('dty_plateform', ['ui.router', 'chart.js', 'ngCookies']);
+
+
+    app.run(function ($rootScope, $cookies) {
         $rootScope.authenticated = $cookies.getObject('authenticated');
         console.log($rootScope.authenticated);
         $rootScope.loggedAs = $cookies.get('userType');
         $rootScope.currentCourse = -1;
     }); // chart.js included to use angular-charts
+    
 
-
-    app.controller('viewController', ["$scope", "$cookies", "$location", "$window", function ($scope, $cookies, $location, $window) {
-        this.tab = 1;
+    app.controller('viewController', ["$scope", "$cookies", "$location","$window", function ($scope, $cookies, $location,$window) {
+        this.tab=1;
 
         this.isSelected = function (checkTab) {
             return this.tab === checkTab
@@ -17,20 +20,34 @@
         this.selectTab = function (setTab) {
             this.tab = setTab;
         };
+
+        $scope.logout = function () {
+            $cookies.remove('authenticated');
+            $cookies.remove('userType');
+            console.log('logged out');
+            $window.location.href = "/";
+            $rootScope.authenticated = '';
+        };
+
+
+    }]);
+
+    app.controller('loginController', ["$scope", "$cookies", "$location", "$window", '$rootScope', function ($scope, $cookies, $location, $window, $rootScope){
         $scope.userType = '';
-        $scope.login = function () {
+
+        $scope.login = function() {
             $cookies.putObject('authenticated', true);
             $cookies.put('userType', $scope.userType);
             console.log('logged in');
 
             console.log($window.location.href);
-            $window.location.href = "/";
+            $window.location.href="/";
         };
         $scope.logout = function () {
             $cookies.remove('authenticated', false);
             $cookies.remove('userType', '');
             console.log('logged out');
-            $window.location.href = "/";
+            $window.location.href="/";
         };
 
 
@@ -79,9 +96,7 @@
         return {
             restrict: 'E',
             templateUrl: '/html/templates/nav-bar.html',
-            controller: function () {
-                panelselected = "";
-            },
+            controller: 'viewController',
             controllerAs: 'headerCtrl'
         }
     });
@@ -264,7 +279,7 @@
     // DISPLAY GRAPHS //
     ////////////////////
 
-    app.config(['ChartJsProvider', function (ChartJsProvider) {
+    app.config(['ChartJsProvider', '$stateProvider', '$urlRouterProvider', function (ChartJsProvider, $stateProvider, $urlRouterProvider) {
         // Configure all charts
         ChartJsProvider.setOptions({
             colours: ['#FF5252', '#FF8A80'],
@@ -274,6 +289,46 @@
         ChartJsProvider.setOptions('Line', {
             datasetFill: false
         });
+
+        //Configuration du stateProvider et urlProvider
+        $urlRouterProvider.otherwise("/");
+
+        $stateProvider
+            .state("signup", {
+                url: "/signup",
+                templateUrl: "src/html/signup.html"
+            })
+
+            .state("login", {
+                url: "/login",
+                templateUrl: "src/html/login.html",
+                controller:"loginController"
+            })
+
+            .state("home", {
+                url: "/",
+                templateUrl: "src/html/home.html"
+            })
+
+            .state("cours", {
+                url: "/cours",
+                templateUrl: "src/html/templates/coursSuivi.html"
+            })
+
+            .state("coachStats", {
+                url: "/coachStats",
+                templateUrl: "src/html/coachProfile/Statistics.html"
+            })
+
+            .state("coachStudents", {
+                url: "/coachProfile",
+                templateUrl: "src/html/coachProfile/studentsListe.html"
+            })
+
+            .state("userProfile", {
+                url: "/userProfile",
+                templateUrl: "src/html/templates/profile.html"
+            })
     }]);
 
     app.controller("LineCtrl", ['$scope', '$timeout', function ($scope, $timeout) {
@@ -299,4 +354,4 @@
     }]);
 
 
-})();
+}());

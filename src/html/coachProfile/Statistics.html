@@ -9,8 +9,6 @@
     <!-- Angular --->
     <script type="text/javascript" src="../../../node_modules/angular/angular.min.js"></script>
 
-
-
     <!-- Scripts bootstrap --->
     <script type="text/javascript" src="../../../bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="../../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -35,27 +33,20 @@
 
     <!-- Template Navbar/Footer --->
     <script type="text/javascript" src="../../js/inscription.js"></script>
-
-
-    <!-- Scrolling Nav JavaScript -->
-    <script src="../../../bower_components/jquery.easing/js/jquery.easing.min.js"></script>
-    <script src="../../js/scrolling-nav.js"></script>
-
 </head>
 <body ng-controller="viewController as views" ng-init="views.selectTab(7)">
 <!-- NAVBAR --->
 <dty-header></dty-header>
 
 <!-- Corps de la page --->
-<div class="container">
-    <!-- Statistiques par leçons --->
-    <div class="page-header-dty">
-        <h1>1. Statistics per lesson</h1>
-    </div>
+<!-- Statistiques par leçons --->
+<div class="page-header-dty">
+    <h1>1. Statistics per lesson</h1>
+</div>
 
-    <div><h2>Choose a lesson :</h2></div>
+<div><h2>Choose a lesson :</h2></div>
 
-    <hr>
+<hr>
 
 
     <div ng-controller="CourseController as courseCtrl">
@@ -97,7 +88,7 @@
 
     <div><h2>Lesson chosen :</h2></div>
 
-    <hr>
+<hr>
 
 
 
@@ -115,49 +106,46 @@
                 <div class="clear-both">&nbsp;</div>
             </div>
 
-            <div class="lesson-statistics-line">
-                <strong>
-                    <div style="float:left;">Highest success rate :</div>
-                </strong>
-                <div style="float:right;">100%</div>
-                <div class="clear-both">&nbsp;</div>
-            </div>
-            <div class="lesson-statistics-line">
-                <strong>
-                    <div style="float:left;">Lowest success rate :</div>
-                </strong>
-                <div style="float:right;">40%</div>
-                <div class="clear-both">&nbsp;</div>
-            </div>
+        <div class="lesson-statistics-line">
+            <strong>
+                <div style="float:left;">Highest success rate :</div>
+            </strong>
+            <div style="float:right;">100%</div>
+            <div class="clear-both">&nbsp;</div>
+        </div>
+        <div class="lesson-statistics-line">
+            <strong>
+                <div style="float:left;">Lowest success rate :</div>
+            </strong>
+            <div style="float:right;">40%</div>
+            <div class="clear-both">&nbsp;</div>
         </div>
     </div>
-
-    <!-- Statistiques du jour --->
-    <div class="page-header-dty">
-        <h1>2. Daily Statistics</h1>
-    </div>
-
-    <div class="panel panel-dty">
-        <div class="panel-heading">
-            <h3>Lessons done by your students today :</h3>
-        </div>
-        <div class="panel-body">
-            <div class="lesson-statistics-line">
-                <strong><div style="float:left;">Student 1 :</div></strong>
-                <div style="float:right;">AngularJS, setting up your environment</div>
-                <div class="clear-both">&nbsp;</div>
-            </div>
-            <div class="lesson-statistics-line">
-                <strong><div style="float:left;">Student 2 :</div></strong>
-                <div style="float:right;">MongoDB, data research</div>
-                <div class="clear-both">&nbsp;</div>
-            </div>
-        </div>
-    </div>
-
-    <dty-footer></dty-footer>
-
 </div>
 
-</body>
-</html>
+<!-- Statistiques du jour --->
+<div class="page-header-dty">
+    <h1>2. Daily Statistics</h1>
+</div>
+
+<div class="panel panel-dty">
+    <div class="panel-heading">
+        <h3>Lessons done by your students today :</h3>
+    </div>
+    <div class="panel-body">
+        <div class="lesson-statistics-line">
+            <strong>
+                <div style="float:left;">Student 1 :</div>
+            </strong>
+            <div style="float:right;">AngularJS, setting up your environment</div>
+            <div class="clear-both">&nbsp;</div>
+        </div>
+        <div class="lesson-statistics-line">
+            <strong>
+                <div style="float:left;">Student 2 :</div>
+            </strong>
+            <div style="float:right;">MongoDB, data research</div>
+            <div class="clear-both">&nbsp;</div>
+        </div>
+    </div>
+</div>s

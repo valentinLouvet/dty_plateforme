@@ -10,14 +10,14 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="/" ng-class="{activeDTY : views.isSelected(1)}" ng-click="views.selectTab(1)">Home</a></li>
+                <li><a ui-sref="home" ng-class="{activeDTY : views.isSelected(1)}" ng-click="views.selectTab(1)">Home</a></li>
                 <li><a href ng-hide="loggedAs == 'coach'">Getting started !</a></li>
                 <li class="dropdown" ng-show="authenticated">
                     <a href class="dropdown-toggle" ng-class="{activeDTY : views.isSelected(2)}" ng-click="views.selectTab(2)" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lessons <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="/intro">Presentation</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="/cours">Git</a></li>
+                        <li><a ui-sref="/cours">Git</a></li>
                         <li role="separator" class="divider"></li>
                         <li class="dropdown-header">Web development</li>
                         <li><a href>HTML/CSS</a></li>
@@ -31,6 +31,9 @@
                         <li><a href>Android</a></li>
                     </ul>
                 </li>
+                <li><a ui-sref="userProfile" ng-show="authenticated && loggedAs == 'student'" ng-class="{activeDTY : views.isSelected(5)}" ng-click="views.selectTab(5)">History</a></li>
+                <li><a ui-sref="coachStudents" ng-show="authenticated && loggedAs == 'coach'" ng-class="{activeDTY : views.isSelected(6)}" ng-click="views.selectTab(6)">Students</a></li>
+                <li><a ui-sref="coachStats" ng-show="authenticated && loggedAs == 'coach'" ng-class="{activeDTY : views.isSelected(7)}" ng-click="views.selectTab(7)">Statistics</a></li>
                 <li><a href="/codingTests">Coding tests</a> </li>
                 <li><a href="/userCourses" ng-show="authenticated && loggedAs == 'student'" ng-class="{activeDTY : views.isSelected(5)}" ng-click="views.selectTab(5)">History</a></li>
                 <li><a href="/coachStudents" ng-show="authenticated && loggedAs == 'coach'" ng-class="{activeDTY : views.isSelected(6)}" ng-click="views.selectTab(6)">Students</a></li>
@@ -38,9 +41,9 @@
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="/signup" ng-hide="authenticated" ng-class="{activeDTY : views.isSelected(3)}" ng-click="views.selectTab(3)"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="/login" style="padding-right: 30px" ng-hide="authenticated" ng-class="{activeDTY : views.isSelected(4)}" ng-click="views.selectTab(4)"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
-                <li><a href ng-show="authenticated" ng-click="logout()"><span class="glyphicon glyphicon-remove"></span>Log out</a></li>
+                <li><a ui-sref="signup" ng-hide="authenticated" ng-class="{activeDTY : views.isSelected(3)}" ng-click="views.selectTab(3)"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a ui-sref="login" style="padding-right: 30px" ng-hide="authenticated" ng-class="{activeDTY : views.isSelected(4)}" ng-click="views.selectTab(4)"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
+                <li><a ui-sref="home" ng-show="authenticated" ng-click="logout()"><span class="glyphicon glyphicon-remove"></span>Log out</a></li>
             </ul>
         </div><!--/.nav-collapse -->
 </nav>

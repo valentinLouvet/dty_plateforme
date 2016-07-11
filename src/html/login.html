@@ -1,51 +1,12 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="dty_plateform">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>DTY Platform - Log In</title>
-
-        <!--Modules JS Obligatoires-->
-        <script type="text/javascript" src="../../node_modules/angular/angular.min.js"></script>
-        <script type="text/javascript" src="../../bower_components/jquery/dist/jquery.min.js"></script>
-        <script type="text/javascript" src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-        <!--Modules JS supplémentaires-->
-        <script src="../../bower_components/Chart.js/Chart.js"></script>
-        <script src="../../bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
-        <script src="../../node_modules/angular-cookies/angular-cookies.min.js"></script>
-        <script src="../../node_modules/angular-cookies/angular-cookies.min.js"></script>
-        <script src="../../node_modules/angular-route/angular-route.min.js"></script>
-
-        <!--Controller de la page-->
-        <script type="text/javascript" src="../js/inscription.js"></script>
-
-        <!--Bootstrap-->
-        <link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
-
-        <!--Module CSS pour les graphes-->
-        <link rel="stylesheet" href="../../bower_components/angular-chart.js/dist/angular-chart.css" />
-
-        <!--CSS Maison-->
-        <link rel="stylesheet" type="text/css" href="../css/main.css">
-    </head>
-
-
-    <body class="container" ng-controller="viewController as views" ng-init="views.selectTab(4)">
-        <dty-header></dty-header>
-        <div class="page-header-dty">
-            <h1>Welcome back!</h1>
-        </div>
-        <p style="margin-bottom: 20px">
-            We're happy to see you again and hope you will learn new awesome stuff today!
-        </p>
-        <div class="jumbotron jumbotronlogin">
-            <connexion-form></connexion-form>
-        </div>
-        <p>
-            Don't have an account yet? No need to worry! You can create one just<a href="/signup"> here </a>
-        </p>
-
-        <dty-footer></dty-footer>
-    </body>
-</html>
+<div class="page-header-dty">
+    <h1>Welcome back!</h1>
+</div>
+<p style="margin-bottom: 20px">
+    We're happy to see you again and hope you will learn new awesome stuff today!
+</p>
+<div class="jumbotron jumbotronlogin">
+    <connexion-form></connexion-form>
+</div>
+<p>
+    Don't have an account yet? No need to worry! You can create one just<a href="/signup"> here </a>
+</p>

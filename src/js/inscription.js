@@ -185,7 +185,7 @@
             description: "Versioning",
             coursesToDo: 1,
             image: "../../images/git2.png",
-            link: '/cours'
+            link: 'cours'
         }
     ];
 
@@ -325,9 +325,9 @@
                 templateUrl: "src/html/coachProfile/studentsListe.html"
             })
 
-            .state("userProfile", {
-                url: "/userProfile",
-                templateUrl: "src/html/templates/profile.html"
+            .state("userCourses", {
+                url: "/userCourses",
+                templateUrl: "src/html/userProfile/userCourses.html"
             })
     }]);
 

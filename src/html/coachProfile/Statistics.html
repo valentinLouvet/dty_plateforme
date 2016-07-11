@@ -1,58 +1,18 @@
-<!DOCTYPE html>
-<!-- Pierre D --->
-<html lang="en" ng-app="dty_plateform">
-<head>
-    <meta charset="UTF-8">
-    <title>DTY Platform - Coach statistics</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<div>
+    <div class="page-header-dty">
+        <h1>1. Statistics per lesson</h1>
+    </div>
 
-    <!-- Angular --->
-    <script type="text/javascript" src="../../../node_modules/angular/angular.min.js"></script>
+    <div><h2>Choose a lesson :</h2></div>
 
-    <!-- Scripts bootstrap --->
-    <script type="text/javascript" src="../../../bower_components/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="../../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-    <!--Bootstrap minifié--->
-    <link rel="stylesheet" href="../../../bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <!--Css Perso-->
-    <link rel="stylesheet" href="../../css/main.css">
-    <!-- Css Benoit --->
-    <link rel="stylesheet" href="../../css/dlonlinelessons.css">
-
-    <!-- Angular chart --->
-    <script src="../../../bower_components/Chart.js/Chart.js"></script>
-    <script src="../../../bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
-    <link rel="stylesheet" href="../../../bower_components/angular-chart.js/dist/angular-chart.css" />
-
-    <!-- Angular Cookies -->
-    <script src="../../../node_modules/angular-cookies/angular-cookies.js"></script>
-
-    <!-- Angular Route -->
-    <script src="../../../node_modules/angular-route/angular-route.min.js"></script>
-
-    <!-- Template Navbar/Footer --->
-    <script type="text/javascript" src="../../js/inscription.js"></script>
-</head>
-<body ng-controller="viewController as views" ng-init="views.selectTab(7)">
-<!-- NAVBAR --->
-<dty-header></dty-header>
-
-<!-- Corps de la page --->
-<!-- Statistiques par leçons --->
-<div class="page-header-dty">
-    <h1>1. Statistics per lesson</h1>
-</div>
-
-<div><h2>Choose a lesson :</h2></div>
-
-<hr>
+    <hr>
 
 
     <div ng-controller="CourseController as courseCtrl">
         <div ng-repeat="course in courseCtrl.courses track by $index">
             <div class="col-md-offset-1 col-md-3" id="courses">
-                <a  class="page-scroll" href = "#courseLessons" ng-click="courseCtrl.setCurrentCourse($index,$event)" > <img ng-src={{course.image}}>
+                <a class="page-scroll" href="#courseLessons" ng-click="courseCtrl.setCurrentCourse($index,$event)"> <img
+                        ng-src={{course.image}}>
                 </a>
                 <h2>{{course.name}}</h2>
 
@@ -70,8 +30,8 @@
 
 
     </accordion>
-    <div >
-        <div id = "courseLessons"  class="lesson-section collapse">
+    <div>
+        <div id="courseLessons" class="lesson-section collapse">
             <div ng-controller="CourseController as courseCtrl">
 
                 <div>{{courseCtrl.courses[currentCourse].name}}</div>
@@ -88,12 +48,10 @@
 
     <div><h2>Lesson chosen :</h2></div>
 
-<hr>
+    <hr>
 
 
-
-
-    <div  class="panel panel-dty">
+    <div class="panel panel-dty">
         <div class="panel-heading">
             <h3>AngularJS, setting up your environment</h3>
         </div>
@@ -106,46 +64,47 @@
                 <div class="clear-both">&nbsp;</div>
             </div>
 
-        <div class="lesson-statistics-line">
-            <strong>
-                <div style="float:left;">Highest success rate :</div>
-            </strong>
-            <div style="float:right;">100%</div>
-            <div class="clear-both">&nbsp;</div>
+            <div class="lesson-statistics-line">
+                <strong>
+                    <div style="float:left;">Highest success rate :</div>
+                </strong>
+                <div style="float:right;">100%</div>
+                <div class="clear-both">&nbsp;</div>
+            </div>
+            <div class="lesson-statistics-line">
+                <strong>
+                    <div style="float:left;">Lowest success rate :</div>
+                </strong>
+                <div style="float:right;">40%</div>
+                <div class="clear-both">&nbsp;</div>
+            </div>
         </div>
-        <div class="lesson-statistics-line">
-            <strong>
-                <div style="float:left;">Lowest success rate :</div>
-            </strong>
-            <div style="float:right;">40%</div>
-            <div class="clear-both">&nbsp;</div>
+    </div>
+
+    <!-- Statistiques du jour --->
+    <div class="page-header-dty">
+        <h1>2. Daily Statistics</h1>
+    </div>
+
+    <div class="panel panel-dty">
+        <div class="panel-heading">
+            <h3>Lessons done by your students today :</h3>
+        </div>
+        <div class="panel-body">
+            <div class="lesson-statistics-line">
+                <strong>
+                    <div style="float:left;">Student 1 :</div>
+                </strong>
+                <div style="float:right;">AngularJS, setting up your environment</div>
+                <div class="clear-both">&nbsp;</div>
+            </div>
+            <div class="lesson-statistics-line">
+                <strong>
+                    <div style="float:left;">Student 2 :</div>
+                </strong>
+                <div style="float:right;">MongoDB, data research</div>
+                <div class="clear-both">&nbsp;</div>
+            </div>
         </div>
     </div>
 </div>
-
-<!-- Statistiques du jour --->
-<div class="page-header-dty">
-    <h1>2. Daily Statistics</h1>
-</div>
-
-<div class="panel panel-dty">
-    <div class="panel-heading">
-        <h3>Lessons done by your students today :</h3>
-    </div>
-    <div class="panel-body">
-        <div class="lesson-statistics-line">
-            <strong>
-                <div style="float:left;">Student 1 :</div>
-            </strong>
-            <div style="float:right;">AngularJS, setting up your environment</div>
-            <div class="clear-both">&nbsp;</div>
-        </div>
-        <div class="lesson-statistics-line">
-            <strong>
-                <div style="float:left;">Student 2 :</div>
-            </strong>
-            <div style="float:right;">MongoDB, data research</div>
-            <div class="clear-both">&nbsp;</div>
-        </div>
-    </div>
-</div>s

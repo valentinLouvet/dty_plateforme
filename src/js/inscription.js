@@ -43,13 +43,6 @@
             console.log($window.location.href);
             $window.location.href="/";
         };
-        $scope.logout = function () {
-            $cookies.remove('authenticated', false);
-            $cookies.remove('userType', '');
-            console.log('logged out');
-            $window.location.href="/";
-        };
-
 
     }]);
 

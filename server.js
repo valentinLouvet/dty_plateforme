@@ -27,7 +27,7 @@ app.get('/intro', function (req,res) {
 // test de départ
 app.get('/test', function (req, res){
     res.sendFile(__dirname+'/src/html/templates/test_beginning.html')
-})
+});
 
 app.listen(3333, function () {
     console.log("Server launched on port 3333");

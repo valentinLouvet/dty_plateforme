@@ -211,7 +211,7 @@
                 }
             ],
         }
-    ]
+    ];
 
     var currentLessons =
         [
@@ -223,7 +223,7 @@
                 number: 2,
                 name: "default 2"
             }
-        ]
+        ];
 
 
     app.controller('BadgeController', function () {
@@ -328,6 +328,11 @@
             .state("codingTests", {
                 url: "/codingTests",
                 templateUrl: "src/html/coding_tests.html"
+            })
+
+            .state("intro", {
+                url:'/intro',
+                templateUrl: 'src/html/intro.html'
             })
     }]);
 

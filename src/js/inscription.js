@@ -325,11 +325,6 @@
                 templateUrl: "src/html/userProfile/userCourses.html"
             })
 
-            .state("codingTests", {
-                url: "/codingTests",
-                templateUrl: "src/html/coding_tests.html"
-            })
-
             .state("intro", {
                 url:'/intro',
                 templateUrl: 'src/html/intro.html'

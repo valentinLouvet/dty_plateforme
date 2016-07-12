@@ -16,14 +16,6 @@ app.get('/userBadges', function(req, res){
     res.sendFile(__dirname + '/src/html/userProfile/rewards.html')
 });
 
-app.get('/codingTests', function (req,res) {
-    res.sendFile(__dirname+'/src/html/coding_tests.html')
-});
-
-app.get('/intro', function (req,res) {
-    res.sendFile(__dirname+'/src/html/intro.html')
-});
-
 // test de départ
 app.get('/test', function (req, res){
     res.sendFile(__dirname+'/src/html/templates/test_beginning.html')

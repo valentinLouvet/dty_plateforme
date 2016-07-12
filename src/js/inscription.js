@@ -196,7 +196,7 @@
                     number: 2,
                     name: "Angular 2"
                 }
-            ],
+            ]
         },
         {
             blockName: "NodesJS",
@@ -209,7 +209,7 @@
                     number: 2,
                     name: "Node 2"
                 }
-            ],
+            ]
         }
     ];
 
@@ -307,7 +307,7 @@
 
             .state("cours", {
                 url: "/cours",
-                templateUrl: "src/html/templates/coursSuivi.html"
+                templateUrl: "src/html/coursGit.html"
             })
 
             .state("coachStats", {

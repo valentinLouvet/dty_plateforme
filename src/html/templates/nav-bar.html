@@ -11,10 +11,11 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li><a ui-sref="home" ng-class="{activeDTY : views.isSelected(1)}" ng-click="views.selectTab(1)">Home</a></li>
+                <li><a ui-sref="presentation" ng-class="{activeDTY : views.isSelected(8)}" ng-click="views.selectTab(8)">Presentation</a></li>
                 <li class="dropdown" ng-show="authenticated">
                     <a href class="dropdown-toggle" ng-class="{activeDTY : views.isSelected(2)}" ng-click="views.selectTab(2)" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lessons <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a ui-sref="intro">Presentation</a></li>
+                        <li><a ui-sref="intro">Introduction</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a ui-sref="cours">Git</a></li>
                         <li role="separator" class="divider"></li>

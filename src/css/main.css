@@ -464,7 +464,7 @@ body{
 .nav-side-menu a{
     color: grey;
 }
-.nav-side-menu button{
+.nav-side-menu .btn{
     margin-top: 5px;
     margin-left: 60px;
     background-color: #87102c;

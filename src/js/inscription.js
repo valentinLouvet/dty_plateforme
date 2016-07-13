@@ -91,7 +91,7 @@ app.controller('loginController', ["$state", "$scope", "$cookies", "$location", 
         console.log($cookies.get($rootScope.loggedAs));
 
         if ($scope.userType == "student") {
-            $state.go('cours');
+            $state.go('test');
         }
         else if ($scope.userType == "coach") {
             $state.go('coachStudents')

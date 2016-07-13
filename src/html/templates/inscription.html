@@ -2,20 +2,20 @@
     <div class="form-group">
         <p>
             <label class="control-label" for="username">Your username </label> :
-            <input type="text" name="username" id="username" class="form-control" placeholder="Ex : Ouemelette" ng-model="signInCtrl.username" required />
+            <input type="text" name="username" id="username" class="form-control" placeholder="Ex : Ouemelette" ng-model="signUpCtrl.username" required />
         </p>
         <p>
             <label class="control-label" for="password">Your password </label> :
-            <input type="password" name="password" id="password" class="form-control" placeholder="Ex : *******" ng-model="signInCtrl.password" ng-class="{pwdvalid: signInCtrl.checkpwd(), pwdinvalid: !signInCtrl.checkpwd()}" required/>
+            <input type="password" name="password" id="password" class="form-control" placeholder="Ex : *******" ng-model="signUpCtrl.password" ng-class="{pwdvalid: signUpCtrl.checkpwd(), pwdinvalid: !signUpCtrl.checkpwd()}" required/>
         </p>
         <p>
             <label class="control-label" for="confirmpwd">Confirm your password </label> :
-            <input type="password" name="confirmpwd" id="confirmpwd" class="form-control" placeholder="Ex : *******" ng-model="signInCtrl.confirmpwd" ng-class="{pwdvalid: signInCtrl.checkpwd(), pwdinvalid: !signInCtrl.checkpwd()}" required>
+            <input type="password" name="confirmpwd" id="confirmpwd" class="form-control" placeholder="Ex : *******" ng-model="signUpCtrl.confirmpwd" ng-class="{pwdvalid: signUpCtrl.checkpwd(), pwdinvalid: !signUpCtrl.checkpwd()}" required>
         </p>
         <p>
             <label class="control-label" for="email">Your e-mail address </label> :
-            <input type="email" name="email" id="email" class="form-control" placeholder="Ex : truc@machin.fr" ng-model="signInCtrl.email" required />
+            <input type="email" name="email" id="email" class="form-control" placeholder="Ex : truc@machin.fr" ng-model="signUpCtrl.email" required />
         </p>
-        <button class="btn btn-primary-dty-inverse" type="submit" value="Register" ng-click="signInCtrl.inscrire()"><span class="glyphicon glyphicon-chevron-right"></span> Register</button>
+        <button class="btn btn-primary-dty-inverse" type="submit" value="Register" ng-click="signUpCtrl.inscrire()"><span class="glyphicon glyphicon-chevron-right"></span> Register</button>
     </div>
 </form>

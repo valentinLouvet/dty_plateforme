@@ -166,6 +166,14 @@
             controllerAs: 'headerCtrl'
         }
     });
+    app.directive('navBarSide', function () {
+        return {
+            restrict: 'E',
+            templateUrl: '/html/templates/nav-bar-side.html',
+            controller: 'viewController',
+            controllerAs: 'headerCtrl'
+        }
+    });
 
     app.directive('dtyFooter', function () {
         return {

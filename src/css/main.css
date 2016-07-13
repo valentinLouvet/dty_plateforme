@@ -574,3 +574,11 @@ body{
     border-left-width: 5px;
     border-left-color: rgb(46, 53, 61);
 }
+
+#courses.courseComplete {
+    border-color: rgb(120, 250, 137);
+}
+
+#courses.courseAvailable{
+    border-color: rgb(250, 120, 126);
+}

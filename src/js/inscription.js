@@ -204,7 +204,7 @@ var courses = [
     // TODO : delete useless images
     {
         name: "Git",
-        level: 67,
+        level: 100,
         description: "Versioning",
         coursesToDo: 1,
         image: "../../images/git2.png",
@@ -212,7 +212,7 @@ var courses = [
     },
     {
         name: "HTML 5",
-        level: 56,
+        level: 100,
         description: "Website Skeleton",
         coursesToDo: 0,
         image: "../../images/html5_2.png",
@@ -220,7 +220,7 @@ var courses = [
     },
     {
         name: "AngularJS",
-        level: 10,
+        level: 27,
         description: "Front-End Javascript",
         coursesToDo: 5,
         image: '../../images/angularjs2.png',
@@ -228,7 +228,7 @@ var courses = [
     },
     {
         name: "NodeJS",
-        level: 38,
+        level: 0,
         description: "Back-End Javascript",
         coursesToDo: 8,
         image: "../../images/nodejs4.png",
@@ -244,7 +244,7 @@ var courses = [
     },
     {
         name: "Android",
-        level: 32,
+        level: 0,
         description: "Smartphone Applications",
         coursesToDo: 5,
         image: "../../images/android-studio2.png",

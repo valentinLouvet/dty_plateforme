@@ -31,7 +31,7 @@
 
         <div ng-controller="CourseController as courseCtrl">
             <div ng-repeat="course in courseCtrl.courses">
-                <div class="col-lg-offset-1 col-lg-3 col-md-offset-1 col-md-5" id="courses">
+                <div class="col-lg-offset-1 col-lg-3 col-md-offset-1 col-md-5" id="courses" ng-class="{courseAvailable: course.level>0 && course.level<100, courseComplete: course.level==100 }">
                     <div class="col-md-12">
                         <a ui-sref={{course.link}}><img ng-src={{course.image}}></a>
                         <p>

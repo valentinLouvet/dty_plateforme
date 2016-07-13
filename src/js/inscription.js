@@ -8,7 +8,63 @@
         $rootScope.loggedAs = $cookies.get('userType');
         $rootScope.currentCourse = -1;
     }); // chart.js included to use angular-charts
-    
+
+    app.config(['ChartJsProvider', '$stateProvider', '$urlRouterProvider', function (ChartJsProvider, $stateProvider, $urlRouterProvider) {
+        // Configure all charts
+        ChartJsProvider.setOptions({
+            colours: ['#FF5252', '#FF8A80'],
+            responsive: false
+        });
+        // Configure all line charts
+        ChartJsProvider.setOptions('Line', {
+            datasetFill: false
+        });
+
+        //Configuration du stateProvider et urlProvider
+        $urlRouterProvider.otherwise("/");
+
+        $stateProvider
+            .state("signup", {
+                url: "/signup",
+                templateUrl: "src/html/signup.html"
+            })
+
+            .state("login", {
+                url: "/login",
+                templateUrl: "src/html/login.html",
+                controller:"loginController"
+            })
+
+            .state("home", {
+                url: "/",
+                templateUrl: "src/html/home.html"
+            })
+
+            .state("cours", {
+                url: "/cours",
+                templateUrl: "src/html/coursGit.html"
+            })
+
+            .state("coachStats", {
+                url: "/coachStats",
+                templateUrl: "src/html/coachProfile/Statistics.html"
+            })
+
+            .state("coachStudents", {
+                url: "/coachProfile",
+                templateUrl: "src/html/coachProfile/studentsListe.html"
+            })
+
+            .state("userCourses", {
+                url: "/userCourses",
+                templateUrl: "src/html/userProfile/userCourses.html"
+            })
+
+            .state("intro", {
+                url:'/intro',
+                templateUrl: 'src/html/intro.html'
+            })
+    }]);
 
     app.controller('viewController', ["$scope", "$cookies", "$location","$window", function ($scope, $cookies, $location,$window) {
         this.tab=1;
@@ -26,7 +82,7 @@
 
     }]);
 
-    app.controller('loginController', ["$scope", "$cookies", "$location", "$window", '$rootScope', function ($scope, $cookies, $location, $window, $rootScope){
+    app.controller('loginController', ["$state", "$scope", "$cookies", "$location", "$window", '$rootScope', function ($state, $scope, $cookies, $location, $window, $rootScope){
         $scope.userType = '';
 
         $scope.login = function() {
@@ -35,7 +91,7 @@
             console.log('logged in');
 
             console.log($window.location.href);
-            $window.location.href="/";
+            $state.go('cours')
         };
 
         $scope.logout = function () {
@@ -273,63 +329,6 @@
     ////////////////////
     // DISPLAY GRAPHS //
     ////////////////////
-
-    app.config(['ChartJsProvider', '$stateProvider', '$urlRouterProvider', function (ChartJsProvider, $stateProvider, $urlRouterProvider) {
-        // Configure all charts
-        ChartJsProvider.setOptions({
-            colours: ['#FF5252', '#FF8A80'],
-            responsive: false
-        });
-        // Configure all line charts
-        ChartJsProvider.setOptions('Line', {
-            datasetFill: false
-        });
-
-        //Configuration du stateProvider et urlProvider
-        $urlRouterProvider.otherwise("/");
-
-        $stateProvider
-            .state("signup", {
-                url: "/signup",
-                templateUrl: "src/html/signup.html"
-            })
-
-            .state("login", {
-                url: "/login",
-                templateUrl: "src/html/login.html",
-                controller:"loginController"
-            })
-
-            .state("home", {
-                url: "/",
-                templateUrl: "src/html/home.html"
-            })
-
-            .state("cours", {
-                url: "/cours",
-                templateUrl: "src/html/coursGit.html"
-            })
-
-            .state("coachStats", {
-                url: "/coachStats",
-                templateUrl: "src/html/coachProfile/Statistics.html"
-            })
-
-            .state("coachStudents", {
-                url: "/coachProfile",
-                templateUrl: "src/html/coachProfile/studentsListe.html"
-            })
-
-            .state("userCourses", {
-                url: "/userCourses",
-                templateUrl: "src/html/userProfile/userCourses.html"
-            })
-
-            .state("intro", {
-                url:'/intro',
-                templateUrl: 'src/html/intro.html'
-            })
-    }]);
 
     app.controller("LineCtrl", ['$scope', '$timeout', function ($scope, $timeout) {
 

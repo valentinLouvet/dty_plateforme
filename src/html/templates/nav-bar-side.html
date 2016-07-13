@@ -29,6 +29,7 @@
                 <li><a href="">Lesson 8</a></li>
                 <li><a href="">Lesson 9</a></li>
                 <li><a href="">Lesson 10</a></li>
+                <li ng-show="authenticated && loggedAs == 'coach'"><a href="">Add Lesson</a></li>
             </ul>
 
 
@@ -39,6 +40,7 @@
                 <li><a>Lesson 1</a></li>
                 <li><a>Lesson 2</a></li>
                 <li><a>Lesson 3</a></li>
+                <li ng-show="authenticated && loggedAs == 'coach'"><a href="">Add Lesson</a></li>
             </ul>
 
 
@@ -49,6 +51,7 @@
                 <li><a>Lesson 1</a></li>
                 <li><a>Lesson 2</a></li>
                 <li><a>Lesson 3</a></li>
+                <li ng-show="authenticated && loggedAs == 'coach'"><a href="">Add Lesson</a></li>
             </ul>
 
             <a class="btn btn-primary-dty" ui-sref="creationCours" ng-show="authenticated && loggedAs == 'coach'">Create new Bloc<span class="glyphicon glyphicon-chevron-right"></span></a>

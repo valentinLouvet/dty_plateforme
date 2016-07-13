@@ -68,6 +68,7 @@
 
     app.controller('viewController', ["$scope", "$cookies", "$location","$window", function ($scope, $cookies, $location,$window) {
         this.tab=1;
+        this.isLoggedIn=false;
 
         this.isSelected = function (checkTab) {
             return this.tab === checkTab
@@ -76,9 +77,14 @@
         this.selectTab = function (setTab) {
             this.tab = setTab;
         };
+        this.logIn= function () {
+            this.isLoggedIn=$cookies.getObject('authenticated');
+            console.log(this.isLoggedIn)
+        };
 
-
-
+        this.isLogIn= function () {
+            return this.isLoggedIn
+        };
 
     }]);
 
@@ -87,11 +93,20 @@
 
         $scope.login = function() {
             $cookies.putObject('authenticated', true);
+            $rootScope.authenticated=true;
             $cookies.put('userType', $scope.userType);
+            $rootScope.loggedAs=$cookies.get('userType');
             console.log('logged in');
 
-            console.log($window.location.href);
-            $state.go('cours')
+            console.log($cookies.getObject($rootScope.authenticated));
+            console.log($cookies.get($rootScope.loggedAs));
+
+            if ($scope.userType=="student"){
+                $state.go('cours');
+            }
+            else if ($scope.userType=="coach"){
+                $state.go('coachStudents')
+            }
         };
 
         $scope.logout = function () {

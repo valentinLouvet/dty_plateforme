@@ -68,6 +68,10 @@ app.config(['ChartJsProvider', '$stateProvider', '$urlRouterProvider', function 
             templateUrl: 'src/html/Cours/creationCours.html',
             controller: "creationCoursController"
         })
+        .state('test', {
+            url:'/test',
+            templateUrl:'src/html/userProfile/test_beginning.html'
+        })
 }]);
 
 app.controller('viewController', ["$scope", "$cookies", "$location", "$window", function ($scope, $cookies, $location, $window) {

@@ -67,25 +67,6 @@
     }]);
 
     app.controller('viewController', ["$scope", "$cookies", "$location","$window", function ($scope, $cookies, $location,$window) {
-        this.tab=1;
-        this.isLoggedIn=false;
-
-        this.isSelected = function (checkTab) {
-            return this.tab === checkTab
-        };
-
-        this.selectTab = function (setTab) {
-            this.tab = setTab;
-        };
-        this.logIn= function () {
-            this.isLoggedIn=$cookies.getObject('authenticated');
-            console.log(this.isLoggedIn)
-        };
-
-        this.isLogIn= function () {
-            return this.isLoggedIn
-        };
-
     }]);
 
     app.controller('loginController', ["$state", "$scope", "$cookies", "$location", "$window", '$rootScope', function ($state, $scope, $cookies, $location, $window, $rootScope){

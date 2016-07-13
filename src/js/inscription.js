@@ -42,7 +42,7 @@
 
             .state("cours", {
                 url: "/cours",
-                templateUrl: "src/html/coursGit.html"
+                templateUrl: "src/html/Cours/coursGit.html"
             })
 
             .state("coachStats", {
@@ -62,7 +62,7 @@
 
             .state("intro", {
                 url:'/intro',
-                templateUrl: 'src/html/intro.html'
+                templateUrl: 'src/html/Cours/intro.html'
             })
     }]);
 

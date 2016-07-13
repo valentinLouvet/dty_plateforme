@@ -33,7 +33,7 @@
     border-color: #e7e7e7;
 }
 
-nav.navbar.navbar-default.container > div > ul.nav.navbar-nav > li > a.activeDTY{
+.activeDTY{
     background-color: #87102C;
     color: white;
 }
@@ -414,11 +414,11 @@ body{
     font-family: verdana;
     font-size: 12px;
     font-weight: 200;
-    background-color: #f5f5f5;
+    background-color: #f8f8f8;
     position: fixed;
     width: 300px;
     height: 80%;
-    color: grey;
+    color: #87102c;
 }
 .nav-side-menu .brand {
     background-color: #f5f5f5;
@@ -561,4 +561,16 @@ body{
     .nav-side-menu .menu-list .menu-content {
         display: block;
     }
+}
+
+.menu-list > ul > li > a {
+    padding-left: 15px;
+}
+
+.nav-side-menu ul .sub-menu-dty li {
+    background-color: #f8f8f8;
+    color: #87102c;
+    border-left-style: solid;
+    border-left-width: 5px;
+    border-left-color: rgb(46, 53, 61);
 }

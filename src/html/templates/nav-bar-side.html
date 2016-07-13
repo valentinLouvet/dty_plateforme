@@ -7,22 +7,18 @@
     <div class="menu-list">
 
         <ul id="menu-content" class="menu-content collapse out">
-            <li>
-                <a ui-sref="intro">
-                    <i class="fa fa-dashboard fa-lg"></i> Présentation
-                </a>
+            <li ui-sref="intro" ui-sref-active="activeDTY">
+                <a> Présentation </a>
             </li>
 
-            <li class="active">
-                <a ui-sref="cours">
-                    <i class="fa fa-user fa-lg"></i> Git
-                </a>
+            <li ui-sref="cours" ui-sref-active="activeDTY">
+                <a> Git </a>
             </li>
 
             <li data-toggle="collapse" data-target="#products" class="collapsed">
-                <a class="activeDTY" href><i class="fa fa-gift fa-lg"></i>HTML/CSS <span class="arrow"></span></a>
+                <a href> HTML/CSS <span class="arrow"></span></a>
             </li>
-            <ul class="sub-menu collapse" id="products">
+            <ul class="sub-menu collapse sub-menu-dty" id="products">
                 <li><a href="">Begin with HTML</a></li>
                 <li><a href="#">lesson 2</a></li>
                 <li><a href="#">lesson 3</a></li>
@@ -37,7 +33,7 @@
 
 
             <li data-toggle="collapse" data-target="#service" class="collapsed">
-                <a href="#"><i class="fa fa-globe fa-lg"></i> JavaScript <span class="arrow"></span></a>
+                <a href="#"> JavaScript <span class="arrow"></span></a>
             </li>
             <ul class="sub-menu collapse" id="service">
                 <li>New Service 1</li>
@@ -47,7 +43,7 @@
 
 
             <li data-toggle="collapse" data-target="#new" class="collapsed">
-                <a href="#"><i class="fa fa-car fa-lg"></i> Angular <span class="arrow"></span></a>
+                <a href="#"> Angular <span class="arrow"></span></a>
             </li>
             <ul class="sub-menu collapse" id="new">
                 <li>New New 1</li>

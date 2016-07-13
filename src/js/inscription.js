@@ -203,6 +203,22 @@ var courses = [
     // TODO : Create thumbnails !!!
     // TODO : delete useless images
     {
+        name: "Git",
+        level: 67,
+        description: "Versioning",
+        coursesToDo: 1,
+        image: "../../images/git2.png",
+        link: 'cours'
+    },
+    {
+        name: "HTML 5",
+        level: 56,
+        description: "Website Skeleton",
+        coursesToDo: 0,
+        image: "../../images/html5_2.png",
+        link: '#'
+    },
+    {
         name: "AngularJS",
         level: 10,
         description: "Front-End Javascript",
@@ -227,28 +243,12 @@ var courses = [
         link: '#'
     },
     {
-        name: "HTML 5",
-        level: 56,
-        description: "Website Skeleton",
-        coursesToDo: 0,
-        image: "../../images/html5_2.png",
-        link: '#'
-    },
-    {
         name: "Android",
         level: 32,
         description: "Smartphone Applications",
         coursesToDo: 5,
         image: "../../images/android-studio2.png",
         link: '#'
-    },
-    {
-        name: "Git",
-        level: 67,
-        description: "Versioning",
-        coursesToDo: 1,
-        image: "../../images/git2.png",
-        link: 'cours'
     }
 ];
 

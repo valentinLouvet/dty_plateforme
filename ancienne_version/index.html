@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = "dty_plateform">
+<head>
+    <meta charset="UTF-8">
+    <title>DTY-Platform</title>
+
+    <!--Bootstrap minifié--->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="src/css/main.css">
+
+    <!-- Angular --->
+    <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+
+    <!--Javascript Bootstrap --->
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Angular Ui Router -->
+    <script src="/ancienne_version/node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+    <!-- Angular-charts -->
+    <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css" />
+    <script src="bower_components/Chart.js/Chart.js"></script>
+    <script src="bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
+
+    <!-- Angular Cookies -->
+    <script src="node_modules/angular-cookies/angular-cookies.js"></script>
+
+    <!-- Script de la page -->
+    <script src="src/js/inscription.js"></script>
+    <script src="src/js/creationCours.js"></script>
+    <script src = "src/js/scrolling-nav.js"></script>
+</head>
+
+
+
+
+<body ng-controller="viewController as views">
+<!-- NAVBAR --->
+<dty-header></dty-header>
+
+<!-- VIEW --->
+<div class = "container">
+    <div ui-view></div>
+</div>
+
+<!-- FOOTER --->
+<div class="container">
+    <dty-footer></dty-footer>
+</div>
+</body>
+</html>

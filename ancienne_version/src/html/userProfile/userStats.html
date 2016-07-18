@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>DTY Platform - User Statistics</title>
+
+    <meta charset="utf-8">
+
+    <!-- Compatibilité avec Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- ANGULAR -->
+    <script src="../../../ancienne_version/node_modules/angular/angular.min.js"></script>
+
+    <!-- Affichage des graphes -->
+    <link rel="stylesheet" href="../../../bower_components/angular-chart.js/dist/angular-chart.css" />
+    <script src="../../../bower_components/Chart.js/Chart.js"></script>
+    <script src="../../../bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
+
+    <!-- Angular Cookies -->
+    <script src="../../../ancienne_version/node_modules/angular-cookies/angular-cookies.js"></script>
+
+    <!-- Angular Route -->
+    <script src="../../../ancienne_version/node_modules/angular-route/angular-route.min.js"></script>
+
+    <!-- Script de la page -->
+    <script src="../../js/inscription.js"></script>
+
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="../../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script type="text/javascript" src="../../../bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- CSS de la page -->
+    <link rel="stylesheet" type="text/css" href="../../css/main.css">
+
+</head>
+<body ng-app="dty_plateform">
+
+    <!-- NAVBAR --->
+
+    <dty-header></dty-header>
+
+    <div class="container">
+
+
+        <div class="row">
+            <div class="col-md-offset-1 col-md-11">
+
+                <h1 class="page-header-dty">
+                    Your statistics :
+                </h1>
+
+                <!-- AFFICHAGE DES GRAPHES -->
+
+                <div class="graph-assiduousness">
+                    <div ng-controller="LineCtrl">
+                        <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels"
+                                chart-legend="false" chart-series="series" chart-click="onClick"></canvas>
+                    </div>
+                </div>
+
+
+                <p> You can see on this page your statistics, your assiduousness, your levels, your goals, your
+                    profile data and many other things with graphs and colors !
+                    <br/>
+                    As you can see, it takes the form of graphs just like the one above.
+                </p>
+
+
+
+                <hr>
+
+            </div>
+
+
+
+        </div>
+
+        <!-- FOOTER -->
+        <dty-footer></dty-footer>
+
+    </div>
+
+</body>
+</html>

@@ -35,6 +35,16 @@
 
 .activeDTY {
     background-color: #87102C;
+    color: white;
+}
+
+.activeDTY > a > span {
+    color: white;
+}
+
+.navbar-default .navbar-nav > .activeDTY.open > a {
+    background-color: #87102c;
+    color: white;
 }
 
 .page-header-dty{

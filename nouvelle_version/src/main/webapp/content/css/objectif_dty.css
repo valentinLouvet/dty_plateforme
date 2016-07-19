@@ -27,10 +27,12 @@
     text-align: right
 }
 
-.jumbotronlogin{
-    color: #87102C;
+.color-dty{
+    color: #87102c;
+}
+
+.modal-header{
     background-color: #f8f8f8;
-    border-color: #e7e7e7;
 }
 
 .activeDTY {

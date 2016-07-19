@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0bbf8ee4-d9ab-448d-8116-1974e2b7f9af" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/layouts/navbar/navbar.html" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/layouts/navbar/navbar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/index.html" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/index.html" />
     </list>
     <ignored path="dty_plateforme.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -535,7 +533,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1467723020015</updated>
-      <workItem from="1467723021352" duration="98999000" />
+      <workItem from="1467723021352" duration="99105000" />
     </task>
     <task id="LOCAL-00025" summary="classe active adaptée à la nav-bar">
       <created>1467813676837</created>
@@ -884,7 +882,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98999000" />
+    <option name="totallyTimeSpent" value="99105000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-438" y="-1080" width="1920" height="1080" extended-state="0" />

@@ -33,8 +33,17 @@
     border-color: #e7e7e7;
 }
 
-.activeDTY{
+.activeDTY {
     background-color: #87102C;
+    color: white;
+}
+
+.activeDTY > a > span {
+    color: white;
+}
+
+.navbar-default .navbar-nav > .activeDTY.open > a {
+    background-color: #87102c;
     color: white;
 }
 
@@ -257,12 +266,11 @@ footer {
     }
 }
 
-
-
-nav.navbar.navbar-default.container > div > ul.nav.navbar-nav > li > a.activeDTY{
+nav.navbar.navbar-default.container > div > div > ul.nav.navbar-nav > li > a.activeDTY{
     background-color: #87102C;
     color: white;
 }
+
 #courses {
     padding-top: 5%;
     /*

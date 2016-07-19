@@ -1,41 +1,65 @@
 <div ng-cloak>
-    <div class="row">
-        <div class="col-md-4">
-            <span class="hipster img-responsive img-rounded"></span>
-        </div>
-        <div class="col-md-8">
-            <h1>Welcome, Java Hipster!</h1>
-            <p class="lead">This is your homepage</p>
-
-            <div ng-switch="vm.isAuthenticated()">
-                <div class="alert alert-success" ng-switch-when="true">
-                    You are logged in as user "{{vm.account.login}}".
-                </div>
-
-                <div class="alert alert-warning" ng-switch-when="false">
-                    If you want to <a class="alert-link" href="" ng-click="vm.login()">sign in</a>, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").
-                </div>
-
-                <div class="alert alert-warning" ng-switch-when="false">
-                    You don't have an account yet? <a class="alert-link" ui-sref="register">Register a new account</a>
-                </div>
+    <header class="header-image">
+        <div class="headline">
+            <div class="container">
+                <h1>Get Ready for DTY</h1>
+                <h2>With Daily Online Courses</h2>
             </div>
+        </div>
+    </header>
 
-            <p>
-                If you have any question on JHipster:
+
+    <div class="container">
+
+        <hr class="featurette-divider">
+
+
+        <div class="featurette" id="about">
+            <img class="featurette-image img-responsive pull-right" src="/content/images/LogoCS.jpg" width="400 " height="200">
+            <h2 class="featurette-heading">Online Courses To Prepare For
+                <span class="text-muted">Digital Tech Year</span>
+            </h2>
+            <p class="lead">Digital Tech Year is a one year program focused on providing a complete experience, in direct
+                contact with companies, for CentraleSupelec students motivated by computer science and new technologies.
             </p>
+        </div>
 
-            <ul>
-                <li><a href="http://jhipster.github.io/" target="_blank">JHipster homepage</a></li>
-                <li><a href="http://stackoverflow.com/tags/jhipster/info" target="_blank">JHipster on Stack Overflow</a></li>
-                <li><a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank">JHipster bug tracker</a></li>
-                <li><a href="https://gitter.im/jhipster/generator-jhipster" target="_blank">JHipster public chat room</a></li>
-                <li><a href="https://twitter.com/java_hipster" target="_blank" >follow @java_hipster on Twitter</a></li>
-            </ul>
+        <hr class="featurette-divider">
 
-            <p>
-             <span>If you like JHipster, don't forget to give us a star on </span>&nbsp;<a href="https://github.com/jhipster/generator-jhipster" target="_blank">Github</a>!
-            </p>
+
+        <div class="featurette" id="services">
+            <img class="featurette-image img-circle img-responsive pull-left" src="/content/images/OnlineLearning.jpg"
+                 width="400 " height="200">
+            <h2 class="featurette-heading"> An Interactive And Comprehensive
+                <span class="text-muted"> Learning Experience</span>
+            </h2>
+            <p class="lead">Sign up for access to over a hundred lessons in multiple domains. Complete these daily small
+                lessons and exercises, follow your progress and get advice from DTY coaches.</p>
+        </div>
+
+        <hr class="featurette-divider">
+
+
+        <div class="featurette" id="contact">
+            <img class="featurette-image img-circle img-responsive pull-right" src="/content/images/Techno2.png" width="400">
+            <br>
+            <h2 class="featurette-heading">Learn To Use
+                <span class="text-muted">New and Exciting Technologies</span>
+            </h2>
+            <p class="lead">This opportunity allows you to go beyond what you learn in school and use frameworks and
+                solutions commonly used by businesses.</p>
+        </div>
+
+
+        <hr class="featurette-divider">
+
+        <div class="featurette" id="getstarted" align="center">
+            <h2 class="featurette-heading">Get Started
+                <span class="text-muted">Now</span>
+            </h2>
+
+            <a ui-sref="register" class="btn btn-primary btn-lg"> Sign Up</a>
+
         </div>
     </div>
 </div>

@@ -90,7 +90,7 @@
     display: block;
     width: 100%;
     text-align: center;
-    background: url('../images/coding2bis.jpg') no-repeat center center;
+    background: url('/content/images/coding2bis.jpg') no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;

@@ -9,38 +9,48 @@
     RegisterController.$inject = [ '$timeout', 'Auth', 'LoginService'];
 
     function RegisterController ($timeout, Auth, LoginService) {
-        var vm = this;
+        //var this = this;
 
-        vm.doNotMatch = null;
-        vm.error = null;
-        vm.errorUserExists = null;
-        vm.login = LoginService.open;
-        vm.register = register;
-        vm.registerAccount = {};
-        vm.success = null;
+        this.doNotMatch = null;
+        this.error = null;
+        this.errorUserExists = null;
+        this.login = LoginService.open;
+        this.register = register;
+        this.registerAccount = {};
+        this.success = null;
+        this.confirmPassword="";
+
 
         $timeout(function (){angular.element('#login').focus();});
 
-        function register () {
-            if (vm.registerAccount.password !== vm.confirmPassword) {
-                vm.doNotMatch = 'ERROR';
+        this.passwordmatch = function () {
+            if(this.registerAccount.password != "" && this.confirmPassword != ""){
+                return this.registerAccount.password == this.confirmPassword
             } else {
-                vm.registerAccount.langKey =  'en' ;
-                vm.doNotMatch = null;
-                vm.error = null;
-                vm.errorUserExists = null;
-                vm.errorEmailExists = null;
+                return false
+            }
+        }
 
-                Auth.createAccount(vm.registerAccount).then(function () {
-                    vm.success = 'OK';
+        function register () {
+            if (this.registerAccount.password !== this.confirmPassword) {
+                this.doNotMatch = 'ERROR';
+            } else {
+                this.registerAccount.langKey =  'en' ;
+                this.doNotMatch = null;
+                this.error = null;
+                this.errorUserExists = null;
+                this.errorEmailExists = null;
+
+                Auth.createAccount(this.registerAccount).then(function () {
+                    this.success = 'OK';
                 }).catch(function (response) {
-                    vm.success = null;
+                    this.success = null;
                     if (response.status === 400 && response.data === 'login already in use') {
-                        vm.errorUserExists = 'ERROR';
+                        this.errorUserExists = 'ERROR';
                     } else if (response.status === 400 && response.data === 'e-mail address already in use') {
-                        vm.errorEmailExists = 'ERROR';
+                        this.errorEmailExists = 'ERROR';
                     } else {
-                        vm.error = 'ERROR';
+                        this.error = 'ERROR';
                     }
                 });
             }

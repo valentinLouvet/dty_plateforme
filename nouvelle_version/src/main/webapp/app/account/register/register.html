@@ -1,7 +1,16 @@
+<div class="page-header-dty">
+    <h1>Welcome traveler!</h1>
+</div>
+<p style="margin-bottom: 20px">
+    On this website, you will be able to learn a lot of new things concerning a large spectre of subjects: web
+    development, well, about computer science in general. We highly suggest you to register in our website, so we can
+    provide
+    you with the best support available
+</p>
 <div>
-    <div class="row">
+    <div class="row well">
         <div class="col-md-8 col-md-offset-2">
-            <h1>Registration</h1>
+            <h2>Registration</h2>
 
             <div class="alert alert-success" ng-show="vm.success">
                 <strong>Registration saved!</strong> Please check your email for confirmation.
@@ -75,7 +84,7 @@
                 <div class="form-group">
                     <label class="control-label" for="password">New password</label>
                     <input type="password" class="form-control" id="password" name="password" placeholder="New password"
-                           ng-model="vm.registerAccount.password" ng-minlength=4 ng-maxlength=50 required>
+                           ng-model="vm.registerAccount.password" ng-class="{pwdvalid: vm.passwordmatch(),pwdinvalid: !vm.passwordmatch()}" ng-minlength=4 ng-maxlength=50 required>
                     <div ng-show="form.password.$dirty && form.password.$invalid">
                         <p class="help-block"
                                ng-show="form.password.$error.required">
@@ -95,7 +104,7 @@
                 <div class="form-group">
                     <label class="control-label" for="confirmPassword">New password confirmation</label>
                     <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm the new password"
-                           ng-model="vm.confirmPassword" ng-minlength=4 ng-maxlength=50 required>
+                           ng-model="vm.confirmPassword" ng-class="{pwdvalid: vm.passwordmatch(), pwdinvalid: !vm.passwordmatch()}" ng-minlength=4 ng-maxlength=50 required>
                     <div ng-show="form.confirmPassword.$dirty && form.confirmPassword.$invalid">
                         <p class="help-block"
                                ng-show="form.confirmPassword.$error.required">
@@ -109,10 +118,14 @@
                                ng-show="form.confirmPassword.$error.maxlength">
                             Your confirmation password cannot be longer than 50 characters.
                         </p>
+                        <p class="help-block"
+                               ng-show="!vm.passwordmatch()">
+                            Your confirmation password doesn't match your password
+                        </p>
                     </div>
                 </div>
 
-                <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">Register</button>
+                <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary btn-primary-dty-inverse"><span class="glyphicon glyphicon-chevron-right"></span> Register</button>
             </form>
             <p></p>
             <div class="alert alert-warning">

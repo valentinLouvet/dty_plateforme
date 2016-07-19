@@ -19,6 +19,63 @@
                         <span class="hidden-sm">Home</span>
                     </a>
                 </li>
+                <li>
+                    <a href="" ui-sref="lesson" ui-sref-active="activeDTY" ng-click="vm.collapseNavbar()" ng-switch-when="true" has-authority="ROLE_USER">
+                        <span>Today's lesson</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" ui-sref="progression" ui-sref-active="activeDTY" ng-click="vm.collapseNavbar()" ng-switch-when="true" has-authority="ROLE_USER">
+                        <span>Progression</span>
+                    </a>
+                </li>
+                <li ng-class="{activeDTY: vm.$state.includes('account')}" uib-dropdown class="dropdown pointer">
+                    <a class="dropdown-toggle" uib-dropdown-toggle href="" id="lessons-menu" ng-switch-when="true">
+                        <span>
+                            <span class="glyphicon glyphicon-list-alt"></span>
+                            <span class="hidden-sm">
+                                Lessons
+                            </span>
+                            <b class="caret"></b>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu" uib-dropdown-menu>
+                        <li ui-sref-active="activeDTY" ng-switch-when="true">
+                            <a ui-sref="settings" ng-click="vm.collapseNavbar()">
+                                <span>Introduction</span>
+                            </a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li ui-sref-active="activeDTY" ng-switch-when="true">
+                            <a ui-sref="password" ng-click="vm.collapseNavbar()">
+                                <span>Git</span>
+                            </a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li class="dropdown-header">Web development</li>
+                        <li ui-sref-active="activeDTY" ng-switch-when="true">
+                            <a ui-sref="sessions" ng-click="vm.collapseNavbar()">
+                                <span>HTML/CSS</span>
+                            </a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li ui-sref-active="activeDTY" ng-switch-when="true">
+                            <a ui-sref="sessions" ng-click="vm.collapseNavbar()">
+                                <span>Swift</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="" ui-sref="students" ui-sref-active="activeDTY" ng-click="vm.collapseNavbar()" ng-switch-when="true" has-authority="ROLE_ADMIN">
+                        <span>Students</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" ui-sref="statistics" ui-sref-active="activeDTY" ng-click="vm.collapseNavbar()" ng-switch-when="true" has-authority="ROLE_ADMIN">
+                        <span>Statistics</span>
+                    </a>
+                </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li ng-switch-when="false">
@@ -46,43 +103,6 @@
                     </a>
                     <ul class="dropdown-menu" uib-dropdown-menu>
                         <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
-                    </ul>
-                </li>
-                <li ng-class="{activeDTY: vm.$state.includes('account')}" uib-dropdown class="dropdown pointer">
-                    <a class="dropdown-toggle" uib-dropdown-toggle href="" id="account-menu" ng-switch-when="true">
-                        <span>
-                            <span class="glyphicon glyphicon-user"></span>
-                            <span class="hidden-sm">
-                                Account
-                            </span>
-                            <b class="caret"></b>
-                        </span>
-                    </a>
-                    <ul class="dropdown-menu" uib-dropdown-menu>
-                        <li ui-sref-active="activeDTY" ng-switch-when="true">
-                            <a ui-sref="settings" ng-click="vm.collapseNavbar()">
-                                <span class="glyphicon glyphicon-wrench"></span>&nbsp;
-                                <span>Settings</span>
-                            </a>
-                        </li>
-                        <li ui-sref-active="activeDTY" ng-switch-when="true">
-                            <a ui-sref="password" ng-click="vm.collapseNavbar()">
-                                <span class="glyphicon glyphicon-lock"></span>&nbsp;
-                                <span>Password</span>
-                            </a>
-                        </li>
-                        <li ui-sref-active="activeDTY" ng-switch-when="true">
-                            <a ui-sref="sessions" ng-click="vm.collapseNavbar()">
-                                <span class="glyphicon glyphicon-cloud"></span>&nbsp;
-                                <span>Sessions</span>
-                            </a>
-                        </li>
-                        <li ui-sref-active="activeDTY" ng-switch-when="true">
-                            <a href="" ng-click="vm.logout()" id="logout">
-                                <span class="glyphicon glyphicon-log-out"></span>&nbsp;
-                                <span>Sign out</span>
-                            </a>
-                        </li>
                     </ul>
                 </li>
                 <li ng-class="{activeDTY: vm.$state.includes('admin')}"  ng-switch-when="true" has-authority="ROLE_ADMIN" uib-dropdown class="dropdown pointer">
@@ -141,6 +161,43 @@
                             <a href='/h2-console' target="_tab" ng-click="vm.collapseNavbar()">
                                 <span class="glyphicon glyphicon-hdd"></span>&nbsp;
                                 <span>Database</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li ng-class="{activeDTY: vm.$state.includes('account')}" uib-dropdown class="dropdown pointer">
+                    <a class="dropdown-toggle" uib-dropdown-toggle href="" id="account-menu" ng-switch-when="true">
+                        <span>
+                            <span class="glyphicon glyphicon-user"></span>
+                            <span class="hidden-sm">
+                                Account
+                            </span>
+                            <b class="caret"></b>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu" uib-dropdown-menu>
+                        <li ui-sref-active="activeDTY" ng-switch-when="true">
+                            <a ui-sref="settings" ng-click="vm.collapseNavbar()">
+                                <span class="glyphicon glyphicon-wrench"></span>&nbsp;
+                                <span>Settings</span>
+                            </a>
+                        </li>
+                        <li ui-sref-active="activeDTY" ng-switch-when="true">
+                            <a ui-sref="password" ng-click="vm.collapseNavbar()">
+                                <span class="glyphicon glyphicon-lock"></span>&nbsp;
+                                <span>Password</span>
+                            </a>
+                        </li>
+                        <li ui-sref-active="activeDTY" ng-switch-when="true">
+                            <a ui-sref="sessions" ng-click="vm.collapseNavbar()">
+                                <span class="glyphicon glyphicon-cloud"></span>&nbsp;
+                                <span>Sessions</span>
+                            </a>
+                        </li>
+                        <li ui-sref-active="activeDTY" ng-switch-when="true">
+                            <a href="" ng-click="vm.logout()" id="logout">
+                                <span class="glyphicon glyphicon-log-out"></span>&nbsp;
+                                <span>Sign out</span>
                             </a>
                         </li>
                     </ul>

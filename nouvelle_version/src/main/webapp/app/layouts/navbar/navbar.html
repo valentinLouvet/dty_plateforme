@@ -19,6 +19,11 @@
                         <span class="hidden-sm">Home</span>
                     </a>
                 </li>
+                <li>
+                    <a href="" ui-sref="students" ui-sref-active="activeDTY" ng-click="vm.collapseNavbar()" ng-switch-when="true" has-authority="ROLE_USER">
+                        <span>Today's lesson</span>
+                    </a>
+                </li>
                 <li ng-class="{activeDTY: vm.$state.includes('account')}" uib-dropdown class="dropdown pointer">
                     <a class="dropdown-toggle" uib-dropdown-toggle href="" id="lessons-menu" ng-switch-when="true">
                         <span>

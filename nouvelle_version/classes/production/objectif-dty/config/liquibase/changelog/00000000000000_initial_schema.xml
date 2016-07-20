@@ -21,7 +21,7 @@
     <changeSet id="00000000000001" author="jhipster">
 
         <validCheckSum>7:e9e375a9ce079d01a033fc694816dc2b</validCheckSum>
-        <validCheckSum>7:5f4f8eaf150003553c40f2e778e635fd</validCheckSum>
+        <validCheckSum>7:bddd555c976bd210050e02f9bb67fe01</validCheckSum>
 
         <createTable tableName="jhi_user">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">

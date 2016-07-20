@@ -1,0 +1,40 @@
+<!-- Présentation de la liste des élèves --->
+<label for="select1">Choose a group of students</label>
+<select id="select1" name="e1">
+    <option value="allStudents">All Students</option>
+    <option value="dtyStudents">DTY Students</option>
+    <option value="yourStudents">Your Students</option>
+</select>
+
+<div class="page-header-dty">
+    <h1>Students List
+        <small>Your Students</small>
+    </h1>
+</div>
+<div class="col-sm-10 col-sm-offset-1">
+
+    <div class="row">
+        <div class="panel panel-dty" ng-repeat="student in vm.students">
+            <div class="panel-heading">
+                <a ui-sref="userCourses" ><h3>{{student.name}}</h3></a>
+            </div>
+            <div class="panel-body">
+                <div style="float:left;">
+                    <strong>Last lesson : Git</strong>
+                </div>
+                <div style="float:right;">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped" role="progressbar"
+                             ng-class="{progressBarSuccess: {{student.assiduity}}>74, progressBarInfo: 75>{{student.assiduity}}>49, progressBarWarning: 50>{{student.assiduity}}>24, progressBarDanger: 25>{{student.assiduity}}>0}"
+                             aria-valuenow="47" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: {{student.assiduity}}%;">
+                            {{student.assiduity}}%
+                        </div>
+                    </div>
+                    <span class="label label-default-dty">{{student.available}}</span>
+                    <span class="label label-primary">Students statistics</span>
+                </div>
+                <div class="clear-both">&nbsp;</div>
+            </div>
+        </div>
+    </div>
+</div>

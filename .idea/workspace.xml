@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bbf8ee4-d9ab-448d-8116-1974e2b7f9af" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/dty_plateforme_node_modules.xml" afterPath="$PROJECT_DIR$/.idea/libraries/dty_plateforme_node_modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/resources/.h2.server.properties" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/resources/.h2.server.properties" />
     </list>
     <ignored path="dty_plateforme.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -174,7 +172,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/layouts/footer/footer.html</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/layouts/navbar/navbar.html</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/index.html</PATH>
         </FILE-GROUP>
@@ -184,10 +181,9 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/course.state.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/view-course.controller.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/view-course.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/view-course.state.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.controller.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.state.js</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -195,9 +191,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="true" />
           <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/lessons/lesson-view.controller.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/lessons/lesson-view.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/lessons/lesson.state.js</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Restored" />
@@ -382,13 +375,6 @@
       <updated>1467723020015</updated>
       <workItem from="1467723021352" duration="102796000" />
       <workItem from="1469000229965" duration="2235000" />
-    </task>
-    <task id="LOCAL-00025" summary="classe active adaptée à la nav-bar">
-      <created>1467813676837</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1467813676837</updated>
     </task>
     <task id="LOCAL-00026" summary="jumbotron bleu">
       <created>1467814064610</created>
@@ -726,7 +712,14 @@
       <option name="project" value="LOCAL" />
       <updated>1468418153856</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="réparation d'une erreur de route">
+      <created>1469023490320</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1469023490320</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -743,7 +736,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -752,7 +745,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19452055" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19452055" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />

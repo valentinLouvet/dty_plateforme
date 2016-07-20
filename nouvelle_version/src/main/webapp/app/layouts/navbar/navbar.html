@@ -20,7 +20,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="" ui-sref="lesson" ui-sref-active="activeDTY" ng-click="vm.collapseNavbar()" ng-switch-when="true" has-authority="ROLE_USER">
+                    <a href="" ui-sref="viewCourse" ui-sref-active="activeDTY" ng-click="vm.collapseNavbar()" ng-switch-when="true" has-authority="ROLE_USER">
                         <span>Today's lesson</span>
                     </a>
                 </li>
@@ -62,6 +62,18 @@
                         <li ui-sref-active="activeDTY" ng-switch-when="true">
                             <a ui-sref="sessions" ng-click="vm.collapseNavbar()">
                                 <span>Swift</span>
+                            </a>
+                        </li>
+                        <li role="separator" class="divider" has-any-authority="ROLE_COACH, ROLE_ADMIN"></li>
+                        <li class="dropdown-header" has-any-authority="ROLE_COACH, ROLE_ADMIN">Create/Edit lessons</li>
+                        <li ui-sref-active="activeDTY" ng-switch-when="true" has-any-authority="ROLE_COACH, ROLE_ADMIN">
+                            <a ui-sref="createLesson" ng-click="vm.collapseNavbar()">
+                                <span>Create new lessons</span>
+                            </a>
+                        </li>
+                        <li ui-sref-active="activeDTY" ng-switch-when="true" has-any-authority="ROLE_COACH, ROLE_ADMIN">
+                            <a ui-sref="editLesson" ng-click="vm.collapseNavbar()">
+                                <span>Edit existing lessons</span>
                             </a>
                         </li>
                     </ul>

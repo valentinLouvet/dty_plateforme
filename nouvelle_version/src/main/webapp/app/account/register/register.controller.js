@@ -18,6 +18,14 @@
         this.registerAccount = {};
         this.success = null;
 
+        this.passwordmatch = function () {
+            if(this.registerAccount.password != "" && this.confirmPassword != "") {
+                return (this.registerAccount.password === this.confirmPassword)
+            } else {
+                return false
+            }
+        };
+
         $timeout(function (){angular.element('#login').focus();});
 
         function register () {

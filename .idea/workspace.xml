@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0bbf8ee4-d9ab-448d-8116-1974e2b7f9af" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/account/register/register.controller.js" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/account/register/register.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/progression/progression.controller.js" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/progression/progression.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/progression/progression.html" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/progression/progression.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/content/css/objectif_dty.css" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/content/css/objectif_dty.css" />
     </list>
     <ignored path="dty_plateforme.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,7 +23,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="userCourses.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="userCourses.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ancienne_version/src/html/userProfile/userCourses.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="465">
@@ -88,10 +85,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="inscription.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="inscription.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ancienne_version/src/js/inscription.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1305">
+            <state relative-caret-position="2115">
               <caret line="247" column="47" selection-start-line="247" selection-start-column="47" selection-end-line="247" selection-end-column="47" />
               <folding />
             </state>
@@ -446,7 +443,7 @@
       <option name="presentableId" value="Default" />
       <updated>1467723020015</updated>
       <workItem from="1467723021352" duration="102796000" />
-      <workItem from="1469000229965" duration="1942000" />
+      <workItem from="1469000229965" duration="2235000" />
     </task>
     <task id="LOCAL-00025" summary="classe active adaptée à la nav-bar">
       <created>1467813676837</created>
@@ -795,7 +792,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104738000" />
+    <option name="totallyTimeSpent" value="105031000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-438" y="-1080" width="1920" height="1080" extended-state="0" />
@@ -1172,18 +1169,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ancienne_version/src/js/inscription.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1305">
-          <caret line="247" column="47" selection-start-line="247" selection-start-column="47" selection-end-line="247" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ancienne_version/src/html/userProfile/userCourses.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
           <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ancienne_version/src/js/inscription.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2115">
+          <caret line="247" column="47" selection-start-line="247" selection-start-column="47" selection-end-line="247" selection-end-column="47" />
           <folding />
         </state>
       </provider>

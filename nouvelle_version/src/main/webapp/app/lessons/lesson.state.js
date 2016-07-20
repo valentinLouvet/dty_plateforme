@@ -9,7 +9,7 @@
 
 
                 parent: 'app',
-                url: '/lesson/view',
+                url: '/lesson',
                 data: {
                     authorities:['ROLE_USER','ROLE_COACH','ROLE_ADMIN'],
                     pageTitle: 'Lesson'

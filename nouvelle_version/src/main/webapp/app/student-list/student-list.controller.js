@@ -5,9 +5,9 @@
         .module('objectifDtyApp')
         .controller('studentListController', studentListController);
 
-    HomeController.$inject = ['$scope', 'Principal', 'LoginService', '$state'];
+    studentListController.$inject = ['$scope', 'Principal', 'LoginService', '$state'];
 
-    function HomeController ($scope, Principal, LoginService, $state) {
+    function studentListController ($scope, Principal, LoginService, $state) {
         var vm = this;
 
         vm.students = students;
@@ -31,5 +31,10 @@ var students = [
         name: 'Student 3',
         assiduity: '86',
         available: 'Unavailable: exams'
+    },
+    {
+        name: 'Student 4',
+        assiduity: '12',
+        available: 'Gave Up'
     }
 ];

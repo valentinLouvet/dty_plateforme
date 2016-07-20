@@ -23,11 +23,11 @@
         this.question.answers.push("answer 2");
 
         this.addAnswer = function (i) {
-            this.newLesson.quizz[i].answers.push("answer " + (this.question.answers.length+1) );
+            this.newLesson.quizz[i].answers.push("answer " + (this.newLesson.quizz[i].answers.length+1) );
         };
 
         this.addQuestion = function () {
-            this.compteur=+1;
+            this.compteur= this.compteur+1;
             var question = {
                 question : "enter question here",
                 id: this.compteur,

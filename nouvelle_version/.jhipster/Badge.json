@@ -1,0 +1,18 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "logo",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160720123101",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "badge",
+    "pagination": "infinite-scroll"
+}

@@ -4,12 +4,24 @@
     angular.module('objectifDtyApp').config(stateConfig);
     stateConfig.$inject = ['$stateProvider'];
 
-    function stateConfig($stateProvider){
-        $stateProvider.state{'lesson',{
+    function stateConfig($stateProvider) {
+        $stateProvider.state('lesson', {
 
-        }
 
-        }
+                parent: 'app',
+                url: '/lesson/view',
+                data: {
+                    authorities:['ROLE_USER','ROLE_COACH','ROLE_ADMIN'],
+                    pageTitle: 'Lesson'
+                },
+                views: {
+                    'content@': {
+                        templateUrl: 'app/lessons/lesson-view.html',
+                        controller: 'LessonViewController',
+                        controllerAs: 'vm'
+                    }
+                }
+            })
 
     };
 

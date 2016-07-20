@@ -1,10 +1,9 @@
 (function(){
 
     angular.module('objectifDtyApp')
-        .controller('lessonViewController',['$state','$http',
+        .controller('LessonViewController',['$state','$http',function($state,$http){
+
+        }
 
             ])
-
-
-
 }());

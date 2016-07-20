@@ -10,12 +10,12 @@
     function progressionController ($scope, Principal, LoginService, $state) {
         var vm = this;
 
-        vm.courses = courses;
+        vm.blocs = blocs;
 
     }
 })();
 
-var courses = [
+var blocs = [
     {
         name: "Git",
         level: 100,

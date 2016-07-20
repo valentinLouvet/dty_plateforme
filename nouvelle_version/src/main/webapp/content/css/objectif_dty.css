@@ -374,8 +374,8 @@ nav.navbar.navbar-default.container > div > div > ul.nav.navbar-nav > li > a.act
 .percent{
     color: #000000;
     position: absolute;
-
-    left: 35%;
+    text-align: center;
+    padding-left: 42px;
 }
 
 .graph-assiduousness{

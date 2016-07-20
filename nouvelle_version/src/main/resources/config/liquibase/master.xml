@@ -6,6 +6,7 @@
 
     <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
 
+    <include file="classpath:config/liquibase/changelog/20160720123101_added_entity_Badge.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="changelog/00000000000002_changelog.xml" relativeToChangelogFile="true"/>
     <include file="changelog/00000000000004_changelog.xml" relativeToChangelogFile="true"/>

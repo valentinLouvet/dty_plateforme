@@ -1,0 +1,56 @@
+<div class="container">
+
+
+    <!-- LESSONS -->
+    <!-- List of lessons and different parameters (level, description) -->
+
+    <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+            <div class="page-header-dty">
+                <h1>
+                    Your courses
+                </h1>
+            </div>
+            <p>We strongly advise you to do the lesson of the day before doing any other lesson.</p>
+            <button ui-sref="cours" class="btn btn-primary-dty">Go to today's lesson !
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </button>
+            <hr>
+
+            <h2>
+                List of your courses :
+            </h2>
+
+            <hr>
+
+        </div>
+
+
+        <!-- AFFICHAGE DES DIFFERENTS COURS -->
+
+
+        <div>
+            <div ng-repeat="course in vm.courses">
+                <div class="col-lg-offset-1 col-lg-3 col-md-offset-1 col-md-5" id="courses" ng-class="{courseAvailable: course.level>0 && course.level<100, courseComplete: course.level==100 }">
+                    <div class="col-md-12">
+                        <a ui-sref={{course.link}}><img ng-src={{course.image}}></a>
+                        <p>
+                            <h2>{{course.name}}</h2>
+                        </p>
+                    </div>
+                    <div class="col-md-12">
+                        <div style="margin-left: auto; margin-right: auto;" class="progress" style="text-align: center">
+                            <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar"
+                                 aria-valuenow="{{course.level}}" aria-valuemin="0" aria-valuemax="100"
+                                 style="min-width: 2em; width: {{course.level}}%;">Your progression : {{course.level}} %
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

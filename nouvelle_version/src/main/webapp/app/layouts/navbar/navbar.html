@@ -67,12 +67,12 @@
                         <li role="separator" class="divider" has-any-authority="ROLE_COACH, ROLE_ADMIN"></li>
                         <li class="dropdown-header" has-any-authority="ROLE_COACH, ROLE_ADMIN">Create/Edit lessons</li>
                         <li ui-sref-active="activeDTY" ng-switch-when="true" has-any-authority="ROLE_COACH, ROLE_ADMIN">
-                            <a ui-sref="createLesson" ng-click="vm.collapseNavbar()">
+                            <a ui-sref="createCourse" ng-click="vm.collapseNavbar()">
                                 <span>Create new lessons</span>
                             </a>
                         </li>
                         <li ui-sref-active="activeDTY" ng-switch-when="true" has-any-authority="ROLE_COACH, ROLE_ADMIN">
-                            <a ui-sref="editLesson" ng-click="vm.collapseNavbar()">
+                            <a ui-sref="editCourse" ng-click="vm.collapseNavbar()">
                                 <span>Edit existing lessons</span>
                             </a>
                         </li>

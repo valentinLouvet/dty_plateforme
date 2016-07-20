@@ -9,23 +9,22 @@
     RegisterController.$inject = ['$timeout', 'Auth', 'LoginService'];
 
     function RegisterController ($timeout, Auth, LoginService) {
-        var vm = this;
 
-        vm.doNotMatch = null;
-        vm.error = null;
-        vm.errorUserExists = null;
-        vm.login = LoginService.open;
-        vm.register = register;
-        vm.registerAccount = {};
-        vm.success = null;
+        this.doNotMatch = null;
+        this.error = null;
+        this.errorUserExists = null;
+        this.login = LoginService.open;
+        this.register = register;
+        this.registerAccount = {};
+        this.success = null;
 
         $timeout(function (){angular.element('#login').focus();});
 
         function register () {
-            if (vm.registerAccount.password !== vm.confirmPassword) {
+            var vm = this;
+            if (vm.registerAccount.password !== this.confirmPassword) {
                 vm.doNotMatch = 'ERROR';
             } else {
-                vm.registerAccount.langKey = $translate.use();
                 vm.doNotMatch = null;
                 vm.error = null;
                 vm.errorUserExists = null;
@@ -38,7 +37,7 @@
                     if (response.status === 400 && response.data === 'login already in use') {
                         vm.errorUserExists = 'ERROR';
                     } else if (response.status === 400 && response.data === 'e-mail address already in use') {
-                        vm.errorEmailExists = 'ERROR';
+                        this.errorEmailExists = 'ERROR';
                     } else {
                         vm.error = 'ERROR';
                     }

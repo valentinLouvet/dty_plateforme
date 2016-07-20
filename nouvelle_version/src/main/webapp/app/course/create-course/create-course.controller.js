@@ -38,5 +38,10 @@
             this.newLesson.quizz.push(question);
         };
 
+        this.removeQuestion = function (i) {
+            this.newLesson.quizz[i].answers = null;
+            this.newLesson.quizz[i].question = null;
+        }
+
     }
 })();

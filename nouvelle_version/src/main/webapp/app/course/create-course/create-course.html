@@ -17,7 +17,7 @@
             <label>Quizz</label>
             <div ng-repeat="question in vm.newLesson.quizz">
                 <label>Question {{vm.newLesson.quizz.indexOf(question) +1}}</label>
-                <textarea placeholder="Enter question Here.." rows="1" class="form-control"></textarea>
+                <textarea placeholder="Enter question here..." rows="1" class="form-control"></textarea>
                 <label></label>
                 <label>Answers</label>
                 <div class="col-ld-6" ng-repeat="answer in question.answers">
@@ -25,7 +25,7 @@
                         <input type="text" placeholder={{answer}} class="form-control">
                     </div>
                 </div>
-                <button type="button" ng-click="vm.addAnswer()" class="btn btn-md btn-info pull-right">add answer</button>
+                <button type="button" ng-click="vm.addAnswer(question.id)" class="btn btn-md btn-info pull-right">add answer</button>
                 <br>
             </div>
             <button type="button" ng-click="vm.addQuestion()" class="btn btn-md btn-info pull-left">add question</button>

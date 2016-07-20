@@ -5,35 +5,37 @@
         .module('objectifDtyApp')
         .controller('courseCreationController', courseCreationController);
 
-    courseCreationController.$inject = ['Sessions', 'Principal'];
-
     function courseCreationController () {
-        this.lessons = [];
+        this.compteur= 0;
         this.newLesson = {
             text : "",
             quizz : []
         };
+
         this.question = {
             question : "enter question here",
+            id: this.compteur,
             answers : []
         };
+
+        this.newLesson.quizz.push(this.question);
         this.question.answers.push("answer 1");
         this.question.answers.push("answer 2");
-        this.addAnswer = function () {
-            this.question.answers.push("answer " + (this.question.answers.length+1) );
+
+        this.addAnswer = function (i) {
+            this.newLesson.quizz[i].answers.push("answer " + (this.question.answers.length+1) );
         };
-        this.newLesson.quizz.push(this.question);
+
         this.addQuestion = function () {
-            this.question = {
+            this.compteur=+1;
+            var question = {
                 question : "enter question here",
+                id: this.compteur,
                 answers : []
             };
-            this.question.answers.push("answer 1");
-            this.question.answers.push("answer 2");
-            this.addAnswer = function () {
-                this.question.answers.push("answer " + (this.question.answers.length+1) );
-            };
-            this.newLesson.quizz.push(this.question);
+            question.answers.push("answer 1");
+            question.answers.push("answer 2");
+            this.newLesson.quizz.push(question);
         };
 
     }

@@ -2,6 +2,10 @@
     display: inline-block;
 }
 
+.NavText {
+     text-font: 40px;
+}
+
 .footer > p{
     text-align: right;
     padding-right: 15px;

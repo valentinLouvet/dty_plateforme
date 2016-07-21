@@ -175,22 +175,17 @@
                 this.compteurAnswer.splice(idOfQuestion - 1, 1);
                 this.compteurQuestion = this.compteurQuestion - 1;
 
-                console.log("Question suppressed");
+                console.log("Question deleted");
 
 
             }
             else{
-                console.log("Can't suppress ! At least a question must remain");
+                console.log("Can't delete ! At least a question must remain");
             }
 
             console.log("####################");
 
         };
-
-        this.removeQuestion = function (i) {
-            this.newLesson.quizz[i].answers = null;
-            this.newLesson.quizz[i].question = null;
-        }
 
     }
 

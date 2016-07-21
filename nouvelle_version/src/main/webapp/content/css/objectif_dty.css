@@ -344,6 +344,10 @@ nav.navbar.navbar-default.container > div > div > ul.nav.navbar-nav > li > a.act
     background-color: lightgray;
 }
 
+.list-group-item-white {
+    background-color: white;
+}
+
 .pager > .previous > a {
     color:#87102c;
 }

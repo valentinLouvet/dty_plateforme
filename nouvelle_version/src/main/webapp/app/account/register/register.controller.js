@@ -37,6 +37,18 @@
                 vm.error = null;
                 vm.errorUserExists = null;
                 vm.errorEmailExists = null;
+                vm.registerAccount.activated = true;
+                if (vm.registerAccount.code == "coach") {
+                    vm.registerAccount.authorities = ["ROLE_COACH"];
+                }
+                else if (vm.registerAccount.code == "student") {
+                    vm.registerAccount.authorities = ["ROLE_USER"];
+                }
+                else {
+                    vm.error = "ERROR"
+                    return;
+                }
+
 
                 Auth.createAccount(vm.registerAccount).then(function () {
                     vm.success = 'OK';

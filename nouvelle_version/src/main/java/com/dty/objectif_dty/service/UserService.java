@@ -87,11 +87,11 @@ public class UserService {
     }
 
     public User createUserInformation(String login, String password, String firstName, String lastName, String email,
-        String langKey) {
+        String langKey , boolean activated, Set<String> authoritys) {
 
         User newUser = new User();
-        Authority authority = authorityRepository.findOne(AuthoritiesConstants.USER);
-        Set<Authority> authorities = new HashSet<>();
+        //Authority authority = authorityRepository.findOne(AuthoritiesConstants.COACH);
+        //Set<Authority> authorities = new HashSet<>();
         String encryptedPassword = passwordEncoder.encode(password);
         newUser.setLogin(login);
         // new user gets initially a generated password
@@ -101,11 +101,16 @@ public class UserService {
         newUser.setEmail(email);
         newUser.setLangKey(langKey);
         // new user is not active
-        newUser.setActivated(false);
+        newUser.setActivated(activated);
         // new user gets registration key
         newUser.setActivationKey(RandomUtil.generateActivationKey());
-        authorities.add(authority);
-        newUser.setAuthorities(authorities);
+        //authorities.add(authority);
+        //newUser.setAuthorities(authorities);
+        Set<Authority> authorities = newUser.getAuthorities();
+        authorities.clear();
+        authoritys.stream().forEach(
+            authority -> authorities.add(authorityRepository.findOne(authority))
+        );
         userRepository.save(newUser);
         log.debug("Created Information for User: {}", newUser);
         return newUser;

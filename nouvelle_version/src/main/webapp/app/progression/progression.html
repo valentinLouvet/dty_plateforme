@@ -12,7 +12,7 @@
                 </h1>
             </div>
             <p>We strongly advise you to do the lesson of the day before doing any other lesson.</p>
-            <button ui-sref="viewCourse({id:'ceci est un test'})" class="btn btn-primary-dty">Go to today's lesson !
+            <button ui-sref="viewCourse({id:3})" class="btn btn-primary-dty">Go to today's lesson !
                 <span class="glyphicon glyphicon-chevron-right"></span>
             </button>
             <hr>
@@ -29,13 +29,15 @@
         <!-- AFFICHAGE DES DIFFERENTS COURS -->
 
 
-        <div>
+        <div class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10">
             <div ng-repeat="bloc in vm.blocs">
-                <div class="col-lg-offset-1 col-lg-3 col-md-offset-1 col-md-5" id="courses" ng-class="{courseAvailable: bloc.level>0 && bloc.level<100, courseComplete: bloc.level==100 }">
+
+                <div class="col-md-5 col-lg-3" id="courses" ng-class="{courseAvailable: bloc.level>0 && bloc.level<100, courseComplete: bloc.level==100, 'colMD': (($index)%2) === 1 , 'colLG': !($index%3 === 0) }">
+                    <div class="row">
                     <div class="col-md-12">
-                        <a ui-sref={{bloc.link}}><img ng-src={{bloc.image}}></a>
-                        <p>
-                            <h2>{{bloc.name}}</h2>
+                        <a ui-sref={{bloc.link}}><img class="fixView" ng-src={{bloc.image}}></a>
+                        <p class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <h2>{{bloc.name}} </h2>
                         </p>
                     </div>
                     <div class="col-md-12">
@@ -43,12 +45,16 @@
                             <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar"
                                  aria-valuenow="{{bloc.level}}" aria-valuemin="0" aria-valuemax="100"
                                  style="min-width: 2em; width: {{bloc.level}}%;">
-                                <div class="percent"> Your progression : {{bloc.level}} %</div>
+                            </div>
+                            <div class = "row">
+                            <div class="percent col-xs-offset-5 col-sm-offset-5 col-md-offset-5 col-lg-offset-5" style="padding-top:30px;">  {{bloc.level}} %</div>
                             </div>
                         </div>
 
                     </div>
+                    </div>
                 </div>
+
             </div>
         </div>
 

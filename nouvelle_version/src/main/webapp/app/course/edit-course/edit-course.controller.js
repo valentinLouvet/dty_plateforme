@@ -1,41 +1,79 @@
-(function() {
+(function () {
     'use strict';
 
     angular
         .module('objectifDtyApp')
-        .controller('editCreationController', courseCreationController);
+        .controller('courseEditionController',['$state', '$cookies', function ($state, $cookies) {
+            this.blocs=blocs;
+            this.compteur=1;
 
-    courseCreationController.$inject = ['Sessions', 'Principal'];
-
-    function courseCreationController () {
-
-        this.lessons = [];
-        this.editedLesson = {
-            text : "",
-            quizz : []
-        };
-        this.question = {
-            question : "enter question here",
-            answers : []
-        };
-        this.question.answers.push("answer 1");
-        this.question.answers.push("answer 2");
-        this.addAnswer = function () {
-            this.question.answers.push("answer " + (this.question.answers.length+1) );
-        };
-        this.newLesson.quizz.push(this.question);
-        this.addQuestion = function () {
-            this.question = {
-                question : "enter question here",
-                answers : []
+            this.addCompteur= function(i){
+                this.compteur = this.compteur + i
             };
-            this.question.answers.push("answer 1");
-            this.question.answers.push("answer 2");
-            this.addAnswer = function () {
-                this.question.answers.push("answer " + (this.question.answers.length+1) );
-            };
-            this.newLesson.quizz.push(this.question);
-        };
 
-    }
+            this.setCompteur = function (i) {
+                this.compteur = i
+            };
+
+            this.goCourse = function (data) {
+                $cookies.putObject('course', data);
+                console.log($cookies.getObject('course'));
+                $state.go('editCourse/modify')
+            }
+
+        }] );
+
+
+
+
+
+    var blocs = [
+        {
+            name: 'HTML',
+            courses: [
+                {
+                    name: 'Lesson 1 HTML',
+                    id: 1,
+                    content: 'HTML 1'
+                },
+                {
+                    name: 'Lesson 2 HTML'
+                },
+                {
+                    name: 'Lesson 3 HTML'
+                }
+            ]
+        },
+        {
+            name: 'CSS',
+            courses: [
+                {
+                    name: 'Lesson 1 CSS'
+                },
+                {
+                    name: 'Lesson 2 CSS'
+                },
+                {
+                    name: 'Lesson 3 CSS'
+                },
+                {
+                    name: 'Lesson 4 CSS'
+                }
+            ]
+        },
+        {
+            name: 'Angular',
+            courses: [
+                {
+                    name: 'Lesson 1 Angular'
+                },
+                {
+                    name: 'Lesson 2 Angular'
+                }
+            ]
+        }
+    ]
+
+
 })();
+

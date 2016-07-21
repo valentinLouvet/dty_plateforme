@@ -29,10 +29,10 @@ import java.util.Optional;
 public class LessonResource {
 
     private final Logger log = LoggerFactory.getLogger(LessonResource.class);
-        
+
     @Inject
     private LessonRepository lessonRepository;
-    
+
     /**
      * POST  /lessons : Create a new lesson.
      *
@@ -93,7 +93,7 @@ public class LessonResource {
     public ResponseEntity<List<Lesson>> getAllLessons(Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to get a page of Lessons");
-        Page<Lesson> page = lessonRepository.findAll(pageable); 
+        Page<Lesson> page = lessonRepository.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/lessons");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
@@ -110,12 +110,13 @@ public class LessonResource {
     @Timed
     public ResponseEntity<Lesson> getLesson(@PathVariable Long id) {
         log.debug("REST request to get Lesson : {}", id);
-        Lesson lesson = lessonRepository.findOne(id);
-        return Optional.ofNullable(lesson)
-            .map(result -> new ResponseEntity<>(
-                result,
-                HttpStatus.OK))
-            .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+            Lesson lesson = lessonRepository.findOne(id);
+            return Optional.ofNullable(lesson)
+                .map(result -> new ResponseEntity<>(
+                    result,
+                    HttpStatus.OK))
+                .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+
     }
 
     /**

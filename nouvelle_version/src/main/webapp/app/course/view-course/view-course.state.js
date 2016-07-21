@@ -8,7 +8,7 @@
 
             parent: 'course',
             url: '/view',
-            params:{id: null},
+            params:{id:null},
             data: {
                 authorities:['ROLE_USER','ROLE_COACH','ROLE_ADMIN'],
                 pageTitle: 'Course'

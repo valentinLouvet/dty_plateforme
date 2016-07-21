@@ -8,7 +8,7 @@
         $stateProvider.state('editCourse', {
 
             parent: 'course',
-            url: '/course/edit',
+            url: '/edit',
             data: {
                 authorities:['ROLE_COACH','ROLE_ADMIN'],
                 pageTitle: 'Edit Course'
@@ -21,7 +21,6 @@
                 }
             }
         })
-
     }
 
 

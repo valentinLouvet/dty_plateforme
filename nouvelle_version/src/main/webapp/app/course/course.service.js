@@ -3,10 +3,7 @@
 
     angular
         .module('objectifDtyApp')
-        .factory('courseService', courseService);
-
-
-    function courseService () {
+        .factory('courseService', function  () {
             var course = {};
 
             function get() {
@@ -20,5 +17,6 @@
             return {
                 message: "truc"
             }
-        }
+        });
+
 });

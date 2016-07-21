@@ -3,35 +3,38 @@
 
     angular
         .module('objectifDtyApp')
-        .controller('courseEditionController', courseEditionController);
+        .controller('courseEditionController',['$state', '$cookies', function ($state, $cookies) {
+            this.blocs=blocs;
+            this.compteur=1;
 
-    courseEditionController.$inject = ['$state', 'courseService'];
+            this.addCompteur= function(i){
+                this.compteur = this.compteur + i
+            };
 
-    function courseEditionController($state, courseService) {
-        this.blocs=blocs;
-        this.compteur=1;
+            this.setCompteur = function (i) {
+                this.compteur = i
+            };
 
-        this.addCompteur= function(i){
-            this.compteur = this.compteur + i
-        };
+            this.goCourse = function (data) {
+                $cookies.putObject('course', data);
+                console.log($cookies.getObject('course'));
+                $state.go('editCourse/modify')
+            }
 
-        this.setCompteur = function (i) {
-            this.compteur = i
-        };
+        }] );
 
-        this.goCourse = function (course) {
-            courseService.set(course);
-            $state.go('home')
-        }
 
-    }
+
+
 
     var blocs = [
         {
             name: 'HTML',
             courses: [
                 {
-                    name: 'Lesson 1 HTML'
+                    name: 'Lesson 1 HTML',
+                    id: 1,
+                    content: 'HTML 1'
                 },
                 {
                     name: 'Lesson 2 HTML'

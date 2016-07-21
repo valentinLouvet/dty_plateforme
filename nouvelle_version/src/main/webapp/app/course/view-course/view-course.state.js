@@ -7,8 +7,7 @@
         $stateProvider.state('viewCourse', {
 
             parent: 'course',
-            url: '/view',
-            params:{id:null},
+            url: '/view/:id',
             data: {
                 authorities:['ROLE_USER','ROLE_COACH','ROLE_ADMIN'],
                 pageTitle: 'Course'

@@ -2,6 +2,21 @@
     display: inline-block;
 }
 
+@media (max-width : 1199px) and (min-width: 992px) {
+  .colMD { margin-left:8.33333333%;}
+}
+
+@media (min-width : 1200px) {
+  .colLG { margin-left:8.33333333%;}
+}
+
+@media (max-width : 360px) {
+  .fixView {display:block;
+            max-width:100%;
+            height:auto;}
+}
+
+
 #SignButton {
     min-width : 150px;
 }
@@ -313,11 +328,6 @@ nav.navbar.navbar-default.container > div > div > ul.nav.navbar-nav > li > a.act
 
 #courses {
     padding-top: 5%;
-    /*
-    padding-left:5%;
-    padding-right:5%;
-    padding-bottom: 5%;
-    */
     margin-bottom:5%;
     background-color: #f5f5f5;
     border: 2px solid #87102c;
@@ -415,16 +425,15 @@ nav.navbar.navbar-default.container > div > div > ul.nav.navbar-nav > li > a.act
     color: white;
 }
 
-.progress{
-    width:216px;
-}
+
 
 .percent{
-    color: #000000;
+    font-weight: bold;
+    font-size : 20px;
     position: absolute;
-    text-align: center;
-    padding-left: 42px;
+    text-align: left;
 }
+
 
 .graph-assiduousness{
     text-align:center;

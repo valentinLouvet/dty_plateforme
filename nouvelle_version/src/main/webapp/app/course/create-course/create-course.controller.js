@@ -59,8 +59,10 @@
 
         this.addAnswer = function(idOfQuestion) {
 
-            console.log("####################");
-            console.log("idOfQuestion : " + idOfQuestion);
+            //console.log("####################");
+            //console.log("idOfQuestion : " + idOfQuestion);
+
+            //création de la réponse
 
             var answer = {
                 intitulate : "Answer " + (this.compteurAnswer[idOfQuestion - 1] + 1),

@@ -7,7 +7,7 @@
         $stateProvider.state('viewCourse', {
 
             parent: 'course',
-            url: '/course/view/',
+            url: '/view',
             params:{id: null},
             data: {
                 authorities:['ROLE_USER','ROLE_COACH','ROLE_ADMIN'],
@@ -18,13 +18,14 @@
                     templateUrl: 'app/course/view-course/view-course.html',
                     controller: 'CourseViewController',
                     controllerAs: 'vm'
-                },
-                resolve: {
-                    course: ['$stateParams', 'Lesson', function($stateParams, Lesson) {
-                        return Lesson.get({id : $stateParams.id}).$promise;
-                    }]
                 }
 
+
+            },
+            resolve: {
+                courseView: ['$stateParams', 'Lesson', function($stateParams, Lesson) {
+                    return Lesson.get({id : $stateParams.id}).$promise;
+                }]
             }
         })
 

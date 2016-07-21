@@ -1,39 +1,41 @@
-(function () {
+(function() {
+    'use strict';
 
     angular
         .module('objectifDtyApp')
-        .controller('courseEditionController', courseEditionController);
+        .controller('editCreationController', courseCreationController);
 
-    function courseEditionController() {
-        this.blocs=blocs;
+    courseCreationController.$inject = ['Sessions', 'Principal'];
+
+    function courseCreationController () {
+
+        this.lessons = [];
+        this.editedLesson = {
+            text : "",
+            quizz : []
+        };
+        this.question = {
+            question : "enter question here",
+            answers : []
+        };
+        this.question.answers.push("answer 1");
+        this.question.answers.push("answer 2");
+        this.addAnswer = function () {
+            this.question.answers.push("answer " + (this.question.answers.length+1) );
+        };
+        this.newLesson.quizz.push(this.question);
+        this.addQuestion = function () {
+            this.question = {
+                question : "enter question here",
+                answers : []
+            };
+            this.question.answers.push("answer 1");
+            this.question.answers.push("answer 2");
+            this.addAnswer = function () {
+                this.question.answers.push("answer " + (this.question.answers.length+1) );
+            };
+            this.newLesson.quizz.push(this.question);
+        };
 
     }
-
-    var blocs = [
-        {
-            name: 'HTML',
-            courses: [
-                {
-                    name: 'Lesson 1 HTML'
-                },
-                {
-                    name: 'Lesson 2 HTML'
-                },
-                {
-                    name: 'Lesson 3 HTML'
-                }
-            ]
-        },
-        {
-            name: 'CSS',
-            courses: ['Lesson 1 CSS', 'Lesson 2 CSS', 'Lesson 3 CSS', 'Lesson 4 CSS']
-        },
-        {
-            name: 'Angular',
-            courses: ['Lesson 1 Angular']
-        }
-    ]
-
-
 })();
-

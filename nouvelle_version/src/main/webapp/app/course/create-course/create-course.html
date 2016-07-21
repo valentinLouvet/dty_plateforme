@@ -16,20 +16,26 @@
         <div class="form-group">
             <label>Quizz</label>
             <div ng-repeat="question in vm.newLesson.quizz">
-                <label>Question {{vm.newLesson.quizz.indexOf(question) +1}}</label>
+                <label>Question {{question.id}}</label>
                 <textarea placeholder="Enter question here..." rows="1" class="form-control"></textarea>
                 <label></label>
                 <label>Answers</label>
                 <div class="col-ld-6" ng-repeat="answer in question.answers">
                     <div>
-                        <input type="text" placeholder={{answer}} class="form-control">
+                        <label>Answer {{answer.id}}</label>
+                        <input type="text" placeholder={{answer.intitulate}} class="form-control">
+                        <button type="button" ng-click="vm.removeAnswer(answer.id, question.id)" class="btn btn-md btn-info pull-right">remove answer</button>
                     </div>
                 </div>
-                <button type="button" ng-click="vm.addAnswer(question.id)" class="btn btn-md btn-info pull-right">Add answer</button>
-                <button type="button" ng-click="vm.removeQuestion(question.id)" class="btn btn-md btn-info pull-left">Remove question</button>
+                <button type="button" ng-click="vm.addAnswer(question.id)" class="btn btn-md btn-info pull-right">add answer</button>
+
                 <br>
+                <button type="button" ng-click="vm.removeQuestion(question.id)" class="btn btn-md btn-info pull-right">remove question</button>
+
             </div>
-            <button type="button" ng-click="vm.addQuestion()" class="btn btn-md btn-info pull-left">Add question</button>
+            <button type="button" ng-click="vm.addQuestion()" class="btn btn-md btn-info pull-left">add question</button>
         </div>
+
+
     </div>
 </div>

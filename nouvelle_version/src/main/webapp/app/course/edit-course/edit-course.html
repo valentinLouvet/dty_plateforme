@@ -1,0 +1,6 @@
+<div ng-repeat="bloc in vm.blocs">
+    Bloc : {{bloc.name}}
+    <div ng-repeat="course in bloc.courses">
+        Lesson {{bloc.indexOf(course) +1}} : {{course.name}}
+    </div>
+</div>

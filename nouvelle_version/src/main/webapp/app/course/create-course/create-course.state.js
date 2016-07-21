@@ -10,7 +10,7 @@
     function stateConfig($stateProvider) {
         $stateProvider.state('createCourse', {
             parent: 'course',
-            url: '/course/edit',
+            url: '/course/create',
             data: {
                 authorities: ['ROLE_COACH', 'ROLE_ADMIN'],
                 pageTitle: 'Course creation'

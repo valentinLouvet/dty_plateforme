@@ -2,6 +2,37 @@
     display: inline-block;
 }
 
+.NavText {
+     font-size: 20px;
+}
+@media (max-width: 465px) {
+  .NavText { font-size: 0.90em; }
+}
+@media (max-width: 435px) {
+  .NavText { font-size: 0.85em; }
+}
+@media (max-width: 400px) {
+  .NavText { font-size: 0.80em; }
+}
+@media (max-width: 385px) {
+  .NavText { font-size: 0.75em; }
+}
+@media (max-width: 375px) {
+  .NavText { font-size: 0.70em; }
+}
+@media (max-width: 365px) {
+  .NavText { font-size: 0.65em; }
+}
+@media (max-width: 355px) {
+  .NavText { font-size: 0.60em; }
+}
+@media (max-width: 336px) {
+  .NavText { font-size: 0.55em; }
+}
+@media (max-width: 326px) {
+  .NavText { font-size: 0.50em; }
+}
+
 .footer > p{
     text-align: right;
     padding-right: 15px;

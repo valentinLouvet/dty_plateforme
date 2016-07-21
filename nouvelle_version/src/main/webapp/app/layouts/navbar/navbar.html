@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#" ng-click="vm.collapseNavbar()">
-                <span style="color: #87102C">Objective </span><span style="color: #4F405D">DTY</span>  - Online Lessons
+                <span class="NavText" style="color: #87102C">Objective </span><span class="NavText" style="color: #4F405D">DTY</span> <span class="NavText"> - Online Lessons </span>
             </a>
         </div>
         <div class="navbar-collapse" uib-collapse="vm.isNavbarCollapsed" ng-switch="vm.isAuthenticated()">
@@ -29,7 +29,7 @@
                         <span>Progression</span>
                     </a>
                 </li>
-                <li ng-class="{activeDTY: vm.$state.includes('account')}" uib-dropdown class="dropdown pointer">
+                <li ng-class="{activeDTY: vm.$state.includes('course')}" uib-dropdown class="dropdown pointer">
                     <a class="dropdown-toggle" uib-dropdown-toggle href="" id="lessons-menu" ng-switch-when="true">
                         <span>
                             <span class="glyphicon glyphicon-list-alt"></span>

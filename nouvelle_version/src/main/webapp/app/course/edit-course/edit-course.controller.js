@@ -6,6 +6,15 @@
 
     function courseEditionController() {
         this.blocs=blocs;
+        this.compteur=1;
+
+        this.addCompteur= function(i){
+            this.compteur = this.compteur + i
+        };
+
+        this.setCompteur = function (i) {
+            this.compteur = i
+        }
 
     }
 
@@ -26,11 +35,31 @@
         },
         {
             name: 'CSS',
-            courses: ['Lesson 1 CSS', 'Lesson 2 CSS', 'Lesson 3 CSS', 'Lesson 4 CSS']
+            courses: [
+                {
+                    name: 'Lesson 1 CSS'
+                },
+                {
+                    name: 'Lesson 2 CSS'
+                },
+                {
+                    name: 'Lesson 3 CSS'
+                },
+                {
+                    name: 'Lesson 4 CSS'
+                }
+            ]
         },
         {
             name: 'Angular',
-            courses: ['Lesson 1 Angular']
+            courses: [
+                {
+                    name: 'Lesson 1 Angular'
+                },
+                {
+                    name: 'Lesson 2 Angular'
+                }
+            ]
         }
     ]
 

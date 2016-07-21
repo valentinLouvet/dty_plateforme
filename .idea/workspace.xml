@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0bbf8ee4-d9ab-448d-8116-1974e2b7f9af" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/layouts/navbar/navbar.html" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/layouts/navbar/navbar.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/content/css/objectif_dty.css" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/content/css/objectif_dty.css" />
     </list>
     <ignored path="dty_plateforme.iws" />
@@ -37,8 +36,8 @@
       <file leaf-file-name="objectif_dty.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/content/css/objectif_dty.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+            <state relative-caret-position="480">
+              <caret line="32" column="28" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -392,13 +391,6 @@
       <workItem from="1467723021352" duration="102796000" />
       <workItem from="1469000229965" duration="3293000" />
     </task>
-    <task id="LOCAL-00026" summary="jumbotron bleu">
-      <created>1467814064610</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1467814064610</updated>
-    </task>
     <task id="LOCAL-00027" summary="jumbotron gris">
       <created>1467814288624</created>
       <option name="number" value="00027" />
@@ -735,7 +727,14 @@
       <option name="project" value="LOCAL" />
       <updated>1469092590426</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="New NavBar !">
+      <created>1469094100485</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1469094100485</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -784,7 +783,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="angular-route pour tout" />
     <MESSAGE value="commentation de signup et de login" />
     <MESSAGE value="footer plus joli" />
     <MESSAGE value="ajout de la page Coding tests" />
@@ -809,7 +807,8 @@
     <MESSAGE value="coloration des contours en fonction de la progression" />
     <MESSAGE value="réparation d'une erreur de route" />
     <MESSAGE value="Test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test" />
+    <MESSAGE value="New NavBar !" />
+    <option name="LAST_COMMIT_MESSAGE" value="New NavBar !" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1107,8 +1106,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/content/css/objectif_dty.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+        <state relative-caret-position="480">
+          <caret line="32" column="28" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
           <folding />
         </state>
       </provider>

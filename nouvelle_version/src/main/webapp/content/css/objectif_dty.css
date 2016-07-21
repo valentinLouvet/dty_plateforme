@@ -29,6 +29,9 @@
 @media (max-width: 336px) {
   .NavText { font-size: 0.55em; }
 }
+@media (max-width: 326px) {
+  .NavText { font-size: 0.50em; }
+}
 
 .footer > p{
     text-align: right;

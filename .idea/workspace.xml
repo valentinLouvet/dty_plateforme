@@ -480,7 +480,7 @@
       <option name="presentableId" value="Default" />
       <updated>1467723020015</updated>
       <workItem from="1467723021352" duration="102796000" />
-      <workItem from="1469000229965" duration="3113000" />
+      <workItem from="1469000229965" duration="3293000" />
     </task>
     <task id="LOCAL-00025" summary="classe active adaptée à la nav-bar">
       <created>1467813676837</created>
@@ -829,7 +829,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105909000" />
+    <option name="totallyTimeSpent" value="106089000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-438" y="-1080" width="1920" height="1080" extended-state="0" />

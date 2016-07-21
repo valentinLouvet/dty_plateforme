@@ -1,0 +1,32 @@
+
+<div>
+    <h2><span>Student</span> {{vm.student.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="objectifDtyApp.student.nb_lesson_today">Nb Lesson Today</span></dt>
+        <dd>
+            <span>{{vm.student.nb_lesson_today}}</span>
+        </dd>
+        <dt><span translate="objectifDtyApp.student.owned_badge">Owned Badge</span></dt>
+        <dd>
+            <span ng-repeat="owned_badge in vm.student.owned_badges">
+                <a ui-sref="badge-detail({id: {{owned_badge.id}}})">{{owned_badge.name}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span>User</span></dt>
+        <dd>
+            {{vm.student.user.login}}
+        </dd>
+        <dt><span translate="objectifDtyApp.student.todo_lesson">Todo Lesson</span></dt>
+        <dd>
+            <a ui-sref="lesson-detail({id:vm.student.todo_lesson.id})">{{vm.student.todo_lesson.title}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

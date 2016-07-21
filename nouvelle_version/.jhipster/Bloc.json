@@ -1,0 +1,41 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "lesson",
+            "otherEntityName": "lesson",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "bloc"
+        },
+        {
+            "relationshipName": "is_father_off",
+            "otherEntityName": "bloc",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "is_son_of"
+        },
+        {
+            "relationshipName": "is_son_of",
+            "otherEntityName": "bloc",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "logo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160720154502",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "bloc",
+    "pagination": "infinite-scroll"
+}

@@ -1,0 +1,31 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "lesson",
+            "otherEntityName": "lesson",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "title"
+        },
+        {
+            "relationshipName": "response",
+            "otherEntityName": "response",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "question"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "intitule",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "difficulty",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20160720154706",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "question",
+    "pagination": "infinite-scroll"
+}

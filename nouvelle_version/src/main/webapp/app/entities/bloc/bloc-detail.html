@@ -1,0 +1,30 @@
+
+<div>
+    <h2><span>Bloc</span> {{vm.bloc.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Name</span></dt>
+        <dd>
+            <span>{{vm.bloc.name}}</span>
+        </dd>
+        <dt><span>Logo</span></dt>
+        <dd>
+            <span>{{vm.bloc.logo}}</span>
+        </dd>
+        <dt><span>Description</span></dt>
+        <dd>
+            <span>{{vm.bloc.description}}</span>
+        </dd>
+        <dt><span translate="objectifDtyApp.bloc.is_son_of">Is Son Of</span></dt>
+        <dd>
+            <a ui-sref="bloc-detail({id:vm.bloc.is_son_of.id})">{{vm.bloc.is_son_of.name}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

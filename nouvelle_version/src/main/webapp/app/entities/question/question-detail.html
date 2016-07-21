@@ -1,0 +1,26 @@
+
+<div>
+    <h2><span>Question</span> {{vm.question.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Intitule</span></dt>
+        <dd>
+            <span>{{vm.question.intitule}}</span>
+        </dd>
+        <dt><span>Difficulty</span></dt>
+        <dd>
+            <span>{{vm.question.difficulty}}</span>
+        </dd>
+        <dt><span>Lesson</span></dt>
+        <dd>
+            <a ui-sref="lesson-detail({id:vm.question.lesson.id})">{{vm.question.lesson.title}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

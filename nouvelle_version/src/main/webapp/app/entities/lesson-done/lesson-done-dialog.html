@@ -1,0 +1,48 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myLesson_doneLabel" translate="objectifDtyApp.lesson_done.home.createOrEditLabel">Create or edit a Lesson Done</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.lesson_done.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.lesson_done.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="objectifDtyApp.lesson_done.note_init" for="field_note_init">Note Init</label>
+            <input type="number" class="form-control" name="note_init" id="field_note_init"
+                    ng-model="vm.lesson_done.note_init"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="objectifDtyApp.lesson_done.note_max" for="field_note_max">Note Max</label>
+            <input type="number" class="form-control" name="note_max" id="field_note_max"
+                    ng-model="vm.lesson_done.note_max"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label translate="objectifDtyApp.lesson_done.student" for="field_student">Student</label>
+            <select class="form-control" id="field_student" name="student" ng-model="vm.lesson_done.student" ng-options="student as student.id for student in vm.students track by student.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="objectifDtyApp.lesson_done.lesson" for="field_lesson">Lesson</label>
+            <select class="form-control" id="field_lesson" multiple name="lesson" ng-model="vm.lesson_done.lessons" ng-options="lesson as lesson.title for lesson in vm.lessons track by lesson.id"></select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

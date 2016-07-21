@@ -1,0 +1,67 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myLessonLabel">Create or edit a Lesson</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.lesson.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.lesson.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_cours">Cours</label>
+                <textarea class="form-control" name="cours" id="field_cours"
+                    ng-model="vm.lesson.cours"  />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_level">Level</label>
+            <input type="number" class="form-control" name="level" id="field_level"
+                    ng-model="vm.lesson.level"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="objectifDtyApp.lesson.num_lesson" for="field_num_lesson">Num Lesson</label>
+            <input type="number" class="form-control" name="num_lesson" id="field_num_lesson"
+                    ng-model="vm.lesson.num_lesson"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_title">Title</label>
+            <input type="text" class="form-control" name="title" id="field_title"
+                    ng-model="vm.lesson.title"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label translate="objectifDtyApp.lesson.created_by" for="field_created_by">Created By</label>
+            <select class="form-control" id="field_created_by" name="created_by" ng-model="vm.lesson.created_by" ng-options="coach as coach.id for coach in vm.coaches track by coach.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="objectifDtyApp.lesson.updated_by" for="field_updated_by">Updated By</label>
+            <select class="form-control" id="field_updated_by" name="updated_by" ng-model="vm.lesson.updated_by" ng-options="coach as coach.id for coach in vm.coaches track by coach.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_bloc">Bloc</label>
+            <select class="form-control" id="field_bloc" name="bloc" ng-model="vm.lesson.bloc" ng-options="bloc as bloc.name for bloc in vm.blocs track by bloc.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,32 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "student",
+            "otherEntityName": "student",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "lesson",
+            "otherEntityName": "lesson",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "title",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "note_init",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "note_max",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20160720153446",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "lesson_done",
+    "pagination": "infinite-scroll"
+}

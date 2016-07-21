@@ -1,0 +1,52 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "created_by",
+            "otherEntityName": "coach",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "updated_by",
+            "otherEntityName": "coach",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "bloc",
+            "otherEntityName": "bloc",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipName": "question",
+            "otherEntityName": "question",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "lesson"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "cours",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "level",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "num_lesson",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160720154109",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "lesson",
+    "pagination": "infinite-scroll"
+}

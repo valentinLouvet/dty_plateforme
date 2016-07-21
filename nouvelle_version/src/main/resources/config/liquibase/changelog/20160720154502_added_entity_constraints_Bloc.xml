@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Bloc.
+    -->
+    <changeSet id="20160720154502-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="is_son_of_id"
+                                 baseTableName="bloc"
+                                 constraintName="fk_bloc_is_son_of_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="bloc"/>
+
+    </changeSet>
+</databaseChangeLog>

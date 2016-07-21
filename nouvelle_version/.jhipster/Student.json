@@ -1,0 +1,40 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "owned_badge",
+            "otherEntityName": "badge",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "name",
+            "ownerSide": true
+        },
+        {
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "login"
+        },
+        {
+            "relationshipName": "todo_lesson",
+            "otherEntityName": "lesson",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "title"
+        },
+        {
+            "relationshipName": "lesson_done",
+            "otherEntityName": "lesson_done",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "student"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nb_lesson_today",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20160720152033",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "student",
+    "pagination": "infinite-scroll"
+}

@@ -1,0 +1,25 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "question",
+            "otherEntityName": "question",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "intitule"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "text",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "veracity",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20160720154844",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "response",
+    "pagination": "infinite-scroll"
+}

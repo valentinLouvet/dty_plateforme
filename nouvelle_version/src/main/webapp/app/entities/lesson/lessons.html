@@ -1,0 +1,74 @@
+<div>
+    <h2>Lessons</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="lesson.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Lesson
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.reset()">
+                    <th jh-sort-by="id"><span>ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="cours"><span>Cours</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="level"><span>Level</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="num_lesson"><span translate="objectifDtyApp.lesson.num_lesson">Num Lesson</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="title"><span>Title</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="created_by.id"><span translate="objectifDtyApp.lesson.created_by">Created By</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="updated_by.id"><span translate="objectifDtyApp.lesson.updated_by">Updated By</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="bloc.name"><span>Bloc</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
+                <tr ng-repeat="lesson in vm.lessons track by lesson.id">
+                    <td><a ui-sref="lesson-detail({id:lesson.id})">{{lesson.id}}</a></td>
+                    <td>{{lesson.cours}}</td>
+                    <td>{{lesson.level}}</td>
+                    <td>{{lesson.num_lesson}}</td>
+                    <td>{{lesson.title}}</td>
+                    <td>
+                        <a ui-sref="coach-detail({id:lesson.created_by.id})">{{lesson.created_by.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="coach-detail({id:lesson.updated_by.id})">{{lesson.updated_by.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="bloc-detail({id:lesson.bloc.id})">{{lesson.bloc.name}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="lesson-detail({id:lesson.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="lesson.edit({id:lesson.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="lesson.delete({id:lesson.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

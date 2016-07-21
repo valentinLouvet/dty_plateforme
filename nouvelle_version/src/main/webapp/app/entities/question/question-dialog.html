@@ -1,0 +1,44 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myQuestionLabel">Create or edit a Question</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.question.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.question.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_intitule">Intitule</label>
+            <input type="text" class="form-control" name="intitule" id="field_intitule"
+                    ng-model="vm.question.intitule"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_difficulty">Difficulty</label>
+            <input type="number" class="form-control" name="difficulty" id="field_difficulty"
+                    ng-model="vm.question.difficulty"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label for="field_lesson">Lesson</label>
+            <select class="form-control" id="field_lesson" name="lesson" ng-model="vm.question.lesson" ng-options="lesson as lesson.title for lesson in vm.lessons track by lesson.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

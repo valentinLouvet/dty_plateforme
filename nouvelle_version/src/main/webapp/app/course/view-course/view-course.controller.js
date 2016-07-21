@@ -1,11 +1,10 @@
 (function(){
 
     angular.module('objectifDtyApp')
-        .controller('LessonViewController',['$state','$http',function($state,$http){
-
-            //requete post pour récupérer la leçon -> a faire quand ttes les entités seront crées.
-
-            var id="Today" //cette var contiendra l'id de la leçon demandée, que ce soit la leçon du jour ou une autre..
+        .controller('CourseViewController',['$scope', '$rootScope', '$stateParams', 'DataUtils','Lesson', 'Coach', 'Bloc', 'Question',function($scope,$rootScope,$stateParams,DataUtils,Lesson,Coach,Bloc,Question){
+            this.id=$stateParams.id;
 
         }])
 }());
+
+//bcp de dépendances inutilisées mais qui pourront toutefois servir !

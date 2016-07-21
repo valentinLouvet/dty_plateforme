@@ -1,4 +1,3 @@
-// Lesson.state : pour tous les états relatifs à la leçon à savoir : view, edit, create. ( edit et create ? )
 (function(){
 
     angular.module('objectifDtyApp').config(stateConfig);
@@ -8,7 +7,8 @@
         $stateProvider.state('viewCourse', {
 
             parent: 'course',
-            url: '/course/view',
+            url: '/course/view/',
+            params:{id: null},
             data: {
                 authorities:['ROLE_USER','ROLE_COACH','ROLE_ADMIN'],
                 pageTitle: 'Course'
@@ -16,9 +16,15 @@
             views: {
                 'content@': {
                     templateUrl: 'app/course/view-course/view-course.html',
-                    controller: 'LessonViewController',
+                    controller: 'CourseViewController',
                     controllerAs: 'vm'
+                },
+                resolve: {
+                    course: ['$stateParams', 'Lesson', function($stateParams, Lesson) {
+                        return Lesson.get({id : $stateParams.id}).$promise;
+                    }]
                 }
+
             }
         })
 

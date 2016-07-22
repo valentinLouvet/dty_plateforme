@@ -14,11 +14,12 @@
                 },
                 views: {
                     'content@': {
-                        templateUrl: 'app/course/edit-course/modify-course.html',
+                        templateUrl: 'app/course/modify-course/modify-course.html',
                         controller: 'courseModifyController',
                         controllerAs: 'vm'
                     }
-                }
+                },
+
             })
 
     }

@@ -36,9 +36,8 @@
                 this.compteur = i
             };
 
-
-            this.goCourse = function (data) {
-                $cookies.putObject('course', data);
+            this.goCourse = function (course) {
+                $cookies.putObject('course', course);
                 console.log($cookies.getObject('course'));
                 $state.go('editCourse/modify')
             }
@@ -55,14 +54,15 @@
             courses: [
                 {
                     name: 'Lesson 1 HTML',
-                    id: 1,
                     content: 'HTML 1'
                 },
                 {
-                    name: 'Lesson 2 HTML'
+                    name: 'Lesson 2 HTML',
+                    content: 'HTML 2'
                 },
                 {
-                    name: 'Lesson 3 HTML'
+                    name: 'Lesson 3 HTML',
+                    content: 'HTML 3'
                 }
             ]
         },

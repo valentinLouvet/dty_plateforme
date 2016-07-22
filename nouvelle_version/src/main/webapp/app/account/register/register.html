@@ -107,7 +107,7 @@
                 <div class="form-group">
                     <label class="control-label" for="password">New password</label>
                     <input type="password" class="form-control" id="password" name="password" placeholder="New password"
-                           ng-model="vm.registerAccount.password" ng-class="{pwdvalid: vm.passwordmatch(),pwdinvalid: !vm.passwordmatch()}" ng-minlength=4 ng-maxlength=50 required>
+                           ng-model="vm.registerAccount.password" ng-minlength=4 ng-maxlength=50 ng-class="{pwdvalid: vm.passwordmatch(), pwdinvalid: !vm.passwordmatch()}" required>
                     <div ng-show="form.password.$dirty && form.password.$invalid">
                         <p class="help-block"
                                ng-show="form.password.$error.required">

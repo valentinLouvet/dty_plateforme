@@ -56,12 +56,12 @@
     padding-right: 15px;
 }
 
-.form-control.pwdvalid.ng-dirty{
+.form-control.pwdvalid.ng-dirty.ng-valid-minlength.ng-not-empty{
     border-color: #78FA89;
 }
 
 .form-control.pwdinvalid.ng-dirty{
-    border-color: #FA787E;
+    border-color: #a94442;
 }
 
 #email.ng-dirty.ng-valid{

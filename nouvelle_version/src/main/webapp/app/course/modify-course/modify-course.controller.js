@@ -4,7 +4,7 @@
     angular
         .module('objectifDtyApp')
         .controller('courseModifyController',['$cookies', function ($cookies) {
-            this.course=$cookies.getObject('course');
+            this.course=$cookies.getObject('course')
 
 
         }])

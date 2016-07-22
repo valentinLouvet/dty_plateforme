@@ -20,6 +20,7 @@
                     controllerAs: 'vm'
                 }
             }
+
         })
     }
 

@@ -19,8 +19,8 @@
         this.success = null;
 
         this.passwordmatch = function () {
-            if(this.registerAccount.password != "" && this.confirmPassword != "") {
-                return (this.registerAccount.password === this.confirmPassword)
+            if(this.registerAccount.password !== null && this.confirmPassword !== null) {
+                return (this.registerAccount.password == this.confirmPassword)
             } else {
                 return false
             }
@@ -45,7 +45,7 @@
                     vm.registerAccount.authorities = ["ROLE_USER"];
                 }
                 else {
-                    vm.error = "ERROR"
+                    vm.error = "ERROR";
                     return;
                 }
 

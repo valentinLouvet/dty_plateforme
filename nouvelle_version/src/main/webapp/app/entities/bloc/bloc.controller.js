@@ -9,7 +9,7 @@
 
     function BlocController ($scope, $state, Bloc, ParseLinks, AlertService) {
         var vm = this;
-        
+
         vm.blocs = [];
         vm.loadPage = loadPage;
         vm.page = 0;
@@ -40,6 +40,7 @@
                 vm.totalItems = headers('X-Total-Count');
                 for (var i = 0; i < data.length; i++) {
                     vm.blocs.push(data[i]);
+                    console.log(vm.blocs);
                 }
             }
             function onError(error) {

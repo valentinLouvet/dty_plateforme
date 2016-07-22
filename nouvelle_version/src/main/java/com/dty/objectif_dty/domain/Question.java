@@ -1,6 +1,7 @@
 package com.dty.objectif_dty.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -33,8 +34,8 @@ public class Question implements Serializable {
     @ManyToOne
     private Lesson lesson;
 
-    @OneToMany(mappedBy = "question")
-    @JsonIgnore
+    @OneToMany(mappedBy = "question", fetch = FetchType.EAGER)
+    @JsonIgnoreProperties("question")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Response> responses = new HashSet<>();
 

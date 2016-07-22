@@ -9,7 +9,7 @@
 
     function LessonController ($scope, $state, DataUtils, Lesson, ParseLinks, AlertService) {
         var vm = this;
-        
+
         vm.lessons = [];
         vm.loadPage = loadPage;
         vm.page = 0;
@@ -42,6 +42,7 @@
                 vm.totalItems = headers('X-Total-Count');
                 for (var i = 0; i < data.length; i++) {
                     vm.lessons.push(data[i]);
+                    console.log(vm.lessons);
                 }
             }
             function onError(error) {

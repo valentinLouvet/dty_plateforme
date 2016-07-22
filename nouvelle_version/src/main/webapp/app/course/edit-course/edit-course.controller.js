@@ -9,6 +9,7 @@
             vm.blocs=blocs;
             vm.blocs2=[];
 
+
             function loadAll () {
                 Bloc.query({},onSuccess,onError)
             }

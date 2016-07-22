@@ -5,6 +5,8 @@
         .module('objectifDtyApp')
         .controller('courseCreationController', courseCreationController);
 
+    courseCreationController.$inject = ['$scope', '$state', 'Lesson', 'Bloc', 'Lesson', 'Question', 'Response'];
+
     function courseCreationController () {
 
         this.compteurQuestion = 1;
@@ -22,6 +24,7 @@
 
         this.answer = {
             intitulate : "answer's intitulate",
+            veracity : false,
             id: this.compteurAnswer[0] + 1
         };
 
@@ -30,6 +33,7 @@
 
         var answer1 = {
             intitulate : "Answer " + (this.compteurAnswer[0] + 1),
+            veracity : false,
             id: this.compteurAnswer[0] + 1
         };
 
@@ -37,13 +41,11 @@
 
         var answer2 = {
             intitulate : "Answer " + (this.compteurAnswer[0] + 1),
+            veracity : false,
             id: this.compteurAnswer[0] + 1
         };
 
         this.compteurAnswer[this.compteurQuestion-1] = this.compteurAnswer[this.compteurQuestion-1] + 1;
-
-        console.log("New answer created, intitulate : "+this.answer.intitulate+", id : "+this.answer.id);
-        console.log("New answer created, intitulate : "+this.answer.intitulate+", id : "+this.answer.id);
 
         this.question.answers.push(answer1);
         this.question.answers.push(answer2);
@@ -51,21 +53,24 @@
         this.newLesson.quizz.push(this.question);
 
         console.log("New question created, intitulate : "+this.question.intitulate+", id : "+this.question.id);
-        console.log("Answers of this question : " + this.question.answers);
+
+
 
         // Différentes fonctions pour ajouter/supprimer les questions/réponses
-
-
+        // A NOTER : les id commencent à 1
+        // et les indices de tableau à 0 (d'où le décalage permanent)
 
         this.addAnswer = function(idOfQuestion) {
 
             //console.log("####################");
             //console.log("idOfQuestion : " + idOfQuestion);
 
-            //création de la réponse
+            // Création d'une nouvelle réponse correspondant à la question située
+            // à l'id idOfQuestion
 
             var answer = {
                 intitulate : "Answer " + (this.compteurAnswer[idOfQuestion - 1] + 1),
+                veracity : false,
                 id : this.compteurAnswer[idOfQuestion - 1] + 1
 
             }
@@ -76,13 +81,19 @@
 
             console.log("New answer created, intitulate : "+answer.intitulate+", id : "+answer.id);
 
-            console.log("####################");
+            //console.log("####################");
+
+
+
 
         };
 
         this.removeAnswer = function(idOfAnswer, idOfQuestion){
 
-            console.log("####################");
+            // Supprime la réponse dont l'id est idOfAnswer
+            // de la question dont l'id est idOfQUestion
+
+
             console.log("idOfQuestion : " + idOfQuestion);
 
             if(this.compteurAnswer[idOfQuestion - 1] != 2){
@@ -109,22 +120,22 @@
             }
 
 
-            console.log("####################");
-
-
 
         }
 
         this.addQuestion = function() {
 
-            console.log("####################");
-
+            // Ajoute une question à la suite des questions déjà existantes
 
             this.compteurAnswer.push(0);
             this.compteurQuestion = this.compteurQuestion + 1;
 
+            // Création de deux réponses
+            // Une question a toujours au moins 2 réponses
+
             var answer1 = {
                 intitulate : "Answer 1",
+                veracity : false,
                 id: this.compteurAnswer[this.compteurQuestion - 1] + 1
             };
 
@@ -132,6 +143,7 @@
 
             var answer2 = {
                 intitulate : "Answer 2",
+                veracity : false,
                 id: this.compteurAnswer[this.compteurQuestion - 1] + 1
             };
 
@@ -149,13 +161,13 @@
             this.newLesson.quizz.push(question);
 
             console.log("New question created, intitulate : "+question.intitulate+", id : "+question.id);
-            console.log("####################");
 
         };
 
         this.removeQuestion = function(idOfQuestion) {
 
-            console.log("####################");
+            // Supprime la question dont l'id est idOfQuestion
+
             console.log("idOfQuestion : " + idOfQuestion);
 
             // Il faut toujours qu'il y ait au moins une question
@@ -185,9 +197,18 @@
                 console.log("Can't delete ! At least a question must remain");
             }
 
-            console.log("####################");
-
         };
+
+        // Modifie la véracité de la réponse si la case est cochée ou décochée
+
+        this.modifyVeracity = function(idOfQuestion, idOfAnswer){
+            console.log("modifyVeracity");
+            this.newLesson.quizz[idOfQuestion - 1].answers[idOfAnswer - 1].veracity = ! (this.newLesson
+            .quizz[idOfQuestion - 1].answers[idOfAnswer - 1].veracity);
+            console.log(idOfQuestion + ", " + idOfAnswer);
+        };
+
+
 
     }
 

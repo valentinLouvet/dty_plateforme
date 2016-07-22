@@ -10,6 +10,10 @@
             this.lesson=courseView;
             console.log(this.lesson);
 
+            this.question=Question.get()
+
+
+
         }
 }());
 

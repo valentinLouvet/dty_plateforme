@@ -3,9 +3,29 @@
 
     angular
         .module('objectifDtyApp')
-        .controller('courseEditionController',['$state', '$cookies', function ($state, $cookies) {
-            this.blocs=blocs;
-            this.compteur=1;
+        .controller('courseEditionController',['$state', '$cookies','Bloc','AlertService',function ($state, $cookies,Bloc,AlertService) {
+            var vm=this;
+            vm.compteur=1;
+            vm.blocs=blocs;
+            vm.blocs2=[];
+
+            function loadAll () {
+                Bloc.query({},onSuccess,onError)
+            }
+
+            function onSuccess(data){
+                vm.blocs2=data;
+                console.log(data)
+            }
+
+            function onError(error){
+                AlertService.error(error.data.message)
+            }
+
+
+            loadAll();
+
+
 
             this.addCompteur= function(i){
                 this.compteur = this.compteur + i
@@ -14,6 +34,7 @@
             this.setCompteur = function (i) {
                 this.compteur = i
             };
+
 
             this.goCourse = function (data) {
                 $cookies.putObject('course', data);

@@ -51,9 +51,9 @@
         </div>
 
 
-        <hr class="featurette-divider">
+        <hr class="featurette-divider" ng-hide="vm.isAuthenticated()">
 
-        <div class="featurette" id="getstarted" align="center">
+        <div class="featurette" id="getstarted" align="center" ng-hide="vm.isAuthenticated()">
             <h2 class="featurette-heading">Get Started
                 <span class="text-muted">Now</span>
             </h2>

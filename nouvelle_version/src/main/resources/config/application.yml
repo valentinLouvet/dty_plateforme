@@ -33,8 +33,8 @@ spring:
     mail:
         host: smtp.gmail.com
         port: 587
-        username: antoinerebeyre78@gmail.com
-        password: MyfirstpassPHRASE
+        username: objectifDTY@gmail.com
+        password: 0jectifDTY!
         protocol: smtp
         tls: true
         properties.mail.smtp:

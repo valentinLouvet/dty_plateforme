@@ -30,7 +30,7 @@ import java.util.Locale;
 public class MailService {
 
     private final Logger log = LoggerFactory.getLogger(MailService.class);
-    
+
     private static final String USER = "user";
     private static final String BASE_URL = "baseUrl";
 
@@ -68,6 +68,7 @@ public class MailService {
 
     @Async
     public void sendActivationEmail(User user, String baseUrl) {
+        user.setLangKey("en");
         log.debug("Sending activation e-mail to '{}'", user.getEmail());
         Locale locale = Locale.forLanguageTag(user.getLangKey());
         Context context = new Context(locale);
@@ -101,5 +102,5 @@ public class MailService {
         String subject = messageSource.getMessage("email.reset.title", null, locale);
         sendEmail(user.getEmail(), subject, content, false, true);
     }
-    
+
 }

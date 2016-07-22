@@ -42,7 +42,6 @@
                 vm.totalItems = headers('X-Total-Count');
                 for (var i = 0; i < data.length; i++) {
                     vm.lessons.push(data[i]);
-                    console.log(vm.lessons);
                 }
             }
             function onError(error) {

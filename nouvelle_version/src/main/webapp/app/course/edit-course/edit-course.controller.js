@@ -6,8 +6,7 @@
         .controller('courseEditionController',['$state', '$cookies','Bloc','AlertService',function ($state, $cookies,Bloc,AlertService) {
             var vm=this;
             vm.compteur=1;
-            vm.blocs=blocs;
-            vm.blocs2=[];
+            vm.blocs=[];
 
 
             function loadAll () {
@@ -15,7 +14,7 @@
             }
 
             function onSuccess(data){
-                vm.blocs2=data;
+                vm.blocs=data;
                 console.log(data)
             }
 

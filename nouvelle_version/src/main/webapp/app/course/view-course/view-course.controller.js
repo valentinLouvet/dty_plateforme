@@ -9,8 +9,9 @@
             this.id=$stateParams.id;
             this.lesson=courseView;
             console.log(this.lesson);
-
         }
+
+
 }());
 
 //bcp de dépendances inutilisées mais qui pourront toutefois servir !

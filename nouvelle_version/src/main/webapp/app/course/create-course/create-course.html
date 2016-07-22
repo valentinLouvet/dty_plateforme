@@ -1,10 +1,14 @@
 <div class="container">
+
     <h1 class="page-header-dty">Create a new bloc</h1>
+
     <div class="col-sm-6 form-group">
         <label>Bloc name</label>
         <input type="text" placeholder="Bloc name" class="form-control">
     </div>
+
     <div class="col-md-12">
+
         <h2 class="page-header">Lesson 1
             <button type="button" ng-click="" class="btn btn-primary-dty-inverse pull-right">Submit Lesson</button>
         </h2>
@@ -13,29 +17,42 @@
             <label>Enter your lesson</label>
             <textarea placeholder="Enter Lesson Here.." rows="10" class="form-control"></textarea>
         </div>
+
         <div class="form-group">
 
             <label>Quizz</label>
 
             <div ng-repeat="question in vm.newLesson.quizz">
+
+                <!-- QUESTION -->
+
                 <label>Question {{question.id}}</label>
-                <textarea placeholder="Enter question here..." rows="1" class="form-control"></textarea>
+                <div class="input-group">
+                    <input type="text" placeholder="Enter question here..." class="form-control">
+                    <span class="input-group-btn">
+                        <button type="button" ng-click="vm.removeQuestion(question.id)" class="btn btn-md btn-primary-dty-inverse pull-right">Remove question</button>
+                    </span>
+                </div>
+
+                <!-- REPONSES A LA QUESTION -->
+
                 <label>Answers</label>
 
                 <div class="col-ld-12" ng-repeat="answer in question.answers">
-                    <!--<label>Answer {{answer.id}}</label>-->
 
-                    <!-- PROBLEME ICI -->
                     <div class="input-group">
                         <span class="input-group-addon">
                             <input type="checkbox" ng-click="vm.modifyVeracity(question.id, answer.id)">
                         </span>
                             <input type="text" placeholder={{answer.intitulate}} class="form-control">
                         <span class="input-group-btn">
-                            <button type="button" ng-click="vm.removeAnswer(answer.id, question.id)" class="btn btn-default btn-primary-dty-inverse pull-right">Remove answer</button>
+                            <button type="button" ng-click="vm.removeAnswer(answer.id, question.id)" class="btn btn-default btn-primary-dty-inverse pull-right glyphicon glyphicon-remove"></button>
                         </span>
                     </div>
+
                 </div>
+
+
                 <button type="button" ng-click="vm.addAnswer(question.id)" class="btn btn-md btn-primary-dty-inverse pull-left" aria-label="Left Align">
                     <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add answer
                 </button>
@@ -43,7 +60,13 @@
 
                 <br>
 
-                <button type="button" ng-click="vm.removeQuestion(question.id)" class="btn btn-md btn-primary-dty-inverse pull-right">Remove question</button>
+                <!-- CORRECTION DE LA QUESTION -->
+
+                <div class="form-group">
+                    <label>Correction</label>
+                    <textarea placeholder={{question.correction}} rows="5" class="form-control"></textarea>
+                </div>
+
 
             </div>
             <button type="button" ng-click="vm.addQuestion()" class="btn btn-md btn-primary-dty-inverse ">Add question</button>

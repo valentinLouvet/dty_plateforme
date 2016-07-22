@@ -17,13 +17,14 @@
         };
 
         this.question = {
-            intitulate : "enter question here",
+            intitulate : "Enter question here",
             id: this.compteurQuestion,
+            correction : "Correction",
             answers : []
         };
 
         this.answer = {
-            intitulate : "answer's intitulate",
+            intitulate : "Answer's intitulate",
             veracity : false,
             id: this.compteurAnswer[0] + 1
         };
@@ -152,6 +153,7 @@
             var question = {
                 intitulate : "Question n° " + (this.compteurQuestion),
                 id : this.compteurQuestion,
+                correction : "correction",
                 answers : []
             }
 
@@ -202,13 +204,11 @@
         // Modifie la véracité de la réponse si la case est cochée ou décochée
 
         this.modifyVeracity = function(idOfQuestion, idOfAnswer){
-            console.log("modifyVeracity");
+            //console.log("modifyVeracity");
             this.newLesson.quizz[idOfQuestion - 1].answers[idOfAnswer - 1].veracity = ! (this.newLesson
             .quizz[idOfQuestion - 1].answers[idOfAnswer - 1].veracity);
             console.log(idOfQuestion + ", " + idOfAnswer);
         };
-
-
 
     }
 

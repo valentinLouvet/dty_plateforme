@@ -3,62 +3,67 @@
 
     angular
         .module('objectifDtyApp')
-        .controller('courseCreationController', ['Bloc', 'Question', 'AlertService', function (Bloc, AlertService) {
+        .controller('courseCreationController', ['Bloc', 'Question', 'Response', 'Lesson', 'AlertService', function (Bloc, Question, Response, Lesson, AlertService) {
 
             var vm= this;
             vm.blocs=[];
 
             this.compteurQuestion = 1;
             this.compteurAnswer = [0];
+
             this.newLesson = {
-                text : "",
+                cours : "",
+                level : 0,
+                num_lesson : 0,
+                title : "",
+                bloc_id : 0,
                 quizz : []
             };
-            
-            function loadAll () {
-                Bloc.query({},onSuccess,onError)
-            }
 
-            function onSuccess(data){
-                vm.blocs=data;
-                console.log(data)
-            }
-
-            function onError(error){
-                AlertService.error(error.data.message)
-            }
+            console.log(vm.newLesson);
 
 
-            loadAll();
 
             this.question = {
-                intitulate : "Enter question here",
-                id: this.compteurQuestion,
-                correction : "Correction",
+                intitule : "",
+                difficulty : 0,
+                //lesson_id : this.newLesson.id,
+                lesson_id : 0,
+                cpt: this.compteurQuestion,
+                correction : "",
                 answers : []
             };
 
             this.answer = {
-                intitulate : "Answer's intitulate",
+                text : "",
                 veracity : false,
-                id: this.compteurAnswer[0] + 1
+                correction: "",
+                //question_id: this.newLesson.quizz[this.compteurAnswer[0]].id,
+                question_id: 0,
+                cpt: this.compteurAnswer[0] + 1
             };
 
             // Initialisation de la 1ère question
             // avec 2 réponses
 
             var answer1 = {
-                intitulate : "Answer " + (this.compteurAnswer[0] + 1),
+                text : "",
                 veracity : false,
-                id: this.compteurAnswer[0] + 1
+                correction: "",
+                //question_id: this.newLesson.quizz[this.compteurAnswer[0]].id,
+                question_id: 0,
+                cpt: this.compteurAnswer[0] + 1
             };
 
             this.compteurAnswer[this.compteurQuestion-1] = this.compteurAnswer[this.compteurQuestion-1] + 1;
 
             var answer2 = {
-                intitulate : "Answer " + (this.compteurAnswer[0] + 1),
+                text : "",
                 veracity : false,
-                id: this.compteurAnswer[0] + 1
+                correction: "",
+                //question_id: this.newLesson.quizz[this.compteurAnswer[0]].id,
+                question_id: 0,
+                cpt: this.compteurAnswer[0] + 1
             };
 
             this.compteurAnswer[this.compteurQuestion-1] = this.compteurAnswer[this.compteurQuestion-1] + 1;
@@ -85,17 +90,19 @@
                 // à l'id idOfQuestion
 
                 var answer = {
-                    intitulate : "Answer " + (this.compteurAnswer[idOfQuestion - 1] + 1),
+                    text : "",
                     veracity : false,
-                    id : this.compteurAnswer[idOfQuestion - 1] + 1
-
+                    correction: "",
+                    //question_id: this.newLesson.quizz[this.compteurAnswer[idOfQuestion - 1]].id,
+                    question_id: 0,
+                    cpt: this.compteurAnswer[idOfQuestion - 1] + 1
                 }
 
                 this.compteurAnswer[idOfQuestion - 1] = this.compteurAnswer[idOfQuestion - 1] + 1;
 
                 this.newLesson.quizz[idOfQuestion - 1].answers.push(answer);
 
-                console.log("New answer created, intitulate : "+answer.intitulate+", id : "+answer.id);
+                console.log("New answer created : " + answer);
 
                 //console.log("####################");
 
@@ -150,25 +157,34 @@
                 // Une question a toujours au moins 2 réponses
 
                 var answer1 = {
-                    intitulate : "Answer 1",
+                    text : "",
                     veracity : false,
-                    id: this.compteurAnswer[this.compteurQuestion - 1] + 1
+                    correction: "",
+                    //question_id: this.newLesson.quizz[this.compteurAnswer[this.compteurQuestion - 1]].id,
+                    question_id: 0,
+                    cpt: this.compteurAnswer[this.compteurQuestion - 1] + 1
                 };
 
                 this.compteurAnswer[this.compteurQuestion - 1] = this.compteurAnswer[this.compteurQuestion - 1] + 1;
 
                 var answer2 = {
-                    intitulate : "Answer 2",
+                    text : "",
                     veracity : false,
-                    id: this.compteurAnswer[this.compteurQuestion - 1] + 1
+                    correction: "",
+                    //question_id: this.newLesson.quizz[this.compteurAnswer[this.compteurQuestion - 1]].id,
+                    question_id: 0,
+                    cpt: this.compteurAnswer[this.compteurQuestion - 1] + 1
                 };
 
                 this.compteurAnswer[this.compteurQuestion - 1] = this.compteurAnswer[this.compteurQuestion - 1] + 1;
 
                 var question = {
-                    intitulate : "Question n° " + (this.compteurQuestion),
-                    id : this.compteurQuestion,
-                    correction : "correction",
+                    intitule : "",
+                    difficulty : 0,
+                    //lesson_id : this.newLesson.id,
+                    lesson_id: 0,
+                    cpt: this.compteurQuestion,
+                    correction : "",
                     answers : []
                 }
 
@@ -177,13 +193,13 @@
 
                 this.newLesson.quizz.push(question);
 
-                console.log("New question created, intitulate : "+question.intitulate+", id : "+question.id);
+                console.log("New question created " + question);
 
             };
 
             this.removeQuestion = function(idOfQuestion) {
 
-                // Supprime la question dont l'id est idOfQuestion
+                // Supprime la question dont le cpt est idOfQuestion
 
                 console.log("idOfQuestion : " + idOfQuestion);
 
@@ -195,7 +211,7 @@
                         // en les décrémentant
                         console.log("This is not the last question");
                         for(var i = idOfQuestion - 1 ; i<this.compteurQuestion; i++){
-                            this.newLesson.quizz[i].id = this.newLesson.quizz[i].id - 1;
+                            this.newLesson.quizz[i].cpt = this.newLesson.quizz[i].cpt - 1;
                         }
                     }
                     else{
@@ -224,12 +240,54 @@
                     .quizz[idOfQuestion - 1].answers[idOfAnswer - 1].veracity);
                 console.log(idOfQuestion + ", " + idOfAnswer);
             };
-            
-            //enregistre la question dans la BDD
-            
-            this.regitserQuestion = function () {
-                
+
+            //Sauvegarde la question dans la BDD
+
+            /*this.saveLesson = function () {
+                Lesson.update(this.newLesson);
+            }*/
+
+            this.saveLesson = function() {
+                vm.isSaving = true;
+                if (vm.newLesson.id !== null) {
+                    console.log("vm.newLesson.id !== null");
+                    Lesson.update(vm.newLesson, onSaveLessonSuccess, onSaveLessonError);
+                } else {
+                    console.log("vm.newLesson.id == null");
+                    Lesson.save(vm.newLesson, onSaveLessonSuccess, onSaveLessonError);
+                }
+                console.log(vm.newLesson);
             }
+
+            function onSaveLessonSuccess (result) {
+                //$scope.$emit('objectifDtyApp:lessonUpdate', result);
+                //$uibModalInstance.close(result);
+                vm.isSaving = false;
+                console.log("onSaveLessonSuccess");
+            }
+
+            function onSaveLessonError () {
+                vm.isSaving = false;
+                console.log("onSaveLessonError");
+            }
+
+            // Recherche la liste des blocs dans la BdD
+
+            function loadAll () {
+                Bloc.query({},onSuccess,onError)
+            }
+
+            function onSuccess(data){
+                vm.blocs=data;
+                console.log(data)
+            }
+
+            function onError(error){
+                AlertService.error(error.data.message)
+            }
+
+
+            loadAll();
 
 
         }]);

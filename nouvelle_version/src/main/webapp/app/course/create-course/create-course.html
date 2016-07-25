@@ -6,7 +6,7 @@
         <label>Select bloc name: </label>
         <br>
         <select name="Bloc Name">
-            <option class="pull-right" ng-repeat="bloc in vm.blocs" value="bloc.name">{{bloc.name}}</option>
+            <option class="pull-right" ng-repeat="bloc in vm.blocs" value="bloc.name" ng-model="vm.newLesson.bloc_id">{{bloc.name}}</option>
         </select>
     </div>
 
@@ -21,17 +21,17 @@
     <div class="col-md-12">
 
         <h2 class="page-header color-dty">Lesson 1
-            <button type="button" ng-click="vm.submit()" class="btn btn-primary-dty-inverse pull-right">Submit Lesson</button>
+            <button type="button" ng-click="vm.saveLesson()" class="btn btn-primary-dty-inverse pull-right">Submit Lesson</button>
         </h2>
 
         <div class="form-group">
             <label>Lesson Title</label>
-            <input type="text" placeholder="Enter Lesson Title here..." class="form-control">
+            <input type="text" placeholder="Enter Lesson Title here..." class="form-control" ng-model="vm.newLesson.title">
         </div>
 
         <div class="form-group">
             <label>Enter your lesson</label>
-            <textarea placeholder="Enter Lesson here..." rows="10" class="form-control"></textarea>
+            <textarea placeholder="Enter Lesson here..." rows="10" class="form-control" ng-model="vm.newLesson.cours"></textarea>
         </div>
 
         <div class="form-group">
@@ -42,11 +42,11 @@
 
                 <!-- QUESTION -->
 
-                <label>Question {{question.id}}</label>
+                <label>Question {{question.cpt}}</label>
                 <div class="input-group">
-                    <input type="text" placeholder="Enter question here..." class="form-control">
+                    <input type="text" placeholder="Enter question here..." class="form-control" ng-model="question.intitule">
                     <span class="input-group-btn">
-                        <button type="button" ng-click="vm.removeQuestion(question.id)" class="btn btn-md btn-primary-dty-inverse pull-right">Remove question</button>
+                        <button type="button" ng-click="vm.removeQuestion(question.cpt)" class="btn btn-md btn-primary-dty-inverse pull-right">Remove question</button>
                     </span>
                 </div>
 
@@ -58,19 +58,19 @@
 
                     <div class="input-group">
                         <span class="input-group-addon">
-                            <input type="checkbox" ng-click="vm.modifyVeracity(question.id, answer.id)">
+                            <input type="checkbox" ng-click="vm.modifyVeracity(question.cpt, answer.cpt)">
                         </span>
-                            <input type="text" placeholder={{answer.intitulate}} class="form-control">
-                            <input type="text" placeholder={{answer.correction}} class="form-control">
+                        <input type="text" placeholder="Answer {{answer.cpt}}" class="form-control" ng-model="answer.text">
+                        <input type="text" placeholder="Correction {{answer.cpt}}" class="form-control" ng-model="answer.correction">
                         <span class="input-group-btn">
-                            <button type="button" ng-click="vm.removeAnswer(answer.id, question.id)" style="top: 0" class="btn btn-default btn-primary-dty-inverse btn-two-lines pull-right glyphicon glyphicon-remove"></button>
+                            <button type="button" ng-click="vm.removeAnswer(answer.cpt, question.cpt)" style="top: 0" class="btn btn-default btn-primary-dty-inverse btn-two-lines pull-right glyphicon glyphicon-remove"></button>
                         </span>
                     </div>
 
                 </div>
 
 
-                <button type="button" ng-click="vm.addAnswer(question.id)" class="btn btn-md btn-primary-dty-inverse pull-left" aria-label="Left Align">
+                <button type="button" ng-click="vm.addAnswer(question.cpt)" class="btn btn-md btn-primary-dty-inverse pull-left" aria-label="Left Align">
                     <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add answer
                 </button>
 
@@ -82,7 +82,7 @@
 
                 <div class="form-group">
                     <label>Correction</label>
-                    <textarea placeholder={{question.correction}} rows="5" class="form-control"></textarea>
+                    <textarea placeholder="Correction" rows="5" class="form-control" ng-model="question.correction"></textarea>
                 </div>
 
 

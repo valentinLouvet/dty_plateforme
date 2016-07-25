@@ -5,12 +5,23 @@
         .module('objectifDtyApp')
         .controller('progressionController', progressionController);
 
-    progressionController.$inject = ['$scope', 'Principal', 'LoginService', '$state'];
+    progressionController.$inject = ['Student','$scope', 'Principal', 'LoginService', '$state'];
 
-    function progressionController ($scope, Principal, LoginService, $state) {
+    function progressionController (Student,$scope, Principal,LoginService, $state) {
         var vm = this;
-
+        var user=Principal.identity().$$state.value;
+        var student=Student.query().$promise;
         vm.blocs = blocs;
+        vm.identity=user;
+
+        vm.student=[];
+        student.then(function(data){
+            vm.student=data[0];
+            console.log(vm.student)
+        });
+
+        console.log(user);
+
 
     }
 })();

@@ -39,6 +39,7 @@
                 for (var i = 0; i < data.length; i++) {
                     vm.students.push(data[i]);
                 }
+                console.log(vm.students)
             }
             function onError(error) {
                 AlertService.error(error.data.message);

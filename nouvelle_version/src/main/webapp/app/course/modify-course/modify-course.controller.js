@@ -7,6 +7,7 @@
             var vm=this;
            vm.course=$cookies.getObject('course')
             console.log(vm.course)
+            console.log(vm.course.questions)
 
 
         }])

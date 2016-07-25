@@ -5,9 +5,9 @@
         .module('objectifDtyApp')
         .controller('NavbarController', NavbarController);
 
-    NavbarController.$inject = ['$state', 'Auth', 'Principal', 'ProfileService', 'LoginService'];
+    NavbarController.$inject = ['Student','$state', 'Auth', 'Principal', 'ProfileService', 'LoginService'];
 
-    function NavbarController ($state, Auth, Principal, ProfileService, LoginService) {
+    function NavbarController (Student,$state, Auth, Principal, ProfileService, LoginService) {
         var vm = this;
 
         vm.isNavbarCollapsed = true;
@@ -42,5 +42,14 @@
         function collapseNavbar() {
             vm.isNavbarCollapsed = true;
         }
+
+        //pour chopper la todo_lesson du student - a modifier, on mettra toutes les infos user/student dans un cookie une fois pour toutes.
+       var student=Student.query().$promise;
+        vm.student=[];
+        student.then(function(data){
+            vm.student=data[0];
+            console.log(vm.student)
+        });
+
     }
 })();

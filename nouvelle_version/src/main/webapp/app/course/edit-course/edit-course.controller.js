@@ -7,6 +7,7 @@
             var vm=this;
             vm.compteur=1;
             vm.blocs=[];
+            vm.blocs_test= tests;
 
 
             function loadAll () {
@@ -46,49 +47,75 @@
 
 
 
-    var blocs = [
+    var tests = [
         {
             name: 'HTML',
-            courses: [
+            lessons: [
                 {
-                    name: 'Lesson 1 HTML',
-                    content: 'HTML 1'
+                    title: 'Lesson 1 HTML',
+                    content: 'HTML 1',
+                    questions: [
+                        {
+                            intitulate: 'Quelle est la couleur du cheval blanc ?',
+                            responses: [
+                                {
+                                    text: 'Blanc',
+                                },
+                                {
+                                    text: 'Vert'
+                                },
+                                {
+                                    text: 'Jaune'
+                                }
+                            ]
+                        },
+                        {
+                            intitulate: 'Quelle est la différence entre un pigeon ?',
+                            responses:[
+                                {
+                                    text: 'Il a deux pattes pareilles, mais surtout la droite'
+                                },
+                                {
+                                    text: 'il ne sait ni voler'
+                                }
+                            ]
+                        }]
                 },
                 {
-                    name: 'Lesson 2 HTML',
+                    title: 'Lesson 2 HTML',
                     content: 'HTML 2'
                 },
                 {
-                    name: 'Lesson 3 HTML',
+                    title: 'Lesson 3 HTML',
                     content: 'HTML 3'
                 }
             ]
         },
         {
             name: 'CSS',
-            courses: [
+            lessons: [
                 {
-                    name: 'Lesson 1 CSS'
+                    title: 'Lesson 1 CSS'
                 },
                 {
-                    name: 'Lesson 2 CSS'
+                    title: 'Lesson 2 CSS'
                 },
                 {
-                    name: 'Lesson 3 CSS'
+                    title: 'Lesson 3 CSS'
                 },
                 {
-                    name: 'Lesson 4 CSS'
+                    title: 'Lesson 4 CSS'
                 }
             ]
         },
         {
             name: 'Angular',
-            courses: [
+            lessons: [
                 {
-                    name: 'Lesson 1 Angular'
+                    title: 'Lesson 1 Angular'
                 },
                 {
-                    name: 'Lesson 2 Angular'
+                    title: 'Lesson 2 Angular'
                 }
             ]
         }

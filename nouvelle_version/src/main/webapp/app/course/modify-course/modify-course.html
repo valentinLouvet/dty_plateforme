@@ -1,12 +1,11 @@
-<div ng-bind-html="vm.course.cours"></div>
-
-<div class="page-header-dty"><h1>2. Exercise</h1></div>
-Choose the right answer!
-
-<div class="Exercise">
-    <ul class="list-group">
-        <li class="list-group-item" ng-repeat="question in vm.course.questions">{{question.intitule}}<select name="e1">.
-            <option ng-repeat="response in question.responses" value="response.text"></option>
-        </select></li>
-        </ul>
+Here is the actual lesson:
+<p ng-bind-html="vm.course.content">
+</p>
+<div ng-repeat="question in vm.course.questions">
+    The question: {{question.intitulate}}
+    <br>
+    All the answers:
+    <div ng-repeat="response in question.responses">
+        {{response.text}}
     </div>
+</div>

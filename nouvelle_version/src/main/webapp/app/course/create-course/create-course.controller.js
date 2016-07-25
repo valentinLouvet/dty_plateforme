@@ -271,19 +271,20 @@
 
             function loadAll () {
                 Bloc.query({},onSuccess,onError)
-            }
+                }
 
-            function onSuccess(data){
+                function onSuccess(data){
                 vm.blocs=data;
-                console.log(data)
-            }
+                console.log(data);
+                 }
 
-            function onError(error){
-                AlertService.error(error.data.message)
-            }
+                 function onError(error){
+                AlertService.error(error.data.message);
+                 }
 
 
             loadAll();
+
 
 
         }]);

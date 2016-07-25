@@ -1,9 +1,11 @@
 package com.dty.objectif_dty.service;
 
 import com.dty.objectif_dty.domain.Authority;
+import com.dty.objectif_dty.domain.Student;
 import com.dty.objectif_dty.domain.User;
 import com.dty.objectif_dty.repository.AuthorityRepository;
 import com.dty.objectif_dty.repository.PersistentTokenRepository;
+import com.dty.objectif_dty.repository.StudentRepository;
 import com.dty.objectif_dty.repository.UserRepository;
 import com.dty.objectif_dty.security.AuthoritiesConstants;
 import com.dty.objectif_dty.security.SecurityUtils;
@@ -22,6 +24,8 @@ import java.time.ZonedDateTime;
 import javax.inject.Inject;
 import java.util.*;
 
+import static com.dty.objectif_dty.security.AuthoritiesConstants.USER;
+
 /**
  * Service class for managing users.
  */
@@ -37,6 +41,9 @@ public class UserService {
 
     @Inject
     private UserRepository userRepository;
+
+    @Inject
+    private  StudentRepository studentRepository;
 
 
     @Inject
@@ -90,6 +97,8 @@ public class UserService {
         String langKey , boolean activated, Set<String> authoritys) {
 
         User newUser = new User();
+        Student newStudent = new Student();
+
         //Authority authority = authorityRepository.findOne(AuthoritiesConstants.COACH);
         //Set<Authority> authorities = new HashSet<>();
         String encryptedPassword = passwordEncoder.encode(password);
@@ -111,6 +120,10 @@ public class UserService {
         authoritys.stream().forEach(
             authority -> authorities.add(authorityRepository.findOne(authority))
         );
+        if (authoritys.contains("ROLE_USER")){
+            newStudent.setUser(newUser);
+            studentRepository.save(newStudent);
+        }
         userRepository.save(newUser);
         log.debug("Created Information for User: {}", newUser);
         return newUser;

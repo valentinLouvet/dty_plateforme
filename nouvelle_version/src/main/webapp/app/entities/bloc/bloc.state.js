@@ -13,7 +13,7 @@
             parent: 'entity',
             url: '/bloc',
             data: {
-                authorities: ['ROLE_ADMIN'],
+                authorities: ['ROLE_ADMIN', 'ROLE_USER', 'ROLE_COACH'],
                 pageTitle: 'Blocs'
             },
             views: {

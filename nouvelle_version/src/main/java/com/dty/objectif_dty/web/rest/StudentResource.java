@@ -3,8 +3,6 @@ package com.dty.objectif_dty.web.rest;
 import com.codahale.metrics.annotation.Timed;
 import com.dty.objectif_dty.domain.Student;
 import com.dty.objectif_dty.repository.StudentRepository;
-import com.dty.objectif_dty.repository.UserRepository;
-import com.dty.objectif_dty.domain.User;
 import com.dty.objectif_dty.web.rest.util.HeaderUtil;
 import com.dty.objectif_dty.web.rest.util.PaginationUtil;
 import org.slf4j.Logger;
@@ -95,9 +93,8 @@ public class StudentResource {
     public ResponseEntity<List<Student>> getAllStudents(Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to get a page of Students");
-        Page<Student> page = studentRepository.findAll(pageable);
-        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/students");
-        return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
+        List<Student> students = studentRepository.findByUserIsCurrentUser();
+        return new ResponseEntity<>(students, HttpStatus.OK);
     }
 
     /**
@@ -112,10 +109,7 @@ public class StudentResource {
     @Timed
     public ResponseEntity<Student> getStudent(@PathVariable Long id) {
         log.debug("REST request to get Student : {}", id);
-
-        Student student = studentRepository.findOne(id);
-
-
+        Student student = studentRepository.findOneWithEagerRelationships(id);
         return Optional.ofNullable(student)
             .map(result -> new ResponseEntity<>(
                 result,

@@ -9,7 +9,7 @@
 
     function StudentController ($scope, $state, Student, ParseLinks, AlertService) {
         var vm = this;
-        
+
         vm.students = [];
         vm.loadPage = loadPage;
         vm.page = 0;
@@ -35,9 +35,7 @@
                 }
                 return result;
             }
-            function onSuccess(data, headers) {
-                vm.links = ParseLinks.parse(headers('link'));
-                vm.totalItems = headers('X-Total-Count');
+            function onSuccess(data) {
                 for (var i = 0; i < data.length; i++) {
                     vm.students.push(data[i]);
                 }

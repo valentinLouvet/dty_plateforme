@@ -13,7 +13,7 @@
             parent: 'entity',
             url: '/response',
             data: {
-                authorities: ['ROLE_ADMIN'],
+                authorities: ['ROLE_ADMIN', 'ROLE_USER', 'ROLE_COACH'],
                 pageTitle: 'Responses'
             },
             views: {

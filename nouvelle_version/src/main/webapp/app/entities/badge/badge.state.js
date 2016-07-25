@@ -13,7 +13,7 @@
             parent: 'entity',
             url: '/badge',
             data: {
-                authorities: ['ROLE_USER', 'ROLE_ADMIN'],
+                authorities: ['ROLE_USER', 'ROLE_ADMIN', 'ROLE_COACH'],
                 pageTitle: 'Badges'
             },
             views: {

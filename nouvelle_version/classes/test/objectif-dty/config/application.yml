@@ -32,7 +32,17 @@ spring:
             hibernate.generate_statistics: true
             hibernate.hbm2ddl.auto: validate
     mail:
-        host: localhost
+        host: smtp.gmail.com
+        port: 587
+        username: antoinerebeyre78@gmail.com
+        password: MyfirstpassPHRASE
+        protocol: smtp
+        tls: true
+        properties.mail.smtp:
+            auth: true
+            starttls.enable: true
+            ssl.enable: true
+            ssl.trust: smtp.gmail.com
     mvc:
         favicon:
             enabled: false

@@ -9,9 +9,15 @@
 # Full reference is available at:
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
-
+management:
+    context-path: /management
+    health:
+        mail:
+            enabled: true
 
 spring:
+    profiles:
+        active: dev
     devtools:
         restart:
             enabled: true
@@ -37,10 +43,17 @@ spring:
             hibernate.cache.use_minimal_puts: true
             hibernate.cache.hazelcast.use_lite_member: true
     mail:
-        host: localhost
-        port: 25
-        username:
-        password:
+        host: smtp.gmail.com
+        port: 587
+        username: objectifdty@gmail.com
+        password: 0bjectifDTY!
+        protocol: smtp
+        tls: true
+        properties.mail.smtp:
+            auth: true
+            starttls.enable: true
+            ssl.enable: true
+            ssl.trust: smtp.gmail.com
     messages:
         cache-seconds: 1
     thymeleaf:
@@ -66,7 +79,7 @@ jhipster:
             # security key (this key should be unique for your application, and kept secret)
             key: c1cbe7df14a6d9850b3d496910c48701f2161988
     mail: # specific JHipster mail property, for standard properties see MailProperties
-        from: objectif_dty@localhost
+        from: antoinerebeyre78@gmail.com
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx.enabled: true
         spark:

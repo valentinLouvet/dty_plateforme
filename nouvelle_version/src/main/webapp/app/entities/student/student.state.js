@@ -13,7 +13,7 @@
             parent: 'entity',
             url: '/student',
             data: {
-                authorities: ['ROLE_ADMIN'],
+                authorities: ['ROLE_ADMIN', 'ROLE_USER', 'ROLE_COACH'],
                 pageTitle: 'Students'
             },
             views: {
@@ -30,7 +30,7 @@
             parent: 'entity',
             url: '/student/{id}',
             data: {
-                authorities: ['ROLE_ADMIN'],
+                authorities: ['ROLE_ADMIN', 'ROLE_USER', 'ROLE_COACH'],
                 pageTitle: 'Student'
             },
             views: {
@@ -50,7 +50,7 @@
             parent: 'student',
             url: '/new',
             data: {
-                authorities: ['ROLE_ADMIN']
+                authorities: ['ROLE_ADMIN', 'ROLE_USER', 'ROLE_COACH']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -78,7 +78,7 @@
             parent: 'student',
             url: '/{id}/edit',
             data: {
-                authorities: ['ROLE_ADMIN']
+                authorities: ['ROLE_ADMIN', 'ROLE_USER', 'ROLE_COACH']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -103,7 +103,7 @@
             parent: 'student',
             url: '/{id}/delete',
             data: {
-                authorities: ['ROLE_ADMIN']
+                authorities: ['ROLE_ADMIN', 'ROLE_USER', 'ROLE_COACH']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({

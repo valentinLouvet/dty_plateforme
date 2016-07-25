@@ -13,7 +13,7 @@
             parent: 'entity',
             url: '/lesson-done',
             data: {
-                authorities: ['ROLE_ADMIN'],
+                authorities: ['ROLE_ADMIN', 'ROLE_USER', 'ROLE_COACH'],
                 pageTitle: 'Lesson_dones'
             },
             views: {

@@ -388,7 +388,11 @@ nav.navbar.navbar-default.container > div > div > ul.nav.navbar-nav > li > a.act
     color: white;
     background-color: #87102c;
     border-color: black;
-    border-width: 1px;
+}
+
+.btn-primary-dty-inverse.glyphicon-remove{
+    padding-top: 23px;
+    padding-bottom: 23px;
 }
 
 .btn-primary-dty-inverse:hover {

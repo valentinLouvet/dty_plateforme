@@ -4,10 +4,9 @@
     <list default="true" id="0bbf8ee4-d9ab-448d-8116-1974e2b7f9af" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/dty_plateforme_node_modules.xml" afterPath="$PROJECT_DIR$/.idea/libraries/dty_plateforme_node_modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/resources/config/application-dev.yml" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/resources/config/application-dev.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/resources/config/application-prod.yml" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/resources/config/application-prod.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/resources/config/application.yml" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/resources/config/application.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/test/resources/config/application.yml" afterPath="$PROJECT_DIR$/nouvelle_version/src/test/resources/config/application.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/resources/.h2.server.properties" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/resources/.h2.server.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/account/register/register.html" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/account/register/register.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/layouts/navbar/navbar.html" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/layouts/navbar/navbar.html" />
     </list>
     <ignored path="dty_plateforme.iws" />
     <ignored path=".idea/workspace.xml" />

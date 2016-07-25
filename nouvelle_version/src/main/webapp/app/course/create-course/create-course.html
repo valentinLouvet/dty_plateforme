@@ -2,20 +2,36 @@
 
     <h1 class="page-header-dty">Create a new bloc</h1>
 
+    <div class="form-group col-sm-6 pull-left" style="margin-top: 22px">
+        <label>Select bloc name: </label>
+        <br>
+        <select name="Bloc Name">
+            <option class="pull-right" ng-repeat="bloc in vm.blocs" value="bloc.name">{{bloc.name}}</option>
+        </select>
+    </div>
+
+    <br>
+
     <div class="col-sm-6 form-group">
-        <label>Bloc name</label>
+        <label>New bloc name</label>
+        <br>
         <input type="text" placeholder="Bloc name" class="form-control">
     </div>
 
     <div class="col-md-12">
 
-        <h2 class="page-header">Lesson 1
+        <h2 class="page-header color-dty">Lesson 1
             <button type="button" ng-click="vm.submit()" class="btn btn-primary-dty-inverse pull-right">Submit Lesson</button>
         </h2>
 
         <div class="form-group">
+            <label>Lesson Title</label>
+            <input type="text" placeholder="Enter Lesson Title here..." class="form-control">
+        </div>
+
+        <div class="form-group">
             <label>Enter your lesson</label>
-            <textarea placeholder="Enter Lesson Here.." rows="10" class="form-control"></textarea>
+            <textarea placeholder="Enter Lesson here..." rows="10" class="form-control"></textarea>
         </div>
 
         <div class="form-group">
@@ -47,7 +63,7 @@
                             <input type="text" placeholder={{answer.intitulate}} class="form-control">
                             <input type="text" placeholder={{answer.correction}} class="form-control">
                         <span class="input-group-btn">
-                            <button type="button" ng-click="vm.removeAnswer(answer.id, question.id)" class="btn btn-default btn-primary-dty-inverse btn-two-lines pull-right glyphicon glyphicon-remove"></button>
+                            <button type="button" ng-click="vm.removeAnswer(answer.id, question.id)" style="top: 0" class="btn btn-default btn-primary-dty-inverse btn-two-lines pull-right glyphicon glyphicon-remove"></button>
                         </span>
                     </div>
 

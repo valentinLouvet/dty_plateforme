@@ -3,7 +3,10 @@
 
     angular
         .module('objectifDtyApp')
-        .controller('courseCreationController',['$scope', '$state', 'Bloc', 'Lesson', 'Question', 'Response',function ($scope, $state, Bloc, Lesson, Question, Response) {
+        .controller('courseCreationController', ['Bloc', 'Question', 'AlertService', function (Bloc, AlertService) {
+
+            var vm= this;
+            vm.blocs=[];
 
             this.compteurQuestion = 1;
             this.compteurAnswer = [0];
@@ -11,6 +14,22 @@
                 text : "",
                 quizz : []
             };
+            
+            function loadAll () {
+                Bloc.query({},onSuccess,onError)
+            }
+
+            function onSuccess(data){
+                vm.blocs=data;
+                console.log(data)
+            }
+
+            function onError(error){
+                AlertService.error(error.data.message)
+            }
+
+
+            loadAll();
 
             this.question = {
                 intitulate : "Enter question here",
@@ -21,7 +40,6 @@
 
             this.answer = {
                 intitulate : "Answer's intitulate",
-                correction : "Correction",
                 veracity : false,
                 id: this.compteurAnswer[0] + 1
             };
@@ -31,7 +49,6 @@
 
             var answer1 = {
                 intitulate : "Answer " + (this.compteurAnswer[0] + 1),
-                correction : "Correction",
                 veracity : false,
                 id: this.compteurAnswer[0] + 1
             };
@@ -40,7 +57,6 @@
 
             var answer2 = {
                 intitulate : "Answer " + (this.compteurAnswer[0] + 1),
-                correction : "Correction",
                 veracity : false,
                 id: this.compteurAnswer[0] + 1
             };
@@ -70,7 +86,6 @@
 
                 var answer = {
                     intitulate : "Answer " + (this.compteurAnswer[idOfQuestion - 1] + 1),
-                    correction : "Correction",
                     veracity : false,
                     id : this.compteurAnswer[idOfQuestion - 1] + 1
 
@@ -122,7 +137,7 @@
 
 
 
-            }
+            };
 
             this.addQuestion = function() {
 
@@ -137,7 +152,6 @@
                 var answer1 = {
                     intitulate : "Answer 1",
                     veracity : false,
-                    correction : "Correction",
                     id: this.compteurAnswer[this.compteurQuestion - 1] + 1
                 };
 
@@ -146,7 +160,6 @@
                 var answer2 = {
                     intitulate : "Answer 2",
                     veracity : false,
-                    correction : "Correction",
                     id: this.compteurAnswer[this.compteurQuestion - 1] + 1
                 };
 
@@ -208,37 +221,20 @@
             this.modifyVeracity = function(idOfQuestion, idOfAnswer){
                 //console.log("modifyVeracity");
                 this.newLesson.quizz[idOfQuestion - 1].answers[idOfAnswer - 1].veracity = ! (this.newLesson
-                .quizz[idOfQuestion - 1].answers[idOfAnswer - 1].veracity);
+                    .quizz[idOfQuestion - 1].answers[idOfAnswer - 1].veracity);
                 console.log(idOfQuestion + ", " + idOfAnswer);
             };
-
-            // Requêtes http utiles
-
-            /*this.submit = function(){
-                Lesson.query({}, onSuccess, onError);
-
-                function onSuccess(data){
-                    this.newLesson=data;
-                    console.log(data)
-                }
-
-                function onError(error){
-                    AlertService.error(error.data.message)
-                }
-
-                Lesson.save(this.newLesson, onSuccess, onError);
-                function onSuccess(data, headers) {
-                    this.links = ParseLinks.parse(headers('link'));
-                    this.totalItems = headers('X-Total-Count');
-                };
-                function onError(error) {
-                    AlertService.error(error.data.message);
-                };
-            }*/
+            
+            //enregistre la question dans la BDD
+            
+            this.regitserQuestion = function () {
+                
+            }
 
 
+        }]);
 
-        }])
+
 
 
 })();

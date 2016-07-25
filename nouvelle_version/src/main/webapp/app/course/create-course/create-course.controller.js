@@ -241,11 +241,7 @@
                 console.log(idOfQuestion + ", " + idOfAnswer);
             };
 
-            //Sauvegarde la question dans la BDD
-
-            /*this.saveLesson = function () {
-                Lesson.update(this.newLesson);
-            }*/
+            //Sauvegarde la leçon dans la BdD
 
             this.saveLesson = function() {
                 vm.isSaving = true;

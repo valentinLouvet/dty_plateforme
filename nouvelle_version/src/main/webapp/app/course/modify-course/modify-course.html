@@ -13,7 +13,7 @@
     </div>
 </div>
 
-<div ng-repeat="question in vm.course.questions">
+<div ng-repeat="question in vm.course.questions" class="form-group">
     The question: {{question.intitulate}}
     <br>
     All the answers:
@@ -21,3 +21,5 @@
         {{response.text}}
     </div>
 </div>
+
+<button ng-click="vm.saveCourse()" class="btn btn-primary-dty-inverse">Save the modifications</button>

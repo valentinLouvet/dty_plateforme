@@ -401,6 +401,10 @@ nav.navbar.navbar-default.container > div > div > ul.nav.navbar-nav > li > a.act
     color: white;
 }
 
+.btn-two-lines {
+    padding: 24px 10px;
+}
+
 .label-default-dty {
     background-color: black;
 }

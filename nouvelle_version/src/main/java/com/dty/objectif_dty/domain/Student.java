@@ -69,8 +69,7 @@ public class Student implements Serializable {
         this.owned_badges = badges;
     }
 
-    public User getUser() {
-        return user;
+    public User getUser() {return user;
     }
 
     public void setUser(User user) {

@@ -11,7 +11,7 @@
         var vm = this;
 
 
-        $scope.lesson = entity;
+        vm.lesson = entity;
         vm.clear = clear;
         vm.byteSize = DataUtils.byteSize;
         vm.openFile = DataUtils.openFile;
@@ -30,10 +30,10 @@
 
         function save () {
             vm.isSaving = true;
-            if ($scope.lesson.id !== null) {
-                Lesson.update($scope.lesson, onSaveSuccess, onSaveError);
+            if (vm.lesson.id !== null) {
+                Lesson.update(vm.lesson, onSaveSuccess, onSaveError);
             } else {
-                Lesson.save($scope.lesson, onSaveSuccess, onSaveError);
+                Lesson.save(vm.lesson, onSaveSuccess, onSaveError);
             }
         }
 

@@ -17,53 +17,54 @@
             <label class="control-label" for="field_cours">Cours</label>
                 <textarea class="form-control" name="cours" id="field_cours" />
 
-         <!--  <script>
+           <script>
                 // Replace the <textarea id="field_cours"> with a CKEditor
-                 CKEDITOR.replace( 'field_cours');
+                 CKEDITOR.replace('field_cours');
                  var e = document.getElementById('objectifDtyApp');
                  var $scope = angular.element(e).scope();
                  //console.log($scope);
                  //console.log($scope.lesson);
                  //this.lesson.cours = CKEDITOR.instances.field_cours.getData();
-            </script>-->
+            </script>
         </div>
         <div class="form-group">
             <label class="control-label" for="field_level">Level</label>
-            <input type="number" class="form-control" name="level" id="field_level"
+            <input required type="number" class="form-control" name="level" id="field_level"
                     ng-model="vm.lesson.level"
                      />
         </div>
         <div class="form-group">
             <label class="control-label" translate="objectifDtyApp.lesson.num_lesson" for="field_num_lesson">Num Lesson</label>
-            <input type="number" class="form-control" name="num_lesson" id="field_num_lesson"
+            <input required type="number" class="form-control" name="num_lesson" id="field_num_lesson"
                     ng-model="vm.lesson.num_lesson"
                      />
         </div>
         <div class="form-group">
             <label class="control-label" for="field_title">Title</label>
-            <input type="text" class="form-control" name="title" id="field_title"
+            <input required type="text" class="form-control" name="title" id="field_title"
                     ng-model="vm.lesson.title"
                      />
         </div>
 
         <div class="form-group">
             <label translate="objectifDtyApp.lesson.created_by" for="field_created_by">Created By</label>
-            <select class="form-control" id="field_created_by" name="created_by" ng-model="vm.lesson.created_by" ng-options="coach as coach.id for coach in vm.coaches track by coach.id">
+            <select required class="form-control" id="field_created_by" name="created_by" ng-model="vm.lesson.created_by" ng-options="coach as coach.id for coach in vm.coaches track by coach.id">
                 <option value=""></option>
             </select>
         </div>
         <div class="form-group">
             <label translate="objectifDtyApp.lesson.updated_by" for="field_updated_by">Updated By</label>
-            <select class="form-control" id="field_updated_by" name="updated_by" ng-model="vm.lesson.updated_by" ng-options="coach as coach.id for coach in vm.coaches track by coach.id">
+            <select required class="form-control" id="field_updated_by" name="updated_by" ng-model="vm.lesson.updated_by" ng-options="coach as coach.id for coach in vm.coaches track by coach.id">
                 <option value=""></option>
             </select>
         </div>
         <div class="form-group">
             <label for="field_bloc">Bloc</label>
-            <select class="form-control" id="field_bloc" name="bloc" ng-model="vm.lesson.bloc" ng-options="bloc as bloc.name for bloc in vm.blocs track by bloc.id">
+            <select required class="form-control" id="field_bloc" name="bloc" ng-model="vm.lesson.bloc" ng-options="bloc as bloc.name for bloc in vm.blocs track by bloc.id">
                 <option value=""></option>
             </select>
         </div>
+        <jhi-alert2></jhi-alert2>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">

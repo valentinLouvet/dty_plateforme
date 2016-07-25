@@ -22,7 +22,9 @@
         vm.openFile = DataUtils.openFile;
         vm.byteSize = DataUtils.byteSize;
 
-        loadAll();
+       loadAll();
+        // var tout2 = Lesson.query();
+        // console.log(tout2);
 
         function loadAll () {
             Lesson.query({

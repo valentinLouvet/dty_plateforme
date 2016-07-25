@@ -5,9 +5,9 @@
         .module('objectifDtyApp')
         .controller('LessonDialogController', LessonDialogController);
 
-    LessonDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'DataUtils', 'entity', 'Lesson', 'Coach', 'Bloc', 'Question'];
+    LessonDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'DataUtils', 'entity', 'Lesson', 'Coach', 'Bloc', 'Question', 'Alert2Service'];
 
-    function LessonDialogController ($timeout, $scope, $stateParams, $uibModalInstance, DataUtils, entity, Lesson, Coach, Bloc, Question) {
+    function LessonDialogController ($timeout, $scope, $stateParams, $uibModalInstance, DataUtils, entity, Lesson, Coach, Bloc, Question, Alert2Service) {
         var vm = this;
 
 
@@ -28,12 +28,32 @@
             $uibModalInstance.dismiss('cancel');
         }
 
+        /*
+        /save edited in order to don't allow lessons to have the same leson_number
+        /need to be edited to only check the lesson number and the block !
+        / @ASK : alburkerk for questions
+        */
+
         function save () {
             vm.isSaving = true;
             if (vm.lesson.id !== null) {
                 Lesson.update(vm.lesson, onSaveSuccess, onSaveError);
             } else {
-                Lesson.save(vm.lesson, onSaveSuccess, onSaveError);
+                var isPossible = true;
+                var tout2 = Lesson.query();
+                         tout2.$promise.then(function(data){
+                                        for (var i = 0; i < data.length; i++) {
+                                        console.log(data[i].bloc);
+                                        console.log(vm.lesson.bloc);
+                                        if((data[i].num_lesson === vm.lesson.num_lesson) && (data[i].bloc.id == vm.lesson.bloc.id)){
+                                        isPossible = false;
+                                     }//Changed data.data.topics to data.topics
+                                }
+                                if(isPossible){
+                                       Lesson.save(vm.lesson, onSaveSuccess, onSaveError);
+                                } else { Alert2Service.error("This lesson number already exists for this bloc. Please enter another number");
+                                         vm.isSaving = false;}
+                                });
             }
         }
 

@@ -26,7 +26,6 @@
             loadAll();
 
 
-
             this.addCompteur= function(i){
                 this.compteur = this.compteur + i
             };

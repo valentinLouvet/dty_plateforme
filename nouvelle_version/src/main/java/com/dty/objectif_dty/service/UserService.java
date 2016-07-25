@@ -1,12 +1,10 @@
 package com.dty.objectif_dty.service;
 
 import com.dty.objectif_dty.domain.Authority;
+import com.dty.objectif_dty.domain.Coach;
 import com.dty.objectif_dty.domain.Student;
 import com.dty.objectif_dty.domain.User;
-import com.dty.objectif_dty.repository.AuthorityRepository;
-import com.dty.objectif_dty.repository.PersistentTokenRepository;
-import com.dty.objectif_dty.repository.StudentRepository;
-import com.dty.objectif_dty.repository.UserRepository;
+import com.dty.objectif_dty.repository.*;
 import com.dty.objectif_dty.security.AuthoritiesConstants;
 import com.dty.objectif_dty.security.SecurityUtils;
 import com.dty.objectif_dty.service.util.RandomUtil;
@@ -44,6 +42,8 @@ public class UserService {
 
     @Inject
     private  StudentRepository studentRepository;
+    @Inject
+    private CoachRepository coachRepository;
 
 
     @Inject
@@ -97,7 +97,7 @@ public class UserService {
         String langKey , boolean activated, Set<String> authoritys) {
 
         User newUser = new User();
-        Student newStudent = new Student();
+
 
         //Authority authority = authorityRepository.findOne(AuthoritiesConstants.COACH);
         //Set<Authority> authorities = new HashSet<>();
@@ -121,8 +121,13 @@ public class UserService {
             authority -> authorities.add(authorityRepository.findOne(authority))
         );
         if (authoritys.contains("ROLE_USER")){
+            Student newStudent = new Student();
             newStudent.setUser(newUser);
             studentRepository.save(newStudent);
+        }else if (authoritys.contains("ROLE_COACH")){
+            Coach newCoach = new Coach();
+            newCoach.setUser(newUser);
+            coachRepository.save(newCoach);
         }
         userRepository.save(newUser);
         log.debug("Created Information for User: {}", newUser);

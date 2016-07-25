@@ -29,10 +29,10 @@ import java.util.Optional;
 public class CoachResource {
 
     private final Logger log = LoggerFactory.getLogger(CoachResource.class);
-        
+
     @Inject
     private CoachRepository coachRepository;
-    
+
     /**
      * POST  /coaches : Create a new coach.
      *
@@ -93,9 +93,8 @@ public class CoachResource {
     public ResponseEntity<List<Coach>> getAllCoaches(Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to get a page of Coaches");
-        Page<Coach> page = coachRepository.findAll(pageable); 
-        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/coaches");
-        return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
+        List<Coach> coaches = coachRepository.findByUserIsCurrentUser();
+        return new ResponseEntity<>(coaches, HttpStatus.OK);
     }
 
     /**

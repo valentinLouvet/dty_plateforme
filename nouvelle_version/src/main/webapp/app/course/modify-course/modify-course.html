@@ -1,6 +1,18 @@
-Here is the actual lesson:
-<p ng-bind-html="vm.course.content">
-</p>
+<div class="form-group">
+    <div class="form-group">Here is the actual lesson:
+        <p ng-bind-html="vm.course.content">
+        </p>
+        <button class="btn btn-primary-dty" ng-click="vm.changeCourse()">
+            Modify Course
+        </button>
+    </div>
+
+    <div ng-show="vm.modifyCourse">
+        <textarea class="form-control" ng-model="vm.newContent"></textarea>
+        <button class="btn btn-primary-dty" ng-click="vm.saveChanges()">Save changes</button>
+    </div>
+</div>
+
 <div ng-repeat="question in vm.course.questions">
     The question: {{question.intitulate}}
     <br>

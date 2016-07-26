@@ -19,9 +19,29 @@
                 vm.modifyCourse=false;
             };
 
-            vm.saveCourse = function () {
-                //$state.go('lesson.edit({id: vm.course.id})')
-                $state.go('lesson.create')
+            vm.saveCourse = function() {
+                vm.isSaving = true;
+                if (vm.course.id !== null) {
+                    console.log(vm.course.id);
+                    console.log("vm.newLesson.id !== null");
+                    Lesson.update(vm.course, onSaveLessonSuccess, onSaveLessonError);
+                } else {
+                    console.log("vm.newLesson.id == null");
+                    Lesson.save(vm.course, onSaveLessonSuccess, onSaveLessonError);
+                }
+                console.log(vm.course);
+            };
+
+            function onSaveLessonSuccess () {
+                //$scope.$emit('objectifDtyApp:lessonUpdate', result);
+                //$uibModalInstance.close(result);
+                vm.isSaving = false;
+                console.log("onSaveLessonSuccess");
+            }
+
+            function onSaveLessonError () {
+                vm.isSaving = false;
+                console.log("onSaveLessonError");
             }
 
 

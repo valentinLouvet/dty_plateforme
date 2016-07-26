@@ -53,6 +53,7 @@
             lessons: [
                 {
                     title: 'Lesson 1 HTML',
+                    id: '4',
                     content: 'HTML 1',
                     questions: [
                         {

@@ -1,8 +1,34 @@
 (function() {
     'use strict';
 
-    angular
-        .module('objectifDtyApp')
+   angular.module('objectifDtyApp')
+
+        .directive('ckEditor', function () {
+           return {
+             require: '?ngModel',
+             link: function (scope, elm, attr, ngModel) {
+               var ck = CKEDITOR.replace(elm[0]);
+               if (!ngModel) return;
+               ck.on('instanceReady', function () {
+                 ck.setData(ngModel.$viewValue);
+               });
+               function updateModel() {
+                 scope.$apply(function () {
+                   ngModel.$setViewValue(ck.getData());
+                 });
+               }
+               ck.on('change', updateModel);
+               ck.on('key', updateModel);
+               ck.on('dataReady', updateModel);
+               ngModel.$render = function (value) {
+                 ck.setData(ngModel.$viewValue);
+               };
+             }
+           };
+     });
+
+     angular.module('objectifDtyApp')
+
         .controller('LessonDialogController', LessonDialogController);
 
     LessonDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'DataUtils', 'entity', 'Lesson', 'Coach', 'Bloc', 'Question', 'Alert2Service'];
@@ -19,6 +45,11 @@
         vm.coaches = Coach.query();
         vm.blocs = Bloc.query();
         vm.questions = Question.query();
+
+        $scope.editorOptions = {
+            // settings more at http://docs.ckeditor.com/#!/guide/dev_configuration
+        };
+
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

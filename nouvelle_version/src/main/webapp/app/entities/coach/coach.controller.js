@@ -35,7 +35,9 @@
                 }
                 return result;
             }
-            function onSuccess(data) {
+            function onSuccess(data, headers) {
+                vm.links = ParseLinks.parse(headers('link'));
+                vm.totalItems = headers('X-Total-Count');
                 for (var i = 0; i < data.length; i++) {
                     vm.coaches.push(data[i]);
                 }

@@ -1,0 +1,50 @@
+<div class="container">
+    <!-- Introduction Row -->
+    <div class="row">
+        <div class="col-lg-12 page-header-dty">
+            <h1>Beginning Test
+                <small>An auto evaluation form to help us evaluate your level</small>
+            </h1>
+        </div>
+        <p>This is a test to evaluate your current level in different kinds of technologies. There is absolutely no
+            reason to cheat on this test !
+        </p>
+
+        <hr>
+
+    </div>
+
+    <!-- EXERCICES -->
+
+    <div ng-repeat="bloc in vm.blocs">
+        <div class="Exercise">
+            <div class="container">
+                <h2>{{bloc.name}}:</h2>
+                <p>How comfortable are you with this techno:</p>
+                <form role="form">
+                    <label class="radio-inline">
+                        <input type="radio" name="git-level"> 1
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="git-level"> 2
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="git-level"> 3
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="git-level"> 4
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="git-level"> 5
+                    </label>
+                </form>
+            </div>
+        </div>
+
+        <hr>
+    </div>
+
+
+    <button class="btn btn-primary-dty" ui-sref="cours"> Test Validation</button>
+</div>
+

@@ -16,7 +16,7 @@
                 level : 0,
                 num_lesson : 0,
                 title : "",
-                bloc_id : 0,
+                bloc : "",
                 quizz : []
             };
 
@@ -96,7 +96,7 @@
                     //question_id: this.newLesson.quizz[this.compteurAnswer[idOfQuestion - 1]].id,
                     question_id: 0,
                     cpt: this.compteurAnswer[idOfQuestion - 1] + 1
-                }
+                };
 
                 this.compteurAnswer[idOfQuestion - 1] = this.compteurAnswer[idOfQuestion - 1] + 1;
 
@@ -186,7 +186,7 @@
                     cpt: this.compteurQuestion,
                     correction : "",
                     answers : []
-                }
+                };
 
                 question.answers.push(answer1);
                 question.answers.push(answer2);
@@ -253,9 +253,9 @@
                     Lesson.save(vm.newLesson, onSaveLessonSuccess, onSaveLessonError);
                 }
                 console.log(vm.newLesson);
-            }
+            };
 
-            function onSaveLessonSuccess (result) {
+            function onSaveLessonSuccess () {
                 //$scope.$emit('objectifDtyApp:lessonUpdate', result);
                 //$uibModalInstance.close(result);
                 vm.isSaving = false;

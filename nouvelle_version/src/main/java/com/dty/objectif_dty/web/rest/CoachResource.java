@@ -93,8 +93,9 @@ public class CoachResource {
     public ResponseEntity<List<Coach>> getAllCoaches(Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to get a page of Coaches");
-        List<Coach> coaches = coachRepository.findByUserIsCurrentUser();
-        return new ResponseEntity<>(coaches, HttpStatus.OK);
+        Page<Coach> page = coachRepository.findAll(pageable);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/coaches");
+        return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
 
     /**

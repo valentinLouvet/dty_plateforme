@@ -3,10 +3,10 @@
     <h1 class="page-header-dty">Create a new bloc</h1>
 
     <div class="form-group col-sm-6 pull-left" style="margin-top: 20px">
-        <label>Select bloc name: </label>
+        <label for="field_bloc">Select bloc name: </label>
         <br>
-        <select name="Bloc Name" ng-model="vm.newLesson.bloc">
-            <option class="pull-right" ng-repeat="bloc in vm.blocs">{{bloc.name}}</option>
+        <select required class="form-control" id="field_bloc" name="bloc" ng-model="vm.lesson.bloc_id" ng-options="bloc as bloc.name for bloc in vm.blocs track by bloc.id">
+            <option value=""></option>
         </select>
     </div>
 

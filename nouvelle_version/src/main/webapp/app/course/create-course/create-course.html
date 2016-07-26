@@ -5,8 +5,8 @@
     <div class="form-group col-sm-6 pull-left" style="margin-top: 20px">
         <label>Select bloc name: </label>
         <br>
-        <select name="Bloc Name">
-            <option class="pull-right" ng-repeat="bloc in vm.blocs" value="bloc.name" ng-model="vm.newLesson.bloc_id">{{bloc.name}}</option>
+        <select name="Bloc Name" ng-model="vm.newLesson.bloc">
+            <option class="pull-right" ng-repeat="bloc in vm.blocs">{{bloc.name}}</option>
         </select>
     </div>
 

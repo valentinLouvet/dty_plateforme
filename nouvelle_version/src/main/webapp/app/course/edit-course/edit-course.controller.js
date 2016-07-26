@@ -54,7 +54,7 @@
                 {
                     title: 'Lesson 1 HTML',
                     id: '4',
-                    content: 'HTML 1',
+                    cours: 'HTML 1',
                     questions: [
                         {
                             intitulate: 'Quelle est la couleur du cheval blanc ?',
@@ -84,11 +84,11 @@
                 },
                 {
                     title: 'Lesson 2 HTML',
-                    content: 'HTML 2'
+                    cours: 'HTML 2'
                 },
                 {
                     title: 'Lesson 3 HTML',
-                    content: 'HTML 3'
+                    cours: 'HTML 3'
                 }
             ]
         },

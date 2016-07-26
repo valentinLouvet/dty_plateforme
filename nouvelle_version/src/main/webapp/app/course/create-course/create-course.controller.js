@@ -16,7 +16,7 @@
                 level : 0,
                 num_lesson : 0,
                 title : "",
-                bloc_id : 0,
+                bloc : "",
                 quizz : []
             };
 

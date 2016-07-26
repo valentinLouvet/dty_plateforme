@@ -42,5 +42,10 @@
         function collapseNavbar() {
             vm.isNavbarCollapsed = true;
         }
+
+        Principal.getStudent().then(function (data) {
+            vm.student=data;
+            vm.user=vm.student.user;
+        });
     }
 })();

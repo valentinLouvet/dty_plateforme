@@ -15,6 +15,7 @@
         vm.save = save;
         vm.students = Student.query();
         vm.lessons = Lesson.query();
+        console.log(vm.lesson_done);
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

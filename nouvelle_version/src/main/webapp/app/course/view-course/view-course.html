@@ -5,10 +5,10 @@ Choose the right answer!
 
 <div class="Exercise">
     <ul class="list-group">
-        <li class="list-group-item" ng-repeat="question in vm.lesson.questions">{{question.intitule}}<select name="e1">.
-            <option ng-repeat="response in question.responses" value={{response.text}}>{{response.text}}</option>
+        <li class="list-group-item"   ng-repeat="question in vm.lesson.questions">{{question.intitule}}<select name="repeatSelect" id="repeatSelect" ng-model="question.score">.
+            <option ng-repeat="response in question.responses" value={{response.veracity}}>{{response.text}}</option>
         </select></li>
     </ul>
-    <button ng-click="" class="btn btn-primary-dty-inverse">Submit my answers</button>
+    <button ng-click="vm.submitLesson()" class="btn btn-primary-dty-inverse">Submit my answers</button>
 </div>
 

@@ -9,7 +9,7 @@
 
     function Lesson_doneController ($scope, $state, Lesson_done, ParseLinks, AlertService) {
         var vm = this;
-        
+
         vm.lesson_dones = [];
         vm.loadPage = loadPage;
         vm.page = 0;
@@ -41,6 +41,7 @@
                 for (var i = 0; i < data.length; i++) {
                     vm.lesson_dones.push(data[i]);
                 }
+                console.log(vm.lesson_dones);
             }
             function onError(error) {
                 AlertService.error(error.data.message);

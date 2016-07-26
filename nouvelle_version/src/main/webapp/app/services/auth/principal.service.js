@@ -109,13 +109,8 @@
             Student.query().$promise
                 .then(function(data){
                     _student=data[0];
-                    console.log(_student);
                     deferred.resolve(_student);
-                })
-                .catch(function () {
-                    _student=null;
-                    deferred.resolve(_student);
-                })
+                });
             return deferred.promise
 
     }

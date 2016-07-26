@@ -9,8 +9,8 @@
 
     function progressionController (Student,$scope, Principal,LoginService, $state) {
         var vm = this;
-        var user=Principal.identity().$$state.value;
-        var student=Principal.getStudent();
+        var user=Principal.identity().$$state;
+        var student=Principal.getStudent().$$state;
 
         vm.blocs=[];
         vm.identity=user;

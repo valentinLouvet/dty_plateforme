@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0bbf8ee4-d9ab-448d-8116-1974e2b7f9af" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/app.module.js" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/app.module.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/lesson/lesson-dialog.controller.js" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/lesson/lesson-dialog.controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/lesson/lesson-dialog.html" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/lesson/lesson-dialog.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/index.html" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/index.html" />
     </list>
     <ignored path="dty_plateforme.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,21 +36,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lesson-dialog.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="lesson-dialog.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/lesson/lesson-dialog.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+            <state relative-caret-position="393">
+              <caret line="56" column="21" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lesson-dialog.controller.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="lesson-dialog.controller.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/lesson/lesson-dialog.controller.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="435">
-              <caret line="29" column="37" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
+              <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -71,8 +69,8 @@
       <file leaf-file-name="app.module.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/app.module.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+            <state relative-caret-position="300">
+              <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -81,8 +79,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="231" column="31" selection-start-line="231" selection-start-column="31" selection-end-line="231" selection-end-column="31" />
+            <state relative-caret-position="453">
+              <caret line="231" column="4" selection-start-line="231" selection-start-column="4" selection-end-line="231" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -110,6 +108,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -156,9 +155,9 @@
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/content/css/main.css" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.controller.js" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/index.html" />
-        <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/lesson/lesson-dialog.controller.js" />
-        <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/app.module.js" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/lesson/lesson-dialog.html" />
+        <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/app.module.js" />
+        <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/lesson/lesson-dialog.controller.js" />
       </list>
     </option>
   </component>
@@ -676,13 +675,6 @@
       <workItem from="1469112391557" duration="322000" />
       <workItem from="1469181301757" duration="159000" />
     </task>
-    <task id="LOCAL-00029" summary="nav-bar active">
-      <created>1467817195305</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1467817195305</updated>
-    </task>
     <task id="LOCAL-00030" summary="refonte des graphismes des pages log in et sign up">
       <created>1467818745582</created>
       <option name="number" value="00030" />
@@ -1019,7 +1011,14 @@
       <option name="project" value="LOCAL" />
       <updated>1469456411837</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="BOW BEFORE THARAXIS">
+      <created>1469524293926</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1469524293926</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -1027,7 +1026,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -1037,7 +1036,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3369863" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32328767" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1056,6 +1055,24 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3240372" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
       <collection />
@@ -1068,7 +1085,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ajout de la page Coding tests" />
     <MESSAGE value="page Coding tests assortie au reste" />
     <MESSAGE value="page de presentation des technos" />
     <MESSAGE value="remplissage de la page d'intro" />
@@ -1093,7 +1109,8 @@
     <MESSAGE value="New NavBar !" />
     <MESSAGE value="Fix a 2px problem of the Navbar &#10;&#10;+ Now lesson can only be created if all the fields are not empty (except the lesson text). In addition, it's no longer possible to create further lessons with the same lesson_number if they belong to the same bloc" />
     <MESSAGE value="Push CkEditor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Push CkEditor" />
+    <MESSAGE value="BOW BEFORE THARAXIS" />
+    <option name="LAST_COMMIT_MESSAGE" value="BOW BEFORE THARAXIS" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1415,16 +1432,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="231" column="31" selection-start-line="231" selection-start-column="31" selection-end-line="231" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/lesson/lesson-dialog.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="37" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
+        <state relative-caret-position="453">
+          <caret line="231" column="4" selection-start-line="231" selection-start-column="4" selection-end-line="231" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -1439,16 +1448,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/app.module.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+        <state relative-caret-position="300">
+          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/lesson/lesson-dialog.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+        <state relative-caret-position="393">
+          <caret line="56" column="21" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/lesson/lesson-dialog.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
           <folding />
         </state>
       </provider>

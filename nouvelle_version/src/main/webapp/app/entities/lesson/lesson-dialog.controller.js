@@ -46,9 +46,6 @@
         vm.blocs = Bloc.query();
         vm.questions = Question.query();
 
-        $scope.editorOptions = {
-            // settings more at http://docs.ckeditor.com/#!/guide/dev_configuration
-        };
 
 
         $timeout(function (){

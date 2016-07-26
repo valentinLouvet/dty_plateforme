@@ -2,231 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bbf8ee4-d9ab-448d-8116-1974e2b7f9af" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/brown_papersq.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/pojoaque.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/school_book.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/widget/images/handle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/moono-dark/icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/moono-dark/icons_hidpi.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/moono-dark/images/arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/moono-dark/images/close.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/moono-dark/images/hidpi/close.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/moono-dark/images/hidpi/lock-open.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/moono-dark/images/hidpi/lock.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/moono-dark/images/hidpi/refresh.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/moono-dark/images/lock-open.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/moono-dark/images/lock.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/moono-dark/images/refresh.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/dialogs/codesnippet.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/CHANGES.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/README.ru.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/arta.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/ascetic.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/atelier-dune.dark.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/atelier-dune.light.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/atelier-forest.dark.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/atelier-forest.light.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/atelier-heath.dark.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/atelier-heath.light.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/atelier-lakeside.dark.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/atelier-lakeside.light.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/atelier-seaside.dark.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/atelier-seaside.light.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/brown_paper.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/dark.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/default.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/docco.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/far.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/foundation.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/github.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/googlecode.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/idea.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/ir_black.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/magula.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/mono-blue.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/monokai.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/monokai_sublime.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/obsidian.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/paraiso.dark.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/paraiso.light.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/pojoaque.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/railscasts.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/rainbow.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/school_book.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/solarized_dark.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/solarized_light.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/sunburst.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/tomorrow-night-blue.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/tomorrow-night-bright.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/tomorrow-night-eighties.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/tomorrow-night.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/tomorrow.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/vs.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/xcode.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/codesnippet/lib/highlight/styles/zenburn.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/imageresize/LICENSE.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/imageresize/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/uploadimage/plugin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/samples/old/codesnippet/codesnippet.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/samples/old/tableresize/tableresize.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/moono-dark/dialog.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/moono-dark/dialog_ie.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/moono-dark/dialog_ie7.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/moono-dark/dialog_ie8.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/moono-dark/dialog_iequirks.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/moono-dark/editor.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/moono-dark/editor_gecko.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/moono-dark/editor_ie.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/moono-dark/editor_ie7.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/moono-dark/editor_ie8.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/moono-dark/editor_iequirks.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/moono-dark/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckupload.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/a11yhelp.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/_translationstatus.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/af.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/ar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/bg.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/ca.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/cs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/cy.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/da.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/de-ch.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/de.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/el.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/en-gb.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/en.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/eo.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/es.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/et.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/eu.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/fa.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/fi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/fo.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/fr-ca.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/fr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/gl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/gu.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/he.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/hi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/hr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/hu.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/id.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/it.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/ja.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/km.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/ko.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/ku.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/lt.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/lv.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/mk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/mn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/nb.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/nl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/no.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/pl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/pt-br.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/pt.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/ro.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/ru.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/si.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/sk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/sl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/sq.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/sr-latn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/sr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/sv.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/th.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/tr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/tt.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/ug.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/uk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/vi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/zh-cn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/a11yhelp/dialogs/lang/zh.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/pastefromword/filter/default.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/.temp/css/dialog.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/.temp/css/dialog_ie.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/.temp/css/dialog_ie7.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/.temp/css/dialog_ie8.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/.temp/css/dialog_iequirks.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/.temp/css/dialog_opera.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/.temp/css/editor.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/.temp/css/editor_gecko.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/.temp/css/editor_ie.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/.temp/css/editor_ie7.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/.temp/css/editor_ie8.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/.temp/css/editor_iequirks.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/dialog.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/dialog_ie.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/dialog_ie7.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/dialog_ie8.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/dialog_iequirks.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/dialog_opera.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/editor.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/editor_gecko.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/editor_ie.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/editor_ie7.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/editor_ie8.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/editor_iequirks.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/icons.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/icons_hidpi.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/images/arrow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/images/close.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/images/hidpi/close.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/images/hidpi/lock-open.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/images/hidpi/lock.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/images/hidpi/refresh.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/images/lock-open.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/images/lock.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/images/refresh.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/readme.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/sample/bootstrapck-sample.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/sample/css/bootstrapck-sample.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/sample/js/analytics.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/sample/js/jquery-1.11.0.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/scss/browser-specific/gecko/editor_gecko.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/scss/browser-specific/ie/dialog_ie.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/scss/browser-specific/ie/editor_ie.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/scss/browser-specific/ie7/dialog_ie7.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/scss/browser-specific/ie7/editor_ie7.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/scss/browser-specific/ie8/dialog_ie8.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/scss/browser-specific/ie8/editor_ie8.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/scss/browser-specific/iequirks/dialog_iequirks.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/scss/browser-specific/iequirks/editor_iequirks.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/scss/browser-specific/opera/dialog_opera.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/scss/components/_colorpanel.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/scss/components/_elementspath.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/scss/components/_mainui.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/scss/components/_menu.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/scss/components/_panel.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/scss/components/_presets.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/scss/components/_reset.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/scss/components/_richcombo.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/scss/components/_toolbar.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/scss/components/editor.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/scss/config/_colors.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/scss/config/_config.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/scss/config/_defaults.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/skins/bootstrapck/scss/dialog/dialog.scss" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/icons.png" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/icons.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/icons_hidpi.png" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/icons_hidpi.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.controller.js" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.state.js" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.state.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/modify-course/modify-course.controller.js" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/modify-course/modify-course.controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/modify-course/modify-course.html" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/modify-course/modify-course.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/lesson/lesson-dialog.controller.js" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/lesson/lesson-dialog.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/lesson/lesson-dialog.html" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/lesson/lesson-dialog.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/build-config.js" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/build-config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/ckeditor.js" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/ckeditor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/config.js" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/lang/en.js" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/lang/en.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/image/dialogs/image.js" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/image/dialogs/image.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/samples/old/index.html" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/samples/old/index.html" />
     </list>
     <ignored path="dty_plateforme.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -246,23 +24,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="create-course.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.html">
+      <file leaf-file-name="lesson-dialog.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/lesson/lesson-dialog.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
-              <folding>
-                <element signature="n#style#0;n#button#0;n#span#1;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="258">
+              <caret line="54" column="172" selection-start-line="54" selection-start-column="104" selection-end-line="54" selection-end-column="172" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create-course.controller.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="create-course.controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+            <state relative-caret-position="-318">
+              <caret line="255" column="20" selection-start-line="255" selection-start-column="20" selection-end-line="255" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit-course.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/edit-course/edit-course.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="modify-course.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/modify-course/modify-course.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lesson-dialog.controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/lesson/lesson-dialog.controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-153">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="misc.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -281,18 +97,8 @@
       <file leaf-file-name="create-course.state.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.state.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
+            <state relative-caret-position="255">
               <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="image.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/image/dialogs/image.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="37" column="249" selection-start-line="37" selection-start-column="249" selection-end-line="37" selection-end-column="249" />
               <folding />
             </state>
           </provider>
@@ -308,39 +114,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3570">
+            <state relative-caret-position="-9645">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1469545747000" expanded="true" signature="59:129395" ph="..." />
-                <marker date="1469545747000" expanded="true" signature="98:33579" ph="..." />
-                <marker date="1469545747000" expanded="true" signature="192:33579" ph="..." />
-                <marker date="1469545747000" expanded="true" signature="129321:129338" ph="..." />
-                <marker date="1469545747000" expanded="true" signature="129321:129356" ph="..." />
-                <marker date="1469545747000" expanded="true" signature="129321:129369" ph="..." />
-                <marker date="1469545747000" expanded="true" signature="129321:129384" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ckupload.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckupload.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -408,15 +186,15 @@
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/edit-course/edit-course.html" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/modify-course/modify-course.controller.js" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/lesson/lesson-dialog.html" />
-        <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/modify-course/modify-course.html" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/uploadimage/plugin.js" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/plugins/image/dialogs/image.js" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckupload.php" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/config.js" />
-        <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.html" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/lesson/lesson-dialog.controller.js" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.state.js" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.controller.js" />
+        <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.html" />
+        <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/modify-course/modify-course.html" />
       </list>
     </option>
   </component>
@@ -586,78 +364,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="entities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dty" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dty" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nouvelle_version" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="entities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lesson" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dty" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dty" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nouvelle_version" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="course" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -696,7 +402,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="create-course" />
+              <option name="myItemId" value="modify-course" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -789,10 +495,9 @@
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
           <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/edit-course/edit-course.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/modify-course/modify-course.controller.js</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/modify-course/modify-course.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/layouts/navbar/navbar.controller.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/progression/progression.controller.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/progression/progression.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/modify-course/modify-course.state.js</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -1160,13 +865,6 @@
       <workItem from="1469181301757" duration="159000" />
       <workItem from="1469528363946" duration="107000" />
     </task>
-    <task id="LOCAL-00031" summary="page d'accueil plus jolie">
-      <created>1467818971367</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1467818971367</updated>
-    </task>
     <task id="LOCAL-00032" summary="page d'accueil plus jolie">
       <created>1467819594504</created>
       <option name="number" value="00032" />
@@ -1503,7 +1201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1469535102152</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="Cadeau Vincent &lt;3">
+      <created>1469545763921</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1469545763921</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -1520,7 +1225,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32328767" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33835617" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1570,7 +1275,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="page de presentation des technos" />
     <MESSAGE value="remplissage de la page d'intro" />
     <MESSAGE value="ajout d'images sur la page" />
     <MESSAGE value="ajout d'images sur la page et correction du e dans la nav-bar" />
@@ -1595,7 +1299,8 @@
     <MESSAGE value="Push CkEditor" />
     <MESSAGE value="BOW BEFORE THARAXIS" />
     <MESSAGE value="Ceci est juste une version qui marche" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ceci est juste une version qui marche" />
+    <MESSAGE value="Cadeau Vincent &lt;3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cadeau Vincent &lt;3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1606,20 +1311,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ancienne_version/src/html/coachProfile/studentsListe.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ancienne_version/src/html/signup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ancienne_version/src/html/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1822,34 +1513,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/lesson/lesson-dialog.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/modify-course/modify-course.controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/modify-course/modify-course.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/edit-course/edit-course.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -1931,32 +1598,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3570">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1469545747000" expanded="true" signature="59:129395" ph="..." />
-            <marker date="1469545747000" expanded="true" signature="98:33579" ph="..." />
-            <marker date="1469545747000" expanded="true" signature="192:33579" ph="..." />
-            <marker date="1469545747000" expanded="true" signature="129321:129338" ph="..." />
-            <marker date="1469545747000" expanded="true" signature="129321:129356" ph="..." />
-            <marker date="1469545747000" expanded="true" signature="129321:129369" ph="..." />
-            <marker date="1469545747000" expanded="true" signature="129321:129384" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#span#1;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/lesson/lesson.controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
@@ -1965,18 +1606,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/lesson/lesson-dialog.controller.js">
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.state.js">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+        <state relative-caret-position="-9645">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/bloc/bloc-dialog.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1989,10 +1638,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.state.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/lesson/lesson-dialog.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#span#1;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/lesson/lesson-dialog.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="54" column="172" selection-start-line="54" selection-start-column="104" selection-end-line="54" selection-end-column="172" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+        <state relative-caret-position="-318">
+          <caret line="255" column="20" selection-start-line="255" selection-start-column="20" selection-end-line="255" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/edit-course/edit-course.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/modify-course/modify-course.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
           <folding />
         </state>
       </provider>

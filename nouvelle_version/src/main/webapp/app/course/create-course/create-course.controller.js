@@ -245,6 +245,7 @@
             //Sauvegarde la leçon dans la BdD
 
             this.saveLesson = function() {
+                console.log(vm.newLesson.id);
 
                 vm.isSaving = true;
                 /*
@@ -264,33 +265,30 @@
                 //$uibModalInstance.close(result);
                 vm.isSaving = false;
                 console.log("onSaveLessonSuccess");
-            };
+            }
 
             function onSaveLessonError () {
                 vm.isSaving = false;
                 console.log("onSaveLessonError");
-            };
+            }
 
             // Recherche la liste des blocs dans la BdD
 
             function loadAll () {
-                Bloc.query({},onSuccess,onError);
-            };
+                Bloc.query({},onSuccess,onError)
+                }
 
-            function onSuccess(data){
+                function onSuccess(data){
                 vm.blocs=data;
                 console.log(data);
-                console.log(vm.blocs);
-            };
+                 }
 
-            function onError(error){
+                 function onError(error){
                 AlertService.error(error.data.message);
-            };
+                 }
 
 
             loadAll();
-
-
 
 
 

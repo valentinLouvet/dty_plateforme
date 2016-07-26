@@ -80,7 +80,7 @@ public class StudentResource {
     }
 
     /**
-     * GET  /students : get all the students.
+     * GET  /students : get all the students linked to the user - there must be only one.
      *
      * @param pageable the pagination information
      * @return the ResponseEntity with status 200 (OK) and the list of students in body

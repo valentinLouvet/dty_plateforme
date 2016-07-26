@@ -13,7 +13,7 @@
         vm.isNavbarCollapsed = true;
         vm.isAuthenticated = Principal.isAuthenticated;
 
-        ProfileService.getProfileInfo().then(function(response) {
+        ProfileService.getProfileInfo().then(function (response) {
             vm.inProduction = response.inProduction;
             vm.swaggerDisabled = response.swaggerDisabled;
         });
@@ -42,14 +42,5 @@
         function collapseNavbar() {
             vm.isNavbarCollapsed = true;
         }
-
-        //pour chopper la todo_lesson du student - a modifier, on mettra toutes les infos user/student dans un cookie une fois pour toutes.
-       var student=Student.query().$promise;
-        vm.student=[];
-        student.then(function(data){
-            vm.student=data[0];
-            console.log(vm.student)
-        });
-
     }
 })();

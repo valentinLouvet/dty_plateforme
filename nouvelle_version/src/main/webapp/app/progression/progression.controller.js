@@ -25,6 +25,5 @@
                 vm.student=data[0];
                 console.log(vm.student)
             })
-
     }
 })();

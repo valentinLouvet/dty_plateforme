@@ -12,11 +12,11 @@
             this.compteurAnswer = [0];
 
             this.newLesson = {
-                cours : "",
-                level : 0,
-                num_lesson : 0,
-                title : "",
-                bloc : "",
+                cours : null,
+                level : null,
+                num_lesson : null,
+                title : null,
+                id : null,
                 quizz : []
             };
 
@@ -244,16 +244,20 @@
             //Sauvegarde la leçon dans la BdD
 
             this.saveLesson = function() {
+                console.log(vm.newLesson.id);
+
                 vm.isSaving = true;
-                if (vm.newLesson.id !== null) {
+                /*
+                if (vm.newLesson.id == null) {
                     console.log("vm.newLesson.id !== null");
                     Lesson.update(vm.newLesson, onSaveLessonSuccess, onSaveLessonError);
-                } else {
-                    console.log("vm.newLesson.id == null");
+                } else
+                { */
+
                     Lesson.save(vm.newLesson, onSaveLessonSuccess, onSaveLessonError);
-                }
+                //}
                 console.log(vm.newLesson);
-            };
+            }
 
             function onSaveLessonSuccess () {
                 //$scope.$emit('objectifDtyApp:lessonUpdate', result);
@@ -284,6 +288,7 @@
 
 
             loadAll();
+
 
 
 

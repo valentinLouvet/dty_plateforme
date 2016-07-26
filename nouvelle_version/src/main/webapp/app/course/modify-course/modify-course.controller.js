@@ -1,37 +1,27 @@
 (function () {
-   'use strict';
+    'use strict';
 
-    /*
-    angular.module('objectifDtyApp')
-        .directive('ckEditor', function () {
-          return {
-            require: '?ngModel',
-            link: function (scope, elm, attr, ngModel) {
-              var ck = CKEDITOR.replace(elm[0]);
-              if (!ngModel) return;
-              ck.on('instanceReady', function () {
-                ck.setData(ngModel.$viewValue);
-              });
-              function updateModel() {
-                scope.$apply(function () {
-                  ngModel.$setViewValue(ck.getData());
-                });
-              }
-              ck.on('change', updateModel);
-              ck.on('key', updateModel);
-              ck.on('dataReady', updateModel);
-              ngModel.$render = function (value) {
-                ck.setData(ngModel.$viewValue);
-              };
-            }
-          };
-        }); */
-    angular.module('objectifDtyApp')
-        .controller('courseModifyController',['$cookies', '$state', 'Lesson', function ($cookies, $state, Lesson) {
+    angular
+        .module('objectifDtyApp')
+        .controller('courseModifyController',['Principal', 'DataUtils', 'courseView', '$state', 'Lesson','AlertService', 'Bloc', function (Principal, DataUtils, courseView, $state, Lesson, AlertService, Bloc) {
+
             var vm=this;
             vm.modifyCourse= false;
-            vm.course=$cookies.getObject('course');
+            vm.blocs= [];
+
+            console.log(vm.id);
+            vm.course= courseView;
+            console.log(vm.course);
+            console.log(courseView);
+
             vm.newContent=vm.course.cours;
+            vm.nbreLesson = vm.course.questions.length;
+            vm.compteurQuestion=0;
+            vm.questions= [];
+
+            vm.addCompteur = function(i){
+                vm.compteurQuestion = vm.compteurQuestion + i;
+            };
 
             //active le champ de texte pour modifier la partie cours
             vm.changeCourse= function () {
@@ -42,6 +32,12 @@
             vm.saveChanges = function () {
                 vm.course.cours = vm.newContent;
                 vm.modifyCourse=false;
+            };
+
+            vm.editQuestion = function () {
+                vm.compteurQuestion = vm.compteurQuestion - vm.nbreLesson;
+                vm.questions[vm.compteurQuestion] = false;
+                console.log(vm.questions)
             };
 
             //enregistre la lesson dans la BDD

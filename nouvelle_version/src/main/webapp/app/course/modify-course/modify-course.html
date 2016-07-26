@@ -14,8 +14,10 @@
 </div>
 
 <div ng-repeat="question in vm.course.questions" class="form-group">
+    {{vm.questions[vm.compteurQuestion] = true}}
+    {{vm.addCompteur(1)}}
     The question: {{question.intitule}}
-    <button class="btn btn-primary-dty">Edit question</button>
+    <button class="btn btn-primary-dty" ng-click="vm.editQuestion()">Edit question</button>
     <br>
     All the answers:
     <div ng-repeat="response in question.responses">

@@ -5,7 +5,7 @@
     </div>
 
     <ul class="list-group" ng-repeat="course in bloc.lessons">
-        <li class="list-group-item list-group-item-white"> Lesson {{vm.compteur}} : <a href ng-click="vm.goCourse(course)">{{course.title}}</a></li>
+        <li class="list-group-item list-group-item-white"> Lesson {{vm.compteur}} : <a href ui-sref="modifyCourse({id:course.id})">{{course.title}}</a></li>
         {{vm.addCompteur(1)}}
     </ul>
 </div>

@@ -38,6 +38,7 @@
             $scope.$emit('objectifDtyApp:lesson_doneUpdate', result);
             $uibModalInstance.close(result);
             vm.isSaving = false;
+            console.log(vm.lesson_done);
         }
 
         function onSaveError () {

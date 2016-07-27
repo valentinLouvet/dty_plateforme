@@ -23,7 +23,7 @@
                 }
                 vm.score *= 100;
                 vm.score/=vm.lesson.questions.length;
-
+                console.log(vm.student[0].lesson_dones);
                 console.log(parseInt(vm.score));
                 vm.lesson_done = {
                     note_init : parseInt(vm.score),

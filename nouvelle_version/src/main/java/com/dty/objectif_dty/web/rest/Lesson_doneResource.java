@@ -95,9 +95,8 @@ public class Lesson_doneResource {
     public ResponseEntity<List<Lesson_done>> getAllLesson_dones(Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to get a page of Lesson_dones");
-        Page<Lesson_done> page = lesson_doneRepository.findAll(pageable);
-        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/lesson-dones");
-        return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
+        List<Lesson_done> list = lesson_doneRepository.findAllWithEagerRelationships();
+        return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
     /**

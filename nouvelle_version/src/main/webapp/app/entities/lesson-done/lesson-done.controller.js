@@ -35,9 +35,7 @@
                 }
                 return result;
             }
-            function onSuccess(data, headers) {
-                vm.links = ParseLinks.parse(headers('link'));
-                vm.totalItems = headers('X-Total-Count');
+            function onSuccess(data) {
                 for (var i = 0; i < data.length; i++) {
                     vm.lesson_dones.push(data[i]);
                 }

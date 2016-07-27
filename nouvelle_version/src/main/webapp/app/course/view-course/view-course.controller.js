@@ -17,6 +17,12 @@
             });
             Lesson_done.query().$promise.then(function(data){
                 vm.lesson_dones = data;
+                for(i=0; i<vm.lesson_dones.length ;i++){
+                    if(vm.lesson_dones[i].lessons[0].id == vm.lesson.id){
+                        vm.lessonDoneNew = false;
+                        vm.lessonDoneI = i;
+                    }
+                }
             });
 
             vm.submitLesson = function(){
@@ -42,6 +48,10 @@
                     if(vm.lesson_dones[i].lessons[0].id == vm.lesson.id){
                         vm.lesson_done.id = vm.lesson_dones[i].id;
                         vm.lesson_done.note_init = vm.lesson_dones[i].note_init;
+                        if(vm.score<vm.lesson_dones[i].note_max){
+
+                            vm.lesson_done.note_max = vm.lesson_dones[i].note_max;
+                        }
                         vm.lessonDoneNew = false;
                     }
                 }

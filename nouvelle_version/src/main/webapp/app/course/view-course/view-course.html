@@ -10,6 +10,7 @@ Choose the right answer!
         </select></li>
     </ul>
     <button ng-click="vm.submitLesson()" ng-hide="vm.scoreCalc" class="btn btn-primary-dty-inverse">Submit my answers</button>
+    <p ng-hide="vm.lessonDoneNew">lesson already submitted, initail score was {{vm.lesson_dones[vm.lessonDoneI].note_init}}% and best score was {{vm.lesson_dones[vm.lessonDoneI].note_max}}%</p>
     <h2 ng-show="vm.scoreCalc">Ton score est de {{vm.score}}%</h2>
 </div>
 

@@ -9,6 +9,7 @@ Choose the right answer!
             <option ng-repeat="response in question.responses" value={{response.veracity}}>{{response.text}}</option>
         </select></li>
     </ul>
-    <button ng-click="vm.submitLesson()" class="btn btn-primary-dty-inverse">Submit my answers</button>
+    <button ng-click="vm.submitLesson()" ng-hide="vm.scoreCalc" class="btn btn-primary-dty-inverse">Submit my answers</button>
+    <h2 ng-show="vm.scoreCalc">Ton score est de {{vm.score}}%</h2>
 </div>
 

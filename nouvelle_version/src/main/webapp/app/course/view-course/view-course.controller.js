@@ -8,6 +8,7 @@
             var vm = this;
             vm.id=$stateParams.id;
             vm.lesson=Lesson.get({id: vm.id});
+            vm.scoreCalc = false;
 
             vm.score = null;
             Student.query().$promise.then(function(data){
@@ -15,6 +16,7 @@
             });
 
             vm.submitLesson = function(){
+
                 vm.score = 0;
                 for(i=0; i<vm.lesson.questions.length; i++){
                     if(vm.lesson.questions[i].score == "true"){
@@ -31,8 +33,10 @@
                     student : vm.student[0],
                     lessons : [vm.lesson]
                 };
+                vm.scoreCalc = true;
                 console.log(vm.lesson_done);
                 save();
+
             };
             function save () {
                 vm.isSaving = true;
@@ -46,6 +50,10 @@
             function onSaveSuccess (result) {
                 $scope.$emit('objectifDtyApp:lesson_doneUpdate', result);
                 vm.isSaving = false;
+                Student.query().$promise.then(function(data){
+                    vm.student = data;
+                    console.log(vm.student);
+                });
             }
 
             function onSaveError () {

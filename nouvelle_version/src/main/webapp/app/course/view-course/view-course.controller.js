@@ -25,8 +25,7 @@
                 }
                 vm.score *= 100;
                 vm.score/=vm.lesson.questions.length;
-                console.log(vm.student[0].lesson_dones);
-                console.log(parseInt(vm.score));
+                console.log(vm.student[0]);
                 vm.lesson_done = {
                     note_init : parseInt(vm.score),
                     note_max : parseInt(vm.score),
@@ -34,7 +33,6 @@
                     lessons : [vm.lesson]
                 };
                 vm.scoreCalc = true;
-                console.log(vm.lesson_done);
                 save();
 
             };

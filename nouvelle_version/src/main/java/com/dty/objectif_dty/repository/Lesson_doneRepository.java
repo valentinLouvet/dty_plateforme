@@ -13,7 +13,7 @@ import java.util.List;
 @SuppressWarnings("unused")
 public interface Lesson_doneRepository extends JpaRepository<Lesson_done,Long> {
 
-    @Query("select distinct lesson_done from Lesson_done lesson_done left join fetch lesson_done.lessons")
+    @Query("select distinct lesson_done from Lesson_done lesson_done left join fetch lesson_done.lessons where lesson_done.student.user.login = ?#{principal.username}")
     List<Lesson_done> findAllWithEagerRelationships();
 
     @Query("select lesson_done from Lesson_done lesson_done left join fetch lesson_done.lessons where lesson_done.id =:id")

@@ -12,7 +12,7 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "coach")
-@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+//@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class Coach implements Serializable {
 
     private static final long serialVersionUID = 1L;

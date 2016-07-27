@@ -13,15 +13,38 @@
     </div>
 </div>
 
-<div ng-repeat="question in vm.course.questions" class="form-group">
-    {{vm.questions[vm.compteurQuestion] = true}}
-    {{vm.addCompteur(1)}}
-    The question: {{question.intitule}}
-    <button class="btn btn-primary-dty" ng-click="vm.editQuestion()">Edit question</button>
+<div ng-repeat="question in vm.questions" class="form-group">
+    <div>
+
+        <span>
+            The question: {{question.intitule}}
+        </span>
+        <button class="btn btn-primary-dty" ng-click="vm.editQuestion(vm.questions.indexOf(question))">Edit question</button>
+        <div class="input-group" ng-show="vm.editedQuestions[vm.questions.indexOf(question)]">
+            <span class="input-group-btn">
+                <button type="button" ng-click="vm.saveQuestion(question)" class="btn btn-md btn-primary-dty pull-right">Remove question</button>
+            </span>
+            <input type="text" placeholder="Enter question here..." class="form-control" ng-model="question.intitule">
+            <span class="input-group-btn">
+                <button type="button" ng-click="vm.saveQuestion(vm.questions.indexOf(question), question.intitule)" class="btn btn-md btn-primary-dty pull-right">Save changes</button>
+            </span>
+        </div>
+    </div>
     <br>
     All the answers:
-    <div ng-repeat="response in question.responses">
-        {{response.text}}
+    <div ng-repeat="response in question.responses" >
+        <div ng-hide="vm.editedQuestions[vm.questions.indexOf(question)]">
+            {{response.text}}
+        </div>
+        <div class="input-group" ng-show="vm.editedQuestions[vm.questions.indexOf(question)]">
+            <span class="input-group-btn">
+                <button type="button" ng-click="" class="btn btn-md btn-primary-dty pull-right">Remove answer</button>
+            </span>
+            <input type="text" placeholder="Enter question here..." class="form-control" ng-model="response.text">
+            <span class="input-group-btn">
+                <button type="button" ng-click="vm.saveAnswer(vm.questions.indexOf(question), question.responses.indexOf(response), response.text)" class="btn btn-md btn-primary-dty pull-right">Save changes</button>
+            </span>
+        </div>
     </div>
 </div>
 

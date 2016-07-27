@@ -11,14 +11,16 @@
             this.compteurQuestion = 1;
             this.compteurAnswer = [0];
 
+            this.quizz = [];
+            this.answers = [];
+
             this.newLesson = {
                 cours : null,
                 level : null,
                 num_lesson : null,
                 title : null,
                 id : null,
-                bloc : null,
-                quizz : []
+                bloc : null
             };
 
             console.log(vm.newLesson);
@@ -26,53 +28,60 @@
 
 
             this.question = {
+                id : null,
                 intitule : "",
                 difficulty : 0,
                 //lesson_id : this.newLesson.id,
-                lesson_id : 0,
+                lesson : null,
                 cpt: this.compteurQuestion,
-                correction : "",
-                answers : []
+                correction : ""
             };
 
-            this.answer = {
+            /*this.answer = {
+                id : null,
                 text : "",
                 veracity : false,
                 correction: "",
                 //question_id: this.newLesson.quizz[this.compteurAnswer[0]].id,
-                question_id: 0,
+                question: null,
                 cpt: this.compteurAnswer[0] + 1
-            };
+            };*/
 
             // Initialisation de la 1ère question
             // avec 2 réponses
 
             var answer1 = {
+                id : null,
                 text : "",
                 veracity : false,
                 correction: "",
                 //question_id: this.newLesson.quizz[this.compteurAnswer[0]].id,
-                question_id: 0,
+                question: null,
                 cpt: this.compteurAnswer[0] + 1
             };
 
             this.compteurAnswer[this.compteurQuestion-1] = this.compteurAnswer[this.compteurQuestion-1] + 1;
 
             var answer2 = {
+                id : null,
                 text : "",
                 veracity : false,
                 correction: "",
                 //question_id: this.newLesson.quizz[this.compteurAnswer[0]].id,
-                question_id: 0,
+                question: null,
                 cpt: this.compteurAnswer[0] + 1
             };
 
             this.compteurAnswer[this.compteurQuestion-1] = this.compteurAnswer[this.compteurQuestion-1] + 1;
 
-            this.question.answers.push(answer1);
-            this.question.answers.push(answer2);
+            this.answers.push([answer1, answer2]);
+            this.quizz.push(this.question);
 
-            this.newLesson.quizz.push(this.question);
+            console.log("Answers : ");
+            console.log(this.answers);
+
+            console.log("Questions :");
+            console.log(this.quizz);
 
             console.log("New question created, intitulate : "+this.question.intitulate+", id : "+this.question.id);
 
@@ -91,17 +100,18 @@
                 // à l'id idOfQuestion
 
                 var answer = {
+                    id : null,
                     text : "",
                     veracity : false,
                     correction: "",
                     //question_id: this.newLesson.quizz[this.compteurAnswer[idOfQuestion - 1]].id,
-                    question_id: 0,
+                    question: 0,
                     cpt: this.compteurAnswer[idOfQuestion - 1] + 1
                 };
 
                 this.compteurAnswer[idOfQuestion - 1] = this.compteurAnswer[idOfQuestion - 1] + 1;
 
-                this.newLesson.quizz[idOfQuestion - 1].answers.push(answer);
+                this.answers[idOfQuestion - 1].push(answer);
 
                 console.log("New answer created : " + answer);
 
@@ -127,15 +137,15 @@
                         // Il faut décaler les id de toutes les réponses qui suivent
 
                         for(var i=idOfAnswer - 1; i<this.compteurAnswer[idOfQuestion - 1]; i++){
-                            this.newLesson.quizz[idOfQuestion - 1].answers[i].id = this.newLesson.quizz[idOfQuestion - 1].answers[i].id - 1;
-                            this.newLesson.quizz[idOfQuestion - 1].answers[i].intitulate = "Answer " + this.newLesson.quizz[idOfQuestion - 1].answers[i].id;
+                            this.answers[idOfQuestion - 1][i].id = this.answers[idOfQuestion - 1][i].id - 1;
+                            this.answers[idOfQuestion - 1][i].intitulate = "Answer " + this.answers[idOfQuestion - 1][i].id;
                         }
 
                     }
                     else{
                         console.log("Last answer...");
                     }
-                    this.newLesson.quizz[idOfQuestion - 1].answers.splice(idOfAnswer - 1, 1);
+                    this.answers[idOfQuestion - 1].splice(idOfAnswer - 1, 1);
                     this.compteurAnswer[idOfQuestion - 1] = this.compteurAnswer[idOfQuestion - 1] - 1;
 
                 }
@@ -158,6 +168,7 @@
                 // Une question a toujours au moins 2 réponses
 
                 var answer1 = {
+                    id : null,
                     text : "",
                     veracity : false,
                     correction: "",
@@ -169,6 +180,7 @@
                 this.compteurAnswer[this.compteurQuestion - 1] = this.compteurAnswer[this.compteurQuestion - 1] + 1;
 
                 var answer2 = {
+                    id : null,
                     text : "",
                     veracity : false,
                     correction: "",
@@ -180,19 +192,18 @@
                 this.compteurAnswer[this.compteurQuestion - 1] = this.compteurAnswer[this.compteurQuestion - 1] + 1;
 
                 var question = {
+                    id : null,
                     intitule : "",
                     difficulty : 0,
                     //lesson_id : this.newLesson.id,
                     lesson_id: 0,
                     cpt: this.compteurQuestion,
-                    correction : "",
-                    answers : []
+                    correction : ""
                 };
 
-                question.answers.push(answer1);
-                question.answers.push(answer2);
+                this.answers.push([answer1, answer2]);
 
-                this.newLesson.quizz.push(question);
+                this.quizz.push(question);
 
                 console.log("New question created " + question);
 
@@ -212,14 +223,15 @@
                         // en les décrémentant
                         console.log("This is not the last question");
                         for(var i = idOfQuestion - 1 ; i<this.compteurQuestion; i++){
-                            this.newLesson.quizz[i].cpt = this.newLesson.quizz[i].cpt - 1;
+                            this.quizz[i].cpt = this.quizz[i].cpt - 1;
                         }
                     }
                     else{
                         console.log("This is the last question");
                     }
 
-                    this.newLesson.quizz.splice(idOfQuestion - 1, 1);
+                    this.quizz.splice(idOfQuestion - 1, 1);
+                    this.answers.splice(idOfQuestion - 1, 1);
                     this.compteurAnswer.splice(idOfQuestion - 1, 1);
                     this.compteurQuestion = this.compteurQuestion - 1;
 
@@ -237,8 +249,8 @@
 
             this.modifyVeracity = function(idOfQuestion, idOfAnswer){
                 //console.log("modifyVeracity");
-                this.newLesson.quizz[idOfQuestion - 1].answers[idOfAnswer - 1].veracity = ! (this.newLesson
-                    .quizz[idOfQuestion - 1].answers[idOfAnswer - 1].veracity);
+                this.answers[idOfQuestion - 1][idOfAnswer - 1].veracity = ! (this.answers[idOfQuestion - 1]
+                [idOfAnswer - 1].veracity);
                 console.log(idOfQuestion + ", " + idOfAnswer);
             };
 
@@ -247,24 +259,35 @@
             this.saveLesson = function() {
                 console.log(vm.newLesson.id);
 
-                vm.isSaving = true;
-                /*
-                if (vm.newLesson.id == null) {
-                    console.log("vm.newLesson.id !== null");
-                    Lesson.update(vm.newLesson, onSaveLessonSuccess, onSaveLessonError);
-                } else
-                { */
+                console.log("Je passe ici");
 
-                    Lesson.save(vm.newLesson, onSaveLessonSuccess, onSaveLessonError);
-                //}
+                vm.isSaving = true;
+
+                console.log("Je vais sauvegarder la leçon");
+
+                // Lesson.save renvoie la leçon qui a été sauvagardée en lui donnant un id
+                vm.newLesson = Lesson.save(vm.newLesson, onSaveLessonSuccess, onSaveLessonError);
                 console.log(vm.newLesson);
-            }
+                console.log("Je passe là");
+
+                console.log(vm.newLesson);
+            };
+
+            this.saveQuestion = function(){
+              console.log("Je rentre dans cette fonction saveQuestion");
+              vm.quizz[0].lesson = vm.newLesson;
+              // Question.save renvoie la leçon qui a été sauvegardée en lui donnant un id
+              Question.save(vm.quizz[0], onSaveQuestionSuccess, onSaveQuestionError);
+              console.log("Question saved :");
+              console.log(vm.quizz[0]);
+            };
 
             function onSaveLessonSuccess () {
                 //$scope.$emit('objectifDtyApp:lessonUpdate', result);
                 //$uibModalInstance.close(result);
                 vm.isSaving = false;
                 console.log("onSaveLessonSuccess");
+                vm.saveQuestion();
             }
 
             function onSaveLessonError () {
@@ -272,20 +295,33 @@
                 console.log("onSaveLessonError");
             }
 
+            function onSaveQuestionSuccess(){
+                vm.isSaving = false;
+                console.log("onSaveQuestionSuccess");
+                //vm.saveLesson();
+            }
+
+            function onSaveQuestionError(){
+                vm.isSaving = false;
+                console.log("onSaveQuestionError");
+            }
+
             // Recherche la liste des blocs dans la BdD
 
             function loadAll () {
-                Bloc.query({},onSuccess,onError)
-                }
 
-                function onSuccess(data){
+                Bloc.query({},onSuccess,onError)
+            }
+
+            function onSuccess(data){
                 vm.blocs=data;
                 console.log(data);
-                 }
+            }
 
-                 function onError(error){
+            function onError(error){
+
                 AlertService.error(error.data.message);
-                 }
+            }
 
 
             loadAll();

@@ -8,6 +8,8 @@
         <select required class="form-control" id="field_bloc" name="bloc" ng-model="vm.newLesson.bloc" ng-options="bloc as bloc.name for bloc in vm.blocs track by bloc.id">
             <option value=""></option>
         </select>
+
+
     </div>
 
     <br>
@@ -38,7 +40,7 @@
 
             <label>Quizz</label>
 
-            <div ng-repeat="question in vm.newLesson.quizz">
+            <div ng-repeat="question in vm.quizz">
 
                 <!-- QUESTION -->
 
@@ -54,7 +56,7 @@
 
                 <label>Answers</label>
 
-                <div class="col-ld-12" ng-repeat="answer in question.answers">
+                <div class="col-ld-12" ng-repeat="answer in vm.answers[question.cpt - 1]">
 
                     <div class="input-group">
                         <span class="input-group-addon">

@@ -2,6 +2,7 @@ package com.dty.objectif_dty.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import com.dty.objectif_dty.domain.Lesson_done;
+import com.dty.objectif_dty.domain.Lesson;
 import com.dty.objectif_dty.repository.Lesson_doneRepository;
 import com.dty.objectif_dty.web.rest.util.HeaderUtil;
 import com.dty.objectif_dty.web.rest.util.PaginationUtil;
@@ -20,6 +21,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 /**
  * REST controller for managing Lesson_done.
@@ -29,10 +31,10 @@ import java.util.Optional;
 public class Lesson_doneResource {
 
     private final Logger log = LoggerFactory.getLogger(Lesson_doneResource.class);
-        
+
     @Inject
     private Lesson_doneRepository lesson_doneRepository;
-    
+
     /**
      * POST  /lesson-dones : Create a new lesson_done.
      *
@@ -93,7 +95,7 @@ public class Lesson_doneResource {
     public ResponseEntity<List<Lesson_done>> getAllLesson_dones(Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to get a page of Lesson_dones");
-        Page<Lesson_done> page = lesson_doneRepository.findAll(pageable); 
+        Page<Lesson_done> page = lesson_doneRepository.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/lesson-dones");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
@@ -117,6 +119,7 @@ public class Lesson_doneResource {
                 HttpStatus.OK))
             .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
+
 
     /**
      * DELETE  /lesson-dones/:id : delete the "id" lesson_done.

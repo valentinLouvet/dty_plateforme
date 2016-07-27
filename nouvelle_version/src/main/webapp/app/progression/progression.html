@@ -34,7 +34,7 @@
                 <div class="col-md-5 col-lg-3" id="courses" ng-class="{courseAvailable: bloc.level>0 && bloc.level<100, courseComplete: bloc.level==100, 'colMD': (($index)%2) === 1 , 'colLG': !($index%3 === 0) }">
                     <div class="row">
                     <div class="col-md-12">
-                        <a ui-sref={{bloc.link}}><img class="fixView" ng-src={{bloc.image}}></a>
+                        <a href="#"><img class="fixView" ng-src={{bloc.image}}></a>
                         <p class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             <h2>{{bloc.name}} </h2>
                         </p>

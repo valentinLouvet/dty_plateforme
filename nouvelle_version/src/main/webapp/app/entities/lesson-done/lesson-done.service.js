@@ -7,10 +7,10 @@
     Lesson_done.$inject = ['$resource'];
 
     function Lesson_done ($resource) {
-        var resourceUrl =  'api/lesson-dones/:id';
+        var resourceUrl = 'api/lesson-dones/:id';
 
         return $resource(resourceUrl, {}, {
-            'query': { method: 'GET', isArray: true},
+            'query': {method: 'GET', isArray: true},
             'get': {
                 method: 'GET',
                 transformResponse: function (data) {
@@ -20,7 +20,7 @@
                     return data;
                 }
             },
-            'update': { method:'PUT' }
+            'update': {method: 'PUT'}
         });
-    }
+    };
 })();

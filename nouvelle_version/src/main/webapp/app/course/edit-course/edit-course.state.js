@@ -5,7 +5,8 @@
     stateConfig.$inject = ['$stateProvider'];
 
     function stateConfig($stateProvider) {
-        $stateProvider.state('editCourse', {
+        $stateProvider
+        .state('editCourse', {
 
             parent: 'course',
             url: '/edit',
@@ -22,6 +23,31 @@
             }
 
         })
+        .state('editCourse.delete', {
+                    parent: 'editCourse',
+                    url: '/{id}/delete',
+                    data: {
+                        authorities: ['ROLE_COACH','ROLE_ADMIN']
+                    },
+                    onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
+                        $uibModal.open({
+                            templateUrl: 'app/entities/lesson/lesson-delete-dialog.html',
+                            controller: 'LessonDeleteController',
+                            controllerAs: 'vm',
+                            size: 'md',
+                            resolve: {
+                                entity: ['Lesson', function(Lesson) {
+                                    return Lesson.get({id : $stateParams.id}).$promise;
+                                }]
+                            }
+                        }).result.then(function() {
+                            $state.go('editCourse', null, { reload: true });
+                        }, function() {
+                            $state.go('^');
+                        });
+                    }]
+         });
+
     }
 
 

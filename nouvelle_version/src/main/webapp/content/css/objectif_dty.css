@@ -16,6 +16,9 @@
             height:auto;}
 }
 
+.rmvButton{
+    float : right;
+}
 
 #SignButton {
     min-width : 150px;

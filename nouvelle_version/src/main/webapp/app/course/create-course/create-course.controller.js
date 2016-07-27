@@ -17,7 +17,7 @@
                 num_lesson : null,
                 title : null,
                 id : null,
-                bloc_id : null,
+                bloc : null,
                 quizz : []
             };
 

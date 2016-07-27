@@ -11,6 +11,12 @@
             this.compteurQuestion = 1;
             this.compteurAnswer = [0];
 
+            vm.compteurQuestionSaved = 0;
+            vm.compteurAnswersSaved = 0;
+
+            vm.indexOfAnswer = 0;
+            vm.indexOfQuestion = 0;
+
             this.quizz = [];
             this.answers = [];
 
@@ -77,13 +83,14 @@
             this.answers.push([answer1, answer2]);
             this.quizz.push(this.question);
 
-            console.log("Answers : ");
+            /*console.log("Answers : ");
             console.log(this.answers);
 
             console.log("Questions :");
             console.log(this.quizz);
 
             console.log("New question created, intitulate : "+this.question.intitulate+", id : "+this.question.id);
+            */
 
 
 
@@ -103,9 +110,9 @@
                     id : null,
                     text : "",
                     veracity : false,
-                    correction: "",
+                    correction : "",
                     //question_id: this.newLesson.quizz[this.compteurAnswer[idOfQuestion - 1]].id,
-                    question: 0,
+                    question : 0,
                     cpt: this.compteurAnswer[idOfQuestion - 1] + 1
                 };
 
@@ -173,7 +180,7 @@
                     veracity : false,
                     correction: "",
                     //question_id: this.newLesson.quizz[this.compteurAnswer[this.compteurQuestion - 1]].id,
-                    question_id: 0,
+                    question : 0,
                     cpt: this.compteurAnswer[this.compteurQuestion - 1] + 1
                 };
 
@@ -185,7 +192,7 @@
                     veracity : false,
                     correction: "",
                     //question_id: this.newLesson.quizz[this.compteurAnswer[this.compteurQuestion - 1]].id,
-                    question_id: 0,
+                    question : 0,
                     cpt: this.compteurAnswer[this.compteurQuestion - 1] + 1
                 };
 
@@ -196,7 +203,7 @@
                     intitule : "",
                     difficulty : 0,
                     //lesson_id : this.newLesson.id,
-                    lesson_id: 0,
+                    lesson : 0,
                     cpt: this.compteurQuestion,
                     correction : ""
                 };
@@ -259,35 +266,106 @@
             this.saveLesson = function() {
                 console.log(vm.newLesson.id);
 
-                console.log("Je passe ici");
+                //console.log("Je passe ici");
 
                 vm.isSaving = true;
 
                 console.log("Je vais sauvegarder la leçon");
 
-                // Lesson.save renvoie la leçon qui a été sauvagardée en lui donnant un id
+                // Lesson.save renvoie la leçon qui a été sauvegardée en lui donnant un id
+                // Sauvegarde par la même occasion la leçon
+
                 vm.newLesson = Lesson.save(vm.newLesson, onSaveLessonSuccess, onSaveLessonError);
                 console.log(vm.newLesson);
+
                 console.log("Je passe là");
 
-                console.log(vm.newLesson);
+                //vm.saveQuestion();
             };
 
-            this.saveQuestion = function(){
-              console.log("Je rentre dans cette fonction saveQuestion");
-              vm.quizz[0].lesson = vm.newLesson;
-              // Question.save renvoie la leçon qui a été sauvegardée en lui donnant un id
-              Question.save(vm.quizz[0], onSaveQuestionSuccess, onSaveQuestionError);
-              console.log("Question saved :");
-              console.log(vm.quizz[0]);
+            /*this.saveQuestion = function(){
+                console.log("Je rentre dans cette fonction saveQuestion");
+
+                for(var i = 0; i < vm.quizz.length; i++){
+                    vm.quizz[i].lesson = vm.newLesson;
+                    // Question.save renvoie la leçon qui a été sauvegardée en lui donnant un id
+                    vm.quizz[i] = Question.save(vm.quizz[i], onSaveQuestionSuccess, onSaveQuestionError);
+                    console.log("Question saved :");
+                    console.log(vm.quizz[i]);
+                }
+
+                //vm.saveResponse();
+            };*/
+
+            this.saveQuestion = function(indexOfQuestion){
+                console.log("Je rentre dans cette fonction saveQuestion");
+
+
+                vm.quizz[indexOfQuestion].lesson = vm.newLesson;
+                // Question.save renvoie la leçon qui a été sauvegardée en lui donnant un id
+                vm.quizz[indexOfQuestion] = Question.save(vm.quizz[indexOfQuestion], onSaveQuestionSuccess, onSaveQuestionError);
+                console.log("Question saved :");
+                console.log(vm.quizz[indexOfQuestion]);
+
             };
+
+            /*this.saveResponse = function(){
+                console.log("Je rentre dans cette fonction saveResponse");
+
+                for(var i = 0; i < vm.quizz.length; i++){
+                    for(var j = 0; j < vm.answers[i].length; j++){
+                        // On passe la question sauvegardée en attribut question de la réponse
+                        vm.answers[i][j].question = vm.quizz[i];
+                        // On sauvegarde la réponse
+                        Response.save(vm.answers[i][j], onSaveResponseSuccess, onSaveResponseError);
+                        console.log("Answer saved :");
+                        console.log(vm.answers[i][j]);
+                    }
+                }
+            };*/
+
+            this.saveResponse = function(indexOfQuestion, indexOfAnswer){
+                console.log("Je rentre dans cette fonction saveResponse");
+
+                // On passe la question sauvegardée en attribut question de la réponse
+                vm.answers[indexOfQuestion][indexOfAnswer].question = vm.quizz[indexOfQuestion];
+                // On sauvegarde la réponse
+                Response.save(vm.answers[indexOfQuestion][indexOfAnswer], onSaveResponseSuccess, onSaveResponseError);
+                console.log("Answer saved :");
+                console.log(vm.answers[indexOfQuestion][indexOfAnswer]);
+
+            };
+
+            function onSaveResponseSuccess (){
+
+                vm.isSaving = false;
+                console.log("onSaveResponseSuccess");
+
+                if(vm.indexOfAnswer < vm.answers[vm.indexOfQuestion].length - 1){
+                    vm.indexOfAnswer ++;
+                    vm.saveResponse(vm.indexOfQuestion, vm.indexOfAnswer);
+                }
+                else{
+                    vm.indexOfAnswer = 0;
+                    if(vm.indexOfQuestion != vm.quizz.length - 1){
+                        vm.indexOfQuestion ++;
+                        vm.saveResponse(vm.indexOfQuestion, vm.indexOfAnswer);
+                    }
+                }
+
+            };
+
+            function onSaveResponseError () {
+                vm.isSaving = false;
+                console.log("onSaveResponseError");
+            }
 
             function onSaveLessonSuccess () {
                 //$scope.$emit('objectifDtyApp:lessonUpdate', result);
                 //$uibModalInstance.close(result);
                 vm.isSaving = false;
                 console.log("onSaveLessonSuccess");
-                vm.saveQuestion();
+                vm.saveQuestion(0);
             }
 
             function onSaveLessonError () {
@@ -298,7 +376,13 @@
             function onSaveQuestionSuccess(){
                 vm.isSaving = false;
                 console.log("onSaveQuestionSuccess");
-                //vm.saveLesson();
+                vm.compteurQuestionSaved ++;
+                if(vm.compteurQuestionSaved != vm.quizz.length){
+                    vm.saveQuestion(vm.compteurQuestionSaved);
+                }
+                else{
+                    vm.saveResponse(0, 0);
+                }
             }
 
             function onSaveQuestionError(){

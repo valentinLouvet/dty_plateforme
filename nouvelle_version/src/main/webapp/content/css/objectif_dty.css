@@ -16,6 +16,16 @@
             height:auto;}
 }
 
+#ImgScore {
+    max-width : 10% !important;
+    height : auto;
+    float : center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
 .rmvButton{
     float : right;
 }

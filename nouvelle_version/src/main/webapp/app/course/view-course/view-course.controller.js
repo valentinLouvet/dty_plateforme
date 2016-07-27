@@ -10,6 +10,7 @@
             vm.lesson=Lesson.get({id: vm.id});
             vm.scoreCalc = false;
             vm.lessonDoneNew = true;
+            vm.noteStars = 1;
 
             vm.score = null;
             Student.query().$promise.then(function(data){
@@ -56,12 +57,37 @@
                     }
                 }
 
+                switch (Math.floor(vm.score/20)) {
+                            case 0 :
+                                vm.noteStars = 1;
+                                break;
+                            case 1 :
+                                vm.noteStars = 2;
+                                break;
+                            case 2 :
+                                vm.noteStars = 3;
+                                break;
+                            case 3 :
+                                vm.noteStars = 4;
+                                break;
+                            case 4 :
+                                vm.noteStars = 5;
+                                break;
+                            case 5 :
+                                vm.noteStars = 5;
+                                break;
+                            }
 
-
+                document.getElementById("ImgScore").src = "../../../content/images/" + vm.noteStars + "-stars.jpg";
                 vm.scoreCalc = true;
                 save();
 
             };
+
+
+
+
+
             function save () {
                 vm.isSaving = true;
                 console.log(vm.lesson_done.id);

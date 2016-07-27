@@ -28,7 +28,7 @@
             <tbody infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
                 <tr ng-repeat="lesson_done in vm.lesson_dones track by lesson_done.id">
                     <td><a ui-sref="lesson-done-detail({id:lesson_done.id})">{{lesson_done.id}}</a></td>
-                    <td>{{lesson_done.note_init}}</td>
+                    <td> {{lesson_done.note_init}} </td>
                     <td>{{lesson_done.note_max}}</td>
                     <td>
                         <a ui-sref="student-detail({id:lesson_done.student.id})">{{lesson_done.student.id}}</a>

@@ -31,6 +31,9 @@ public class Question implements Serializable {
     @Column(name = "difficulty")
     private Integer difficulty;
 
+    @Column(name = "correction")
+    private String correction;
+
     @ManyToOne
     private Lesson lesson;
 
@@ -38,6 +41,14 @@ public class Question implements Serializable {
     @JsonIgnoreProperties("question")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Response> responses = new HashSet<>();
+
+    public String getCorrection(){
+        return correction;
+    }
+
+    public void setCorrection(String correction){
+        this.correction = correction;
+    }
 
     public Long getId() {
         return id;
@@ -105,6 +116,7 @@ public class Question implements Serializable {
             "id=" + id +
             ", intitule='" + intitule + "'" +
             ", difficulty='" + difficulty + "'" +
+            ", correction='" + correction + "'" +
             '}';
     }
 }

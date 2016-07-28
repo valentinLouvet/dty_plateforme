@@ -47,6 +47,9 @@ public class ResponseResourceIntTest {
     private static final Boolean DEFAULT_VERACITY = false;
     private static final Boolean UPDATED_VERACITY = true;
 
+    private static final String DEFAULT_CORRECTION = "AAAAA";
+    private static final String UPDATED_CORRECTION = "BBBBB";
+
     @Inject
     private ResponseRepository responseRepository;
 
@@ -75,6 +78,7 @@ public class ResponseResourceIntTest {
         response = new Response();
         response.setText(DEFAULT_TEXT);
         response.setVeracity(DEFAULT_VERACITY);
+        response.setCorrection(DEFAULT_CORRECTION);
     }
 
     @Test
@@ -95,6 +99,7 @@ public class ResponseResourceIntTest {
         Response testResponse = responses.get(responses.size() - 1);
         assertThat(testResponse.getText()).isEqualTo(DEFAULT_TEXT);
         assertThat(testResponse.isVeracity()).isEqualTo(DEFAULT_VERACITY);
+        assertThat(testResponse.getCorrection()).isEqualTo(DEFAULT_CORRECTION);
     }
 
     @Test
@@ -109,7 +114,8 @@ public class ResponseResourceIntTest {
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.[*].id").value(hasItem(response.getId().intValue())))
                 .andExpect(jsonPath("$.[*].text").value(hasItem(DEFAULT_TEXT.toString())))
-                .andExpect(jsonPath("$.[*].veracity").value(hasItem(DEFAULT_VERACITY.booleanValue())));
+                .andExpect(jsonPath("$.[*].veracity").value(hasItem(DEFAULT_VERACITY.booleanValue())))
+                .andExpect(jsonPath("$.[*].correction").value(hasItem(DEFAULT_CORRECTION.toString())));
     }
 
     @Test
@@ -124,7 +130,8 @@ public class ResponseResourceIntTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON))
             .andExpect(jsonPath("$.id").value(response.getId().intValue()))
             .andExpect(jsonPath("$.text").value(DEFAULT_TEXT.toString()))
-            .andExpect(jsonPath("$.veracity").value(DEFAULT_VERACITY.booleanValue()));
+            .andExpect(jsonPath("$.veracity").value(DEFAULT_VERACITY.booleanValue()))
+            .andExpect(jsonPath("$.correction").value(DEFAULT_CORRECTION.toString()));
     }
 
     @Test
@@ -147,6 +154,7 @@ public class ResponseResourceIntTest {
         updatedResponse.setId(response.getId());
         updatedResponse.setText(UPDATED_TEXT);
         updatedResponse.setVeracity(UPDATED_VERACITY);
+        updatedResponse.setCorrection(UPDATED_CORRECTION);
 
         restResponseMockMvc.perform(put("/api/responses")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -159,6 +167,7 @@ public class ResponseResourceIntTest {
         Response testResponse = responses.get(responses.size() - 1);
         assertThat(testResponse.getText()).isEqualTo(UPDATED_TEXT);
         assertThat(testResponse.isVeracity()).isEqualTo(UPDATED_VERACITY);
+        assertThat(testResponse.getCorrection()).isEqualTo(UPDATED_CORRECTION);
     }
 
     @Test

@@ -47,6 +47,9 @@ public class QuestionResourceIntTest {
     private static final Integer DEFAULT_DIFFICULTY = 1;
     private static final Integer UPDATED_DIFFICULTY = 2;
 
+    private static final String DEFAULT_CORRECTION = "AAAAA";
+    private static final String UPDATED_CORRECTION = "BBBBB";
+
     @Inject
     private QuestionRepository questionRepository;
 
@@ -75,6 +78,7 @@ public class QuestionResourceIntTest {
         question = new Question();
         question.setIntitule(DEFAULT_INTITULE);
         question.setDifficulty(DEFAULT_DIFFICULTY);
+        question.setCorrection(DEFAULT_CORRECTION);
     }
 
     @Test
@@ -95,6 +99,7 @@ public class QuestionResourceIntTest {
         Question testQuestion = questions.get(questions.size() - 1);
         assertThat(testQuestion.getIntitule()).isEqualTo(DEFAULT_INTITULE);
         assertThat(testQuestion.getDifficulty()).isEqualTo(DEFAULT_DIFFICULTY);
+        assertThat(testQuestion.getCorrection()).isEqualTo(DEFAULT_CORRECTION);
     }
 
     @Test
@@ -109,7 +114,8 @@ public class QuestionResourceIntTest {
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.[*].id").value(hasItem(question.getId().intValue())))
                 .andExpect(jsonPath("$.[*].intitule").value(hasItem(DEFAULT_INTITULE.toString())))
-                .andExpect(jsonPath("$.[*].difficulty").value(hasItem(DEFAULT_DIFFICULTY)));
+                .andExpect(jsonPath("$.[*].difficulty").value(hasItem(DEFAULT_DIFFICULTY)))
+                .andExpect(jsonPath("$.[*].correction").value(hasItem(DEFAULT_CORRECTION.toString())));
     }
 
     @Test
@@ -124,7 +130,8 @@ public class QuestionResourceIntTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON))
             .andExpect(jsonPath("$.id").value(question.getId().intValue()))
             .andExpect(jsonPath("$.intitule").value(DEFAULT_INTITULE.toString()))
-            .andExpect(jsonPath("$.difficulty").value(DEFAULT_DIFFICULTY));
+            .andExpect(jsonPath("$.difficulty").value(DEFAULT_DIFFICULTY))
+            .andExpect(jsonPath("$.correction").value(DEFAULT_CORRECTION.toString()));
     }
 
     @Test
@@ -147,6 +154,7 @@ public class QuestionResourceIntTest {
         updatedQuestion.setId(question.getId());
         updatedQuestion.setIntitule(UPDATED_INTITULE);
         updatedQuestion.setDifficulty(UPDATED_DIFFICULTY);
+        updatedQuestion.setCorrection(UPDATED_CORRECTION);
 
         restQuestionMockMvc.perform(put("/api/questions")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -159,6 +167,7 @@ public class QuestionResourceIntTest {
         Question testQuestion = questions.get(questions.size() - 1);
         assertThat(testQuestion.getIntitule()).isEqualTo(UPDATED_INTITULE);
         assertThat(testQuestion.getDifficulty()).isEqualTo(UPDATED_DIFFICULTY);
+        assertThat(testQuestion.getCorrection()).isEqualTo(UPDATED_CORRECTION);
     }
 
     @Test

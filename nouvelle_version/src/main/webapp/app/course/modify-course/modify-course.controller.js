@@ -3,11 +3,12 @@
 
     angular
         .module('objectifDtyApp')
-        .controller('courseModifyController',['Principal', 'DataUtils', 'courseView', '$state', 'Lesson', 'Question', 'Response', 'AlertService', function (Principal, DataUtils, courseView, $state, Lesson, Question, Response, AlertService) {
+        .controller('courseModifyController',['Principal', 'DataUtils', 'courseView', '$state', 'Lesson', 'Question', 'Response', function (Principal, DataUtils, courseView, $state, Lesson, Question, Response, $q) {
 
             var vm=this;
             vm.modifyCourse= false;
             vm.questions = [];
+            vm.responses = [];
 
             vm.course= courseView;
 
@@ -17,11 +18,14 @@
             //savoir quelles leçons sont éditées
             vm.editedQuestions= [];
 
-            //avoir les questions pour pouvoir les modifier quand même
+            //avoir les questions pour pouvoir les modifier quand même et les réponses
             for (var i=0; i<vm.nbreLesson; i++){
                 vm.editedQuestions[i] = false;
                 vm.questions.push(Question.get({id : vm.course.questions[i].id}));
-                console.log(vm.questions)
+                vm.responses[i] = new Array(0);
+                for (var j = 0; j<vm.course.questions[i].responses.length; j++){
+                    vm.responses[i].push(Response.get({id : vm.course.questions[i].responses[j].id}));
+                }
             }
 
             //active le champ de texte pour modifier la partie cours
@@ -38,22 +42,51 @@
             //permet d'afficher la modif de question
             vm.editQuestion = function (i) {
                 vm.editedQuestions[i] = !vm.editedQuestions[i];
-                console.log(vm.editedQuestions)
             };
 
-            //sauvegarde la réponse
-            vm.saveAnswer = function (question, answer, text) {
-                console.log(text);
-                vm.course.questions[question].responses[answer].text = text;
-                vm.editedQuestions[question] = false;
-                console.log(vm.editedQuestions)
+            //supprime la question
+            vm.deleteQuestion = function (question) {
+                if (vm.questions.length>1){
+                    console.log(vm.questions.indexOf(question));
+                    console.log(vm.responses[vm.questions.indexOf(question)]);
+                    for (var j = 0; j<vm.responses[vm.questions.indexOf(question)].length; j++){
+                        Response.delete({id : vm.responses[vm.questions.indexOf(question)][j].id}, onDeleteResponseSuccess, onDeleteResponseError);
+                        vm.responses[vm.questions.indexOf(question)][j] = null;
+                        Question.delete({id : question.id}, onDeleteQuestionSuccess, onDeleteQuestionError);
+                    }
+                    vm.questions[vm.questions.indexOf(question)] = null;
+                }
+                console.log(question)
             };
 
-            //modifie la question
-            vm.saveQuestion = function (question, text) {
-                vm.course.questions[question].intitule = text;
-                vm.editedQuestions[question] = false;
+            function onDeleteQuestionSuccess() {
+                vm.isSaving= false;
+                console.log("Question deleted")
+            }
+
+            function onDeleteQuestionError() {
+                vm.isSaving= false;
+                console.log("Question not deleted")
+            }
+
+            //supprime la réponse
+            vm.deleteResponse = function (question, response) {
+                if (vm.responses[vm.questions.indexOf(question)].length>2){
+                    vm.responses[vm.questions.indexOf(question)][vm.responses[vm.questions.indexOf(question)].indexOf(response)] = null;
+                    Response.delete({id : response.id}, onDeleteResponseSuccess, onDeleteResponseError);
+                }
+                console.log(response)
             };
+
+            function onDeleteResponseSuccess() {
+                vm.isSaving= false;
+                console.log("response deleted")
+            }
+
+            function onDeleteResponseError() {
+                vm.isSaving= false;
+                console.log("Response not deleted")
+            }
 
             //enregistre la lesson dans la BDD
             vm.saveCourse = function() {
@@ -87,24 +120,50 @@
             vm.saveQuestion = function(question) {
                 vm.isSaving = true;
                 if (vm.course.id !== null) {
-                    console.log(vm.course.id);
-                    console.log("vm.course.id !== null");
+                    console.log(question);
+                    console.log("question !== null");
                     Question.update(question, onSaveQuestionSuccess, onSaveQuestionError);
 
                 } else {
-                    console.log("vm.course.id == null");
-                    Lesson.save(vm.course, onSaveLessonSuccess, onSaveLessonError);
+                    console.log("question == null");
+                    Question.save(question, onSaveQuestionSuccess, onSaveQuestionError);
                 }
-                console.log(vm.course);
+                vm.editedQuestions[vm.questions.indexOf(question)] = false;
+                console.log(question);
             };
+
             function onSaveQuestionSuccess() {
                 vm.isSaving=false;
-                console.log("ok")
+                console.log("ok question")
             }
 
             function onSaveQuestionError(){
                 vm.isSaving = false;
-                console.log("error")
+                console.log("error question")
+            }
+
+            //modifier les questions
+            vm.saveResponse = function(response) {
+                vm.isSaving = true;
+                if (response !== null) {
+                    console.log(response);
+                    console.log("response !== null");
+                    Response.update(response, onSaveResponseSuccess, onSaveResponseError);
+
+                } else {
+                    console.log("question == null");
+                    Response.save(response, onSaveResponseSuccess, onSaveResponseError);
+                }
+                console.log(response);
+            };
+            function onSaveResponseSuccess() {
+                vm.isSaving=false;
+                console.log("ok response")
+            }
+
+            function onSaveResponseError(){
+                vm.isSaving = false;
+                console.log("error response")
             }
 
 

@@ -8,6 +8,10 @@
             var vm= this;
             vm.blocs=[];
 
+            ///////////////////////////////////////////////
+            // Variables utilisées lors de la sauvegarde //
+            ///////////////////////////////////////////////
+
             this.compteurQuestion = 1;
             this.compteurAnswer = [0];
 
@@ -28,15 +32,10 @@
                 bloc : null
             };
 
-            console.log(vm.newLesson);
-
-
-
             this.question = {
                 id : null,
                 intitule : null,
                 difficulty : null,
-                //lesson_id : this.newLesson.id,
                 lesson : null,
                 cpt: this.compteurQuestion,
                 correction : null
@@ -50,7 +49,6 @@
                 text : null,
                 veracity : false,
                 correction: null,
-                //question_id: this.newLesson.quizz[this.compteurAnswer[0]].id,
                 question: null,
                 cpt: this.compteurAnswer[0] + 1
             };
@@ -62,7 +60,6 @@
                 text : null,
                 veracity : false,
                 correction: null,
-                //question_id: this.newLesson.quizz[this.compteurAnswer[0]].id,
                 question: null,
                 cpt: this.compteurAnswer[0] + 1
             };
@@ -78,9 +75,6 @@
             // et les indices de tableau à 0 (d'où le décalage permanent)
 
             this.addAnswer = function(idOfQuestion) {
-
-                //console.log("####################");
-                //console.log("idOfQuestion : " + idOfQuestion);
 
                 // Création d'une nouvelle réponse correspondant à la question située
                 // à l'id idOfQuestion
@@ -100,11 +94,6 @@
                 this.answers[idOfQuestion - 1].push(answer);
 
                 console.log("New answer created : " + answer);
-
-                //console.log("####################");
-
-
-
 
             };
 
@@ -170,7 +159,6 @@
                     text : null,
                     veracity : false,
                     correction: null,
-                    //question_id: this.newLesson.quizz[this.compteurAnswer[this.compteurQuestion - 1]].id,
                     question : 0,
                     cpt: this.compteurAnswer[this.compteurQuestion - 1] + 1
                 };
@@ -181,7 +169,6 @@
                     id : null,
                     intitule : null,
                     difficulty : 0,
-                    //lesson_id : this.newLesson.id,
                     lesson : 0,
                     cpt: this.compteurQuestion,
                     correction : null
@@ -234,7 +221,6 @@
             // Modifie la véracité de la réponse si la case est cochée ou décochée
 
             this.modifyVeracity = function(idOfQuestion, idOfAnswer){
-                //console.log("modifyVeracity");
                 this.answers[idOfQuestion - 1][idOfAnswer - 1].veracity = ! (this.answers[idOfQuestion - 1]
                 [idOfAnswer - 1].veracity);
                 console.log(idOfQuestion + ", " + idOfAnswer);
@@ -245,11 +231,7 @@
             this.saveLesson = function() {
                 console.log(vm.newLesson.id);
 
-                //console.log("Je passe ici");
-
                 vm.isSaving = true;
-
-                console.log("Je vais sauvegarder la leçon");
 
                 // Lesson.save renvoie la leçon qui a été sauvegardée en lui donnant un id
                 // Sauvegarde par la même occasion la leçon
@@ -257,14 +239,9 @@
                 vm.newLesson = Lesson.save(vm.newLesson, onSaveLessonSuccess, onSaveLessonError);
                 console.log(vm.newLesson);
 
-                console.log("Je passe là");
-
-                //vm.saveQuestion();
             };
 
             this.saveQuestion = function(indexOfQuestion){
-                console.log("Je rentre dans cette fonction saveQuestion");
-
 
                 vm.quizz[indexOfQuestion].lesson = vm.newLesson;
                 // Question.save renvoie la leçon qui a été sauvegardée en lui donnant un id
@@ -274,14 +251,12 @@
 
             };
 
-
             this.saveResponse = function(indexOfQuestion, indexOfAnswer){
-                console.log("Je rentre dans cette fonction saveResponse");
 
                 // On passe la question sauvegardée en attribut question de la réponse
                 vm.answers[indexOfQuestion][indexOfAnswer].question = vm.quizz[indexOfQuestion];
                 // On sauvegarde la réponse
-                Response.save(vm.answers[indexOfQuestion][indexOfAnswer], onSaveResponseSuccess, onSaveResponseError);
+                vm.answers[indexOfQuestion][indexOfAnswer] = Response.save(vm.answers[indexOfQuestion][indexOfAnswer], onSaveResponseSuccess, onSaveResponseError);
                 console.log("Answer saved :");
                 console.log(vm.answers[indexOfQuestion][indexOfAnswer]);
 
@@ -290,8 +265,8 @@
             function onSaveResponseSuccess (){
 
                 vm.isSaving = false;
-                console.log("onSaveResponseSuccess");
 
+                // Il faut parcourir tout le tableau answers "sans déborder"
                 if(vm.indexOfAnswer < vm.answers[vm.indexOfQuestion].length - 1){
                     vm.indexOfAnswer ++;
                     vm.saveResponse(vm.indexOfQuestion, vm.indexOfAnswer);
@@ -308,23 +283,21 @@
 
             function onSaveResponseError () {
                 vm.isSaving = false;
-                console.log("onSaveResponseError");
+
             }
 
             function onSaveLessonSuccess () {
                 vm.isSaving = false;
-                console.log("onSaveLessonSuccess");
                 vm.saveQuestion(0);
             }
 
             function onSaveLessonError () {
                 vm.isSaving = false;
-                console.log("onSaveLessonError");
+
             }
 
             function onSaveQuestionSuccess(){
                 vm.isSaving = false;
-                console.log("onSaveQuestionSuccess");
                 vm.compteurQuestionSaved ++;
                 if(vm.compteurQuestionSaved != vm.quizz.length){
                     vm.saveQuestion(vm.compteurQuestionSaved);
@@ -336,7 +309,7 @@
 
             function onSaveQuestionError(){
                 vm.isSaving = false;
-                console.log("onSaveQuestionError");
+
             }
 
             // Recherche la liste des blocs dans la BdD

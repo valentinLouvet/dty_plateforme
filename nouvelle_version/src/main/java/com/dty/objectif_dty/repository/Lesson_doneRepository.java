@@ -18,5 +18,4 @@ public interface Lesson_doneRepository extends JpaRepository<Lesson_done,Long> {
 
     @Query("select lesson_done from Lesson_done lesson_done left join fetch lesson_done.lessons where lesson_done.id =:id")
     Lesson_done findOneWithEagerRelationships(@Param("id") Long id);
-
 }

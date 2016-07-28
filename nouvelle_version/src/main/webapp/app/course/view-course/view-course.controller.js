@@ -15,6 +15,7 @@
         vm.score = null;
         Student.query().$promise.then(function (data) {
             vm.student = data;
+
         });
         Lesson_done.query().$promise.then(function (data) {
             vm.lesson_dones = data;
@@ -26,8 +27,17 @@
             }
         });
 
-        vm.submitLesson = function () {
+        vm.SetNextLessonToDo = function(){
+            for(i = 0; i<vm.lesson.bloc.lessons.length; i++){
+                if(vm.lesson.bloc.lessons[i].num_lesson = vm.lesson.num_lesson + 1){
 
+                    vm.student[0].todo_lesson = vm.lesson.bloc.lessons[i];
+                }
+            }
+            console.log(vm.student[0].id);
+        };
+
+        vm.submitLesson = function () {
             vm.score = 0;
             for (i = 0; i < vm.lesson.questions.length; i++) {
                 if (vm.lesson.questions[i].score == "true") {
@@ -36,8 +46,7 @@
             }
             vm.score *= 100;
             vm.score /= vm.lesson.questions.length;
-            vm.score = parseInt(vm.score)
-            console.log(vm.lesson_dones);
+            vm.score = parseInt(vm.score);
 
             vm.lesson_done = {
                 note_init: vm.score,
@@ -46,7 +55,6 @@
                 lessons: [vm.lesson],
                 date: new Date()
             };
-            console.log(vm.lesson_done.date);
             for (i = 0; i < vm.lesson_dones.length; i++) {
                 if (vm.lesson_dones[i].lessons[0].id == vm.lesson.id) {
                     vm.lesson_done.id = vm.lesson_dones[i].id;
@@ -85,32 +93,54 @@
 
             document.getElementById("ImgScore").src = "../../../content/images/" + vm.noteStars + "-stars.jpg";
             vm.scoreCalc = true;
-            save();
+            saveLesson_done();
 
         };
 
 
-        function save() {
+        function saveLesson_done() {
             vm.isSaving = true;
-            console.log(vm.lesson_done.id);
             if (vm.lesson_done.id !== null) {
-                Lesson_done.update(vm.lesson_done, onSaveSuccess, onSaveError);
+                Lesson_done.update(vm.lesson_done, onSaveLessonSuccess, onSaveError);
             } else {
-                Lesson_done.save(vm.lesson_done, onSaveSuccess, onSaveError);
+                Lesson_done.save(vm.lesson_done, onSaveLessonSuccess, onSaveError);
             }
         }
 
-        function onSaveSuccess(result) {
+        function onSaveLessonSuccess(result) {
             $scope.$emit('objectifDtyApp:lesson_doneUpdate', result);
             vm.isSaving = false;
             Student.query().$promise.then(function (data) {
                 vm.student = data;
             });
+            if(vm.lessonDoneNew){
+                vm.SetNextLessonToDo();
+                saveStudent();
+            }
+
+
+
         }
 
         function onSaveError() {
             vm.isSaving = false;
         }
+
+        function saveStudent () {
+            vm.isSaving = true;
+            if (vm.student.id !== null) {
+                Student.update(vm.student[0], onSaveStudentSuccess, onSaveError);
+            } else {
+                Student.save(vm.student[0], onSaveStudentSuccess, onSaveError);
+            }
+        }
+
+        function onSaveStudentSuccess (result) {
+            $scope.$emit('objectifDtyApp:studentUpdate', result);
+            vm.isSaving = false;
+            console.log(vm.student[0].id);
+        }
+
 
 
     }

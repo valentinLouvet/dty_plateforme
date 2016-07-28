@@ -27,6 +27,7 @@
         }
 
         function save () {
+            console.log(vm.student);
             vm.isSaving = true;
             if (vm.student.id !== null) {
                 Student.update(vm.student, onSaveSuccess, onSaveError);

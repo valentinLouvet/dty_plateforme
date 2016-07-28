@@ -19,36 +19,60 @@
             <span>
                 The question: {{question.intitule}}
             </span>
-            <button class="btn btn-primary-dty" ng-click="vm.editQuestion(vm.questions.indexOf(question))">Edit question</button>
+            <button class="btn btn-primary-dty" ng-click="vm.editQuestion(vm.questions.indexOf(question))">
+                Edit question
+            </button>
         </div>
 
         <div class="input-group form-group" ng-show="vm.editedQuestions[vm.questions.indexOf(question)]">
             <span class="input-group-btn">
-                <button type="button" ng-click="vm.deleteQuestion(question)" class="btn btn-md btn-primary-dty pull-right">Remove question</button>
+                <button type="button" ng-click="vm.deleteQuestion(question)"
+                        class="btn btn-md btn-primary-dty pull-right">Remove question</button>
             </span>
             <input type="text" placeholder="Enter question here..." class="form-control" ng-model="question.intitule">
             <span class="input-group-btn">
-                <button type="button" ng-click="vm.saveQuestion(question)" class="btn btn-md btn-primary-dty pull-right">Save changes</button>
+                <button type="button" ng-click="vm.saveQuestion(question)"
+                        class="btn btn-md btn-primary-dty pull-right">Save changes</button>
             </span>
         </div>
         <div class="form-group">
             All the answers:
         </div>
-        <div ng-repeat="response in vm.responses[vm.questions.indexOf(question)]" >
+        <div ng-repeat="response in vm.responses[vm.questions.indexOf(question)]">
             <div ng-hide="vm.editedQuestions[vm.questions.indexOf(question)]">
                 {{response.text}}
             </div>
             <div class="input-group" ng-show="vm.editedQuestions[vm.questions.indexOf(question)] && response.text">
                 <span class="input-group-btn">
-                    <button type="button" ng-click="vm.deleteResponse(question, response)" class="btn btn-md btn-primary-dty pull-right">Remove answer</button>
+                    <button type="button" ng-click="vm.deleteResponse(question, response)"
+                            class="btn btn-md btn-primary-dty pull-right">Remove answer</button>
                 </span>
                 <input type="text" placeholder="Enter question here..." class="form-control" ng-model="response.text">
                 <span class="input-group-btn">
-                    <button type="button" ng-click="vm.saveResponse(response)" class="btn btn-md btn-primary-dty pull-right">Save changes</button>
+                    <button type="button" ng-click="vm.saveResponse(response)"
+                            class="btn btn-md btn-primary-dty pull-right">Save changes</button>
                 </span>
             </div>
         </div>
     </div>
 </div>
 
-<button ng-click="vm.saveCourse()" class="btn btn-primary-dty-inverse" ng-disabled="vm.isSaving">Save the modifications</button>
+<div style="margin-bottom: 15px">
+    <span>
+        <button ng-click="vm.addQuestion()" class="btn btn-primary-dty" style="margin-bottom: 15px">
+            New question
+        </button>
+    </span>
+    <div class="input-group" ng-show="vm.addingQuestion">
+        <input type="text" placeholder="Enter question here..." class="form-control" ng-model="vm.newIntitule">
+        <span class="input-group-btn">
+            <button type="button" ng-click="vm.registerQuestion()"
+                    class="btn btn-md btn-primary-dty pull-right">Add Question</button>
+        </span>
+    </div>
+</div>
+
+
+<button ng-click="vm.saveCourse()" class="btn btn-primary-dty-inverse" ng-disabled="vm.isSaving">
+    Save the modifications
+</button>

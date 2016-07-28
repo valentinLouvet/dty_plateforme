@@ -3,30 +3,38 @@
 
     angular
         .module('objectifDtyApp')
-        .controller('courseModifyController',['Principal', 'DataUtils', 'courseView', '$state', 'Lesson', 'Question', 'Response', function (Principal, DataUtils, courseView, $state, Lesson, Question, Response, $q) {
+        .controller('courseModifyController',['Principal', 'DataUtils', 'courseView', '$state', 'Lesson', 'Question', 'Response', function (Principal, DataUtils, courseView, $state, Lesson, Question, Response) {
 
             var vm=this;
             vm.modifyCourse= false;
-            vm.questions = [];
-            vm.responses = [];
-
-            vm.course= courseView;
-
-            vm.newContent=vm.course.cours;
-            vm.nbreLesson = vm.course.questions.length;
+            vm.addingQuestion = false;
 
             //savoir quelles leçons sont éditées
             vm.editedQuestions= [];
 
-            //avoir les questions pour pouvoir les modifier quand même et les réponses
-            for (var i=0; i<vm.nbreLesson; i++){
-                vm.editedQuestions[i] = false;
-                vm.questions.push(Question.get({id : vm.course.questions[i].id}));
-                vm.responses[i] = new Array(0);
-                for (var j = 0; j<vm.course.questions[i].responses.length; j++){
-                    vm.responses[i].push(Response.get({id : vm.course.questions[i].responses[j].id}));
+            vm.initialize = function () {
+                vm.questions = [];
+                vm.responses = [];
+                vm.newIntitule = [];
+
+                vm.course= courseView;
+
+                vm.newContent=vm.course.cours;
+                vm.nbreLesson = vm.course.questions.length;
+
+                //avoir les questions pour pouvoir les modifier quand même et les réponses
+                for (var i=0; i<vm.nbreLesson; i++){
+                    vm.editedQuestions[i] = false;
+                    vm.questions.push(Question.get({id : vm.course.questions[i].id}));
+                    vm.responses[i] = new Array(0);
+                    for (var j = 0; j<vm.course.questions[i].responses.length; j++){
+                        vm.responses[i].push(Response.get({id : vm.course.questions[i].responses[j].id}));
+                    }
                 }
-            }
+            };
+
+            vm.initialize();
+
 
             //active le champ de texte pour modifier la partie cours
             vm.changeCourse= function () {
@@ -44,19 +52,37 @@
                 vm.editedQuestions[i] = !vm.editedQuestions[i];
             };
 
+            //active le champ de création de question
+            vm.addQuestion = function () {
+                vm.addingQuestion = !vm.addingQuestion
+            };
+
+            //ajoute la question
+            vm.registerQuestion = function () {
+                var newQuestion = vm.questions[0];
+                newQuestion.id = null;
+                newQuestion.intitule = vm.newIntitule;
+                console.log(newQuestion);
+                console.log(vm.questions[0]);
+                Question.save(newQuestion, onSaveQuestionSuccess, onSaveQuestionError);
+                $state.go($state.current, {}, {reload: true});
+                vm.initialize()
+            };
+
             //supprime la question
             vm.deleteQuestion = function (question) {
                 if (vm.questions.length>1){
                     console.log(vm.questions.indexOf(question));
                     console.log(vm.responses[vm.questions.indexOf(question)]);
                     for (var j = 0; j<vm.responses[vm.questions.indexOf(question)].length; j++){
-                        Response.delete({id : vm.responses[vm.questions.indexOf(question)][j].id}, onDeleteResponseQuestionSuccess(question), onDeleteResponseQuestionError(question));
-                        vm.responses[vm.questions.indexOf(question)][j] = null;
+                        Response.delete({id : vm.responses[vm.questions.indexOf(question)][j].id}, onDeleteResponseQuestionSuccess(question), onDeleteResponseQuestionError);
+                        vm.responses[vm.questions.indexOf(question)][j].text = null;
                     }
-                    Question.delete({id : vm.questions[vm.questions.indexOf(question)].id}, onDeleteQuestionSuccess(), onDeleteQuestionError());
-                    vm.questions[vm.questions.indexOf(question)] = null;
+                    Question.delete({id : vm.questions[vm.questions.indexOf(question)].id}, onDeleteQuestionSuccess, onDeleteQuestionError);
+                    vm.questions[vm.questions.indexOf(question)].intitule = null;
                 }
-                console.log(question)
+                $state.go($state.current, {}, {reload: true});
+                vm.initialize()
             };
 
             function onDeleteResponseQuestionSuccess(question) {
@@ -65,7 +91,7 @@
                 console.log("response deleted")
             }
 
-            function onDeleteResponseQuestionError(question) {
+            function onDeleteResponseQuestionError() {
                 vm.isSaving= false;
                 console.log("Response not deleted")
             }

@@ -5,12 +5,13 @@
         .module('objectifDtyApp')
         .factory('Principal', Principal);
 
-    Principal.$inject = ['$q', 'Account','Student'];
+    Principal.$inject = ['$q', 'Account','Student', 'Coach'];
 
-    function Principal ($q, Account,Student) {
+    function Principal ($q, Account,Student, Coach) {
         var _identity,
             _authenticated = false;
         var _student;
+        var _coach;
 
         var service = {
             authenticate: authenticate,
@@ -19,7 +20,8 @@
             identity: identity,
             isAuthenticated: isAuthenticated,
             isIdentityResolved: isIdentityResolved,
-            getStudent: getStudent
+            getStudent: getStudent,
+            getCoach: getCoach
         };
 
         return service;
@@ -113,7 +115,24 @@
                 });
             return deferred.promise
 
-    }
+        }
+
+        function getCoach(){
+            var deferred=$q.defer();
+
+            if (angular.isDefined(_coach)){
+                deferred.resolve(_coach);
+                return deferred.promise;
+            }
+
+            Coach.query().$promise
+                .then(function(data){
+                    _coach=data[0];
+                    deferred.resolve(_coach);
+                });
+            return deferred.promise
+
+        }
 
 
     }

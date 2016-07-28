@@ -3,10 +3,29 @@
 
     angular
         .module('objectifDtyApp')
-        .controller('courseCreationController', ['Bloc', 'Question', 'Response', 'Lesson', 'AlertService', function (Bloc, Question, Response, Lesson, AlertService) {
+        .controller('courseCreationController', ['Bloc', 'Question', 'Response', 'Lesson', 'AlertService', 'Principal', function (Bloc, Question, Response, Lesson, AlertService, Principal) {
 
             var vm= this;
             vm.blocs=[];
+
+            // LEVEL of the LESSON //
+
+            vm.MAX_LEVEL = 30;
+            vm.tabLevel = [];
+
+            for(var i = 0; i<vm.MAX_LEVEL; i++){
+                vm.tabLevel[i] = i+1;
+            }
+
+            // IDENTITY OF THE USER-COACH //
+
+            vm.coach;
+
+            Principal.getCoach().then(function(coach){
+                vm.coach = coach;
+                //console.log(coach.id);
+            });
+
 
             ///////////////////////////////////////////////
             // Variables utilisées lors de la sauvegarde //
@@ -29,7 +48,8 @@
                 num_lesson : null,
                 title : null,
                 id : null,
-                bloc : null
+                bloc : null,
+                created_by : null // id du coach connecté
             };
 
             this.question = {
@@ -69,7 +89,6 @@
             this.answers.push([answer1, answer2]);
             this.quizz.push(this.question);
 
-
             // Différentes fonctions pour ajouter/supprimer les questions/réponses
             // A NOTER : les id commencent à 1
             // et les indices de tableau à 0 (d'où le décalage permanent)
@@ -93,17 +112,12 @@
 
                 this.answers[idOfQuestion - 1].push(answer);
 
-                console.log("New answer created : " + answer);
-
             };
 
             this.removeAnswer = function(idOfAnswer, idOfQuestion){
 
                 // Supprime la réponse dont l'id est idOfAnswer
                 // de la question dont l'id est idOfQUestion
-
-
-                console.log("idOfQuestion : " + idOfQuestion);
 
                 if(this.compteurAnswer[idOfQuestion - 1] != 2){
                     // Il doit toujours y avoir au moins 2 réponses à une question
@@ -178,15 +192,12 @@
 
                 this.quizz.push(question);
 
-                console.log("New question created " + question);
 
             };
 
             this.removeQuestion = function(idOfQuestion) {
 
                 // Supprime la question dont le cpt est idOfQuestion
-
-                console.log("idOfQuestion : " + idOfQuestion);
 
                 // Il faut toujours qu'il y ait au moins une question
                 if(this.compteurQuestion != 1){
@@ -223,31 +234,31 @@
             this.modifyVeracity = function(idOfQuestion, idOfAnswer){
                 this.answers[idOfQuestion - 1][idOfAnswer - 1].veracity = ! (this.answers[idOfQuestion - 1]
                 [idOfAnswer - 1].veracity);
-                console.log(idOfQuestion + ", " + idOfAnswer);
             };
 
             //Sauvegarde la leçon dans la BdD
 
             this.saveLesson = function() {
-                console.log(vm.newLesson.id);
 
                 vm.isSaving = true;
+
+                vm.newLesson.created_by = vm.coach;
 
                 // Lesson.save renvoie la leçon qui a été sauvegardée en lui donnant un id
                 // Sauvegarde par la même occasion la leçon
 
                 vm.newLesson = Lesson.save(vm.newLesson, onSaveLessonSuccess, onSaveLessonError);
-                console.log(vm.newLesson);
 
             };
 
             this.saveQuestion = function(indexOfQuestion){
 
+                // On enregistre le compteur de la question sur la page pour conserver
+                // un affichage correct des réponses après la sauvegarde
+
                 vm.quizz[indexOfQuestion].lesson = vm.newLesson;
                 // Question.save renvoie la leçon qui a été sauvegardée en lui donnant un id
                 vm.quizz[indexOfQuestion] = Question.save(vm.quizz[indexOfQuestion], onSaveQuestionSuccess, onSaveQuestionError);
-                console.log("Question saved :");
-                console.log(vm.quizz[indexOfQuestion]);
 
             };
 
@@ -257,8 +268,6 @@
                 vm.answers[indexOfQuestion][indexOfAnswer].question = vm.quizz[indexOfQuestion];
                 // On sauvegarde la réponse
                 vm.answers[indexOfQuestion][indexOfAnswer] = Response.save(vm.answers[indexOfQuestion][indexOfAnswer], onSaveResponseSuccess, onSaveResponseError);
-                console.log("Answer saved :");
-                console.log(vm.answers[indexOfQuestion][indexOfAnswer]);
 
             };
 
@@ -278,7 +287,6 @@
                         vm.saveResponse(vm.indexOfQuestion, vm.indexOfAnswer);
                     }
                 }
-
             };
 
             function onSaveResponseError () {
@@ -321,7 +329,7 @@
 
             function onSuccess(data){
                 vm.blocs=data;
-                console.log(data);
+                //console.log(data);
             }
 
             function onError(error){
@@ -332,12 +340,6 @@
 
             loadAll();
 
-
-
-
         }]);
-
-
-
 
 })();

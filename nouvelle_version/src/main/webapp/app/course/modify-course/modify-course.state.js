@@ -21,7 +21,7 @@
             },
 
             resolve: {
-                courseView: ['$stateParams', 'Lesson', 'Question', function($stateParams, Lesson, Question) {
+                courseView: ['$stateParams', 'Lesson', 'Question', function($stateParams, Lesson) {
                     console.log(Lesson.get({id : $stateParams.id}).$promise);
                     return Lesson.get({id : $stateParams.id}).$promise;
                 }]

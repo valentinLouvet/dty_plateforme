@@ -4,10 +4,19 @@
 
 @media (max-width : 1199px) and (min-width: 992px) {
   .colMD { margin-left:8.33333333%;}
+    .fixView{
+        max-width:100%;
+        height:auto;
+
+    }
 }
 
 @media (min-width : 1200px) {
   .colLG { margin-left:8.33333333%;}
+    .fixView{
+        max-width:100%;
+        heigth:auto;
+    }
 }
 
 @media (max-width : 360px) {
@@ -17,7 +26,7 @@
 }
 
 #ImgScore {
-    max-width : 10% !important;
+    max-width : 10% /*!important*/;
     height : auto;
     float : center;
     display: block;

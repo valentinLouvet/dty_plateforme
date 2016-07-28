@@ -12,6 +12,8 @@
         var vm=this;
         var Blocs=[];
 
+        vm.floor=floor
+
         Principal.getStudent().then(function (data) {
             vm.student=data;
             vm.user=data.user;
@@ -42,12 +44,10 @@
                         var res = {
                             bloc: bloc,
                             lesson_done: [lesson_done],
-                            level:(1/(bloc.lessons.length))*100
                         };
                         Blocs.push(res);
                     } else {
                         Blocs[isIn.num].lesson_done.push(lesson_done);
-                        Blocs[isIn.num].level= (Blocs[isIn.num].level/100+(1/Blocs[isIn.num].bloc.lessons.length))*100
                     }
                     vm.blocs = Blocs;
                 });
@@ -67,8 +67,6 @@
                         res = true;
                         num = i;
                     }
-                    console.log("Blocs:", Blocs);
-                    console.log('Id ', Id);
                     done = (i === Array.length - 1);
 
                     if (done) {

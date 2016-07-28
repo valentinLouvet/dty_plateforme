@@ -20,7 +20,9 @@
                     controller: 'progressionController',
                     controllerAs: 'vm'
                 }
-            }
-        });
+
+        }
+        })
+
     }
 })();

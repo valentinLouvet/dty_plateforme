@@ -24,8 +24,7 @@
 
         </div>
 
-
-        <!-- AFFICHAGE DES DIFFERENTS COURS -->
+        <!-- AFFICHAGE DES DIFFERENTS BLOCS -->
 
 
         <div class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10">
@@ -33,30 +32,62 @@
 
                 <div class="col-md-5 col-lg-3" id="courses" ng-class="{courseAvailable: (bloc.lesson_done.length/bloc.bloc.lessons.length)*100>0 && (bloc.lesson_done.length/bloc.bloc.lessons.length)*100<100, courseComplete: (bloc.lesson_done.length/bloc.bloc.lessons.length)*100==100, 'colMD': (($index)%2) === 1 , 'colLG': !($index%3 === 0) }">
                     <div class="row">
-                    <div class="col-md-12">
-                        <a href="#"><img class="fixView" ng-src={{bloc.bloc.logo}}></a>
-                        <p class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="col-md-12">
+                            <a data-toggle="modal" data-target="#{{bloc.bloc.id}}"> <img class="fixView" ng-src={{bloc.bloc.logo}}></a>
+                            <p class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             <h2>{{bloc.bloc.name}} </h2>
-                        </p>
-                    </div>
-                    <div class="col-md-12">
-                        <div style="margin-left: auto; margin-right: auto;" class="progress" style="text-align: center">
-                            <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar"
-                                 aria-valuenow="{{(bloc.lesson_done.length/bloc.bloc.lessons.length)*100}}" aria-valuemin="0" aria-valuemax="100"
-                                 style="min-width: 2em; width: {{(bloc.lesson_done.length/bloc.bloc.lessons.length)*100}}%;">
-                            </div>
-                            <div class = "row">
-                            <div class="percent col-xs-offset-5 col-sm-offset-5 col-md-offset-5 col-lg-offset-5" style="padding-top:30px;">{{vm.floor((bloc.lesson_done.length/bloc.bloc.lessons.length)*100)}}%</div>
-                            </div>
+                            </p>
                         </div>
+                        <div class="col-md-12">
+                            <div style="margin-left: auto; margin-right: auto;" class="progress" style="text-align: center">
+                                <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar"
+                                     aria-valuenow="{{(bloc.lesson_done.length/bloc.bloc.lessons.length)*100}}" aria-valuemin="0" aria-valuemax="100"
+                                     style="min-width: 2em; width: {{(bloc.lesson_done.length/bloc.bloc.lessons.length)*100}}%;">
+                                </div>
+                                <div class = "row">
+                                    <div class="percent col-xs-offset-5 col-sm-offset-5 col-md-offset-5 col-lg-offset-5" style="padding-top:30px;">{{vm.floor((bloc.lesson_done.length/bloc.bloc.lessons.length)*100)}}%</div>
+                                </div>
+                            </div>
 
-                    </div>
+                        </div>
                     </div>
                 </div>
 
-            </div>
+                <!-- MODAL POUR AFFICHER LES LECONS DU BLOC LORSQU'ON CLIQUE DESSUS-->
+
+                <div class="modal fade" id={{bloc.bloc.id}} tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel"><h1 align="center">Your lessons</h1></h4>
+                            </div>
+                            <div class="modal-body">
+
+
+                                <ul class="list-group">
+                                    <li class="list-group-item" ng-repeat="lesson in bloc.bloc.lessons"><a data-dismiss="modal" ui-sref="viewCourse({id:lesson.id})" >{{lesson.title}}</a></li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
         </div>
+    </div>
 
     </div>
 
+
+
+
+
 </div>
+
+

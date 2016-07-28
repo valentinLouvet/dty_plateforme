@@ -3,16 +3,18 @@
 
     angular
         .module('objectifDtyApp')
-        .controller('progressionController', progressionController);
+        .controller('progressionController', progressionController)
 
-    progressionController.$inject = ['Student','$scope', 'Principal', 'LoginService','Lesson_done', '$state'];
+
+    progressionController.$inject = ['Student','$scope', 'Principal', 'LoginService','Lesson_done','$state'];
 
     function progressionController (Student,$scope, Principal, LoginService, Lesson_done, $state) {
 
         var vm=this;
         var Blocs=[];
 
-        vm.floor=floor
+        vm.floor=floor;
+        vm.BlocOn=null;
 
         Principal.getStudent().then(function (data) {
             vm.student=data;
@@ -24,8 +26,8 @@
     });
         /**
 
-        fonction bloc_done : parcoure les lessons réalisées par le student - et crée le tableau Blocs
-         qui continent des elements de la forme { bloc : bloc, lesson_dones : array contenant les id des lesson dones.
+        fonction bloc_done : parcourt les lessons réalisées par le student - et crée le tableau Blocs
+         qui contient des elements de la forme { bloc : bloc, lesson_dones : array contenant les id des lesson dones.
          Regroupe les leçons par bloc.
 */
 
@@ -60,7 +62,7 @@
             var num = -1;
             var done = false;
             if (Array.length === 0) {
-                callback({res: res, num: num})
+                done=true
             } else {
                 for (var i = 0; i < Array.length; i++) {
                     if (Blocs[i].bloc.id === Id) {
@@ -69,19 +71,21 @@
                     }
                     done = (i === Array.length - 1);
 
-                    if (done) {
-                        console.log(res, num);
-                        console.log("done putain");
-                        var result = {res: res, num: num};
-                        callback(result);
-                    }
+
                 }
+
+            }
+            if (done) {
+                console.log(res, num);
+                var result = {res: res, num: num};
+                callback(result);
             }
         }
 
         function floor(value){
             return Math.floor(value);
         }
+
 
 
     }

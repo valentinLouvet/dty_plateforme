@@ -27,8 +27,19 @@ public class Response implements Serializable {
     @Column(name = "veracity")
     private Boolean veracity;
 
+    @Column(name = "correction")
+    private String correction;
+
     @ManyToOne
     private Question question;
+
+    public String getCorrection(){
+        return correction;
+    }
+
+    public void setCorrection(String correction){
+        this.correction = correction;
+    }
 
     public Long getId() {
         return id;
@@ -88,6 +99,7 @@ public class Response implements Serializable {
             "id=" + id +
             ", text='" + text + "'" +
             ", veracity='" + veracity + "'" +
+            ", correction='" + correction + "'" +
             '}';
     }
 }

@@ -31,23 +31,24 @@
             console.log(lessons);
 
             for(var i=0;i<lessons.length;i++){
+                console.log("Blocs :",Blocs)
 
                 var bloc=lessons[i].lessons[0].bloc;
-                console.log(lessons[i].lessons[0].bloc);
+                console.log("lesson_done:",lessons[i].lessons[0].bloc);
                 var lesson_done=lessons[i].lessons[0].id;
 
                 IsBlocInBlocs(bloc.id,Blocs,function(isIn){
-                    console.log(isIn);
                     if (!(isIn.res)) {
                         var res = {
                             bloc: bloc,
-                            lesson_done: [lesson_done]
+                            lesson_done: [lesson_done],
+                            level:(1/(bloc.lessons.length))*100
                         };
                         Blocs.push(res);
                     } else {
                         Blocs[isIn.num].lesson_done.push(lesson_done);
+                        Blocs[isIn.num].level= (Blocs[isIn.num].level/100+(1/Blocs[isIn.num].bloc.lessons.length))*100
                     }
-                    console.log(Blocs);
                     vm.blocs = Blocs;
                 });
 
@@ -80,8 +81,8 @@
             }
         }
 
-        function call(text) {
-            console.log(text)
+        function floor(value){
+            return Math.floor(value);
         }
 
 

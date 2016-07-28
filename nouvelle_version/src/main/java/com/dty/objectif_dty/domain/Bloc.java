@@ -36,7 +36,7 @@ public class Bloc implements Serializable {
 
     @OneToMany(mappedBy = "bloc", fetch = FetchType.EAGER)
     @JsonIgnoreProperties({"bloc"})
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    //@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Lesson> lessons = new HashSet<>();
 
     @OneToMany(mappedBy = "is_son_of")

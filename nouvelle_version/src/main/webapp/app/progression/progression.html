@@ -31,7 +31,7 @@
         <div class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10">
             <div ng-repeat="bloc in vm.blocs">
 
-                <div class="col-md-5 col-lg-3" id="courses" ng-class="{courseAvailable: bloc.bloc.level>0 && bloc.bloc.level<100, courseComplete: bloc.bloc.level==100, 'colMD': (($index)%2) === 1 , 'colLG': !($index%3 === 0) }">
+                <div class="col-md-5 col-lg-3" id="courses" ng-class="{courseAvailable: bloc.level>0 && bloc.level<100, courseComplete: bloc.level==100, 'colMD': (($index)%2) === 1 , 'colLG': !($index%3 === 0) }">
                     <div class="row">
                     <div class="col-md-12">
                         <a href="#"><img class="fixView" ng-src={{bloc.bloc.logo}}></a>
@@ -42,11 +42,11 @@
                     <div class="col-md-12">
                         <div style="margin-left: auto; margin-right: auto;" class="progress" style="text-align: center">
                             <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar"
-                                 aria-valuenow="{{bloc.bloc.level}}" aria-valuemin="0" aria-valuemax="100"
+                                 aria-valuenow="{{bloc.level}}" aria-valuemin="0" aria-valuemax="100"
                                  style="min-width: 2em; width: {{bloc.level}}%;">
                             </div>
                             <div class = "row">
-                            <div class="percent col-xs-offset-5 col-sm-offset-5 col-md-offset-5 col-lg-offset-5" style="padding-top:30px;">  {{bloc.bloc.level}} %</div>
+                            <div class="percent col-xs-offset-5 col-sm-offset-5 col-md-offset-5 col-lg-offset-5" style="padding-top:30px;">{{bloc.level}}%</div>
                             </div>
                         </div>
 

@@ -5,6 +5,7 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Objects;
@@ -28,6 +29,12 @@ public class Lesson_done implements Serializable {
 
     @Column(name = "note_max")
     private Integer note_max;
+
+
+
+
+    @Column(name = "date")
+    private Date date;
 
     @ManyToOne
     private Student student;
@@ -79,6 +86,9 @@ public class Lesson_done implements Serializable {
         this.lessons = lessons;
     }
 
+    public Date getDate() { return date; }
+
+    public void setDate(Date date) { this.date = date; }
     @Override
     public boolean equals(Object o) {
         if (this == o) {

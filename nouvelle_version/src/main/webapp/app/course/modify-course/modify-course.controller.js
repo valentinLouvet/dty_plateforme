@@ -50,14 +50,25 @@
                     console.log(vm.questions.indexOf(question));
                     console.log(vm.responses[vm.questions.indexOf(question)]);
                     for (var j = 0; j<vm.responses[vm.questions.indexOf(question)].length; j++){
-                        Response.delete({id : vm.responses[vm.questions.indexOf(question)][j].id}, onDeleteResponseSuccess, onDeleteResponseError);
+                        Response.delete({id : vm.responses[vm.questions.indexOf(question)][j].id}, onDeleteResponseQuestionSuccess(question), onDeleteResponseQuestionError(question));
                         vm.responses[vm.questions.indexOf(question)][j] = null;
-                        Question.delete({id : question.id}, onDeleteQuestionSuccess, onDeleteQuestionError);
                     }
+                    Question.delete({id : vm.questions[vm.questions.indexOf(question)].id}, onDeleteQuestionSuccess(), onDeleteQuestionError());
                     vm.questions[vm.questions.indexOf(question)] = null;
                 }
                 console.log(question)
             };
+
+            function onDeleteResponseQuestionSuccess(question) {
+                vm.isSaving= false;
+                Question.delete({id : question.id}, onDeleteQuestionSuccess, onDeleteQuestionError);
+                console.log("response deleted")
+            }
+
+            function onDeleteResponseQuestionError(question) {
+                vm.isSaving= false;
+                console.log("Response not deleted")
+            }
 
             function onDeleteQuestionSuccess() {
                 vm.isSaving= false;

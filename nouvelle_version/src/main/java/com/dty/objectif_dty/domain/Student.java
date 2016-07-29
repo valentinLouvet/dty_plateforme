@@ -29,7 +29,7 @@ public class Student implements Serializable {
     private Integer nb_lesson_today;
 
     @ManyToMany
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    //Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     @JoinTable(name = "student_owned_badge",
                joinColumns = @JoinColumn(name="students_id", referencedColumnName="ID"),
                inverseJoinColumns = @JoinColumn(name="owned_badges_id", referencedColumnName="ID"))

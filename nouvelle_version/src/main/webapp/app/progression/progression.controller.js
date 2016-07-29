@@ -15,6 +15,8 @@
 
         vm.floor=floor;
         vm.BlocOn=null;
+        vm.isDisabled=isDisabled;
+        vm.goToLesson=goToLesson;
 
         Principal.getStudent().then(function (data) {
             vm.student=data;
@@ -38,17 +40,20 @@
                 console.log("Blocs :",Blocs)
 
                 var bloc=lessons[i].lessons[0].bloc;
-                console.log("lesson_done:",lessons[i].lessons[0].bloc);
+                console.log("lesson_done:",lessons[i]);
                 var lesson_done=lessons[i].lessons[0].id;
+                var lesson_results_init=lessons[i].note_init;
+                var lesson_results_max=lessons[i].note_max;
 
                 IsBlocInBlocs(bloc.id,Blocs,function(isIn){
                     if (!(isIn.res)) {
                         var res = {
                             bloc: bloc,
-                            lesson_done: [lesson_done],
+                            lesson_done: [{ldId:lesson_done,ldRes:lesson_results_max}]
                         };
                         Blocs.push(res);
                     } else {
+                        var Obj={ldId:lesson_done,ldRes:lesson_results_max};
                         Blocs[isIn.num].lesson_done.push(lesson_done);
                     }
                     vm.blocs = Blocs;
@@ -84,6 +89,28 @@
 
         function floor(value){
             return Math.floor(value);
+        }
+        function isDisabled(lessonId,lesson_done) {
+
+            var done=false;
+            var res=true;
+            for(var i=0;i<lesson_done.length;i++) {
+                if (lesson_done[i].ldId === lessonId) {
+                    res=false;
+                }
+                done=(i===lesson_done.length-1)
+            }
+                if(done){return res}
+
+        };
+
+        function goToLesson(id,bool){
+            if(bool===false){
+                console.log(id)
+               $state.go('viewCourse',{id:id});
+            }else{
+            }
+
         }
 
 

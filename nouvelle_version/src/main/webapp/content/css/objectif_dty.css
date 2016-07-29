@@ -431,6 +431,16 @@ nav.navbar.navbar-default.container > div > div > ul.nav.navbar-nav > li > a.act
     padding: 24px 10px;
 }
 
+.btn-primary-dty-modal{
+    color: #87102c;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+    width: 100%;
+}
+.btn-primary-dty-modal:hover{
+    background-color:#e0dfe3;
+}
+
 .label-default-dty {
     background-color: black;
 }

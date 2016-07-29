@@ -39,7 +39,7 @@ public class Question implements Serializable {
 
     @OneToMany(mappedBy = "question", fetch = FetchType.EAGER)
     @JsonIgnoreProperties("question")
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    //Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Response> responses = new HashSet<>();
 
     public String getCorrection(){

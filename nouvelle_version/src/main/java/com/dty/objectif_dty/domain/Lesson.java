@@ -49,7 +49,7 @@ public class Lesson implements Serializable {
 
     @OneToMany(mappedBy = "lesson", fetch = FetchType.EAGER)
     @JsonIgnoreProperties({"lesson"})
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    //Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Question> questions = new HashSet<>();
 
     public Long getId() {

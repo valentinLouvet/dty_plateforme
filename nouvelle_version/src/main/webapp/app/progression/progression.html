@@ -67,7 +67,7 @@
                                     <div class="col-lg-3 col-lg-offset-1" id="courses">
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <a data-toggle="modal" data-target="#{{bloc.bloc.id}}"> <img class="fixView" ng-src={{bloc.bloc.logo}}></a>
+                                                <img class="fixView" ng-src={{bloc.bloc.logo}}>
                                                 <p class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                                 <h2>{{bloc.bloc.name}} </h2>
                                                 </p>
@@ -76,7 +76,7 @@
                                         </div>
                                     <div class="col-md-6 col-lg-7">
                                         <ul class="btn-group-vertical" style="width:100%">
-                                            <li class="btn btn-primary-dty-modal " ng-disabled="vm.isDisabled(lesson.id,bloc.lesson_done)" ng-repeat="lesson in bloc.bloc.lessons"data-dismiss="modal" ng-click="vm.goToLesson(lesson.id,vm.isDisabled(lesson.id,bloc.lesson_done))"><span>{{lesson.num_lesson}} - {{lesson.title}}</span><span></span></li>
+                                            <li class="btn btn-primary-dty-modal " style="text-align: left" ng-disabled="vm.isDisabled(lesson.id,bloc.lesson_done)" ng-repeat="lesson in bloc.bloc.lessons"data-dismiss="modal" ng-click="vm.goToLesson(lesson.id,vm.isDisabled(lesson.id,bloc.lesson_done))" ><span >{{lesson.num_lesson}} - {{lesson.title}}</span><span class="pull-right" ng-hide="vm.isDisabled(lesson.id,bloc.lesson_done)">&#x2713</span></li>
                                         </ul>
 
                                     </div>

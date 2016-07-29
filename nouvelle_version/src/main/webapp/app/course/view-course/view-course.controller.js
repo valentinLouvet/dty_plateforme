@@ -9,7 +9,7 @@
         vm.id = $stateParams.id;
         vm.lesson = Lesson.get({id: vm.id});
         vm.scoreCalc = false;
-        vm.lessonDoneNew = false;
+        vm.lessonDoneNew = true;
         vm.noteStars = 1;
 
 
@@ -26,9 +26,13 @@
                     vm.lessonDoneI = i;
                     var temp = vm.lesson_dones[i];
 
+                    if(temp.note_init == null){
+                        setImgScoreInit(" &#9888;  Cette leçon n'a pas de question, elle n'a donc pas de score ! &#9888");
+                        setImgScoreMax("&#9888;  Cette leçon n'a pas de question, elle n'a donc pas de score !  &#9888;");
+                    } else {
                     setImgScoreMax(convertScore(temp.note_max));
-
                     setImgScoreInit(convertScore(temp.note_init));
+                    }
                 }
             }
         });
@@ -74,9 +78,16 @@
 
 
                 vm.scoreCalc = true;
-                setImgScoreMax(convertScore(vm.lesson_done.note_max));
-                setImgScoreInit(convertScore(vm.lesson_done.note_init));
-                setImgScoreDone(convertScore(vm.score));
+                    if(temp.note_init == null){
+                            setImgScoreInit(" &#9888;  Cette leçon n'a pas de question, elle n'a donc pas de score ! &#9888");
+                            setImgScoreMax("&#9888;  Cette leçon n'a pas de question, elle n'a donc pas de score !  &#9888;");
+                            setImgScoreDone("&#9888;  Cette leçon n'a pas de question, elle n'a donc pas de score !  &#9888;");
+                    } else {
+                             setImgScoreMax(convertScore(vm.lesson_done.note_max));
+                             setImgScoreInit(convertScore(vm.lesson_done.note_init));
+                             setImgScoreDone(convertScore(vm.score));
+                           }
+
 
                 saveLesson_done();
 
@@ -90,7 +101,7 @@
             */
 
         function convertScore(score){
-            console.log("WasCalled");
+
             var Note = 0;
 
             switch (Math.floor((score)/20)) {
@@ -123,7 +134,7 @@
             for(j=0; j< 5-Note; j++){
                 etoile = etoile + "&#9734;";
             }
-            console.log(etoile);
+
             return etoile;
 
 

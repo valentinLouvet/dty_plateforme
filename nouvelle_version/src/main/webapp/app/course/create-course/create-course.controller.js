@@ -3,7 +3,11 @@
 
     angular
         .module('objectifDtyApp')
-        .controller('courseCreationController', ['Bloc', 'Question', 'Response', 'Lesson', 'AlertService', 'Principal', function (Bloc, Question, Response, Lesson, AlertService, Principal) {
+        .controller('courseCreationController', ['Bloc', 'Question', 'Response', 'Lesson',
+        //'Lesson2',
+        'AlertService', 'Principal', function (Bloc, Question, Response, Lesson,
+        //Lesson2,
+        AlertService, Principal) {
 
             var vm= this;
             vm.blocs=[];
@@ -90,6 +94,9 @@
 
             this.answers.push([answer1, answer2]);
             this.quizz.push(this.question);
+
+            loadAll();
+            loadAllLessons();
 
             // Différentes fonctions pour ajouter/supprimer les questions/réponses
             // A NOTER : les id (index) commencent à 1
@@ -240,6 +247,21 @@
 
                 vm.isSaving = true;
 
+                /*console.log("vm.newLesson.bloc.id :");
+                console.log(vm.newLesson.bloc.id);
+                console.log("debug0");
+                vm.num_lesson = vm.loadNumberLesson(vm.newLesson.bloc.id);
+                console.log("debug4");
+
+                vm.newLesson.created_by = vm.coach;
+                vm.newLesson.num_lesson = vm.num_lesson;
+
+                console.log("vm.num_lesson : ");
+                console.log(vm.num_lesson);
+                console.log("");*/
+
+
+
                 vm.num_lesson = vm.numberLessonForNewLesson(vm.newLesson.bloc.id);
                 vm.newLesson.created_by = vm.coach;
                 vm.newLesson.num_lesson = vm.num_lesson;
@@ -338,9 +360,6 @@
                 AlertService.error(error.data.message);
             }
 
-            loadAll();
-            loadAllLessons();
-
             function loadAllLessons () {
 
                 Lesson.query({},onSuccessLoadAllLessons, onErrorLoadAllLessons)
@@ -366,22 +385,28 @@
                         }
                     }
                 }
-
                 return num_lesson;
             }
 
 
+
             // Recherche le numéro de la leçon qui le précède
+
             /*
-            function loadNumberLesson (id) {
-                Lesson2.get({}, onSuccessLoadNumberLesson, onErrorLoadNumberLesson);
+            this.loadNumberLesson = function(id2) {
+                console.log("debug1");
+                vm.num_lesson = Lesson2.get({id:id2}, onSuccessLoadNumberLesson, onErrorLoadNumberLesson);
+                console.log("vm.num_lesson");
+                console.log(vm.num_lesson);
+                console.log("debug2");
                 //Lesson.query({},onSuccess,onError)
             }
 
             function onSuccessLoadNumberLesson(data){
-                vm.lesson = data;
+                //vm.lesson = data;
                 console.log("data : ");
                 console.log(data);
+
             }
 
             function onErrorLoadNumberLesson(error){

@@ -16,9 +16,12 @@
     </ul>
     <button ng-click="vm.submitLesson()"  ng-hide="vm.scoreCalc" class="btn btn-primary-dty-inverse">Submit my answers</button>
 
-        <div ng-hide="vm.lessonDoneNew" class="container row">
+        <div class="container row">
+            <div ng-hide="vm.lessonDoneNew">
+
+
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <h2> That lesson was already submitted ! <br/></h2>
+                <h4> That lesson was already submitted ! <br/></h4>
             </div>
 
 
@@ -31,13 +34,16 @@
                 <span id="ImgScoreMax">
                 </span>
             </p>
+            </div>
 
-            <p ng-show="vm.scoreCalc" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div ng-show="vm.scoreCalc">
+            <p class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
-              <br/> The score you obtained this time : {{vm.score}}%
+              <br/> <h2> The score you obtained this time : {{vm.score}}%
                 <span id="ImgScoreDone">
-                </span>
+                </span>  </h2>
             </p>
+            </div>
         </div>
 
 

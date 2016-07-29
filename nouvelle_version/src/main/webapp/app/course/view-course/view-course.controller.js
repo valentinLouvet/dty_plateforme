@@ -72,13 +72,14 @@
 
 
                         }
-                        vm.lessonDoneNew = false;
+
                     }
+                    vm.lessonDoneNew = false;
                 }
 
 
                 vm.scoreCalc = true;
-                    if(temp.note_init == null){
+                    if(vm.lesson_done.note_init == null){
                             setImgScoreInit(" &#9888;  Cette leçon n'a pas de question, elle n'a donc pas de score ! &#9888");
                             setImgScoreMax("&#9888;  Cette leçon n'a pas de question, elle n'a donc pas de score !  &#9888;");
                             setImgScoreDone("&#9888;  Cette leçon n'a pas de question, elle n'a donc pas de score !  &#9888;");

@@ -2,7 +2,7 @@
 
     <h1 class="page-header-dty">Create a new bloc</h1>
 
-    <div class="form-group col-sm-6 pull-left" style="margin-top: 20px">
+    <div class="form-group col-xs-6 col-sm-6 pull-left" style="margin-top: 20px">
         <label for="field_bloc">Select bloc name : </label>
         <br>
         <select required class="form-control" id="field_bloc" name="bloc" ng-model="vm.newLesson.bloc" ng-options="bloc as bloc.name for bloc in vm.blocs track by bloc.id">
@@ -12,7 +12,7 @@
 
     <br>
 
-    <div class="col-sm-6 form-group">
+    <div class="col-xs-6 col-sm-6 form-group">
         <label>New bloc name</label>
         <br>
         <input type="text" placeholder="Bloc name" class="form-control">
@@ -20,12 +20,19 @@
 
     <br>
 
-    <div class="form-group col-sm-6 pull-left" style="margin-top: 20px">
+    <div class="form-group col-xs-6 col-sm-6 pull-left" style="margin-top: 20px">
         <label for="field_level">Level of the lesson : </label>
         <br>
         <select required class="form-control" id="field_level" name="level" ng-model="vm.newLesson.level" ng-options="level for level in vm.tabLevel">
             <option value=""></option>
         </select>
+    </div>
+
+    <div class="form-group col-xs-6 col-sm-6 " style="margin-top: 20px">
+        <label for="field_level">Is it the last quizz of your Bloc ? (Necessary to give the badge)  </label>
+        <div class="checkbox">
+            <label><input type="checkbox" value="">Yes</label>
+        </div>
     </div>
 
     <div class="col-md-12">

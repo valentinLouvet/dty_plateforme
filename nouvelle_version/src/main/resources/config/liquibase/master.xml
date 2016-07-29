@@ -20,6 +20,7 @@
     <include file="changelog/20160722163200_changelog.xml" relativeToChangelogFile="true"/>
     <include file="changelog/20160722163300_changelog.xml" relativeToChangelogFile="true"/>
     <include file="changelog/20160728102400_changelog.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/20160729102400_changelog.xml" relativeToChangelogFile="true"/>
     <include file="classpath:config/liquibase/changelog/20160720152033_added_entity_constraints_Student.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20160720153017_added_entity_constraints_Coach.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20160720153446_added_entity_constraints_Lesson_done.xml" relativeToChangelogFile="false"/>

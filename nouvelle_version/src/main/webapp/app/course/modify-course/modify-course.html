@@ -63,12 +63,20 @@
             New question
         </button>
     </span>
-    <div class="input-group" ng-show="vm.addingQuestion">
-        <input type="text" placeholder="Enter question here..." class="form-control" ng-model="vm.newIntitule">
-        <span class="input-group-btn">
+    <div ng-show="vm.addingQuestion">
+        <div class="input-group">
+            <input type="text" placeholder="Enter question here..." class="form-control" ng-model="vm.newIntitule">
+            <span class="input-group-btn">
             <button type="button" ng-click="vm.registerQuestion()"
-                    class="btn btn-md btn-primary-dty pull-right">Add Question</button>
-        </span>
+                    class="btn btn-md btn-primary-dty pull-right" style="margin-bottom: 15px">Add Question</button>
+            </span>
+        </div>
+        <div class="form-group">
+            Add answers :
+        </div>
+        <div ng-repeat="newAnswer in vm.newAnswers">
+            <input type="text" placeholder="Enter answer here..." class="form-control" ng-model="newAnswer.text">
+        </div>
     </div>
 </div>
 

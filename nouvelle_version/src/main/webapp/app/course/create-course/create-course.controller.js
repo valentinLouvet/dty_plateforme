@@ -287,7 +287,7 @@
                         vm.saveResponse(vm.indexOfQuestion, vm.indexOfAnswer);
                     }
                 }
-            };
+            }
 
             function onSaveResponseError () {
                 vm.isSaving = false;

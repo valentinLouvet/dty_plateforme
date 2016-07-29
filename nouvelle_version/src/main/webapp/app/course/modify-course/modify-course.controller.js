@@ -31,6 +31,7 @@
                         vm.responses[i].push(Response.get({id : vm.course.questions[i].responses[j].id}));
                     }
                 }
+                vm.newAnswers = [{text: ""}, {text: ""}];
             };
 
             vm.initialize();
@@ -63,32 +64,64 @@
                 newQuestion.id = null;
                 newQuestion.intitule = vm.newIntitule;
                 console.log(newQuestion);
-                console.log(vm.questions[0]);
-                Question.save(newQuestion, onSaveQuestionSuccess, onSaveQuestionError);
+                Question.save(newQuestion, onSaveQuestionResponseSuccess, onSaveQuestionError);
+            };
+
+            function onSaveQuestionResponseSuccess(newQuestion) {
+                var newQuestionAnswers = [];
+                for (var i=0; i < vm.newAnswers.length; i++){
+                    newQuestionAnswers.push(vm.responses[1][0]);
+                    newQuestionAnswers[i].text = vm.newAnswers[i].text;
+                    newQuestionAnswers[i].question = newQuestion;
+                    newQuestionAnswers[i].id = null;
+                    console.log(newQuestionAnswers[i]);
+                    Response.save(newQuestionAnswers[i], onSaveResponseSuccess, onSaveResponseError)
+                }
+                vm.isSaving=false;
+                console.log("Nouvelle Question créée");
                 $state.go($state.current, {}, {reload: true});
                 vm.initialize()
-            };
+            }
+
 
             //supprime la question
             vm.deleteQuestion = function (question) {
                 if (vm.questions.length>1){
-                    console.log(vm.questions.indexOf(question));
                     console.log(vm.responses[vm.questions.indexOf(question)]);
-                    for (var j = 0; j<vm.responses[vm.questions.indexOf(question)].length; j++){
-                        Response.delete({id : vm.responses[vm.questions.indexOf(question)][j].id}, onDeleteResponseQuestionSuccess(question), onDeleteResponseQuestionError);
-                        vm.responses[vm.questions.indexOf(question)][j].text = null;
+                    if (vm.responses[vm.questions.indexOf(question)].length == 0){
+                        Question.delete({id: question.id}, onDeleteQuestionSuccess, onDeleteQuestionError);
+                        vm.questions[vm.questions.indexOf(question)].intitule = null;
+                        $state.go($state.current, {}, {reload: true});
+                        vm.initialize()
+                    } else {
+                        for (var j = 0; j<vm.responses[vm.questions.indexOf(question)].length; j++){
+                            /*if (j != vm.responses[vm.questions.indexOf(question)].length){
+                                Response.delete({id : vm.responses[vm.questions.indexOf(question)][j].id}, onDeleteResponseSuccess, onDeleteResponseError);
+                                vm.responses[vm.questions.indexOf(question)][j].text = null;
+                            } else {
+                                console.log(vm.responses[vm.questions.indexOf(question)][j]);
+                                Response.delete({id : vm.responses[vm.questions.indexOf(question)][j].id}, onDeleteResponseQuestionSuccess, onDeleteResponseQuestionError)
+                                vm.responses[vm.questions.indexOf(question)][j].text = null;
+                            }*/
+                             Response.delete({id : vm.responses[vm.questions.indexOf(question)][j].id}, onDeleteResponseQuestionSuccess, onDeleteResponseQuestionError)
+                             vm.responses[vm.questions.indexOf(question)][j].text = null;
+                            Question.delete({id : question.id}, onDeleteQuestionSuccess, onDeleteQuestionError);
+                        }
+                        Question.delete({id : question.id}, onDeleteQuestionSuccess, onDeleteQuestionError);
+                        vm.questions[vm.questions.indexOf(question)].intitule = null;
                     }
-                    Question.delete({id : vm.questions[vm.questions.indexOf(question)].id}, onDeleteQuestionSuccess, onDeleteQuestionError);
-                    vm.questions[vm.questions.indexOf(question)].intitule = null;
                 }
-                $state.go($state.current, {}, {reload: true});
-                vm.initialize()
             };
 
-            function onDeleteResponseQuestionSuccess(question) {
+            function onDeleteResponseQuestionSuccess() {
                 vm.isSaving= false;
-                Question.delete({id : question.id}, onDeleteQuestionSuccess, onDeleteQuestionError);
-                console.log("response deleted")
+                /*Question.delete({id : question.id}, onDeleteQuestionSuccess, onDeleteQuestionError);
+                //Question.delete({id : vm.questions[vm.questions.indexOf(question)].id}, onDeleteQuestionSuccess, onDeleteQuestionError);
+                vm.questions[vm.questions.indexOf(question)].intitule = null;
+                console.log("response deleted");
+                $state.go($state.current, {}, {reload: true});
+                vm.initialize()*/
+                console.log('Question deleted')
             }
 
             function onDeleteResponseQuestionError() {
@@ -117,7 +150,9 @@
 
             function onDeleteResponseSuccess() {
                 vm.isSaving= false;
-                console.log("response deleted")
+                console.log("response deleted");
+                $state.go($state.current, {}, {reload: true});
+                vm.initialize()
             }
 
             function onDeleteResponseError() {
@@ -171,7 +206,9 @@
 
             function onSaveQuestionSuccess() {
                 vm.isSaving=false;
-                console.log("ok question")
+                console.log("ok question");
+                $state.go($state.current, {}, {reload: true});
+                vm.initialize()
             }
 
             function onSaveQuestionError(){
@@ -193,9 +230,10 @@
                 }
                 console.log(response);
             };
+
             function onSaveResponseSuccess() {
                 vm.isSaving=false;
-                console.log("ok response")
+                console.log("Nouvelle réponse créée")
             }
 
             function onSaveResponseError(){

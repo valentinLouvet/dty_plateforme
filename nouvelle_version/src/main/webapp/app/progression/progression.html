@@ -76,7 +76,7 @@
                                         </div>
                                     <div class="col-md-6 col-lg-7">
                                         <ul class="btn-group-vertical" style="width:100%">
-                                            <li class="btn btn-primary-dty-modal " ng-disabled="vm.isDisabled(lesson.id,bloc.lesson_done)" ng-repeat="lesson in bloc.bloc.lessons"data-dismiss="modal" ng-click="vm.goToLesson(lesson.id,vm.isDisabled(lesson.id,bloc.lesson_done))"><span>{{lesson.title}}</span><span></span></li>
+                                            <li class="btn btn-primary-dty-modal " ng-disabled="vm.isDisabled(lesson.id,bloc.lesson_done)" ng-repeat="lesson in bloc.bloc.lessons"data-dismiss="modal" ng-click="vm.goToLesson(lesson.id,vm.isDisabled(lesson.id,bloc.lesson_done))"><span>{{lesson.num_lesson}} - {{lesson.title}}</span><span></span></li>
                                         </ul>
 
                                     </div>

@@ -29,12 +29,10 @@
 
         vm.SetNextLessonToDo = function(){
             for(i = 0; i<vm.lesson.bloc.lessons.length; i++){
-                if(vm.lesson.bloc.lessons[i].num_lesson = vm.lesson.num_lesson + 1){
-
+                if(vm.lesson.bloc.lessons[i].num_lesson == vm.lesson.num_lesson + 1){
                     vm.student[0].todo_lesson = vm.lesson.bloc.lessons[i];
                 }
             }
-            console.log(vm.student[0].id);
         };
 
         vm.submitLesson = function () {
@@ -138,7 +136,6 @@
         function onSaveStudentSuccess (result) {
             $scope.$emit('objectifDtyApp:studentUpdate', result);
             vm.isSaving = false;
-            console.log(vm.student[0].id);
         }
 
 

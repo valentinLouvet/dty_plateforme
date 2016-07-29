@@ -1,16 +1,17 @@
-(function () {
+(function(){
 
     angular.module('objectifDtyApp').controller('CourseViewController', ViewCourseController);
 
-    ViewCourseController.$inject = ['Principal', 'courseView', '$scope', '$rootScope', '$stateParams', 'DataUtils', 'Lesson', 'Coach', 'Bloc', 'Question', 'Lesson_done', 'Student'];
+    ViewCourseController.$inject = ['Principal', 'courseView', '$scope', '$rootScope', '$stateParams', '$state', 'DataUtils', 'Lesson', 'Coach', 'Bloc', 'Question', 'Lesson_done', 'Student'];
 
-    function ViewCourseController(Principal, courseView, $scope, $rootScope, $stateParams, DataUtils, Lesson, Coach, Bloc, Question, Lesson_done, Student) {
+    function ViewCourseController(Principal, courseView, $scope, $rootScope, $stateParams, $state, DataUtils, Lesson, Coach, Bloc, Question, Lesson_done, Student) {
         var vm = this;
         vm.id = $stateParams.id;
         vm.lesson = Lesson.get({id: vm.id});
         vm.scoreCalc = false;
-        vm.lessonDoneNew = true;
+        vm.lessonDoneNew = false;
         vm.noteStars = 1;
+
 
         vm.score = null;
         Student.query().$promise.then(function (data) {
@@ -23,6 +24,11 @@
                 if (vm.lesson_dones[i].lessons[0].id == vm.lesson.id) {
                     vm.lessonDoneNew = false;
                     vm.lessonDoneI = i;
+                    var temp = vm.lesson_dones[i];
+
+                    setImgScoreMax(convertScore(temp.note_max));
+
+                    setImgScoreInit(convertScore(temp.note_init));
                 }
             }
         });
@@ -46,54 +52,99 @@
             vm.score /= vm.lesson.questions.length;
             vm.score = parseInt(vm.score);
 
-            vm.lesson_done = {
-                note_init: vm.score,
-                note_max: vm.score,
-                student: vm.student[0],
-                lessons: [vm.lesson],
-                date: new Date()
-            };
-            for (i = 0; i < vm.lesson_dones.length; i++) {
-                if (vm.lesson_dones[i].lessons[0].id == vm.lesson.id) {
-                    vm.lesson_done.id = vm.lesson_dones[i].id;
-                    vm.lesson_done.note_init = vm.lesson_dones[i].note_init;
-                    if (vm.lesson_dones[i].date) {
-                        vm.lesson_done.date = vm.lesson_dones[i].date;
-                    }
-                    if (vm.score < vm.lesson_dones[i].note_max) {
+                vm.lesson_done = {
+                    note_init : vm.score,
+                    note_max : vm.score,
+                    student : vm.student[0],
+                    lessons : [vm.lesson]
+                };
+                for(i=0; i<vm.lesson_dones.length ;i++){
+                    if(vm.lesson_dones[i].lessons[0].id == vm.lesson.id){
+                        vm.lesson_done.id = vm.lesson_dones[i].id;
+                        vm.lesson_done.note_init = vm.lesson_dones[i].note_init;
+                        if(vm.score<vm.lesson_dones[i].note_max){
 
-                        vm.lesson_done.note_max = vm.lesson_dones[i].note_max;
+                            vm.lesson_done.note_max = vm.lesson_dones[i].note_max;
+
+
+                        }
+                        vm.lessonDoneNew = false;
                     }
-                    vm.lessonDoneNew = false;
                 }
+
+
+                vm.scoreCalc = true;
+                setImgScoreMax(convertScore(vm.lesson_done.note_max));
+                setImgScoreInit(convertScore(vm.lesson_done.note_init));
+                setImgScoreDone(convertScore(vm.score));
+
+                saveLesson_done();
+
+               // $state.go('course.BadgeCourse', {id:1, idLesson:vm.id}, {inherit : false});
+
+
+            };
+
+            /*
+            /   Convertit le score en un string d'etoiles
+            */
+
+        function convertScore(score){
+            console.log("WasCalled");
+            var Note = 0;
+
+            switch (Math.floor((score)/20)) {
+
+
+                        case 0 :
+                            Note = 0;
+                        break;
+                        case 1 :
+                            Note = 1;
+                        break;
+                        case 2 :
+                            Note= 2;
+                        break;
+                        case 3 :
+                            Note= 3;
+                        break;
+                            case 4 :
+                            Note = 4;
+                        break;
+                        case 5 :
+                            Note = 5;
+                        break;
+                        }
+            var etoile = "";
+
+            for(i = 0; i < Note; i++){
+                etoile = etoile + "&#9733;";
             }
-
-            switch (Math.floor(vm.score / 20)) {
-                case 0 :
-                    vm.noteStars = 1;
-                    break;
-                case 1 :
-                    vm.noteStars = 2;
-                    break;
-                case 2 :
-                    vm.noteStars = 3;
-                    break;
-                case 3 :
-                    vm.noteStars = 4;
-                    break;
-                case 4 :
-                    vm.noteStars = 5;
-                    break;
-                case 5 :
-                    vm.noteStars = 5;
-                    break;
+            for(j=0; j< 5-Note; j++){
+                etoile = etoile + "&#9734;";
             }
+            console.log(etoile);
+            return etoile;
 
-            document.getElementById("ImgScore").src = "../../../content/images/" + vm.noteStars + "-stars.jpg";
-            vm.scoreCalc = true;
-            saveLesson_done();
 
-        };
+        }
+
+
+        function setImgScoreMax(etoile){
+            var spanMax = document.getElementById("ImgScoreMax");
+            spanMax.innerHTML = etoile;
+        }
+
+        function setImgScoreInit(etoile){
+
+            var spanInit = document.getElementById("ImgScoreInit");
+            spanInit.innerHTML = etoile;
+        }
+
+        function setImgScoreDone(etoile){
+            var spanDone = document.getElementById("ImgScoreDone");
+            spanDone.innerHTML = etoile;
+         }
 
 
         function saveLesson_done() {

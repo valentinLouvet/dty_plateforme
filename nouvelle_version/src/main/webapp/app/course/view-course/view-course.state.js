@@ -4,7 +4,8 @@
     stateConfig.$inject = ['$stateProvider'];
 
     function stateConfig($stateProvider) {
-        $stateProvider.state('viewCourse', {
+        $stateProvider
+        .state('viewCourse', {
 
             parent: 'course',
             url: '/view/:id',
@@ -27,6 +28,21 @@
                 }]
             }
         })
+        .state('course.BadgeCourse', {
+                    parent: 'course',
+                    url: '/{id}/{idLesson}/SucessBadge',
+                    data: {
+                        authorities: ['ROLE_ADMIN', 'ROLE_USER', 'ROLE_COACH']
+                    },
+                    onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
+                        $uibModal.open({
+                            templateUrl: 'app/badge/1-badge.html',
+                            controller: 'BadgeController',
+                            controllerAs: 'vm',
+                            size: 'md'
+                        });
+                    }]
+         });
 
     }
 

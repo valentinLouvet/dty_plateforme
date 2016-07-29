@@ -247,25 +247,12 @@
 
                 vm.isSaving = true;
 
-                /*console.log("vm.newLesson.bloc.id :");
-                console.log(vm.newLesson.bloc.id);
-                console.log("debug0");
-                vm.num_lesson = vm.loadNumberLesson(vm.newLesson.bloc.id);
-                console.log("debug4");
-
-                vm.newLesson.created_by = vm.coach;
-                vm.newLesson.num_lesson = vm.num_lesson;
-
-                console.log("vm.num_lesson : ");
-                console.log(vm.num_lesson);
-                console.log("");*/
-
-
-
+                // on incrémente le numéro de la leçon par rapport aux anciennes
                 vm.num_lesson = vm.numberLessonForNewLesson(vm.newLesson.bloc.id);
-                vm.newLesson.created_by = vm.coach;
                 vm.newLesson.num_lesson = vm.num_lesson;
-                console.log("vm.newLesson.num_lesson : " + vm.newLesson.num_lesson);
+
+                // Qui a créé la leçon ?
+                vm.newLesson.created_by = vm.coach;
 
                 // Lesson.save renvoie la leçon qui a été sauvegardée en lui donnant un id
                 // Sauvegarde par la même occasion la leçon

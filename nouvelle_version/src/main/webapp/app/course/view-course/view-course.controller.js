@@ -72,9 +72,9 @@
 
 
                         }
-
+                        vm.lessonDoneNew = false;
                     }
-                    vm.lessonDoneNew = false;
+
                 }
 
 

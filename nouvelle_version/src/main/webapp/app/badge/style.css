@@ -1,0 +1,122 @@
+/* Animation properties */
+.Badge_logo {
+  animation: Badge_logo 10s ease-out ;
+}
+.Badge_byline span {
+  animation: Badge_spin-letters 10s linear;
+}
+.Badge_byline {
+  animation: Badge_move-byline 10s linear;
+}
+
+/* Keyframes */
+@keyframes Badge_logo {
+  0% {
+    opacity: 0;
+    transform: scale(1.5) translateY(-0.75em);
+  }
+  20% {
+    opacity: 1;
+  }
+  89% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateZ(-1000em);
+  }
+}
+
+
+@keyframes Badge_spin-letters {
+  0%, 10% {
+    opacity: 0;
+    transform: rotateY(90deg);
+  }
+  30% {
+    opacity: 1;
+  }
+  70%, 86% {
+    transform: rotateY(0);
+    opacity: 1;
+  }
+  95%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes Badge_move-byline {
+  0% {
+    transform: translateZ(5em);
+  }
+  100% {
+    transform: translateZ(0);
+  }
+}
+
+/* Make the 3D work on the container */
+.Badge_logo-demo {
+  perspective: 800px;
+  transform-style: preserve3d;
+}
+
+/* General styles and layout */
+/*
+body {
+
+    background-color: #DFF2BF;
+}*/
+
+.Badge_logo-demo {
+  height: 17em;
+  left: 50%;
+  position: absolute;
+  top: 53%;
+  transform: translate(-50%, -50%);
+  width: 34em;
+}
+
+.Badge_byline span {
+  display: inline;
+}
+
+img {
+  width: 100%;
+}
+
+.Badge_logo, .Badge_byline {
+  position: absolute;
+}
+
+.Badge_logo {
+  top: -10em;
+}
+
+
+.Badge_byline {
+  color: #fff;
+  font-family: "ITC Serif Gothic", Lato;
+  font-size: 2.25em;
+  left: -2em;
+  letter-spacing: 0.4em;
+  right: -2em;
+  text-align: center;
+  text-transform: uppercase;
+  top: 5.5em;
+}
+
+/*** Media queries for adjusting to different screen sizes ***/
+
+@media only screen and (max-width: 600px) {
+  .Badge_logo-demo {
+    font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .Badge_logo-demo {
+    font-size: 7px;
+  }
+}
+

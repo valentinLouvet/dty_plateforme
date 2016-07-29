@@ -7,6 +7,8 @@
 
             var vm= this;
             vm.blocs=[];
+            vm.lessons = [];
+            vm.num_lesson = null;
 
             // LEVEL of the LESSON //
 
@@ -90,7 +92,7 @@
             this.quizz.push(this.question);
 
             // Différentes fonctions pour ajouter/supprimer les questions/réponses
-            // A NOTER : les id commencent à 1
+            // A NOTER : les id (index) commencent à 1
             // et les indices de tableau à 0 (d'où le décalage permanent)
 
             this.addAnswer = function(idOfQuestion) {
@@ -141,9 +143,6 @@
                 else{
                     console.log("Can't delete this answer");
                 }
-
-
-
             };
 
             this.addQuestion = function() {
@@ -161,7 +160,6 @@
                     text : null,
                     veracity : false,
                     correction: null,
-                    //question_id: this.newLesson.quizz[this.compteurAnswer[this.compteurQuestion - 1]].id,
                     question : 0,
                     cpt: this.compteurAnswer[this.compteurQuestion - 1] + 1
                 };
@@ -242,7 +240,10 @@
 
                 vm.isSaving = true;
 
+                vm.num_lesson = vm.numberLessonForNewLesson(vm.newLesson.bloc.id);
                 vm.newLesson.created_by = vm.coach;
+                vm.newLesson.num_lesson = vm.num_lesson;
+                console.log("vm.newLesson.num_lesson : " + vm.newLesson.num_lesson);
 
                 // Lesson.save renvoie la leçon qui a été sauvegardée en lui donnant un id
                 // Sauvegarde par la même occasion la leçon
@@ -337,9 +338,57 @@
                 AlertService.error(error.data.message);
             }
 
-
             loadAll();
+            loadAllLessons();
 
+            function loadAllLessons () {
+
+                Lesson.query({},onSuccessLoadAllLessons, onErrorLoadAllLessons)
+            }
+
+            function onSuccessLoadAllLessons(data){
+                vm.lessons=data;
+                console.log('LESSONS : ');
+                console.log(data);
+            }
+
+            function onErrorLoadAllLessons(error){
+
+                AlertService.error(error.data.message);
+            }
+
+            this.numberLessonForNewLesson = function(idOfBloc){
+                var num_lesson = 1;
+                for(var i = 0; i<vm.lessons.length; i++){
+                    if(idOfBloc === vm.lessons[i].bloc.id){
+                        if(num_lesson <= vm.lessons[i].num_lesson){
+                            num_lesson = vm.lessons[i].num_lesson + 1;
+                        }
+                    }
+                }
+
+                return num_lesson;
+            }
+
+
+            // Recherche le numéro de la leçon qui le précède
+            /*
+            function loadNumberLesson (id) {
+                Lesson2.get({}, onSuccessLoadNumberLesson, onErrorLoadNumberLesson);
+                //Lesson.query({},onSuccess,onError)
+            }
+
+            function onSuccessLoadNumberLesson(data){
+                vm.lesson = data;
+                console.log("data : ");
+                console.log(data);
+            }
+
+            function onErrorLoadNumberLesson(error){
+                console.log("Error");
+                AlertService.error(error.data.message);
+            }
+            */
         }]);
 
 })();

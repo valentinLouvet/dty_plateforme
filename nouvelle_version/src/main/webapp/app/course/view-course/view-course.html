@@ -1,17 +1,45 @@
 <div ng-bind-html="vm.lesson.cours"></div>
 
 <div class="page-header-dty"><h1>2. Exercise</h1></div>
-Choose the right answer!
+    <div style="margin-bottom:2%;">
+        Choose the right answer!
+    </div>
+
 
 <div class="Exercise">
     <ul class="list-group">
-        <li class="list-group-item"   ng-repeat="question in vm.lesson.questions">{{question.intitule}}<select name="repeatSelect" id="repeatSelect" ng-model="question.score">.
+        <li class="list-group-item"  ng-repeat="question in vm.lesson.questions" style="margin-bottom:2%;"> Question n°{{$index +1}} : {{question.intitule}}
+            <select name="repeatSelect" id="repeatSelect" ng-model="question.score" class="form-control" style="margin-top:1%;">.
             <option ng-repeat="response in question.responses" value={{response.veracity}}>{{response.text}}</option>
-        </select></li>
+            </select>
+        </li>
     </ul>
-    <button ng-click="vm.submitLesson()" ng-hide="vm.scoreCalc" class="btn btn-primary-dty-inverse">Submit my answers</button>
-    <p ng-hide="vm.lessonDoneNew">lesson already submitted, initail score was {{vm.lesson_dones[vm.lessonDoneI].note_init}}% and best score was {{vm.lesson_dones[vm.lessonDoneI].note_max}}%</p>
-    <h2 ng-show="vm.scoreCalc">Ton score est de {{vm.score}}%</h2>
-    <img ng-show="vm.scoreCalc" id="ImgScore" src="">
+    <button ng-click="vm.submitLesson()"  ng-hide="vm.scoreCalc" class="btn btn-primary-dty-inverse">Submit my answers</button>
+
+        <div ng-hide="vm.lessonDoneNew" class="container row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h2> That lesson was already submitted ! <br/></h2>
+            </div>
+
+
+            <p class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+               <br/> Your initial score : {{vm.lesson_dones[vm.lessonDoneI].note_init}}%
+                <span id="ImgScoreInit">
+                </span>
+            <p class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+               <br/> Your best score : {{vm.lesson_dones[vm.lessonDoneI].note_max}}% !
+                <span id="ImgScoreMax">
+                </span>
+            </p>
+
+            <p ng-show="vm.scoreCalc" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+              <br/> The score you obtained this time : {{vm.score}}%
+                <span id="ImgScoreDone">
+                </span>
+            </p>
+        </div>
+
+
 </div>
 

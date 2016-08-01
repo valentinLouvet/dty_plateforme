@@ -23,16 +23,19 @@
                 Edit question
             </button>
         </div>
-
+        <div style="color: blue" class="form-group" ng-show="!vm.editedQuestions[vm.questions.indexOf(question)]">
+            Question global correction: {{question.correction}}
+        </div>
         <div class="input-group form-group" ng-show="vm.editedQuestions[vm.questions.indexOf(question)]">
             <span class="input-group-btn">
-                <button type="button" ng-click="vm.deleteQuestion(question)"
-                        class="btn btn-md btn-primary-dty pull-right">Remove question</button>
+                <button type="button" ng-click="vm.saveQuestion(question)"
+                        class="btn btn-md btn-primary-dty pull-right btn-two-lines" style="padding-top: 23px; padding-bottom: 23px">Save changes</button>
             </span>
             <input type="text" placeholder="Enter question here..." class="form-control" ng-model="question.intitule">
+            <input type="text" placeholder="Enter correction here..." class="form-control" ng-model="question.correction">
             <span class="input-group-btn">
-                <button type="button" ng-click="vm.saveQuestion(question)"
-                        class="btn btn-md btn-primary-dty pull-right">Save changes</button>
+                <button type="button" ng-click="vm.deleteQuestion(question)"
+                        class="btn btn-md btn-primary-dty pull-right btn-two-lines" style="padding-top: 23px; padding-bottom: 23px">Remove question</button>
             </span>
         </div>
         <div class="form-group">
@@ -40,18 +43,26 @@
         </div>
         <div ng-repeat="response in vm.responses[vm.questions.indexOf(question)]">
             <div ng-hide="vm.editedQuestions[vm.questions.indexOf(question)]">
-                {{response.text}}
+                Response: {{response.text}}<br>
+                <div ng-class="{correctAnswer: response.veracity, incorrectAnswer: !response.veracity}">Answer correction: {{response.correction}}</div>
             </div>
             <div class="input-group" ng-show="vm.editedQuestions[vm.questions.indexOf(question)] && response.text">
-                <span class="input-group-btn">
-                    <button type="button" ng-click="vm.deleteResponse(question, response)"
-                            class="btn btn-md btn-primary-dty pull-right">Remove answer</button>
-                </span>
-                <input type="text" placeholder="Enter question here..." class="form-control" ng-model="response.text">
+                <!--bouton pour sayvegarder les réponses individuellement, me semble peu pertinent
                 <span class="input-group-btn">
                     <button type="button" ng-click="vm.saveResponse(response)"
-                            class="btn btn-md btn-primary-dty pull-right">Save changes</button>
+                            class="btn btn-md btn-two-lines btn-primary-dty pull-right">Save changes</button>
                 </span>
+                -->
+                <span class="input-group-addon">
+                    <input type="checkbox" ng-click="" ng-model="response.veracity" style="padding-top: 23px; padding-bottom: 23px">
+                </span>
+                <input type="text" placeholder="Enter question here..." class="form-control" ng-model="response.text">
+                <input type="text" placeholder="Enter answer here..." class="form-control" ng-model="response.correction">
+                <span class="input-group-btn">
+                    <button type="button" ng-click="vm.deleteResponse(question, response)"
+                            class="btn btn-md btn-primary-dty pull-right btn-two-lines" style="padding-top: 23px; padding-bottom: 23px">Remove answer</button>
+                </span>
+
             </div>
         </div>
     </div>

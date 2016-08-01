@@ -848,4 +848,11 @@ img {
   }
 }
 
+.correctAnswer{
+    color: #00cc66;
+}
+
+.incorrectAnswer{
+    color: red;
+}
 

@@ -12,6 +12,7 @@
         vm.scoreCalc = false;
         vm.lessonDoneNew = true;
         vm.noteStars = 1;
+        vm.chooseNewBloc = false;
 
 
         vm.score = null;
@@ -183,6 +184,10 @@
             if(vm.lessonDoneNew){
                 vm.SetNextLessonToDo();
                 saveStudent();
+            }
+
+            if(vm.student[0].todo_lesson.id == vm.lesson.id ){
+                vm.chooseNewBloc = true;
             }
 
 

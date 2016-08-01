@@ -12,6 +12,9 @@
             //savoir quelles leçons sont éditées
             vm.editedQuestions = [];
 
+            //cette fonction sert à initialsier la page en ayant les bonnes questions et les réponses
+            //on l'appelle à la fin de chaque modification afin d'être sûrs que le back et le front soient cohérents
+            //permet de ne pas recharger la page
             vm.initialize = function () {
                 vm.questions = [];
                 vm.responses = [];
@@ -23,6 +26,9 @@
                 vm.nbreLesson = vm.course.questions.length;
 
                 //avoir les questions pour pouvoir les modifier quand même et les réponses
+                //pour éviter les boucles, on ne peut accéder à lesson.questions.lesson
+                //il faut donc faire une requete pour obtenir les questions qui correspondent aux questions de la leçon afin de les modifier
+                //il en va de même pour les réponses qui correspondent aux questions
                 for (var i = 0; i < vm.nbreLesson; i++) {
                     vm.editedQuestions[i] = false;
                     vm.questions.push(Question.get({id: vm.course.questions[i].id}));
@@ -59,6 +65,9 @@
             };
 
             //ajoute la question
+            //les fonctions de callback permettent de s'assurer que les fonctions sont bien exécutées dans le bon ordre #asynchronisme
+            //il faut s'assurer que la question est bien créée avant les réponses, sinon on ne peut affecter les réponses à la question, qui n'est pas dans la BDD
+            //les trois premières lignes servent à créer un modèle de question vide, puis à lui affecter la bonne question et une id nulle pour pouvoir l'enregistrer
             vm.registerQuestion = function () {
                 var newQuestion = vm.questions[0];
                 newQuestion.id = null;
@@ -67,6 +76,9 @@
                 Question.save(newQuestion, onSaveQuestionResponseSuccess, onSaveQuestionError);
             };
 
+            //fonction de callback qui sauvegarde les réponses associées à la question
+            //les premières lignes servent à créer un modèle de réponse
+            //on lui associe ensuite la bonne question puis une id nulle pour pouvoir l'enregistrer
             function onSaveQuestionResponseSuccess(newQuestion) {
                 var newQuestionAnswers = [];
                 for (var i = 0; i < vm.newAnswers.length; i++) {
@@ -85,6 +97,9 @@
 
 
             //supprime la question
+            //fonctionnel, mais à améliorer pour vaincre l'asynchronisme
+            //le problème ne peut se régler comme avant avec une fonction de callback, car on ne va pas l'appeler à chaque boucle
+            //à creuser : disjonction de cas, j'ai essayé mais cela ne fonctionne pas actuellement
             vm.deleteQuestion = function (question) {
                 if (vm.questions.length > 1) {
                     console.log(vm.responses[vm.questions.indexOf(question)]);
@@ -103,7 +118,7 @@
                              Response.delete({id : vm.responses[vm.questions.indexOf(question)][j].id}, onDeleteResponseQuestionSuccess, onDeleteResponseQuestionError)
                              vm.responses[vm.questions.indexOf(question)][j].text = null;
                              }*/
-                            Response.delete({id: vm.responses[vm.questions.indexOf(question)][j].id}, onDeleteResponseQuestionSuccess, onDeleteResponseQuestionError)
+                            Response.delete({id: vm.responses[vm.questions.indexOf(question)][j].id}, onDeleteResponseQuestionSuccess, onDeleteResponseQuestionError);
                             vm.responses[vm.questions.indexOf(question)][j].text = null;
                             Question.delete({id: question.id}, onDeleteQuestionSuccess, onDeleteQuestionError);
                         }
@@ -192,8 +207,8 @@
             vm.saveQuestion = function (question) {
                 vm.isSaving = true;
                 if (vm.course.id !== null) {
-                    console.log(question);
-                    console.log("question !== null");
+                    vm.indexUpdate = vm.questions.indexOf(question);
+                    console.log(vm.questions.indexOf(question));
                     Question.update(question, onSaveQuestionSuccess, onSaveQuestionError);
 
                 } else {
@@ -204,7 +219,10 @@
                 console.log(question);
             };
 
-            function onSaveQuestionSuccess() {
+            function onSaveQuestionSuccess(question) {
+                for (var i = 0; i<vm.responses[vm.indexUpdate].length; i++){
+                    Response.update(vm.responses[vm.indexUpdate][i], onSaveResponseSuccess, onSaveResponseError)
+                }
                 vm.isSaving = false;
                 console.log("ok question");
                 $state.go($state.current, {}, {reload: true});
@@ -216,7 +234,7 @@
                 console.log("error question")
             }
 
-            //modifier les questions
+            //modifier les réponses
             vm.saveResponse = function (response) {
                 vm.isSaving = true;
                 if (response !== null) {

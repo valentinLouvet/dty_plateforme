@@ -16,6 +16,9 @@
         vm.floor=floor;
         vm.isDisabled=isDisabled;
         vm.goToLesson=goToLesson;
+        vm.current=null;
+        vm.setCurrent=setCurrent;
+        vm.isCurrent=isCurrent;
 
         Principal.getStudent().then(function (data) {
             vm.student=data;
@@ -59,6 +62,8 @@
         }
         }
 
+        //regarde si un bloc du même identifiant existe deja dans le tableau de blocs.
+
         function IsBlocInBlocs(Id,Array,callback) {
             var res = false;
             var num = -1;
@@ -84,6 +89,8 @@
             }
         }
 
+        //partie entière
+
         function floor(value){
             return Math.floor(value);
         }
@@ -92,6 +99,7 @@
             return lesson_done.indexOf(lessonId)===-1;
 
         }
+        // changement de page
 
 
         function goToLesson(id,bool){
@@ -103,17 +111,29 @@
 
         }
 
+        //function de tri, entrée : le bloc, sortie : le bloc avec le tableau lecons triées par numéro.
         function tri(Array) {
             var done = false
             for (var i = 0; i < Array.length; i++) {
                 Array[i].bloc.lessons.sort(function (a, b) {
                     return (a.num_lesson - b.num_lesson)
-                })
+                });
                 if (i === Array.length - 1) {
                     done = true
                 }
                 if(done){return Array}
             }
+        }
+
+        //value : bloc
+
+        function isCurrent(value){
+            return vm.current.bloc.id===value.bloc.id;
+        }
+
+        function setCurrent(value){
+            vm.current=value;
+            console.log(value)
         }
 
 

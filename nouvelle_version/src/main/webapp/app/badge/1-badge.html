@@ -1,27 +1,31 @@
 <div>
 <div class="Badge_logo-demo">
     <img ng-click="vm.close()" src="./app/badge/logo.svg" alt="Badge_logo" class="Badge_logo">
-    <h2 class="Badge_byline" id="Badge_byline"> You successfully completed your first lesson !</h2>
+    <h2 class="Badge_byline" id="Badge_byline">  {{displayText}} </h2>
 </div>
 </div>
+<!--
 <script>
 
     var byline = document.getElementById('Badge_byline');  	// Find the H2
     bylineText = byline.innerHTML;										// Get the content of the H2
     bylineArr = bylineText.split('');									// Split content into array
-    byline.innerHTML = '';														// Empty current content
+    byline.innerHTML = '';											    // Empty current content
 
     var span;					// Create variables to create elements
     var letter;
 
     for(i=0;i<bylineArr.length;i++){									// Loop for every letter
-            span = document.createElement("span");					// Create a <span> element
+            span = document.createElement("span");					    // Create a <span> element
             letter = document.createTextNode(bylineArr[i]);	// Create the letter
-            if(bylineArr[i] == ' ') {												// If the letter is a space...
-                byline.appendChild(letter);					// ...Add the space without a span
+            if(bylineArr[i] == ' ') {									// If the letter is a space...
+                byline.appendChild(letter);					            // ...Add the space without a span
             } else {
-		        span.appendChild(letter);						// Add the letter to the span
-  	            byline.appendChild(span); 					// Add the span to the h2
+		        span.appendChild(letter);						        // Add the letter to the span
+  	            byline.appendChild(span); 					            // Add the span to the h2
             }
     }
+
+
 </script>
+-->

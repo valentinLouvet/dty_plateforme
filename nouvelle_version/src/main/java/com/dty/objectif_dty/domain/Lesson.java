@@ -16,11 +16,10 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "lesson")
-//@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class Lesson implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -39,6 +38,9 @@ public class Lesson implements Serializable {
     @Column(name = "title")
     private String title;
 
+    @Column(name = "islast")
+    private boolean islast;
+
     @ManyToOne
     private Coach created_by;
 
@@ -50,7 +52,7 @@ public class Lesson implements Serializable {
 
     @OneToMany(mappedBy = "lesson", fetch = FetchType.EAGER)
     @JsonIgnoreProperties({"lesson"})
-    //Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Question> questions = new HashSet<>();
 
     public Long getId() {
@@ -123,6 +125,14 @@ public class Lesson implements Serializable {
 
     public void setQuestions(Set<Question> questions) {
         this.questions = questions;
+    }
+
+    public boolean islast() {
+        return islast;
+    }
+
+    public void setIslast(boolean islast) {
+        this.islast = islast;
     }
 
     @Override

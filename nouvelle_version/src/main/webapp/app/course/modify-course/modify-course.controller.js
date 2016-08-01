@@ -207,8 +207,8 @@
             vm.saveQuestion = function (question) {
                 vm.isSaving = true;
                 if (vm.course.id !== null) {
-                    console.log(question);
-                    console.log("question !== null");
+                    vm.indexUpdate = vm.questions.indexOf(question);
+                    console.log(vm.questions.indexOf(question));
                     Question.update(question, onSaveQuestionSuccess, onSaveQuestionError);
 
                 } else {
@@ -219,7 +219,10 @@
                 console.log(question);
             };
 
-            function onSaveQuestionSuccess() {
+            function onSaveQuestionSuccess(question) {
+                for (var i = 0; i<vm.responses[vm.indexUpdate].length; i++){
+                    Response.update(vm.responses[vm.indexUpdate][i], onSaveResponseSuccess, onSaveResponseError)
+                }
                 vm.isSaving = false;
                 console.log("ok question");
                 $state.go($state.current, {}, {reload: true});
@@ -231,7 +234,7 @@
                 console.log("error question")
             }
 
-            //modifier les questions
+            //modifier les réponses
             vm.saveResponse = function (response) {
                 vm.isSaving = true;
                 if (response !== null) {

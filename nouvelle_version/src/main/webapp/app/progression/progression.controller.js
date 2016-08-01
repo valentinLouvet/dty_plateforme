@@ -24,7 +24,7 @@
             vm.student=data;
             vm.user=data.user;
 
-            Lesson_done.query({},function(lessons){
+            Lesson_done.lessonDoneWid({},function(lessons){
                 Bloc_done(lessons);
             });
     });

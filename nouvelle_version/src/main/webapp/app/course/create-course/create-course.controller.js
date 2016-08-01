@@ -348,8 +348,12 @@
             }
 
             function loadAllLessons () {
+                // Pour pouvoir faire le query de toutes les leçons, j'ai mis size à 10000.
+                // En effet, par défaut, size est à 20, et le query ne charge que 20 leçons...
+                // cf lesson.controller.js et lesson.html pour toutes les obtenir (mais c'est
+                // plus long à implémenter
 
-                Lesson.query({},onSuccessLoadAllLessons, onErrorLoadAllLessons)
+                Lesson.query({page: vm.page, size: 10000},onSuccessLoadAllLessons, onErrorLoadAllLessons);
             }
 
             function onSuccessLoadAllLessons(data){

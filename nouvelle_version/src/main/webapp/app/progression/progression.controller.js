@@ -8,9 +8,9 @@
 
     progressionController.$inject = ['Student','$scope', 'Principal', 'LoginService','Lesson_done','$state'];
 
-    function progressionController (Student,$scope, Principal, LoginService, Lesson_done, $state) {
+    function progressionController (Student, $scope, Principal, LoginService, Lesson_done, $state) {
 
-        var vm=this;
+        var vm = this;
         var Blocs=[];
 
         vm.floor=floor;
@@ -27,7 +27,34 @@
             Lesson_done.query({},function(lessons){
                 Bloc_done(lessons);
             });
-    });
+
+        });
+
+
+
+
+
+        // HeatMap (Github-like)
+
+        // datas is an array of object
+        /*this.datas = [
+            {date: 1468761991, value: 2},
+            {date: 1469107591, value: 1},
+            {date: 1469280391, value: 3},
+            {date: 1470057991, value: 0}
+        ];
+
+        console.log(this.datas);
+
+        this.parser = function(data) {
+            var stats = {};
+            for (var d in data) {
+                stats[data[d].date] = data[d].value;
+            }
+            console.log("stats : ");
+            console.log(stats);
+            return stats;
+        };*/
         /**
 
         fonction bloc_done : parcourt les lessons réalisées par le student - et crée le tableau Blocs
@@ -135,8 +162,6 @@
             vm.current=value;
             console.log(value)
         }
-
-
 
     }
 })();

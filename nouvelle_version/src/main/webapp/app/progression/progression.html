@@ -115,9 +115,69 @@
 
             </div>
             <script type="text/javascript">
-                var cal = new CalHeatMap();
-                cal.init({domain : "month", subDomain : "day", range : 12, cellSize : 15, domainMargin: [0, 1, 1, 1], legend: [1, 2, 3, 4], legendColors: ["#f5f5f5", "#87102c"]});
 
+                /*this.datas = [
+                    {date: "1468761991", value: 2},
+                    {date: "1469107591", value: 1},
+                    {date: "1469280391", value: 3},
+                    {date: "1470057991", value: 0}
+                ];
+
+                var date = null;
+                var data = {};
+
+                for(var i = 0; i < this.datas.length; i++){
+                    this.datas.date
+                    date = dateFormat.parse(this.datas[i].date);
+                    date = (+date / 1000).toString();
+                    data[i] = date;
+
+                }
+
+                console.log("this.datas");
+                console.log(this.datas);
+
+                console.log("Ici : datas : " + this.datas);
+
+                var parser = function(data) {
+                    var stats = {};
+                    for (var d in data) {
+                        stats[data[d].date] = data[d].value;
+                    }
+                    console.log("stats : ");
+                    console.log(stats);
+                    return stats;
+                };
+
+                var cal = new CalHeatMap();
+                cal.init({data: this.data,
+                            domain : "month",
+                            subDomain : "day",
+                            range : 12,
+                            cellSize : 15,
+                            domainMargin: [0, 1, 1, 1],
+                            legend: [1, 2, 3, 4],
+                            legendColors: ["#f5f5f5", "87102c"]
+                });*/
+                var data = {
+                    1352437200: 121,
+                    1352523600: 52,
+                    1352610000: 43,
+                    1352696400: 58
+                };
+
+                var calendar = new CalHeatMap();
+                calendar.init({
+                    data: data,
+                    start: new Date(2012, 10),
+                    domain: "year",
+                    subDomain: "day",
+                    range: 1,
+                    cellSize : 15,
+                    domainMargin : [0, 1, 1, 1],
+                    legend: [1, 2, 3, 4],
+                    legendColors: ["#f5f5f5", "87102c"]
+                });
             </script>
 
         </div>

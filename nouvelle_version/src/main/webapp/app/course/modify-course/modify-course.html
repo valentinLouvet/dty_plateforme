@@ -62,8 +62,19 @@
                     <button type="button" ng-click="vm.deleteResponse(question, response)"
                             class="btn btn-md btn-primary-dty pull-right btn-two-lines" style="padding-top: 23px; padding-bottom: 23px">Remove answer</button>
                 </span>
-
             </div>
+        </div>
+        <button style="margin-bottom: 15px; margin-top: 15px" class="btn btn-primary-dty" ng-show="vm.editedQuestions[vm.questions.indexOf(question)]" ng-click="vm.addAnswer(question)">Add Answer</button>
+        <div class="input-group" ng-show="vm.addingAnswer[vm.questions.indexOf(question)]" >
+            <span class="input-group-addon">
+                    <input type="checkbox" ng-click="" ng-model="vm.newVeracity" style="padding-top: 23px; padding-bottom: 23px">
+                </span>
+            <input type="text" placeholder="Enter question here..." class="form-control" ng-model="vm.newText">
+            <input type="text" placeholder="Enter answer here..." class="form-control" ng-model="vm.newCorrection">
+            <span class="input-group-btn">
+                <button type="button" ng-click="vm.addResponse(question)"
+                        class="btn btn-md btn-two-lines btn-primary-dty pull-right" style="padding-top: 23px; padding-bottom: 23px">Save new Answer</button>
+            </span>
         </div>
     </div>
 </div>

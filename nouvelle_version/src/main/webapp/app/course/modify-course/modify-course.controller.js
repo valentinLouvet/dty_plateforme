@@ -19,6 +19,10 @@
                 vm.questions = [];
                 vm.responses = [];
                 vm.newIntitule = [];
+                vm.addingAnswer = [];
+                vm.newText = "";
+                vm.newCorrection = "";
+                vm.newVeracity = false;
 
                 vm.course = courseView;
 
@@ -31,6 +35,7 @@
                 //il en va de même pour les réponses qui correspondent aux questions
                 for (var i = 0; i < vm.nbreLesson; i++) {
                     vm.editedQuestions[i] = false;
+                    vm.addingAnswer[i] = false;
                     vm.questions.push(Question.get({id: vm.course.questions[i].id}));
                     vm.responses[i] = new Array(0);
                     for (var j = 0; j < vm.course.questions[i].responses.length; j++) {
@@ -173,6 +178,35 @@
             function onDeleteResponseError() {
                 vm.isSaving = false;
                 console.log("Response not deleted")
+            }
+
+            //ajoute le champ pour rentrer une nouvelle réponse
+            vm.addAnswer = function (question) {
+                vm.addingAnswer[vm.questions.indexOf(question)] = !vm.addingAnswer[vm.questions.indexOf(question)]
+            };
+
+            vm.addResponse = function (question){
+                var newResponse = vm.responses[vm.questions.indexOf(question)][0];
+                newResponse.veracity = vm.newVeracity;
+                newResponse.text = vm.newText;
+                newResponse.correction = vm.newCorrection;
+                newResponse.id = null;
+                console.log(newResponse);
+                Response.save(newResponse, onSaveNewResponseSuccess, onSaveNewResponseError)
+            };
+
+            function onSaveNewResponseSuccess() {
+                vm.isSaving = false;
+                console.log("Nouvelle réponse créée")
+                $state.go($state.current, {}, {reload: true});
+                vm.initialize()
+            }
+
+            function onSaveNewResponseError() {
+                vm.isSaving = false;
+                console.log("error response")
+                $state.go($state.current, {}, {reload: true});
+                vm.initialize()
             }
 
             //enregistre la lesson dans la BDD

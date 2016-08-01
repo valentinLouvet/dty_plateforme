@@ -9,7 +9,7 @@
     function Lesson_done ($resource) {
         var resourceUrl = 'api/lesson-dones/:id';
 
-        return $resource(resourceUrl, {}, {
+        var res1= $resource(resourceUrl, {}, {
             'query': {method: 'GET', isArray: true},
             'get': {
                 method: 'GET',
@@ -22,5 +22,15 @@
             },
             'update': {method: 'PUT'}
         });
+
+        var res2=$resource("api/lesson-doneswid",{},{
+            'get':{
+                method:'GET',isArray:true
+            }
+        });
+
+        return{
+            'query':res1.query,'get':res1.get,'update':res1.update,'lessonDoneWid':res2.get
+        }
     }
 })();

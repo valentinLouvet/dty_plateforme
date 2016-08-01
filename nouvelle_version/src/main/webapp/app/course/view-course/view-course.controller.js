@@ -12,6 +12,7 @@
         vm.scoreCalc = false;
         vm.lessonDoneNew = true;
         vm.noteStars = 1;
+        vm.chooseNewBloc = false;
 
 
         vm.score = null;
@@ -94,7 +95,7 @@
                 saveLesson_done();
 
 
-                if (vm.lesson.islast){
+                if (vm.lesson.last){
                      console.log(vm.lesson.bloc.name);
                      $state.go('course.BadgeCourse', {id:1, idLesson:vm.id, blocName:vm.lesson.bloc.name}, {inherit : false});;
                     }
@@ -183,6 +184,10 @@
             if(vm.lessonDoneNew){
                 vm.SetNextLessonToDo();
                 saveStudent();
+            }
+
+            if(vm.student[0].todo_lesson.id == vm.lesson.id ){
+                vm.chooseNewBloc = true;
             }
 
 

@@ -1,0 +1,25 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+            ng-click="vm.clear()">&times;</button>
+    <h4 class="modal-title" id="myBlocLabel">Choose your new Bloc!</h4>
+</div>
+<div class="container">
+    <div
+        class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10">
+        <div ng-repeat="bloc in vm.blocs">
+            <a ng-click="vm.setNextBloc(bloc)">
+                <div class="col-md-5 col-lg-3" id="courses"
+                <div class="row">
+                    <div class="col-md-12">
+                        <img class="fixView"
+                             ng-src={{bloc.logo}}>
+                        <p class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <h2>{{bloc.name}} </h2>
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+</div>

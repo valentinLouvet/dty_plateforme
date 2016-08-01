@@ -34,3 +34,5 @@
         }
     }
 })();
+
+//remarque : si on veut agir sur un bloc en particulier, ne pas hésiter à créer une requete api/bloswid/:id. A créer dans le back aussi.

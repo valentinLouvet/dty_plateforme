@@ -9,9 +9,11 @@
             vm.blocs=[];
             //vm.blocs_test= tests;
 
+            //blocswid : load all the blocs mais pas le contenu des lessons. en espérant que ca suffit.
+
 
             function loadAll () {
-                Bloc.query({},onSuccess,onError)
+                Bloc.blocswid({},onSuccess,onError)
             }
 
             function onSuccess(data){

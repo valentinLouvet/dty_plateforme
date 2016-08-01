@@ -166,4 +166,5 @@ public class BlocResource {
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert("bloc", id.toString())).build();
     }
 
+
 }

@@ -95,7 +95,7 @@
                 saveLesson_done();
 
 
-                if (vm.lesson.islast){
+                if (vm.lesson.last){
                      console.log(vm.lesson.bloc.name);
                      $state.go('course.BadgeCourse', {id:1, idLesson:vm.id, blocName:vm.lesson.bloc.name}, {inherit : false});;
                     }

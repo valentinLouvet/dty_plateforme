@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0bbf8ee4-d9ab-448d-8116-1974e2b7f9af" name="Default" comment="L'attribut isLast est en place &#10;&#10;A PRENDRE EN NOTE : SI vous avez des leçons sans l'attribut isLast, vous devez les supprimer ou modifier l'attribut dans H2 pour qu'il ne soit pas null">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/resources/config/liquibase/changelog/20160801102400_changelog.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/resources/config/liquibase/changelog/20160729102400_changelog.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/dty_plateforme_node_modules.xml" afterPath="$PROJECT_DIR$/.idea/libraries/dty_plateforme_node_modules.xml" />
+    <list default="true" id="0bbf8ee4-d9ab-448d-8116-1974e2b7f9af" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/java/com/dty/objectif_dty/domain/Lesson.java" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/java/com/dty/objectif_dty/domain/Lesson.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/resources/config/liquibase/master.xml" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/resources/config/liquibase/master.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/badge/1-badge.html" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/badge/1-badge.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/badge/badge.controller.js" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/badge/badge.controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/view-course.controller.js" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/view-course.controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/content/css/objectif_dty.css" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/content/css/objectif_dty.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/index.html" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/index.html" />
     </list>
     <ignored path="dty_plateforme.iws" />
@@ -29,54 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="create-course.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="33" column="94" selection-start-line="33" selection-start-column="94" selection-end-line="33" selection-end-column="94" />
-              <folding>
-                <element signature="n#style#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Lesson.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/java/com/dty/objectif_dty/domain/Lesson.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="21" column="52" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="20160801102400_changelog.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/resources/config/liquibase/changelog/20160801102400_changelog.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="361" selection-start-line="1" selection-start-column="361" selection-end-line="1" selection-end-column="361" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="master.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/resources/config/liquibase/master.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="68" selection-start-line="4" selection-start-column="68" selection-end-line="4" selection-end-column="68" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="view-course.controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/view-course.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1470">
-              <caret line="98" column="85" selection-start-line="98" selection-start-column="85" selection-end-line="98" selection-end-column="85" />
+            <state relative-caret-position="1455">
+              <caret line="97" column="30" selection-start-line="97" selection-start-column="30" selection-end-line="97" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -92,11 +47,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="1-badge.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="1-badge.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/badge/1-badge.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+            <state relative-caret-position="60">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="objectif_dty.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/content/css/objectif_dty.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="246">
+              <caret line="723" column="13" selection-start-line="723" selection-start-column="13" selection-end-line="723" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -105,8 +70,8 @@
       <file leaf-file-name="badge.controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/badge/badge.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+            <state relative-caret-position="195">
+              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -161,9 +126,7 @@
         <option value="$PROJECT_DIR$/ancienne_version/src/html/templates/nav-bar.html" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/layouts/navbar/navbar.html" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/home/home.html" />
-        <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/content/css/objectif_dty.css" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/content/css/main.css" />
-        <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/index.html" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/app.module.js" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/edit-course/edit-course.html" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/modify-course/modify-course.controller.js" />
@@ -177,15 +140,17 @@
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/modify-course/modify-course.html" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/view-course.html" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.controller.js" />
-        <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/view-course.controller.js" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/view-course.state.js" />
-        <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/badge/badge.controller.js" />
-        <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/badge/1-badge.html" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.html" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/resources/config/liquibase/changelog/20160729102400_changelog.xml" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/resources/config/liquibase/master.xml" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/java/com/dty/objectif_dty/domain/Lesson.java" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/resources/config/liquibase/changelog/20160801102400_changelog.xml" />
+        <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/view-course.controller.js" />
+        <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/index.html" />
+        <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/badge/badge.controller.js" />
+        <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/content/css/objectif_dty.css" />
+        <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/badge/1-badge.html" />
       </list>
     </option>
   </component>
@@ -324,40 +289,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Objective" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Objective" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nouvelle_version" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="course" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -641,7 +572,13 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/progression/progression.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/java/com/dty/objectif_dty/web/rest/Lesson_doneResource.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/view-course.controller.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/view-course.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/view-course.state.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/bloc/bloc.service.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/lesson-done/lesson-done.service.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/progression/progression.controller.js</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/index.html</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
@@ -650,22 +587,20 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/bower_components/cal-heatmap/.bower.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/bower_components/cal-heatmap/.editorconfig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/bower_components/cal-heatmap/.gitignore</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/bower_components/cal-heatmap/.jamignore</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/bower_components/cal-heatmap/.jshintrc</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/bower_components/cal-heatmap/.travis.yml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/bower_components/cal-heatmap/CHANGELOG.md</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/bower_components/cal-heatmap/CONTRIBUTING.md</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/bower_components/cal-heatmap/LICENCE-MIT</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/bower_components/cal-heatmap/README.md</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/bower_components/cal-heatmap/bower.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/bower_components/cal-heatmap/cal-heatmap.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/bower_components/cal-heatmap/cal-heatmap.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/bower_components/cal-heatmap/cal-heatmap.min.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/bower_components/cal-heatmap/cal-heatmap.source-map.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/bower_components/cal-heatmap/component.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/classes/production/objectif-dty/config/liquibase/changelog/20160722163200_changelog.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/classes/production/objectif-dty/config/liquibase/changelog/20160722163300_changelog.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/classes/production/objectif-dty/config/liquibase/changelog/20160728102400_changelog.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/choosecourse.controller.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/choosecourse.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/bower_components/d3/.bower.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/bower_components/d3/LICENSE</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/bower_components/d3/README.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/bower_components/d3/bower.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/bower_components/d3/d3.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/bower_components/d3/d3.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/content/images/Java_logo.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/content/images/js-logo-badge-256.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/content/images/spring.png</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -1021,13 +956,6 @@
       <workItem from="1469528363946" duration="107000" />
       <workItem from="1469559030196" duration="261000" />
     </task>
-    <task id="LOCAL-00038" summary="navbar adaptée au coach et à la connexion">
-      <created>1467881868418</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1467881868418</updated>
-    </task>
     <task id="LOCAL-00039" summary="login et signup angular-cookie">
       <created>1467889835775</created>
       <option name="number" value="00039" />
@@ -1364,7 +1292,14 @@
       <option name="project" value="LOCAL" />
       <updated>1469803567474</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="L'attribut isLast est en place &#10;&#10;A PRENDRE EN NOTE : SI vous avez des leçons sans l'attribut isLast, vous devez les supprimer ou modifier l'attribut dans H2 pour qu'il ne soit pas null">
+      <created>1470056398679</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1470056398682</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -1376,13 +1311,13 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39863014" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39863014" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16438356" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16438356" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1467,13 +1402,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/lesson/lesson-delete-dialog.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/lesson/lessons.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1545,13 +1473,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/modify-course/modify-course.state.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/course.state.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1664,14 +1585,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="37" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/home/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
@@ -1729,38 +1642,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/view-course.state.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/badge/1-badge.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/badge/badge.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/view-course.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1470">
-          <caret line="98" column="85" selection-start-line="98" selection-start-column="85" selection-end-line="98" selection-end-column="85" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/view-course.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
@@ -1805,25 +1686,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="33" column="94" selection-start-line="33" selection-start-column="94" selection-end-line="33" selection-end-column="94" />
-          <folding>
-            <element signature="n#style#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/java/com/dty/objectif_dty/domain/Lesson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="21" column="52" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/resources/config/liquibase/master.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1836,6 +1698,81 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="361" selection-start-line="1" selection-start-column="361" selection-end-line="1" selection-end-column="361" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/java/com/dty/objectif_dty/domain/Lesson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="21" column="52" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="94" selection-start-line="33" selection-start-column="94" selection-end-line="33" selection-end-column="94" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="188" column="53" selection-start-line="188" selection-start-column="53" selection-end-line="188" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/course.state.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/badge/badge.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/content/css/objectif_dty.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="723" column="13" selection-start-line="723" selection-start-column="13" selection-end-line="723" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/view-course.state.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/view-course.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1455">
+          <caret line="97" column="30" selection-start-line="97" selection-start-column="30" selection-end-line="97" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/badge/1-badge.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
       </provider>

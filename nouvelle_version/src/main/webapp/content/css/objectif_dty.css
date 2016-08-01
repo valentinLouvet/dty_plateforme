@@ -723,18 +723,15 @@ body{
 /* Animation properties */
 .Badge_logo {
   animation: Badge_logo 10s ease-out ;
-  animation-fill-mode : forwards;
-  -webkit-animation-fill-mode : forwards;
+  animation-fill-mode : initial;
+  -webkit-animation-fill-mode : backwards;
+  animation-iteration-count: initial;
 }
-.Badge_byline span {
-  animation: Badge_spin-letters 10s linear;
-  animation-fill-mode : forwards;
-  -webkit-animation-fill-mode : forwards;
-}
+
 .Badge_byline {
   animation: Badge_move-byline 10s linear;
-  animation-fill-mode : forwards;
-  -webkit-animation-fill-mode : forwards;
+   animation-iteration-count: initial;
+
 }
 
 /* Keyframes */

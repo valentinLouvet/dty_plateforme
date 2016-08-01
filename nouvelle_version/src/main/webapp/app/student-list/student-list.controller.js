@@ -5,12 +5,12 @@
         .module('objectifDtyApp')
         .controller('studentListController', studentListController);
 
-    studentListController.$inject = ['$scope', 'Principal', 'LoginService', '$state','Student'];
+    studentListController.$inject = ['AllStudent','$scope', 'Principal', 'LoginService', '$state','Student'];
 
-    function studentListController ($scope, Principal, LoginService, $state, Student) {
+    function studentListController (AllStudent,$scope, Principal, LoginService, $state, Student) {
         var vm = this;
 
-        Student.getAll().$promise.then(function(data){
+        AllStudent.query().$promise.then(function(data){
             vm.student=data;
             console.log(data)
         })

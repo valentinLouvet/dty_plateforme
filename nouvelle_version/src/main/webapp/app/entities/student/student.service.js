@@ -2,15 +2,17 @@
     'use strict';
     angular
         .module('objectifDtyApp')
-        .factory('Student', Student);
+        .factory('Student', Student)
+        .factory('AllStudent',getAllStudent);
 
     Student.$inject = ['$resource'];
+    getAllStudent.$inject= ['$resource'];
 
     function Student ($resource) {
-        var resourceUrl =  'api/students/:id';
+        var resourceUrl = 'api/students/:id';
 
-        var res1= $resource(resourceUrl, {}, {
-            'query': { method: 'GET', isArray: true},
+        return $resource(resourceUrl, {}, {
+            'query': {method: 'GET', isArray: true},
             'get': {
                 method: 'GET',
                 transformResponse: function (data) {
@@ -20,15 +22,16 @@
                     return data;
                 }
             },
-            'update': { method:'PUT' }
+            'update': {method: 'PUT'}
         });
-
-        var res2=$resource('api/allstudents',{},{
-            'getAll':{
-                method:'GET',isArray:true
-            }
-        });
-
-        return { 'query':res1.query,'get':res1.get,'update':res1.update,'getAll':res2.getAll}
     }
+
+    function getAllStudent($resource) {
+        return $resource('api/allstudents', {}, {
+            'query': {
+                method: 'GET', isArray: true
+            }
+        })
+    }
+
 })();

@@ -6,9 +6,9 @@
         .controller('progressionController', progressionController)
 
 
-    progressionController.$inject = ['Student','$scope', 'Principal', 'LoginService','Lesson_done','$state'];
+    progressionController.$inject = ['Student','$scope', 'Principal', 'LoginService','$state','Lesson_doneWid'];
 
-    function progressionController (Student,$scope, Principal, LoginService, Lesson_done, $state) {
+    function progressionController (Student,$scope, Principal, LoginService,$state,Lesson_doneWid) {
 
         var vm=this;
         var Blocs=[];
@@ -24,7 +24,7 @@
             vm.student=data;
             vm.user=data.user;
 
-            Lesson_done.lessonDoneWid({},function(lessons){
+            Lesson_doneWid.get({},function(lessons){
                 Bloc_done(lessons);
             });
     });

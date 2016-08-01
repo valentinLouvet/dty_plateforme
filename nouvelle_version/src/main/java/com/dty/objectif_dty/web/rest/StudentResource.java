@@ -90,12 +90,31 @@ public class StudentResource {
         method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<List<Student>> getAllStudents(Pageable pageable)
+    public ResponseEntity<List<Student>> getStudent(Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to get a page of Students");
         List<Student> students = studentRepository.findByUserIsCurrentUser();
         return new ResponseEntity<>(students, HttpStatus.OK);
     }
+
+    /**
+     * GET  /allstudents : get all the students using ObjectiveDTY
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of students in body
+     * @throws URISyntaxException if there is an error to generate the pagination HTTP headers
+     */
+    @RequestMapping(value = "/allstudents",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public ResponseEntity<List<Student>> getAllStudents(Pageable pageable)
+        throws URISyntaxException {
+        log.debug("REST request to get a page of Students");
+        List<Student> students = studentRepository.findAllWithEagerRelationships();
+        return new ResponseEntity<>(students, HttpStatus.OK);
+    }
+
 
     /**
      * GET  /students/:id : get the "id" student.

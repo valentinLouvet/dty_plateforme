@@ -3,7 +3,7 @@
 
     angular
         .module('objectifDtyApp')
-        .controller('courseEditionController',['$state', '$cookies','Bloc', 'Lesson', 'AlertService',function ($state, $cookies,Bloc,Lesson,AlertService) {
+        .controller('courseEditionController',['$state', '$cookies','Bloc', 'Lesson', 'AlertService', 'BlocsWid',function ($state, $cookies,Bloc,Lesson,AlertService,BlocsWid) {
             var vm=this;
             vm.compteur=1;
             vm.blocs=[];
@@ -13,7 +13,7 @@
 
 
             function loadAll () {
-                Bloc.blocswid({},onSuccess,onError)
+                BlocsWid.get({},onSuccess,onError)
             }
 
             function onSuccess(data){

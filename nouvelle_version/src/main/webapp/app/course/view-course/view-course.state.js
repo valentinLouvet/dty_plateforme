@@ -30,7 +30,7 @@
         })
         .state('course.BadgeCourse', {
                     parent: 'course',
-                    url: '/{id}/{idLesson}/SucessBadge',
+                    url: '/{id}/{blocName}/{idLesson}/SucessBadge',
                     data: {
                         authorities: ['ROLE_ADMIN', 'ROLE_USER', 'ROLE_COACH']
                     },

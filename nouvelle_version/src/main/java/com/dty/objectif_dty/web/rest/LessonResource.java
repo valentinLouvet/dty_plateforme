@@ -20,6 +20,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
+import java.lang.Integer;
 
 /**
  * REST controller for managing Lesson.
@@ -135,4 +136,27 @@ public class LessonResource {
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert("lesson", id.toString())).build();
     }
 
+
+    /*
+     * GET  /lessonWithBlocId/:id : get the "bloc" lesson.
+     *
+     * @param id the id of the lesson to retrieve
+     * @return the ResponseEntity with status 200 (OK) and with body the lesson, or with status 404 (Not Found)
+     *
+    @RequestMapping(value = "/lessonWithBlocId/{id}",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public ResponseEntity<Integer> getLessonWithBlocId(@PathVariable Long id) {
+        log.debug("REST request to get lessonWithBlocId : {}", id);
+        Integer num_lesson = lessonRepository.findOneWithBlocId(id);
+        return Optional.ofNullable(num_lesson)
+            .map(result -> new ResponseEntity<>(
+                result,
+
+                HttpStatus.OK))
+            .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+
+    }
+    */
 }

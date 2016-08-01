@@ -8,6 +8,7 @@
         var vm = this;
         vm.id = $stateParams.id;
         vm.lesson = Lesson.get({id: vm.id});
+        console.log(vm.lesson);
         vm.scoreCalc = false;
         vm.lessonDoneNew = true;
         vm.noteStars = 1;
@@ -92,7 +93,12 @@
 
                 saveLesson_done();
 
-               // $state.go('course.BadgeCourse', {id:1, idLesson:vm.id}, {inherit : false});
+
+                if (vm.lesson.islast){
+                     console.log(vm.lesson.bloc.name);
+                     $state.go('course.BadgeCourse', {id:1, idLesson:vm.id, blocName:vm.lesson.bloc.name}, {inherit : false});;
+                    }
+
 
 
             };

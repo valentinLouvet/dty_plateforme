@@ -2,7 +2,6 @@ package com.dty.objectif_dty.repository;
 
 import com.dty.objectif_dty.domain.Lesson;
 
-import com.dty.objectif_dty.domain.Lesson_done;
 import org.springframework.data.jpa.repository.*;
 import org.springframework.data.repository.query.Param;
 
@@ -14,7 +13,10 @@ import java.util.List;
 @SuppressWarnings("unused")
 public interface LessonRepository extends JpaRepository<Lesson,Long> {
 
-    //@Query("SELECT DISTINCT NUM_LESSON FROM LESSON WHERE NUM_LESSON=(SELECT max(NUM_LESSON) FROM LESSON WHERE BLOC_ID = id)")
+    //@Query("SELECT DISTINCT Num_lesson FROM Lesson WHERE Num_lesson = (SELECT MAX(Num_lesson) FROM Lesson WHERE Bloc_id = :id)")
     //Lesson findOneWithBlocId(@Param("id") Long id);
+
+    //@Query("select max(l.num_lesson) from Lesson l where l.bloc.id = :id")
+    //Integer findOneWithBlocId(@Param("id") Long id);
 
 }

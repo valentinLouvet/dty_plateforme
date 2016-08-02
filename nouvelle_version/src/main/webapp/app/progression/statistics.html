@@ -10,8 +10,64 @@
         class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10">
 
         <!-- HEATMAP -->
-        <cal-heatmap config="{data: vm.data, start: vm.date_beginning_display , domain: 'month', subDomain: 'day', range: 12, cellSize : 15,
-         domainMargin : [0, 1, 1, 1], legend: [1, 2, 3, 4]}"></cal-heatmap>
+        <!--<cal-heatmap config="{data: vm.data, start: vm.date_beginning_display , domain: 'month', subDomain: 'day', range: 12, cellSize : 15,
+         domainMargin : [0, 1, 1, 1], legend: [1, 2, 3, 4]}"></cal-heatmap>-->
+        <div id="cal-heatmap"></div>
+        <!--<script>
+            var cal = new CalHeatMap();
+            cal.init({data: d, start: new Date(2016, 6) , domain: 'month', subDomain: 'day',
+                range: 12, cellSize : 15,
+                domainMargin : [0, 1, 1, 1], legend: [1, 2, 3, 4]});
+        </script>-->
+
+        <!--<div id="cal-heatmap"></div>
+        <script type="text/javascript">
+
+            console.log("Je suis là");
+
+            Principal.getStudent().then(function (data) {
+                vm = this;
+                vm.data = null;
+
+                Lesson_doneWid.get({},function(lessons){
+                    for(var i = 0 ; i < lessons.length ; i++){
+                        console.log("date");
+                        console.log(lessons[i].date);
+                    }
+                    console.log("lessons script");
+                    console.log(lessons);
+                    //vm.lessonsDoneByUser = lessons;
+                    vm.data = convertDateToTimeStamp(lessons);
+                });
+
+            });
+
+            var cal = new CalHeatMap();
+            cal.init({data: vm.data, start: new Date(2016, 6); , domain: 'month', subDomain: 'day',
+                range: 12, cellSize : 15,
+                domainMargin : [0, 1, 1, 1], legend: [1, 2, 3, 4]});
+
+            function convertDateToTimeStamp(lessons){
+                var timestamps = {};
+                var dateAux = new Date();
+                for(var i = 0; i<lessons.length; i++){
+                    dateAux = new Date(lessons[i].date);
+                    console.log(dateAux.getTime());
+                    if(timestamps[dateAux.getTime()/1000.0] != null){
+                        timestamps[dateAux.getTime()/1000.0] ++;
+                    }
+                    else{
+                        timestamps[dateAux.getTime()/1000.0] = 1;
+                    }
+                }
+
+                return timestamps;
+
+            }
+
+        </script>-->
+
+
 
     </div>
 

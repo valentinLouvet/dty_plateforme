@@ -39,11 +39,6 @@
                     controller: 'LessonDetailController',
                     controllerAs: 'vm'
                 }
-            },
-            resolve: {
-                entity: ['$stateParams', 'Lesson', function($stateParams, Lesson) {
-                    return Lesson.get({id : $stateParams.id}).$promise;
-                }]
             }
         })
         .state('lesson.new', {

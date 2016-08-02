@@ -10,19 +10,43 @@
 
     function progressionController(Student, $scope, Principal, LoginService, Lesson_done, Lesson_doneWid, Lesson_doneWithBlockId, $state) {
 
+        console.log("debug0");
         var vm = this;
         var Blocs = [];
-        vm.lessonsDoneByUser = null;
 
-        console.log("Avant !");
+        console.log("debug1");
 
-        this.data = {
+        // Recherche toutes les dates des leçons réalisées par le user
+        // Les place dans un tableau, incrémente lorsqu'une date apparaît
+        // plus d'une fois, et place le résultat dans data
+
+        function convertDateToTimeStamp(lessons){
+            var timestamps = {};
+            var dateAux = new Date();
+            for(var i = 0; i<lessons.length; i++){
+                dateAux = new Date(lessons[i].date);
+                console.log(dateAux.getTime());
+                if(timestamps[dateAux.getTime()/1000.0] != null){
+                    timestamps[dateAux.getTime()/1000.0] ++;
+                }
+                else{
+                    timestamps[dateAux.getTime()/1000.0] = 1;
+                }
+            }
+
+            return(timestamps);
+
+        }
+        console.log("$scope.data");
+        console.log($scope.data);
+
+        /*this.data = {
             1467811591: 1,
             1468329991: 3,
             1469712391: 1,
             1470057991: 4
 
-        };
+        };*/
 
         vm.date_beginning_display = new Date(2016, 6);
 
@@ -37,19 +61,22 @@
             vm.student = data;
             vm.user = data.user;
 
+            // Request to get the lessons
             Lesson_doneWid.get({},function(lessons){
-                // Leçons réalisées par le user
-                vm.lessonsDoneByUser = lessons;
-                for(var i = 0 ; i < lessons.length ; i++){
-                    console.log("date");
-                    console.log(lessons[i].date);
-                }
                 console.log("lessons");
                 console.log(lessons);
+
+                var d = convertDateToTimeStamp(lessons);
+
+                var cal = new CalHeatMap();
+                cal.init({itemSelector:"#cal-heatmap", data: d, start: new Date(2016, 6) , domain: 'month',
+                    subDomain: 'day', range: 12, cellSize : 15, domainMargin : [0, 1, 1, 1], legend: [1, 2, 3, 4]});
+
                 Bloc_done(lessons);
             });
 
         });
+
         /**
 
          fonction bloc_done : parcourt les lessons réalisées par le student - et crée le tableau Blocs
@@ -57,11 +84,12 @@
          Regroupe les leçons par bloc.
         */
 
+
         function Bloc_done(lessons) {
             console.log(lessons);
 
             for (var i = 0; i < lessons.length; i++) {
-                console.log("Blocs :", Blocs)
+                console.log("Blocs :", Blocs);
 
                 var bloc = lessons[i].lessons[0].bloc;
                 console.log("lesson_done:", lessons[i]);

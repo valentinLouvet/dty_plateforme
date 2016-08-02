@@ -12,6 +12,19 @@
 
         var vm = this;
         var Blocs = [];
+        vm.lessonsDoneByUser = null;
+
+        console.log("Avant !");
+
+        this.data = {
+            1467811591: 1,
+            1468329991: 3,
+            1469712391: 1,
+            1470057991: 4
+
+        };
+
+        vm.date_beginning_display = new Date(2016, 6);
 
         vm.floor=floor;
         vm.isDisabled=isDisabled;
@@ -25,19 +38,17 @@
             vm.user = data.user;
 
             Lesson_doneWid.get({},function(lessons){
+                // Leçons réalisées par le user
+                vm.lessonsDoneByUser = lessons;
+                for(var i = 0 ; i < lessons.length ; i++){
+                    console.log("date");
+                    console.log(lessons[i].date);
+                }
                 console.log("lessons");
                 console.log(lessons);
                 Bloc_done(lessons);
             });
 
-            Lesson_doneWithBlockId.get({},function(lessons2){
-                // Renvoie les dates à laquelle l'utilisateur a fait ses leçons
-                // pour la première fois
-                console.log("lessons2");
-                console.log(lessons2);
-
-
-            });
         });
         /**
 
@@ -150,5 +161,7 @@
 
 
 
+
     }
+
 })();

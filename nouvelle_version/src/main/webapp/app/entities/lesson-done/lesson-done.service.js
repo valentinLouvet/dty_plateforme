@@ -27,6 +27,7 @@
         });
     }
 
+    // NE JAMAIS OUBLIER LE $ !!!!!!!!!!!!
     Lesson_doneWid.$inject=['$resource'];
 
     function Lesson_doneWid($resource){

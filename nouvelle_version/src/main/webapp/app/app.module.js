@@ -16,7 +16,8 @@
             // jhipster-needle-angularjs-add-module JHipster will add new module here
             'angular-loading-bar',
             'ngSanitize',
-            'ngCkeditor'
+            'ngCkeditor',
+            'calHeatmap'
         ])
         .run(run);
 

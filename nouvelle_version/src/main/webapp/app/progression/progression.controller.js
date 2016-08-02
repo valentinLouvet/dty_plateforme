@@ -6,9 +6,9 @@
         .controller('progressionController', progressionController)
 
 
-    progressionController.$inject = ['Student', '$scope', 'Principal', 'LoginService', 'Lesson_done', '$state'];
+    progressionController.$inject = ['Student', '$scope', 'Principal', 'LoginService', 'Lesson_done', 'Lesson_doneWid', 'Lesson_doneWithBlockId', '$state'];
 
-    function progressionController(Student, $scope, Principal, LoginService, Lesson_done, $state) {
+    function progressionController(Student, $scope, Principal, LoginService, Lesson_done, Lesson_doneWid, Lesson_doneWithBlockId, $state) {
 
         var vm = this;
         var Blocs = [];
@@ -25,8 +25,18 @@
             vm.user = data.user;
 
             Lesson_doneWid.get({},function(lessons){
+                console.log("lessons");
                 console.log(lessons);
                 Bloc_done(lessons);
+            });
+
+            Lesson_doneWithBlockId.get({},function(lessons2){
+                // Renvoie les dates à laquelle l'utilisateur a fait ses leçons
+                // pour la première fois
+                console.log("lessons2");
+                console.log(lessons2);
+
+
             });
         });
         /**

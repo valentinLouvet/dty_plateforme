@@ -160,4 +160,28 @@ public class Lesson_doneResource {
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
+    /**
+     * GET /lesson_donesWithBlockId : get all the lesson_dones from the student - but not the content of the lesson.
+     */
+
+
+    @RequestMapping(value = "/lesson-donesWithBlockId",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public ResponseEntity<List<Lesson_done>> getAllLesson_donesWithBlockId(Pageable pageable)
+        throws URISyntaxException {
+        log.debug("REST request to get a page of Lesson_dones");
+        List<Lesson_done> list = lesson_doneRepository.findAllWithEagerRelationships();
+        for (Lesson_done item : list) {
+            Set<Lesson> lessons = item.getLessons();
+            for (Lesson itemLesson : lessons) {
+                itemLesson.setCours(null);
+                itemLesson.setQuestions(null);
+            }
+        }
+
+        return new ResponseEntity<>(list, HttpStatus.OK);
+    }
+
 }

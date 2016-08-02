@@ -27,7 +27,7 @@
         });
     }
 
-    Lesson_doneWid.inject=['$resource'];
+    Lesson_doneWid.$inject=['$resource'];
 
     function Lesson_doneWid($resource){
         return $resource("api/lesson-doneswid",{},{
@@ -37,13 +37,15 @@
         });
     }
 
-    Lesson_doneWithBlockId.inject=['$resource'];
+    Lesson_doneWithBlockId.$inject=['$resource'];
 
-        function Lesson_doneWithBlockId($resource){
-            return $resource("api/lesson-donesWithBlockId",{},{
-                'get':{
-                    method:'GET',isArray:true
-                }
-            });
-        }
+    function Lesson_doneWithBlockId($resource){
+        return $resource("api/lesson-donesWithBlockId",{},{
+            'get':{
+                method:'GET',isArray:true
+            }
+        });
+    }
+
+
 })();

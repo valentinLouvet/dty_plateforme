@@ -1,21 +1,13 @@
 <div class="container">
 
-    <h1 class="page-header-dty">Create a new bloc</h1>
+    <h1 class="page-header-dty">Create a new lesson</h1>
 
-    <div class="form-group col-xs-6 col-sm-6 pull-left" style="margin-top: 20px">
+    <div class="form-group col-xs-6 col-sm-6 pull-left" style="margin-top: 40px">
         <label for="field_bloc">Select bloc name : </label>
         <br>
         <select required class="form-control" id="field_bloc" name="bloc" ng-model="vm.newLesson.bloc" ng-options="bloc as bloc.name for bloc in vm.blocs track by bloc.id">
             <option value=""></option>
         </select>
-    </div>
-
-    <br>
-
-    <div class="col-xs-6 col-sm-6 form-group">
-        <label>New bloc name</label>
-        <br>
-        <input type="text" placeholder="Bloc name" class="form-control">
     </div>
 
     <br>

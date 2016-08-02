@@ -9,7 +9,7 @@
 
     <div ng-show="vm.modifyCourse">
         <textarea data-ck-editor class="form-control" ng-model="vm.newContent"></textarea>
-        <button class="btn btn-primary-dty" ng-click="vm.saveChanges()">Save changes</button>
+        <button class="btn btn-primary-dty-inverse" ng-click="vm.saveChanges()">Save changes</button>
     </div>
 </div>
 
@@ -29,7 +29,7 @@
         <div class="input-group form-group" ng-show="vm.editedQuestions[vm.questions.indexOf(question)]">
             <span class="input-group-btn">
                 <button type="button" ng-click="vm.saveQuestion(question)"
-                        class="btn btn-md btn-primary-dty pull-right btn-two-lines" style="padding-top: 23px; padding-bottom: 23px">Save changes</button>
+                        class="btn btn-md btn-primary-dty-inverse pull-right btn-two-lines" style="padding-top: 23px; padding-bottom: 23px">Save changes</button>
             </span>
             <input type="text" placeholder="Enter question here..." class="form-control" ng-model="question.intitule">
             <input type="text" placeholder="Enter correction here..." class="form-control" ng-model="question.correction">

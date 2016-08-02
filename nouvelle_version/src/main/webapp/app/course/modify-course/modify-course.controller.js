@@ -15,6 +15,8 @@
             //cette fonction sert à initialsier la page en ayant les bonnes questions et les réponses
             //on l'appelle à la fin de chaque modification afin d'être sûrs que le back et le front soient cohérents
             //permet de ne pas recharger la page
+            //on stocke les variables pour le nouvelle question et les nouvelles réponses temporairement avant de les assigner
+            //cela permet de ne pas modifier la question ou la réponse qui sert de modèle
             vm.initialize = function () {
                 vm.questions = [];
                 vm.responses = [];
@@ -225,11 +227,30 @@
             };
 
             function onSaveLessonSuccess() {
-                //$scope.$emit('objectifDtyApp:lessonUpdate', result);
-                //$uibModalInstance.close(result);
+                for (var i=0; i<vm.questions.length; i++){
+                    Question.update(vm.questions[i], onSaveGlobalQuestionSuccess(i), onSaveGlobalQuestionError)
+                }
                 vm.isSaving = false;
                 console.log("onSaveLessonSuccess");
-                $state.go('editCourse')
+                //$state.go('editCourse')
+            }
+
+            function onSaveGlobalQuestionSuccess(i){
+                for (var j=0; j<vm.responses[i].length; j++){
+                    Response.update(vm.responses[i][j], onSaveResponseGlobalSuccess, onSaveResponseGlobalError)
+                }
+            }
+
+            function onSaveResponseGlobalSuccess() {
+                console.log("Sauvegarde de la réponse globale réussie")
+            }
+
+            function onSaveResponseGlobalError() {
+                console.log("Sauvegarde de la réponse globale échouée")
+            }
+
+            function onSaveGlobalQuestionError() {
+                console.log('Erreur dans la sauvegarde globale de la question')
             }
 
             function onSaveLessonError() {

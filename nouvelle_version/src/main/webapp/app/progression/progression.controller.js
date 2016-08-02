@@ -10,14 +10,11 @@
 
     function progressionController(Student, $scope, Principal, LoginService, Lesson_done, Lesson_doneWid, Lesson_doneWithBlockId, $state) {
 
-        console.log("debug0");
         var vm = this;
         var Blocs = [];
 
-        console.log("debug1");
-
-        // Recherche toutes les dates des leçons réalisées par le user
-        // Les place dans un tableau, incrémente lorsqu'une date apparaît
+        // Recherche toutes les dates des leçons réalisées par le user,
+        // les place dans un tableau, incrémente lorsqu'une date apparaît
         // plus d'une fois, et place le résultat dans data
 
         function convertDateToTimeStamp(lessons){
@@ -37,16 +34,6 @@
             return(timestamps);
 
         }
-        console.log("$scope.data");
-        console.log($scope.data);
-
-        /*this.data = {
-            1467811591: 1,
-            1468329991: 3,
-            1469712391: 1,
-            1470057991: 4
-
-        };*/
 
         vm.date_beginning_display = new Date(2016, 6);
 
@@ -63,15 +50,28 @@
 
             // Request to get the lessons
             Lesson_doneWid.get({},function(lessons){
-                console.log("lessons");
-                console.log(lessons);
 
+                // data displayed on the heatmap calendar
                 var d = convertDateToTimeStamp(lessons);
 
+                // heatmap calendar
+                // itemSelector important to bind the data
                 var cal = new CalHeatMap();
-                cal.init({itemSelector:"#cal-heatmap", data: d, start: new Date(2016, 6) , domain: 'month',
-                    subDomain: 'day', range: 12, cellSize : 15, domainMargin : [0, 1, 1, 1], legend: [1, 2, 3, 4]});
+                cal.init({itemSelector:"#cal-heatmap",
+                 data: d,
+                  start: new Date(2016, 6) ,
+                   domain: 'month',
+                    subDomain: 'day',
+                     range: 12,
+                      cellSize : 15,
+                       domainMargin : [0, 1, 1, 1],
+                        legend: [1, 2, 3, 4],
+                         legendColors: {min:"#f5f5f5",
+                                        max:"#87102c",
+                                         empty:"white"}
+                                                        });
 
+                // Regroupe les leçons par bloc
                 Bloc_done(lessons);
             });
 

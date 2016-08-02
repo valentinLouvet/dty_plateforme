@@ -25,6 +25,7 @@
             vm.user = data.user;
 
             Lesson_doneWid.get({},function(lessons){
+                console.log(lessons);
                 Bloc_done(lessons);
             });
         });

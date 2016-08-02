@@ -3,7 +3,8 @@
     angular
         .module('objectifDtyApp')
         .factory('Lesson_done', Lesson_done)
-        .factory('Lesson_doneWid',Lesson_doneWid);
+        .factory('Lesson_doneWid',Lesson_doneWid)
+        .factory('Lesson_doneWithBlockId',Lesson_doneWithBlockId);
 
 
     Lesson_done.$inject = ['$resource'];
@@ -35,4 +36,14 @@
             }
         });
     }
+
+    Lesson_doneWithBlockId.inject=['$resource'];
+
+        function Lesson_doneWid($resource){
+            return $resource("api/lesson-donesWithBlockId",{},{
+                'get':{
+                    method:'GET',isArray:true
+                }
+            });
+        }
 })();

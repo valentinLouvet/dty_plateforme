@@ -7,7 +7,7 @@
         <h3>Bloc : {{bloc.name}}</h3>
     </div>
 
-    <ul class="list-group" ng-repeat="course in bloc.lessons">
+    <ul class="list-group" ng-repeat="course in bloc.lessons | orderBy:'num_lesson'">
         <li class="list-group-item list-group-item-white"> Lesson {{vm.compteur}} : <a href ui-sref="modifyCourse({id:course.id})">{{course.title}}</a> <a class="glyphicon glyphicon-remove-circle rmvButton" ui-sref="editCourse.delete({id:course.id})" ></a></li>
         {{vm.addCompteur(1)}}
     </ul>

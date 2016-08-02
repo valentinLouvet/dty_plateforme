@@ -4,17 +4,24 @@
     <div class="form-group">
         <label>New bloc name</label>
         <br>
-        <input type="text" placeholder="Bloc name" class="form-control">
+        <input type="text" placeholder="Bloc name" class="form-control" ng-model="vm.newBloc.name">
     </div>
 
     <div class="form-group">
-        <label>New bloc description</label>
+        <label>Enter your bloc description</label>
+        <textarea data-ck-editor placeholder="Enter Lesson here..." rows="10" class="form-control" ng-model="vm.newBloc.description"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="field_bloc">Select bloc's father : </label>
         <br>
-        <textarea></textarea>
+        <select required class="form-control" id="field_bloc" name="bloc" ng-model="vm.newBloc.is_son_of" ng-options="bloc as bloc.name for bloc in vm.blocs track by bloc.id">
+            <option value=""></option>
+        </select>
     </div>
 
     <div class="from-group">
-        <button class="btn btn-primary-dty-inverse">Validate new bloc</button>
+        <button class="btn btn-primary-dty-inverse" ng-click="vm.saveBloc()">Validate new bloc</button>
     </div>
 
 </div>

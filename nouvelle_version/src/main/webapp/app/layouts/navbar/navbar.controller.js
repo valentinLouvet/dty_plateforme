@@ -1,13 +1,13 @@
-(function() {
+(function () {
     'use strict';
 
     angular
         .module('objectifDtyApp')
         .controller('NavbarController', NavbarController);
 
-    NavbarController.$inject = ['Student','$state', 'Auth', 'Principal', 'ProfileService', 'LoginService'];
+    NavbarController.$inject = ['Student', '$state', 'Auth', 'Principal', 'ProfileService', 'LoginService'];
 
-    function NavbarController (Student,$state, Auth, Principal, ProfileService, LoginService) {
+    function NavbarController(Student, $state, Auth, Principal, ProfileService, LoginService) {
         var vm = this;
 
         vm.isNavbarCollapsed = true;
@@ -23,6 +23,17 @@
         vm.toggleNavbar = toggleNavbar;
         vm.collapseNavbar = collapseNavbar;
         vm.$state = $state;
+        vm.goCourse = goCourse;
+
+        function goCourse() {
+            collapseNavbar();
+            Student.query().$promise.then(function (data) {
+                vm.student = data;
+                $state.go('viewCourse', {id: vm.student[0].todo_lesson.id});
+            });
+
+
+        }
 
         function login() {
             collapseNavbar();
@@ -44,7 +55,7 @@
         }
 
         Principal.getStudent().then(function (data) {
-            vm.student=data;
+            vm.student = data;
         });
     }
 })();

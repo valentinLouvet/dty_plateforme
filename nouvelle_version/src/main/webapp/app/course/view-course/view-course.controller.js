@@ -1,4 +1,5 @@
 (function(){
+    'use strict';
 
     angular.module('objectifDtyApp').controller('CourseViewController', ViewCourseController);
 
@@ -22,7 +23,7 @@
         });
         Lesson_done.query().$promise.then(function (data) {
             vm.lesson_dones = data;
-            for (i = 0; i < vm.lesson_dones.length; i++) {
+            for (var i = 0; i < vm.lesson_dones.length; i++) {
                 if (vm.lesson_dones[i].lessons[0].id == vm.lesson.id) {
                     vm.lessonDoneNew = false;
                     vm.lessonDoneI = i;
@@ -136,10 +137,10 @@
                         }
             var etoile = "";
 
-            for(i = 0; i < Note; i++){
+            for(var i = 0; i < Note; i++){
                 etoile = etoile + "&#9733;";
             }
-            for(j=0; j< 5-Note; j++){
+            for(var j=0; j< 5-Note; j++){
                 etoile = etoile + "&#9734;";
             }
 

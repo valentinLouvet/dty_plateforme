@@ -25,7 +25,7 @@
             },
             'update': {method: 'PUT'}
         });
-    };
+    }
 
     Lesson_doneWid.inject=['$resource'];
 
@@ -39,7 +39,7 @@
 
     Lesson_doneWithBlockId.inject=['$resource'];
 
-        function Lesson_doneWid($resource){
+        function Lesson_doneWithBlockId($resource){
             return $resource("api/lesson-donesWithBlockId",{},{
                 'get':{
                     method:'GET',isArray:true

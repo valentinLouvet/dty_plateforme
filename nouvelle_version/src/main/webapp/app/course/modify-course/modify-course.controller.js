@@ -197,14 +197,14 @@
 
             function onSaveNewResponseSuccess() {
                 vm.isSaving = false;
-                console.log("Nouvelle réponse créée")
+                console.log("Nouvelle réponse créée");
                 $state.go($state.current, {}, {reload: true});
                 vm.initialize()
             }
 
             function onSaveNewResponseError() {
                 vm.isSaving = false;
-                console.log("error response")
+                console.log("error response");
                 $state.go($state.current, {}, {reload: true});
                 vm.initialize()
             }

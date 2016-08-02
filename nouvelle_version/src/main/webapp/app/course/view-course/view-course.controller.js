@@ -63,12 +63,14 @@
                     note_init : vm.score,
                     note_max : vm.score,
                     student : vm.student[0],
-                    lessons : [vm.lesson]
+                    lessons : [vm.lesson],
+                    date: Date.now()
                 };
                 for(var i=0; i<vm.lesson_dones.length ;i++){
                     if(vm.lesson_dones[i].lessons[0].id == vm.lesson.id){
                         vm.lesson_done.id = vm.lesson_dones[i].id;
                         vm.lesson_done.note_init = vm.lesson_dones[i].note_init;
+                        vm.lesson_done.date = vm.lesson_done[i].date;
                         if(vm.score<vm.lesson_dones[i].note_max){
 
                             vm.lesson_done.note_max = vm.lesson_dones[i].note_max;

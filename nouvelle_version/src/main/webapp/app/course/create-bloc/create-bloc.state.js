@@ -9,7 +9,7 @@
 
     function stateConfig($stateProvider) {
         $stateProvider.state('createBloc', {
-            parent: 'app',
+            parent: 'course',
             url: '/blocCreation',
             data: {
                 authorities: ['ROLE_COACH', 'ROLE_ADMIN'],

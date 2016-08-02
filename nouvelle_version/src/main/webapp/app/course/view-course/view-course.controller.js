@@ -41,7 +41,7 @@
         });
 
         vm.SetNextLessonToDo = function(){
-            for(i = 0; i<vm.lesson.bloc.lessons.length; i++){
+            for(var i = 0; i<vm.lesson.bloc.lessons.length; i++){
                 if(vm.lesson.bloc.lessons[i].num_lesson == vm.lesson.num_lesson + 1){
                     vm.student[0].todo_lesson = vm.lesson.bloc.lessons[i];
                 }
@@ -50,7 +50,7 @@
 
         vm.submitLesson = function () {
             vm.score = 0;
-            for (i = 0; i < vm.lesson.questions.length; i++) {
+            for (var i = 0; i < vm.lesson.questions.length; i++) {
                 if (vm.lesson.questions[i].score == "true") {
                     vm.score++;
                 }
@@ -65,7 +65,7 @@
                     student : vm.student[0],
                     lessons : [vm.lesson]
                 };
-                for(i=0; i<vm.lesson_dones.length ;i++){
+                for(var i=0; i<vm.lesson_dones.length ;i++){
                     if(vm.lesson_dones[i].lessons[0].id == vm.lesson.id){
                         vm.lesson_done.id = vm.lesson_dones[i].id;
                         vm.lesson_done.note_init = vm.lesson_dones[i].note_init;

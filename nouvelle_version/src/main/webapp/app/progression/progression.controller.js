@@ -13,6 +13,15 @@
         var vm = this;
         var Blocs = [];
 
+        //vm.date_beginning_display = new Date(2016, 6);
+
+        vm.floor=floor;
+        vm.isDisabled=isDisabled;
+        vm.goToLesson=goToLesson;
+        vm.current=null;
+        vm.setCurrent=setCurrent;
+        vm.isCurrent=isCurrent;
+
         // Recherche toutes les dates des leçons réalisées par le user,
         // les place dans un tableau, incrémente lorsqu'une date apparaît
         // plus d'une fois, et place le résultat dans data
@@ -34,15 +43,6 @@
             return(timestamps);
 
         }
-
-        vm.date_beginning_display = new Date(2016, 6);
-
-        vm.floor=floor;
-        vm.isDisabled=isDisabled;
-        vm.goToLesson=goToLesson;
-        vm.current=null;
-        vm.setCurrent=setCurrent;
-        vm.isCurrent=isCurrent;
 
         Principal.getStudent().then(function (data) {
             vm.student = data;

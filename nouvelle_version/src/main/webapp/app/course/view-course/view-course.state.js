@@ -37,12 +37,37 @@
                 onEnter: ['$stateParams', '$state', '$uibModal', function ($stateParams, $state, $uibModal) {
                     $uibModal.open({
                         templateUrl: 'app/badge/1-badge.html',
-                        controller: 'BadgeController',
+                        controller: 'MyBadgeController',
                         controllerAs: 'vm',
                         size: 'md'
                     });
                 }]
             })
+            /*.state('viewCourse.Badge', {
+                 parent: 'viewCourse',
+                 url: '/{id}/{idLesson}/{name}/SucessBadge',
+                 data: {
+                     authorities: ['ROLE_ADMIN', 'ROLE_USER', 'ROLE_COACH']
+                 },
+                 onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
+                     $uibModal.open({
+                         templateUrl: 'app/badge/1-badge.html',
+                         controller: 'MyBadgeController',
+                         controllerAs: 'vm',
+                         size: 'md',
+                         resolve: {
+                             entity: ['Badge', function(Badge) {
+                                 return Badge.get({name : $stateParams.name}).$promise;
+                             }]
+                         }
+                     }).result.then(function() {
+                         $state.go('viewCourse', {id: $stateParams.idLesson}, { reload: true });
+                     }, function() {
+                         $state.go('^');
+                     });
+                 }]
+             }) */
+
             .state('choosecourse', {
                 parent: 'viewCourse',
                 url: '/choosecourse',

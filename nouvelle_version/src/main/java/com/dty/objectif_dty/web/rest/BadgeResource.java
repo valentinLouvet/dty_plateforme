@@ -29,10 +29,10 @@ import java.util.Optional;
 public class BadgeResource {
 
     private final Logger log = LoggerFactory.getLogger(BadgeResource.class);
-        
+
     @Inject
     private BadgeRepository badgeRepository;
-    
+
     /**
      * POST  /badges : Create a new badge.
      *
@@ -93,7 +93,7 @@ public class BadgeResource {
     public ResponseEntity<List<Badge>> getAllBadges(Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to get a page of Badges");
-        Page<Badge> page = badgeRepository.findAll(pageable); 
+        Page<Badge> page = badgeRepository.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/badges");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
@@ -108,7 +108,7 @@ public class BadgeResource {
         method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<Badge> getBadge(@PathVariable Long id) {
+    public ResponseEntity<Badge> getBadge(@PathVariable long id) {
         log.debug("REST request to get Badge : {}", id);
         Badge badge = badgeRepository.findOne(id);
         return Optional.ofNullable(badge)

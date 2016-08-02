@@ -3,13 +3,12 @@
 
     angular.module('objectifDtyApp').controller('CourseViewController', ViewCourseController);
 
-    ViewCourseController.$inject = ['Principal', 'courseView', '$scope', '$rootScope', '$stateParams', '$state', 'DataUtils', 'Lesson', 'Coach', 'Bloc', 'Question', 'Lesson_done', 'Student'];
+    ViewCourseController.$inject = ['Principal', 'courseView', '$scope', '$rootScope', '$stateParams', '$state', '$uibModal', 'DataUtils', 'Lesson', 'Coach', 'Bloc', 'Question', 'Lesson_done', 'Student'];
 
-    function ViewCourseController(Principal, courseView, $scope, $rootScope, $stateParams, $state, DataUtils, Lesson, Coach, Bloc, Question, Lesson_done, Student) {
+    function ViewCourseController(Principal, courseView, $scope, $rootScope, $stateParams, $state, $uibModal, DataUtils, Lesson, Coach, Bloc, Question, Lesson_done, Student) {
         var vm = this;
         vm.id = $stateParams.id;
         vm.lesson = Lesson.get({id: vm.id});
-        console.log(vm.lesson);
         vm.scoreCalc = false;
         vm.lessonDoneNew = true;
         vm.noteStars = 1;
@@ -70,7 +69,7 @@
                     if(vm.lesson_dones[i].lessons[0].id == vm.lesson.id){
                         vm.lesson_done.id = vm.lesson_dones[i].id;
                         vm.lesson_done.note_init = vm.lesson_dones[i].note_init;
-                        vm.lesson_done.date = vm.lesson_done[i].date;
+                        //vm.lesson_done.date = vm.lesson_done[i].date;
                         if(vm.score<vm.lesson_dones[i].note_max){
 
                             vm.lesson_done.note_max = vm.lesson_dones[i].note_max;
@@ -100,7 +99,28 @@
 
                 if (vm.lesson.last){
                      console.log(vm.lesson.bloc.name);
-                     $state.go('course.BadgeCourse', {id:1, idLesson:vm.id, blocName:vm.lesson.bloc.name}, {inherit : false});;
+                      var fen = $uibModal.open({
+                               animation: true,
+                               templateUrl: 'app/badge/1-badge.html',
+                               controller: 'MyBadgeController',
+                               controllerAs : 'vm',
+                               size: 'md',
+                               resolve: {
+                                 items: function() {
+                                       return {
+                                        title: vm.lesson.bloc.name,
+                                        path : vm.lesson.bloc.logo
+
+                                      };
+                                    },
+                                    BadgeView: ['$stateParams', 'Lesson', function ($stateParams, Lesson) {
+                                      return Lesson.get({id: vm.id}).$promise;
+                                     }]
+                                 }
+
+                               });
+
+
                     }
 
 

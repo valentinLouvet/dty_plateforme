@@ -12,4 +12,5 @@ import java.util.List;
 @SuppressWarnings("unused")
 public interface BadgeRepository extends JpaRepository<Badge,Long> {
 
+
 }

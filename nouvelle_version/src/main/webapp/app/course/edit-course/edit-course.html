@@ -4,7 +4,11 @@
 <div class="panel panel-default panel-dty" ng-repeat="bloc in vm.blocs">
     {{vm.setCompteur(1)}}
     <div class="panel-heading">
+        <div ui-sref="createCourse()" class="btn btn-primary-dty-inverse pull-right">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Lesson
+        </div>
         <h3>Bloc : {{bloc.name}}</h3>
+
     </div>
 
     <ul class="list-group" ng-repeat="course in bloc.lessons | orderBy:'num_lesson'">

@@ -9,6 +9,18 @@
         //Lesson2,
         AlertService, Principal) {
 
+            // Oblige à aller en haut de la page lors du chargement
+            // En effet, sans ça, le bouton "add Lesson" de la page
+            // view-courses n'update pas la position du scroll
+
+            window.onbeforeunload = function(){
+            	window.scrollTo(0,0);
+            }
+
+            onbeforeunload();
+
+            // Variables
+
             var vm= this;
             vm.blocs=[];
             vm.lessons = [];

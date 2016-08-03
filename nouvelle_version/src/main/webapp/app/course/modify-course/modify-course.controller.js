@@ -27,7 +27,6 @@
                 vm.newVeracity = false;
 
                 vm.course = courseView;
-                //vm.course.islast = vm.course.last;
 
                 vm.newContent = vm.course.cours;
                 vm.nbreLesson = vm.course.questions.length;
@@ -90,7 +89,7 @@
             function onSaveQuestionResponseSuccess(newQuestion) {
                 var newQuestionAnswers = [];
                 for (var i = 0; i < vm.newAnswers.length; i++) {
-                    newQuestionAnswers.push(vm.responses[1][0]);
+                    newQuestionAnswers.push(vm.responses[0][0]);
                     newQuestionAnswers[i].text = vm.newAnswers[i].text;
                     newQuestionAnswers[i].question = newQuestion;
                     newQuestionAnswers[i].id = null;
@@ -208,14 +207,13 @@
             function onSaveNewResponseError() {
                 vm.isSaving = false;
                 console.log("error response");
-                $state.go($state.current, {}, {reload: true});
-                vm.initialize()
             }
 
             //enregistre la lesson dans la BDD
             vm.saveCourse = function () {
                 vm.isSaving = true;
                 if (vm.course.id !== null) {
+                    console.log(vm.course);
                     Lesson.update(vm.course, onSaveLessonSuccess, onSaveLessonError);
 
                 } else {
@@ -226,7 +224,9 @@
 
             function onSaveLessonSuccess() {
                 for (var i=0; i<vm.questions.length; i++){
-                    Question.update(vm.questions[i], onSaveGlobalQuestionSuccess(i), onSaveGlobalQuestionError)
+                    console.log('truc');
+                    vm.questions[i].id = null;
+                    Question.save(vm.questions[i], onSaveGlobalQuestionSuccess(i), onSaveGlobalQuestionError)
                 }
                 vm.isSaving = false;
                 console.log("onSaveLessonSuccess");
@@ -311,24 +311,6 @@
                 vm.isSaving = false;
                 console.log("error response")
             }
-
-            vm.print = function(){
-                Lesson.save(vm.course, onSaveIsLastSuccess, onSaveIsLastError);
-            };
-
-            function onSaveIsLastSuccess() {
-                console.log(vm.course)
-            }
-
-            function onSaveIsLastError() {
-                console.log('Erreur')
-            }
-
-            vm.switchIsLast = function () {
-                vm.course.last = true;
-                console.log(vm.course)
-            }
-
 
         }])
 })();

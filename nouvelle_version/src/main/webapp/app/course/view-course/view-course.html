@@ -14,7 +14,9 @@
                     style="margin-top:1%;">.
                 <option ng-repeat="response in question.responses" value={{response.veracity}}>{{response.text}}
                 </option>
+                <p>{{response.correction}}</p>
             </select>
+            <p style="color: #0000ff" ng-show="vm.scoreCalc">{{question.correction}}</p>
         </li>
     </ul>
     <button ng-click="vm.submitLesson()" ng-hide="vm.scoreCalc" class="btn btn-primary-dty-inverse">Submit my answers
@@ -61,9 +63,12 @@
     </div>
 
     <div>
-        <button class="btn btn-primary-dty-inverse pull-right">Go to the next lesson <span class="glyphicon glyphicon-chevron-right"></span> </button>
+        <button class="btn btn-primary-dty-inverse pull-right"
+                ng-show="vm.scoreCalc"
+                ng-click="vm.goCourse()">
+            Go to the next lesson <span class="glyphicon glyphicon-chevron-right"></span>
+        </button>
     </div>
-
 
 
 </div>

@@ -13,6 +13,7 @@
         vm.lessonDoneNew = true;
         vm.noteStars = 1;
         vm.chooseNewBloc = false;
+        vm.goCourse = goCourse;
 
 
         vm.score = null;
@@ -69,7 +70,7 @@
                     if(vm.lesson_dones[i].lessons[0].id == vm.lesson.id){
                         vm.lesson_done.id = vm.lesson_dones[i].id;
                         vm.lesson_done.note_init = vm.lesson_dones[i].note_init;
-                        //vm.lesson_done.date = vm.lesson_done[i].date;
+                        vm.lesson_done.date = vm.lesson_dones[i].date;
                         if(vm.score<vm.lesson_dones[i].note_max){
 
                             vm.lesson_done.note_max = vm.lesson_dones[i].note_max;
@@ -233,6 +234,15 @@
         function onSaveStudentSuccess (result) {
             $scope.$emit('objectifDtyApp:studentUpdate', result);
             vm.isSaving = false;
+        }
+
+        function goCourse() {
+            Student.query().$promise.then(function (data) {
+                vm.student = data;
+                $state.go('viewCourse', {id: vm.student[0].todo_lesson.id});
+            });
+
+
         }
 
 

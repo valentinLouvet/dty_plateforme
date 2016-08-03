@@ -1,0 +1,12 @@
+
+<div class="panel panel-default panel-dty" ng-repeat="bloc in vm.blocs">
+    {{vm.setCompteur(1)}}
+    <div class="panel-heading">
+        <h3>Bloc : {{bloc.name}}</h3>
+    </div>
+
+    <ul class="list-group" ng-repeat="course in bloc.lessons | orderBy:'num_lesson'">
+        <li class="list-group-item list-group-item-white"> Lesson {{vm.compteur}} : <a href ui-sref="viewCourse({id:course.id})">{{course.title}}</a></li>
+        {{vm.addCompteur(1)}}
+    </ul>
+</div>

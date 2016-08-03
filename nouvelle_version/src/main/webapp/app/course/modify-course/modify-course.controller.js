@@ -213,35 +213,35 @@
             vm.saveCourse = function () {
                 vm.isSaving = true;
                 if (vm.course.id !== null) {
-                    console.log(vm.course);
+                    console.log('vm.course.id !== null');
                     Lesson.update(vm.course, onSaveLessonSuccess, onSaveLessonError);
 
                 } else {
+                    console.log('vm.course.id == null');
                     Lesson.save(vm.course, onSaveLessonSuccess, onSaveLessonError);
                 }
                 console.log(vm.course);
+                $state.go($state.current, {}, {reload: true})
             };
 
             function onSaveLessonSuccess() {
-                console.log(vm.questions);
-                for (var i=0; i<vm.questions.length; i++){
-                    console.log('truc');
-                    vm.questions[i].id = null;
-                    Question.save(vm.questions[i], onSaveGlobalQuestionSuccess(i), onSaveGlobalQuestionError)
+                for (var compteur=0; compteur<vm.questions.length; compteur++){
+                    Question.update(vm.questions[compteur], onSaveGlobalQuestionSuccess(compteur), onSaveGlobalQuestionError);
+                    //Question.update(question, onSaveGlobalQuestionSuccess(i), onSaveGlobalQuestionError)
                 }
                 vm.isSaving = false;
                 console.log("onSaveLessonSuccess");
                 //$state.go('editCourse')
             }
 
-            function onSaveGlobalQuestionSuccess(i){
-                for (var j=0; j<vm.responses[i].length; j++){
-                    Response.update(vm.responses[i][j], onSaveResponseGlobalSuccess, onSaveResponseGlobalError)
+            function onSaveGlobalQuestionSuccess(compteur){
+                for (var j=0; j<vm.responses[compteur].length; j++){
+                    Response.update(vm.responses[compteur][j], onSaveResponseGlobalSuccess, onSaveResponseGlobalError)
                 }
             }
 
             function onSaveResponseGlobalSuccess() {
-                console.log(vm.course)
+                console.log('Sauvegarde de la question réussie')
             }
 
             function onSaveResponseGlobalError() {

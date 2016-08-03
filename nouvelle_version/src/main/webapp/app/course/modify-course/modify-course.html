@@ -1,6 +1,6 @@
 <div class="form-group">
     <div class="form-group">Here is the actual lesson:
-        <label class="pull-right"><input type="checkbox" ng-model="vm.newIsLast"> Dernière leçon </label>
+        <label class="pull-right"><input type="checkbox" ng-model="vm.course.last"> Dernière leçon </label>
         <p ng-bind-html="vm.course.cours">
         </p>
         <button class="btn btn-primary-dty" ng-click="vm.changeCourse()">
@@ -47,7 +47,7 @@
                 Response: {{response.text}}<br>
                 <div ng-class="{correctAnswer: response.veracity, incorrectAnswer: !response.veracity}">Answer correction: {{response.correction}}</div>
             </div>
-            <div class="input-group" ng-show="vm.editedQuestions[vm.questions.indexOf(question)] && response.text">
+            <div class="input-group" ng-show="vm.editedQuestions[vm.questions.indexOf(question)]">
                 <span class="input-group-addon">
                     <input type="checkbox" ng-click="" ng-model="response.veracity" style="padding-top: 23px; padding-bottom: 23px">
                 </span>
@@ -59,7 +59,7 @@
                 </span>
             </div>
         </div>
-        <button style="margin-bottom: 15px; margin-top: 15px" class="btn btn-primary-dty" ng-show="vm.editedQuestions[vm.questions.indexOf(question)]" ng-click="vm.addAnswer(question)">Add Answer</button>
+        <button style="margin-bottom: 15px; margin-top: 15px" class="btn btn-primary-dty" ng-show="vm.editedQuestions[vm.questions.indexOf(question)]" ng-click="vm.addAnswer(question)">Add One Answer</button>
         <div class="input-group" ng-show="vm.addingAnswer[vm.questions.indexOf(question)]" >
             <span class="input-group-addon">
                     <input type="checkbox" ng-click="" ng-model="vm.newVeracity" style="padding-top: 23px; padding-bottom: 23px">

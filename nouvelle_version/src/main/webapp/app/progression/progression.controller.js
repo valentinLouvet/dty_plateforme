@@ -112,15 +112,15 @@
 
         });
 
-        /**
 
-         fonction bloc_done : parcourt les lessons réalisées par le student - et crée le tableau Blocs
-         qui contient des elements de la forme { bloc : bloc, lesson_dones : array contenant les id des lesson dones.
-         Regroupe les leçons par bloc.
-        */
 
 
         function Bloc_done(lessons) {
+            /**
+             fonction bloc_done : parcourt les lessons réalisées par le student - et crée le tableau Blocs
+             qui contient des elements de la forme { bloc : bloc, lesson_dones : array contenant les id des lesson dones.
+             Regroupe les leçons par bloc.
+            */
             console.log(lessons);
 
             for (var i = 0; i < lessons.length; i++) {

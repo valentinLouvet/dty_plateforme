@@ -4,13 +4,21 @@
 <div class="panel panel-default panel-dty" ng-repeat="bloc in vm.blocs">
     {{vm.setCompteur(1)}}
     <div class="panel-heading">
-        <div ui-sref="createCourse()" class="btn btn-primary-dty-inverse pull-right">
-            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Lesson
-        </div>
-        <div class="btn edit-properties pull-right"><a ng-click="vm.editBloc(bloc.id)"> Edit bloc properties</a></div>
-        <h3>Bloc : {{bloc.name}}</h3>
 
+        <span class="input-group-btn">
+            <h3 style="padding-top: 6px" class="color-dty">Bloc : {{bloc.name}}
+            <div class="btn btn-primary-dty-inverse pull-right" ng-click="vm.editBloc(bloc.id)">Edit</div>
+                <div ui-sref="createCourse()" class="btn btn-primary-dty-inverse pull-right">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Lesson
+                </div>
+            </h3>
+
+        </span>
     </div>
+    <div class="panel-body">
+        <h4>{{bloc.description}}</h4>
+    </div>
+
 
     <ul class="list-group" ng-repeat="course in bloc.lessons | orderBy:'num_lesson'">
         <li class="list-group-item list-group-item-white"> Lesson {{vm.compteur}} : <a href ui-sref="modifyCourse({id:course.id})">{{course.title}}</a> <a class="glyphicon glyphicon-remove-circle rmvButton" ui-sref="editCourse.delete({id:course.id})" ></a></li>
@@ -18,4 +26,4 @@
     </ul>
 </div>
 
-<div class="btn btn-primary-dty-inverse" ui-sref="createBloc"> Create new Bloc !</></div>
+<div class="btn btn-primary-dty-inverse" ui-sref="createBloc"> Create new Bloc !</div>

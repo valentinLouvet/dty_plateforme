@@ -160,9 +160,32 @@ public class Lesson_doneResource {
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
+    //GET lesson_done of the student ID
+
+    @RequestMapping(value = "/lesson-doneswid/:studentId",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public ResponseEntity<List<Lesson_done>> getLesson_donesWid(@PathVariable Long studentId)
+        throws URISyntaxException {
+        log.debug("REST request to get a page of Lesson_dones");
+        List<Lesson_done> list = lesson_doneRepository.findAllFromStudentWithEagerRelationShips(studentId);
+        for (Lesson_done item : list) {
+            Set<Lesson> lessons = item.getLessons();
+            for (Lesson itemLesson : lessons) {
+                itemLesson.setCours(null);
+                itemLesson.setQuestions(null);
+            }
+        }
+
+        return new ResponseEntity<>(list,HttpStatus.OK);
+
+    }
+
+
     /**
      * GET /lesson_donesWithBlockId : get all the lesson_dones from the student - but not the content of the lesson.
-     */
+
 
 
     @RequestMapping(value = "/lesson-donesWithBlockId",
@@ -182,6 +205,7 @@ public class Lesson_doneResource {
         }
 
         return new ResponseEntity<>(list, HttpStatus.OK);
-    }
+    }*/
+
 
 }

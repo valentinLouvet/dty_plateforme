@@ -6,9 +6,9 @@
         .controller('progressionController', progressionController)
 
 
-    progressionController.$inject = ['Student', '$scope', 'Principal', 'LoginService', 'Lesson_done', 'Lesson_doneWid', 'Lesson_doneWithBlockId', '$state'];
+    progressionController.$inject = ['Student', '$scope', 'Principal', 'LoginService', 'Lesson_done', 'Lesson_doneWid','$state'];
 
-    function progressionController(Student, $scope, Principal, LoginService, Lesson_done, Lesson_doneWid, Lesson_doneWithBlockId, $state) {
+    function progressionController(Student, $scope, Principal, LoginService, Lesson_done, Lesson_doneWid, $state) {
 
         var vm = this;
         var Blocs = [];
@@ -49,7 +49,7 @@
             vm.user = data.user;
 
             // Request to get the lessons
-            Lesson_doneWid.get({},function(lessons){
+            Lesson_doneWid.query({},function(lessons){
 
                 // data displayed on the heatmap calendar
                 var d = convertDateToTimeStamp(lessons);

@@ -11,7 +11,7 @@
                 </h1>
             </div>
             <p>We strongly advise you to do the lesson of the day before doing any other lesson.</p>
-            <button ui-sref="viewCourse({id:vm.student.todo_lesson.id})" class="btn btn-primary-dty">Go to today's
+            <button ng-click="vm.goCourse()" class="btn btn-primary-dty">Go to today's
                 lesson !
                 <span class="glyphicon glyphicon-chevron-right"></span>
             </button>

@@ -21,6 +21,7 @@
         vm.current=null;
         vm.setCurrent=setCurrent;
         vm.isCurrent=isCurrent;
+        vm.goCourse = goCourse;
 
         // Recherche toutes les dates des leçons réalisées par le user,
         // les place dans un tableau, incrémente lorsqu'une date apparaît
@@ -41,6 +42,14 @@
             }
 
             return(timestamps);
+
+        }
+        function goCourse() {
+            Student.query().$promise.then(function (data) {
+                vm.student = data;
+                $state.go('viewCourse', {id: vm.student[0].todo_lesson.id});
+            });
+
 
         }
 

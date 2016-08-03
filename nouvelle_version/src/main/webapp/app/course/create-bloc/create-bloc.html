@@ -1,5 +1,6 @@
 <div class="container">
-    <h1 class="page-header-dty">Create new bloc</h1>
+    <h1 class="page-header-dty" ng-show="!edit">Create new bloc</h1>
+    <h1 class="page-header-dty" ng-show="edit">Edit bloc</h1>
 
     <div class="form-group">
         <label>New bloc name</label>
@@ -20,8 +21,9 @@
         </select>
     </div>
 
-    <div class="from-group">
-        <button class="btn btn-primary-dty-inverse" ng-click="vm.saveBloc()">Validate new bloc</button>
+    <div class="form-group">
+        <button class="btn btn-primary-dty-inverse" ng-click="vm.saveBloc()">Validate bloc</button>
+        <button class="btn btn btn-primary-dty" ui-sref="editCourse"> Back </button>
     </div>
 
 </div>

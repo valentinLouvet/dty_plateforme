@@ -51,6 +51,11 @@
                 this.compteur = i
             };
 
+            this.editBloc=function (id) {
+                $state.go('createBloc',{id:id,edit:'edit'})
+            }
+
+
 
 
         }] );

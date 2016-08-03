@@ -225,6 +225,7 @@
             };
 
             function onSaveLessonSuccess() {
+                console.log(vm.questions);
                 for (var i=0; i<vm.questions.length; i++){
                     Question.update(vm.questions[i], onSaveGlobalQuestionSuccess(i), onSaveGlobalQuestionError)
                 }

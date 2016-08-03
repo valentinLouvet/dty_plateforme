@@ -21,6 +21,7 @@
         vm.setCurrent=setCurrent;
         vm.isCurrent=isCurrent;
         vm.goCourse = goCourse;
+        vm.convertScore=convertScore;
 
         function convertDateToTimeStamp(lessons){
             // Recherche toutes les dates des leçons réalisées par le user,
@@ -79,6 +80,7 @@
 
             // Request to get the lessons
             Lesson_doneWid.query({},function(lessons){
+                vm.lessonDones=lessons;
 
                 // data displayed on the heatmap calendar
                 var d = convertDateToTimeStamp(lessons);
@@ -192,9 +194,33 @@
         }
 
         function isDisabled(lessonId, lesson_done) {
-            var isTodo=(vm.student.todo_lesson.id===lessonId);
+            var isTodo = (vm.student.todo_lesson.id === lessonId);
+            var isDis = (lesson_done.indexOf(lessonId) === -1) && (!isTodo);
+            if (!isDis) {
+                var index = findByLessonId(lessonId);
+                var score=vm.lessonDones[index].note_max;
+            }
 
-            return (lesson_done.indexOf(lessonId) === -1)&&(!isTodo);
+            return{isDisabled:isDis,score:score}
+        }
+
+            function findByLessonId(id){
+                var done=false;
+                for(var i=0;i<vm.lessonDones.length;i++) {
+                    if(vm.lessonDones[i].lessons[0].id === id){
+                        var num=i;
+                    }
+
+                    done = (i === vm.lessonDones.length-1);
+                    if(done){
+                        return num
+                    }
+                }
+
+
+
+            }
+
 
         }
         // changement de page
@@ -234,6 +260,44 @@
             console.log(value)
         }
 
+        //conversion score en etoiles
+
+    function convertScore(score) {
+
+        var Note = 0;
+
+        switch (Math.floor((score) / 20)) {
+
+
+            case 0 :
+                Note = 0;
+                break;
+            case 1 :
+                Note = 1;
+                break;
+            case 2 :
+                Note = 2;
+                break;
+            case 3 :
+                Note = 3;
+                break;
+            case 4 :
+                Note = 4;
+                break;
+            case 5 :
+                Note = 5;
+                break;
+        }
+        var etoile = "";
+
+        for (var i = 0; i < Note; i++) {
+            etoile = etoile + "&#9733;";
+        }
+        for (var j = 0; j < 5 - Note; j++) {
+            etoile = etoile + "&#9734;";
+        }
+
+        return etoile;
     }
 
 })();

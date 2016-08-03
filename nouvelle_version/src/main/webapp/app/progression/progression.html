@@ -77,11 +77,11 @@
                             <div class="modal-body">
                                 <ul class="btn-group-vertical" style="width:100%">
                                     <li class="btn btn-primary-dty-modal " style="text-align: left"
-                                        ng-disabled="vm.isDisabled(lesson.id,bloc.lesson_done)"
+                                        ng-disabled="vm.isDisabled(lesson.id,bloc.lesson_done).isDisabled"
                                         ng-repeat="lesson in bloc.bloc.lessons" data-dismiss="modal"
-                                        ng-click="vm.goToLesson(lesson.id,vm.isDisabled(lesson.id,bloc.lesson_done))">
-                                        <span>{{lesson.num_lesson}} - {{lesson.title}}</span><span class="pull-right"
-                                                                                                   ng-hide="vm.isDisabled(lesson.id,bloc.lesson_done)">&#x2713</span>
+                                        ng-click="vm.goToLesson(lesson.id,vm.isDisabled(lesson.id,bloc.lesson_done).isDisabled)">
+                                        <span>{{lesson.num_lesson}} - {{lesson.title}}</span>
+                                        <span class="pull-right" ng-hide="vm.isDisabled(lesson.id,bloc.lesson_done).isDisabled">{{vm.isDisabled(lesson.id,bloc.lesson_done).score}}</span>
                                     </li>
                                 </ul>
 

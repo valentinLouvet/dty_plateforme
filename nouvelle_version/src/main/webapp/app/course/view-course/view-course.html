@@ -12,10 +12,11 @@
             n°{{$index +1}} : {{question.intitule}}
             <select name="repeatSelect" id="repeatSelect" ng-model="question.score" class="form-control"
                     style="margin-top:1%;">.
-                <option ng-repeat="response in question.responses" value={{response.veracity}}>{{response.text}}
+                <option ng-repeat="response in question.responses" value={{response}}>{{response.text}}
                 </option>
-                <p>{{response.correction}}</p>
+
             </select>
+            <div ng-show="vm.scoreCalc"  ng-class="{correctAnswer: question.answerchoosen.veracity, incorrectAnswer: !question.answerchoosen.veracity}">{{question.answerchoosen.correction}}</div>
             <p style="color: #0000ff" ng-show="vm.scoreCalc">{{question.correction}}</p>
         </li>
     </ul>

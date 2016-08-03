@@ -51,7 +51,8 @@
         vm.submitLesson = function () {
             vm.score = 0;
             for (var i = 0; i < vm.lesson.questions.length; i++) {
-                if (vm.lesson.questions[i].score == "true") {
+                vm.lesson.questions[i].answerchoosen = angular.fromJson(vm.lesson.questions[i].score);
+                if (angular.fromJson(vm.lesson.questions[i].score).veracity == true) {
                     vm.score++;
                 }
             }

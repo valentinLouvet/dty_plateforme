@@ -285,6 +285,7 @@
                         vm.newLesson = Lesson.save(vm.newLesson, onSaveLessonSuccess, onSaveLessonError);
                         console.log("Save..");
                         console.log(vm.newLesson);
+                        $state.go('editCourse');
                     }
                     else{
                         console.log("Problème de véracité");

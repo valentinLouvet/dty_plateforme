@@ -5,7 +5,7 @@
         .module('objectifDtyApp')
         .controller('blocCreationController',['$state','$stateParams','Bloc', function ($state,$stateParams,Bloc) {
             var vm = this;
-            var edit=$stateParams.edit!==null;
+            var edit=$stateParams.edit==='edit';
             vm.edit=edit;
             console.log(edit)
 

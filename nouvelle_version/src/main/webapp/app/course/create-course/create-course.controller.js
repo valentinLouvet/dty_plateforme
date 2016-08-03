@@ -5,9 +5,9 @@
         .module('objectifDtyApp')
         .controller('courseCreationController', ['Bloc', 'Question', 'Response', 'Lesson',
         //'Lesson2',
-        'AlertService', 'Principal', function (Bloc, Question, Response, Lesson,
+        'AlertService', 'Principal', '$state', function (Bloc, Question, Response, Lesson,
         //Lesson2,
-        AlertService, Principal) {
+        AlertService, Principal, $state) {
 
             // Oblige à aller en haut de la page lors du chargement
             // En effet, sans ça, le bouton "add Lesson" de la page
@@ -107,8 +107,10 @@
             this.answers.push([answer1, answer2]);
             this.quizz.push(this.question);
 
+
+            // Charge tous les blocs
+            // puis toutes les leçons
             loadAll();
-            loadAllLessons();
 
             // Différentes fonctions pour ajouter/supprimer les questions/réponses
             // A NOTER : les id (index) commencent à 1
@@ -354,6 +356,14 @@
             function onSuccess(data){
                 vm.blocs=data;
                 //console.log(data);
+                // Si il n'y a aucun bloc, il va d'abord falloir créer un bloc avant de créer une leçon
+                if(vm.blocs.length == 0){
+                    console.log("Il n'y a aucun bloc ! Il faut d'abord créer un bloc avant de réaliser une leçon !");
+                    $state.go('createBloc');
+                }else{
+                    // charge toutes les lessons déjà existantes (pour incrémenter num_lesson)
+                    loadAllLessons();
+                }
             }
 
             function onError(error){
@@ -394,33 +404,6 @@
                 }
                 return num_lesson;
             }
-
-
-
-            // Recherche le numéro de la leçon qui le précède
-
-            /*
-            this.loadNumberLesson = function(id2) {
-                console.log("debug1");
-                vm.num_lesson = Lesson2.get({id:id2}, onSuccessLoadNumberLesson, onErrorLoadNumberLesson);
-                console.log("vm.num_lesson");
-                console.log(vm.num_lesson);
-                console.log("debug2");
-                //Lesson.query({},onSuccess,onError)
-            }
-
-            function onSuccessLoadNumberLesson(data){
-                //vm.lesson = data;
-                console.log("data : ");
-                console.log(data);
-
-            }
-
-            function onErrorLoadNumberLesson(error){
-                console.log("Error");
-                AlertService.error(error.data.message);
-            }
-            */
         }]);
 
 })();

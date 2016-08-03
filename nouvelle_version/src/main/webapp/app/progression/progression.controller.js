@@ -13,7 +13,6 @@
         var vm = this;
         var Blocs = [];
 
-        //vm.date_beginning_display = new Date(2016, 6);
 
         vm.floor=floor;
         vm.isDisabled=isDisabled;
@@ -23,11 +22,11 @@
         vm.isCurrent=isCurrent;
         vm.goCourse = goCourse;
 
-        // Recherche toutes les dates des leçons réalisées par le user,
-        // les place dans un tableau, incrémente lorsqu'une date apparaît
-        // plus d'une fois, et place le résultat dans data
-
         function convertDateToTimeStamp(lessons){
+            // Recherche toutes les dates des leçons réalisées par le user,
+            // les place dans un tableau, incrémente lorsqu'une date apparaît
+            // plus d'une fois, et place le résultat dans data
+
             var timestamps = {};
             var dateAux = new Date();
             for(var i = 0; i<lessons.length; i++){
@@ -44,6 +43,27 @@
             return(timestamps);
 
         }
+
+
+        function earliestDateFromLessonDone(lessons){
+            // Recherche de la date de la première leçon effectuée
+            var dateAux = new Date();
+            var dateBeginning = 9999999999000;
+            var dateMilli = 0;
+            var indexOfBeginning = 0;
+
+            for(var i = 0; i<lessons.length; i++){
+                dateAux = new Date(lessons[i].date);
+                dateMilli = dateAux.getTime();
+                if(dateMilli < dateBeginning){
+                    dateBeginning = dateMilli;
+                    indexOfBeginning = i;
+                }
+            }
+            return lessons[indexOfBeginning].date;
+        }
+
+
         function goCourse() {
             Student.query().$promise.then(function (data) {
                 vm.student = data;
@@ -63,12 +83,16 @@
                 // data displayed on the heatmap calendar
                 var d = convertDateToTimeStamp(lessons);
 
+                // calcule la date de la première leçon réalisée
+                // afin de fixer le début du calendrier
+                var dateOfBeginning = earliestDateFromLessonDone(lessons);
+
                 // heatmap calendar
                 // itemSelector important to bind the data
                 var cal = new CalHeatMap();
                 cal.init({itemSelector:"#cal-heatmap",
                  data: d,
-                  start: new Date(2016, 6) ,
+                  start: new Date(dateOfBeginning),
                    domain: 'month',
                     subDomain: 'day',
                      range: 12,

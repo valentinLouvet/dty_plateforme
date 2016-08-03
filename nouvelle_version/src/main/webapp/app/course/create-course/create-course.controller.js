@@ -355,7 +355,6 @@
 
             function onSuccess(data){
                 vm.blocs=data;
-                //console.log(data);
                 // Si il n'y a aucun bloc, il va d'abord falloir créer un bloc avant de créer une leçon
                 if(vm.blocs.length == 0){
                     console.log("Il n'y a aucun bloc ! Il faut d'abord créer un bloc avant de réaliser une leçon !");

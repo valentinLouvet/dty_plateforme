@@ -27,6 +27,7 @@
                 vm.newVeracity = false;
 
                 vm.course = courseView;
+                //vm.course.islast = vm.course.last;
 
                 vm.newContent = vm.course.cours;
                 vm.nbreLesson = vm.course.questions.length;
@@ -215,12 +216,9 @@
             vm.saveCourse = function () {
                 vm.isSaving = true;
                 if (vm.course.id !== null) {
-                    console.log(vm.course.id);
-                    console.log("vm.course.id !== null");
                     Lesson.update(vm.course, onSaveLessonSuccess, onSaveLessonError);
 
                 } else {
-                    console.log("vm.course.id == null");
                     Lesson.save(vm.course, onSaveLessonSuccess, onSaveLessonError);
                 }
                 console.log(vm.course);
@@ -242,7 +240,7 @@
             }
 
             function onSaveResponseGlobalSuccess() {
-                console.log("Sauvegarde de la réponse globale réussie")
+                console.log(vm.course)
             }
 
             function onSaveResponseGlobalError() {
@@ -312,6 +310,23 @@
             function onSaveResponseError() {
                 vm.isSaving = false;
                 console.log("error response")
+            }
+
+            vm.print = function(){
+                Lesson.save(vm.course, onSaveIsLastSuccess, onSaveIsLastError);
+            };
+
+            function onSaveIsLastSuccess() {
+                console.log(vm.course)
+            }
+
+            function onSaveIsLastError() {
+                console.log('Erreur')
+            }
+
+            vm.switchIsLast = function () {
+                vm.course.last = true;
+                console.log(vm.course)
             }
 
 

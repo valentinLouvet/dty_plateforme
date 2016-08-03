@@ -270,6 +270,7 @@
                 // Sauvegarde par la même occasion la leçon
 
                 vm.newLesson = Lesson.save(vm.newLesson, onSaveLessonSuccess, onSaveLessonError);
+                console.log(vm.newLesson)
 
             };
 

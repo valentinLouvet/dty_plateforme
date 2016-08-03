@@ -3,7 +3,7 @@
 
     angular
         .module('objectifDtyApp')
-        .controller('blocCreationController',['Bloc', function (Bloc) {
+        .controller('blocCreationController',['Bloc', '$state', function (Bloc, $state) {
             var vm = this;
 
             vm.blocs = [];
@@ -22,7 +22,8 @@
             };
 
             function onSaveBlocSuccess() {
-                console.log('Bloc creation successful')
+                console.log('Bloc creation successful');
+                $state.go('createCourse')
             }
 
             function onSaveBlocError(){

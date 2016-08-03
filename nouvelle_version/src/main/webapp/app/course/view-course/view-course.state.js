@@ -88,7 +88,6 @@
                         }
                     }).result.then(function () {
                         $state.go('viewCourse', null, {reload: true});
-                        console.log('coucou, tu veux ')
                     }, function () {
                         $state.go('^');
                     });

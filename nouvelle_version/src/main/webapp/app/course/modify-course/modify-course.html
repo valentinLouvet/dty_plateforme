@@ -1,5 +1,6 @@
 <div class="form-group">
     <div class="form-group">Here is the actual lesson:
+        <label class="pull-right"><input type="checkbox" ng-model="vm.newIsLast"> Dernière leçon </label>
         <p ng-bind-html="vm.course.cours">
         </p>
         <button class="btn btn-primary-dty" ng-click="vm.changeCourse()">
@@ -17,7 +18,7 @@
     <div ng-show="question.intitule">
         <div class="form-group">
             <span>
-                The question: {{question.intitule}}
+                Question: {{question.intitule}}
             </span>
             <button class="btn btn-primary-dty" ng-click="vm.editQuestion(vm.questions.indexOf(question))">
                 Edit question
@@ -47,12 +48,6 @@
                 <div ng-class="{correctAnswer: response.veracity, incorrectAnswer: !response.veracity}">Answer correction: {{response.correction}}</div>
             </div>
             <div class="input-group" ng-show="vm.editedQuestions[vm.questions.indexOf(question)] && response.text">
-                <!--bouton pour sayvegarder les réponses individuellement, me semble peu pertinent
-                <span class="input-group-btn">
-                    <button type="button" ng-click="vm.saveResponse(response)"
-                            class="btn btn-md btn-two-lines btn-primary-dty pull-right">Save changes</button>
-                </span>
-                -->
                 <span class="input-group-addon">
                     <input type="checkbox" ng-click="" ng-model="response.veracity" style="padding-top: 23px; padding-bottom: 23px">
                 </span>

@@ -259,7 +259,12 @@
 
             this.saveLesson = function() {
 
+
+
                 vm.isSaving = true;
+
+
+
 
                 // on incrémente le numéro de la leçon par rapport aux anciennes
                 vm.num_lesson = vm.numberLessonForNewLesson(vm.newLesson.bloc.id);
@@ -268,12 +273,27 @@
                 // Qui a créé la leçon ?
                 vm.newLesson.created_by = vm.coach;
 
-                // Lesson.save renvoie la leçon qui a été sauvegardée en lui donnant un id
-                // Sauvegarde par la même occasion la leçon
 
-                vm.newLesson = Lesson.save(vm.newLesson, onSaveLessonSuccess, onSaveLessonError);
-                console.log(vm.newLesson)
+                if(vm.newLesson.level != null && vm.newLesson.bloc != null && vm.newLesson.title != null && vm.newLesson.cours != null
+                && areQuestionFilled(vm.quizz) && areAnswersFilled(vm.answers)
+                && vm.newLesson.title != "" && vm.newLesson.cours != ""){
 
+                    if(checkOneAndOnlyOneVeracity(vm.answers)){
+                        // Lesson.save renvoie la leçon qui a été sauvegardée en lui donnant un id
+                        // Sauvegarde par la même occasion la leçon
+
+                        vm.newLesson = Lesson.save(vm.newLesson, onSaveLessonSuccess, onSaveLessonError);
+                        console.log("Save..");
+                        console.log(vm.newLesson);
+                    }
+                    else{
+                        console.log("Problème de véracité");
+                        vm.isSaving = false;
+                    }
+                }else{
+                    console.log("Problème de champs non remplis");
+                    vm.isSaving = false;
+                }
             };
 
             this.saveQuestion = function(indexOfQuestion){
@@ -403,6 +423,58 @@
                 }
                 return num_lesson;
             }
+
+            var areQuestionFilled = function(quizz){
+                var filled = true;
+
+                for(var i = 0; i < quizz.length; i++){
+                    if(quizz[i].intitule == null || quizz[i].correction == null
+                    || quizz[i].intitule == "" || quizz[i].correction == ""){
+                        filled = false;
+                    }
+                }
+
+                return filled;
+            }
+
+            var areAnswersFilled = function(answers){
+                var filled = true;
+
+                for(var i = 0; i < answers.length; i++){
+                    for(var j = 0; j < answers[i].length; j++){
+                        if(answers[i][j].text == null || answers[i][j].correction == null
+                        || answers[i][j].text == "" || answers[i][j].correction == ""){
+                            filled = false;
+                        }
+                    }
+                }
+
+                return filled;
+            }
+
+            var checkOneAndOnlyOneVeracity = function(answers){
+
+                var numberOfTrueAnswers = 0;
+                var checkVeracity = true;
+
+                for(var i = 0; i < answers.length; i++){
+                    numberOfTrueAnswers = 0;
+                    for(var j = 0; j < answers[i].length; j++){
+                        if(answers[i][j].veracity){
+                            numberOfTrueAnswers ++;
+                        }
+                    }
+                    if(numberOfTrueAnswers != 1){
+                        checkVeracity = false;
+                    }
+                }
+
+                return checkVeracity;
+
+
+            }
+
+
         }]);
 
 })();

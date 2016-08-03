@@ -42,9 +42,9 @@
         vm.byteSize = DataUtils.byteSize;
         vm.openFile = DataUtils.openFile;
         vm.save = save;
-        vm.coaches = Coach.query();
-        vm.blocs = Bloc.query();
-        vm.questions = Question.query();
+        vm.coaches = Coach.query({page: vm.page, size: 10000});
+        vm.blocs = Bloc.query({page: vm.page, size: 10000});
+        vm.questions = Question.query({page: vm.page, size: 10000});
 
         $scope.editorOptions = {
             // settings more at http://docs.ckeditor.com/#!/guide/dev_configuration
@@ -74,17 +74,17 @@
                 var tout2 = Lesson.query();
                          tout2.$promise.then(function(data){
                                         for (var i = 0; i < data.length; i++) {
-                                        console.log(data[i].bloc);
-                                        console.log(vm.lesson.bloc);
-                                        if((data[i].num_lesson === vm.lesson.num_lesson) && (data[i].bloc.id == vm.lesson.bloc.id)){
-                                        isPossible = false;
-                                     }//Changed data.data.topics to data.topics
-                                }
-                                if(isPossible){
-                                       Lesson.save(vm.lesson, onSaveSuccess, onSaveError);
-                                } else { Alert2Service.error("This lesson number already exists for this bloc. Please enter another number");
-                                         vm.isSaving = false;}
-                                });
+                                            console.log(data[i].bloc);
+                                            console.log(vm.lesson.bloc);
+                                            if((data[i].num_lesson === vm.lesson.num_lesson) && (data[i].bloc.id == vm.lesson.bloc.id)){
+                                                isPossible = false;
+                                            }//Changed data.data.topics to data.topics
+                                        }
+                                        if(isPossible){
+                                               Lesson.save(vm.lesson, onSaveSuccess, onSaveError);
+                                        } else { Alert2Service.error("This lesson number already exists for this bloc. Please enter another number");
+                                                 vm.isSaving = false;}
+                                        });
             }
         }
 

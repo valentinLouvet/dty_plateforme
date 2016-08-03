@@ -13,7 +13,9 @@
 
 
             function loadAll () {
-                BlocsWid.get({},onSuccess,onError)
+                // {page: vm.page, size: 10000} nécessaire pour charger tous les blocs
+                // 10000 est une marge haute (on est sûr qu'il y aura moins de 10000 blocs à charger)
+                BlocsWid.get({page: vm.page, size: 10000},onSuccess,onError)
             }
 
             function onSuccess(data){

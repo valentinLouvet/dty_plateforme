@@ -21,7 +21,7 @@
             vm.student = data;
 
         });
-        Lesson_done.query().$promise.then(function (data) {
+        Lesson_done.query({page: vm.page, size: 10000}).$promise.then(function (data) {
             vm.lesson_dones = data;
             for (var i = 0; i < vm.lesson_dones.length; i++) {
                 if (vm.lesson_dones[i].lessons[0].id == vm.lesson.id) {

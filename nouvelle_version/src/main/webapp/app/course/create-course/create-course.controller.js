@@ -333,8 +333,9 @@
             // Recherche la liste des blocs dans la BdD
 
             function loadAll () {
-
-                Bloc.query({},onSuccess,onError)
+                // {page: vm.page, size: 10000} nécessaire pour charger tous les blocs
+                // 10000 est une marge haute (on est sûr qu'il y aura moins de 10000 blocs à charger)
+                Bloc.query({page: vm.page, size: 10000},onSuccess,onError)
             }
 
             function onSuccess(data){
@@ -352,6 +353,8 @@
                 // En effet, par défaut, size est à 20, et le query ne charge que 20 leçons...
                 // cf lesson.controller.js et lesson.html pour toutes les obtenir (mais c'est
                 // plus long à implémenter
+
+                // On a besoin de toutes les leçon pour pouvoir incrémenter l'attribut num_lesson
 
                 Lesson.query({page: vm.page, size: 10000},onSuccessLoadAllLessons, onErrorLoadAllLessons);
             }

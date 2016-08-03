@@ -95,6 +95,8 @@
                 console.log("lesson_done:", lessons[i]);
                 var lesson_done = lessons[i].lessons[0].id;
 
+
+
                 IsBlocInBlocs(bloc.id, Blocs, function (isIn) {
                     if (!(isIn.res)) {
                         var res = {
@@ -108,9 +110,20 @@
                     }
                     vm.blocs = tri(Blocs);
                 });
-
             }
-        }
+
+            IsBlocInBlocs(vm.student.todo_lesson.bloc.id,Blocs,function(isIn){
+                if(!(isIn.res)){
+                    var res={
+                        bloc:vm.student.todo_lesson.bloc,
+                        lesson_done:[]
+                    };
+                    Blocs.push(res);
+                }
+            })
+    }
+
+
 
         //regarde si un bloc du même identifiant existe deja dans le tableau de blocs.
 
@@ -146,8 +159,9 @@
         }
 
         function isDisabled(lessonId, lesson_done) {
+            var isTodo=(vm.student.todo_lesson.id===lessonId);
 
-            return lesson_done.indexOf(lessonId) === -1;
+            return (lesson_done.indexOf(lessonId) === -1)&&(!isTodo);
 
         }
         // changement de page
@@ -186,9 +200,6 @@
             vm.current=value;
             console.log(value)
         }
-
-
-
 
     }
 

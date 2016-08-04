@@ -3,7 +3,12 @@ package com.dty.objectif_dty.web.rest;
 import com.codahale.metrics.annotation.Timed;
 import com.dty.objectif_dty.domain.Bloc;
 import com.dty.objectif_dty.domain.Lesson;
+import com.dty.objectif_dty.domain.Question;
+import com.dty.objectif_dty.domain.Response;
 import com.dty.objectif_dty.repository.BlocRepository;
+import com.dty.objectif_dty.repository.LessonRepository;
+import com.dty.objectif_dty.repository.QuestionRepository;
+import com.dty.objectif_dty.repository.ResponseRepository;
 import com.dty.objectif_dty.web.rest.util.HeaderUtil;
 import com.dty.objectif_dty.web.rest.util.PaginationUtil;
 import org.slf4j.Logger;
@@ -19,6 +24,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.inject.Inject;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -34,6 +40,15 @@ public class BlocResource {
 
     @Inject
     private BlocRepository blocRepository;
+    @Inject
+    private LessonRepository lessonRepository;
+
+    @Inject
+    private QuestionRepository questionRepository;
+
+    @Inject
+    private ResponseRepository responseRepository;
+
 
     /**
      * POST  /blocs : Create a new bloc.
@@ -161,6 +176,30 @@ public class BlocResource {
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
     public ResponseEntity<Void> deleteBloc(@PathVariable Long id) {
+        Bloc bloc = blocRepository.findOne(id);
+        for(Iterator<Lesson> itL = bloc.getLessons().iterator(); itL.hasNext();){
+            Lesson lesson = itL.next();
+            for(Iterator<Question> it = lesson.getQuestions().iterator(); it.hasNext();){
+                Question question = it.next();
+
+                for(Iterator<Response> itR = question.getResponses().iterator(); itR.hasNext();){
+                    Response response = itR.next();
+                    log.debug("REST request to delete Response : {}", response.getId());
+                    responseRepository.delete(response.getId());
+                }
+
+                log.debug("REST request to delete Question : {}", question.getId());
+                questionRepository.delete(question.getId());
+
+            }
+            log.debug("REST request to delete Lesson : {}", lesson.getId());
+            lessonRepository.delete(lesson.getId());
+
+        }
+
+
+
+
         log.debug("REST request to delete Bloc : {}", id);
         blocRepository.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert("bloc", id.toString())).build();

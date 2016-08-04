@@ -1,5 +1,5 @@
 <div class="container">
-
+    <jhi-alert></jhi-alert>
     <h1 class="page-header-dty">Create a new lesson</h1>
 
     <div class="form-group col-xs-6 col-sm-6 pull-left" style="margin-top: 40px">
@@ -35,12 +35,12 @@
 
         <div class="form-group">
             <label>Lesson Title</label>
-            <input type="text" placeholder="Enter Lesson Title here..." class="form-control" ng-model="vm.newLesson.title">
+            <input required type="text" placeholder="Enter Lesson Title here..." class="form-control" ng-model="vm.newLesson.title">
         </div>
 
         <div class="form-group">
             <label>Enter your lesson</label>
-            <textarea data-ck-editor placeholder="Enter Lesson here..." rows="10" class="form-control" ng-model="vm.newLesson.cours"></textarea>
+            <textarea required data-ck-editor placeholder="Enter Lesson here..." rows="10" class="form-control" ng-model="vm.newLesson.cours"></textarea>
         </div>
 
         <div class="form-group">

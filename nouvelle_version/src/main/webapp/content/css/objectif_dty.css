@@ -8,6 +8,7 @@
 
         max-width:100%;
         height:auto;
+        max-height :350px !important;
 
     }
 }
@@ -18,13 +19,16 @@
 
         max-width:100%;
         height:auto;
+        max-height:350px !important;
     }
 }
 
 @media (max-width : 360px) {
   .fixView {display:block;
             max-width:100%;
-            height:auto;}
+            height:auto;
+             max-height:350px !important;
+             }
 }
 
 #ImgScore {

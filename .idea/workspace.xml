@@ -4,12 +4,10 @@
     <list default="true" id="0bbf8ee4-d9ab-448d-8116-1974e2b7f9af" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/resources/.h2.server.properties" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/resources/.h2.server.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/badge/1-badge.html" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/badge/1-badge.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/view-course.controller.js" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/view-course.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/progression/progression.controller.js" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/progression/progression.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/progression/progression.html" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/progression/progression.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.controller.js" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.html" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/choosecourse.html" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/choosecourse.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/content/css/objectif_dty.css" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/content/css/objectif_dty.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/index.html" afterPath="$PROJECT_DIR$/nouvelle_version/src/main/webapp/index.html" />
     </list>
     <ignored path="dty_plateforme.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,11 +27,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MyBadge.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/badge/MyBadge.controller.js">
+      <file leaf-file-name="create-course.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+            <state relative-caret-position="15">
+              <caret line="1" column="8" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lesson.controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/lesson/lesson.controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="49" column="55" selection-start-line="49" selection-start-column="15" selection-end-line="49" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -42,62 +50,38 @@
       <file leaf-file-name="view-course.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/view-course.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
+            <state relative-caret-position="96">
               <caret line="56" column="9" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="objectif_dty.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/content/css/objectif_dty.css">
+      <file leaf-file-name="choosecourse.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/choosecourse.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+            <state relative-caret-position="135">
+              <caret line="9" column="60" selection-start-line="9" selection-start-column="60" selection-end-line="9" selection-end-column="60" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view-course.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/view-course.controller.js">
+      <file leaf-file-name="choosecourse.controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/choosecourse.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-135">
-              <caret line="208" column="44" selection-start-line="208" selection-start-column="44" selection-end-line="208" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="progression.controller.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/progression/progression.controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="268" column="0" selection-start-line="268" selection-start-column="0" selection-end-line="268" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="progression.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/progression/progression.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="81" column="129" selection-start-line="81" selection-start-column="129" selection-end-line="81" selection-end-column="129" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#1;n#div#0;n#div#1;n#div#0;n#div#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="student.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/student/student.controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="-1080">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create-course.controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1410">
+              <caret line="295" column="77" selection-start-line="295" selection-start-column="77" selection-end-line="295" selection-end-column="77" />
               <folding />
             </state>
           </provider>
@@ -106,18 +90,18 @@
       <file leaf-file-name="view-course.state.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/view-course.state.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
+            <state relative-caret-position="-600">
               <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BadgeResource.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/java/com/dty/objectif_dty/web/rest/BadgeResource.java">
+      <file leaf-file-name="objectif_dty.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/content/css/objectif_dty.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1770">
-              <caret line="118" column="5" selection-start-line="118" selection-start-column="5" selection-end-line="118" selection-end-column="5" />
+            <state relative-caret-position="390">
+              <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -146,7 +130,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/html/login.html" />
         <option value="$PROJECT_DIR$/src/html/templates/footer.html" />
         <option value="$PROJECT_DIR$/src/html/home.html" />
         <option value="$PROJECT_DIR$/src/html/intro.html" />
@@ -180,11 +163,9 @@
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/config.js" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/lesson/lesson-dialog.controller.js" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.state.js" />
-        <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.controller.js" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/modify-course/modify-course.html" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/resources/config/liquibase/changelog/20160729102400_changelog.xml" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/resources/config/liquibase/master.xml" />
-        <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.html" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/view-course.html" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/badge/badge.controller.js" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/badge/MyBadge.controller.js" />
@@ -193,10 +174,13 @@
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/java/com/dty/objectif_dty/web/rest/BadgeResource.java" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/badge/1-badge.html" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/view-course.controller.js" />
-        <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/content/css/objectif_dty.css" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/index.html" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/progression/progression.html" />
         <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/progression/progression.controller.js" />
+        <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.html" />
+        <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.controller.js" />
+        <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/content/css/objectif_dty.css" />
+        <option value="$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/choosecourse.html" />
       </list>
     </option>
   </component>
@@ -467,78 +451,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="entities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Objective" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Objective" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nouvelle_version" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="entities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="student" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Objective" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Objective" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nouvelle_version" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="course" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -690,8 +602,9 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/edit-course/edit-course.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/webapp/content/css/objectif_dty.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/classes/production/objectif-dty/.h2.server.properties</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/java/com/dty/objectif_dty/web/rest/QuestionResource.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/nouvelle_version/src/main/resources/config/liquibase/changelog/20160801102400_changelog.xml</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -1055,13 +968,6 @@
       <workItem from="1469559030196" duration="261000" />
       <workItem from="1469898619947" duration="1293000" />
     </task>
-    <task id="LOCAL-00039" summary="login et signup angular-cookie">
-      <created>1467889835775</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1467889835775</updated>
-    </task>
     <task id="LOCAL-00040" summary="jolis boutons">
       <created>1467890102048</created>
       <option name="number" value="00040" />
@@ -1398,7 +1304,14 @@
       <option name="project" value="LOCAL" />
       <updated>1470147902855</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="Les etoiles marchent dans progression">
+      <created>1470301325288</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1470301325288</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -1406,10 +1319,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="709" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09076175" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -1429,7 +1343,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09076175" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3240372" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1465,7 +1378,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="réorganisation des fichiers" />
     <MESSAGE value="nouveaux onglets pour le student&#10;" />
     <MESSAGE value="redirection fonctionnelle depuis le log in" />
     <MESSAGE value="redirection fonctionnelle depuis le log in avec modif nav-bar sans reload obligatoire" />
@@ -1490,7 +1402,8 @@
     <MESSAGE value="Maintenant ça ne bug plus quand il y a null en note init et note max &#10;&#10;De même quand on subit ses réponses et qu'il n'y en a pas" />
     <MESSAGE value="Maintenant c'est bon" />
     <MESSAGE value="Les badges se révèlent si c'est la denrière lesson.&#10;&#10;L'image du badge est le logo du bloc, verifier qu'il y en a bien un, et le texte est en fonction du bloc name." />
-    <option name="LAST_COMMIT_MESSAGE" value="Les badges se révèlent si c'est la denrière lesson.&#10;&#10;L'image du badge est le logo du bloc, verifier qu'il y en a bien un, et le texte est en fonction du bloc name." />
+    <MESSAGE value="Les etoiles marchent dans progression" />
+    <option name="LAST_COMMIT_MESSAGE" value="Les etoiles marchent dans progression" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1501,28 +1414,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckupload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/ckeditor/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/lesson/lesson.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/misc.xml" />
     <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/bloc/bloc-dialog.controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-15">
@@ -1562,6 +1453,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1654,20 +1546,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="245" column="0" selection-start-line="245" selection-start-column="0" selection-end-line="245" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -1811,38 +1689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/view-course.state.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/content/css/objectif_dty.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/view-course.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="56" column="9" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/view-course.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-135">
-          <caret line="208" column="44" selection-start-line="208" selection-start-column="44" selection-end-line="208" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/progression/progression.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="111">
@@ -1859,6 +1705,86 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="268" column="0" selection-start-line="268" selection-start-column="0" selection-end-line="268" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/view-course.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-135">
+          <caret line="208" column="44" selection-start-line="208" selection-start-column="44" selection-end-line="208" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/lesson/lessons.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="27" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/entities/lesson/lesson.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="49" column="55" selection-start-line="49" selection-start-column="15" selection-end-line="49" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="8" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/view-course.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="56" column="9" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/create-course/create-course.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1410">
+          <caret line="295" column="77" selection-start-line="295" selection-start-column="77" selection-end-line="295" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/choosecourse.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1080">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/view-course.state.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-600">
+          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/content/css/objectif_dty.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nouvelle_version/src/main/webapp/app/course/view-course/choosecourse.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="60" selection-start-line="9" selection-start-column="60" selection-end-line="9" selection-end-column="60" />
           <folding />
         </state>
       </provider>

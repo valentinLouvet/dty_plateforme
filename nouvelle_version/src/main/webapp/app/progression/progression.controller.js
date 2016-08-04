@@ -91,7 +91,7 @@
 
                 // heatmap calendar
                 // itemSelector important to bind the data
-                var cal = new CalHeatMap();
+               /* var cal = new CalHeatMap();
                 cal.init({
                     itemSelector: "#cal-heatmap",
                     data: d,
@@ -107,7 +107,7 @@
                         max: "#87102c",
                         empty: "white"
                     }
-                });
+                }); */
 
                 // Regroupe les leçons par bloc
                 Bloc_done(lessons);

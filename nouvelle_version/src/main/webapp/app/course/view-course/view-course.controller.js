@@ -41,11 +41,12 @@
                     }
                 }
 
-                if(vm.lesson_dones[i].date = Date.now()){
+                if(vm.lesson_dones[i].date = Date.now() ){
                     vm.nbLessonDoneToday ++;
                 }
             }
-            if(vm.nbLessonDoneToday>=5){
+            console.log(vm.nbLessonDoneToday);
+            if(vm.nbLessonDoneToday>4 && vm.lessonDoneNew){
                 $state.go("tooMuchLesson")
             }
 

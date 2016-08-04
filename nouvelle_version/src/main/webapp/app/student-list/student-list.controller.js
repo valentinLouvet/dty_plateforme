@@ -10,9 +10,10 @@
     function studentListController (AllStudent,$state,Statistics) {
         var vm = this;
 
-        AllStudent.query().$promise.then(function(data){
-            vm.student=data;
-            console.log(data)
-        })
+       Statistics.getStudents().then(function(data){
+           vm.student=data;
+
+           Statistics.LessonDones(vm.student[0].id)
+       })
     }
 })();

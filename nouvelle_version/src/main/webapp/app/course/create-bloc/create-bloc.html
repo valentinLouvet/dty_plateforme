@@ -11,7 +11,7 @@
 
     <div class="form-group">
         <label>Enter your bloc description</label>
-        <textarea placeholder="Enter Lesson here..." rows="10" class="form-control" ng-model="vm.newBloc.description"></textarea>
+        <textarea placeholder="Enter description here..." rows="5" class="form-control" ng-model="vm.newBloc.description"></textarea>
     </div>
 
     <div class="form-group">
@@ -20,6 +20,13 @@
         <select required class="form-control" id="field_bloc" name="bloc" ng-model="vm.newBloc.is_son_of" ng-options="bloc as bloc.name for bloc in vm.blocs track by bloc.id">
             <option value=""></option>
         </select>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label" for="field_logo">Logo</label>
+        <input type="text" class="form-control" name="logo" id="field_logo"
+               ng-model="vm.newBloc.logo"
+        />
     </div>
 
     <div class="form-group">

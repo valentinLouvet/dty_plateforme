@@ -906,3 +906,8 @@ img {
     margin-right: 2%;
 }
 
+.thumbnail{
+    max-width: 200px;
+    /*max-height: 150px;*/
+}
+

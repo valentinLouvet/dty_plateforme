@@ -3,7 +3,7 @@
 
     angular
         .module('objectifDtyApp')
-        .controller('blocCreationController',['$state','flow','$stateParams','Bloc','AlertService' function ($state,flow,$stateParams,Bloc,AlertService) {
+        .controller('blocCreationController',['$state','$stateParams','Bloc','AlertService', function ($state,$stateParams,Bloc,AlertService) {
             var vm = this;
             var edit=$stateParams.edit==='edit';
             vm.edit=edit;

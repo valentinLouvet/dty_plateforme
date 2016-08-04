@@ -288,11 +288,12 @@
                         $state.go('editCourse');
                     }
                     else{
+                        AlertService.error("Trop de bonnes réponses à une même question !");
                         console.log("Problème de véracité");
                         vm.isSaving = false;
                     }
                 }else{
-                    console.log("Problème de champs non remplis");
+                    AlertService.error("Tousles champs ne sont pas remplis !");
                     vm.isSaving = false;
                 }
             };

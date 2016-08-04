@@ -3,11 +3,11 @@
 
     angular
         .module('objectifDtyApp')
-        .controller('blocCreationController',['$state','$stateParams','Bloc', function ($state,$stateParams,Bloc) {
+        .controller('blocCreationController',['$state','flow','$stateParams','Bloc', function ($state,flow,$stateParams,Bloc) {
             var vm = this;
             var edit=$stateParams.edit==='edit';
             vm.edit=edit;
-            console.log(edit)
+            console.log(edit);
 
             vm.blocs = [];
             if(edit) {
@@ -22,8 +22,7 @@
                         is_son_of: data.is_son_of,
                     }
                 })
-            }else
-                {
+            }else{
                     vm.newBloc = {
                         id: null,
                         name: "",

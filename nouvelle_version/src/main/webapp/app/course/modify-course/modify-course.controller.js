@@ -21,10 +21,12 @@
                 vm.questions = [];
                 vm.responses = [];
                 vm.newIntitule = [];
+                vm.newQuestionCorrection = "";
                 vm.addingAnswer = [];
                 vm.newText = "";
                 vm.newCorrection = "";
                 vm.newVeracity = false;
+                vm.compteurQuestion = 0;
 
                 vm.course = courseView;
 
@@ -79,6 +81,7 @@
                 var newQuestion = vm.questions[0];
                 newQuestion.id = null;
                 newQuestion.intitule = vm.newIntitule;
+                newQuestion.correction = vm.newQuestionCorrection;
                 console.log(newQuestion);
                 Question.save(newQuestion, onSaveQuestionResponseSuccess, onSaveQuestionError);
             };
@@ -90,16 +93,22 @@
                 var newQuestionAnswers = [];
                 for (var i = 0; i < vm.newAnswers.length; i++) {
                     newQuestionAnswers.push(vm.responses[0][0]);
-                    newQuestionAnswers[i].text = vm.newAnswers[i].text;
-                    newQuestionAnswers[i].question = newQuestion;
+                    newQuestionAnswers[i] = vm.newAnswers[i];
                     newQuestionAnswers[i].id = null;
+                    newQuestionAnswers[i].question = newQuestion;
                     console.log(newQuestionAnswers[i]);
-                    Response.save(newQuestionAnswers[i], onSaveResponseSuccess, onSaveResponseError)
+                    Response.save(newQuestionAnswers[i], onSaveResponseCompteurSuccess, onSaveResponseError)
+
                 }
                 vm.isSaving = false;
                 console.log("Nouvelle Question créée");
                 $state.go($state.current, {}, {reload: true});
                 vm.initialize()
+            }
+
+            function onSaveResponseCompteurSuccess(response){
+                vm.compteurQuestion++;
+                console.log(response)
             }
 
 
@@ -303,9 +312,9 @@
                 console.log(response);
             };
 
-            function onSaveResponseSuccess() {
+            function onSaveResponseSuccess(response) {
                 vm.isSaving = false;
-                console.log("Nouvelle réponse créée")
+                console.log(response)
             }
 
             function onSaveResponseError() {

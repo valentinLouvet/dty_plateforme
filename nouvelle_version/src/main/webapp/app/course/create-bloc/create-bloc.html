@@ -21,9 +21,16 @@
         </select>
     </div>
 
+    <div flow-init>
+        <input type="file" flow-btn />
+        <input type="file" flow-btn flow-directory />
+        Input OR Other element as upload button
+        <span flow-btn>Upload File</span>
+    </div>
+
     <div class="form-group">
         <button class="btn btn-primary-dty-inverse" ng-click="vm.saveBloc()">Validate bloc</button>
-        <button class="btn btn btn-primary-dty" ui-sref="editCourse"> Back </button>
+        <button class="btn btn btn-primary-dty" ui-sref="editCourse" ng-show="vm.edit"> Back </button>
     </div>
 
 </div>

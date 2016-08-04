@@ -16,7 +16,10 @@
                 </option>
 
             </select>
-            <div ng-show="vm.scoreCalc"  ng-class="{correctAnswer: question.answerchoosen.veracity, incorrectAnswer: !question.answerchoosen.veracity}">{{question.answerchoosen.correction}}</div>
+            <div ng-show="vm.scoreCalc"
+                 ng-class="{correctAnswer: question.answerchoosen.veracity, incorrectAnswer: !question.answerchoosen.veracity}">
+                {{question.answerchoosen.correction}}
+            </div>
             <p style="color: #0000ff" ng-show="vm.scoreCalc">{{question.correction}}</p>
         </li>
     </ul>
@@ -56,7 +59,7 @@
 
     <div>
         <button type="submit"
-                ng-show="vm.chooseNewBloc"
+                ng-show="vm.chooseNewBloc || (!vm.lessonDoneNew && vm.isLastLessonDone)"
                 ui-sref="choosecourse"
                 class="btn btn-primary-dty">
             Choose a new bloc!

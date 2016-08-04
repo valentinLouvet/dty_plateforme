@@ -6,57 +6,57 @@
         .controller('progressionController', progressionController)
 
 
-    progressionController.$inject = ['Student', '$scope', 'Principal', 'LoginService', 'Lesson_done', 'Lesson_doneWid','$state'];
+    progressionController.$inject = ['Student', 'Principal', 'Lesson_doneWid','$state'];
 
-    function progressionController(Student, $scope, Principal, LoginService, Lesson_done, Lesson_doneWid, $state) {
+    function progressionController(Student, Principal, Lesson_doneWid, $state) {
 
         var vm = this;
         var Blocs = [];
 
 
-        vm.floor=floor;
-        vm.isDisabled=isDisabled;
-        vm.goToLesson=goToLesson;
-        vm.current=null;
-        vm.setCurrent=setCurrent;
-        vm.isCurrent=isCurrent;
+        vm.floor = floor;
+        vm.isDisabled = isDisabled;
+        vm.goToLesson = goToLesson;
+        vm.current = null;
+        vm.setCurrent = setCurrent;
+        vm.isCurrent = isCurrent;
         vm.goCourse = goCourse;
-        vm.convertScore=convertScore;
+        vm.convertScore = convertScore;
 
-        function convertDateToTimeStamp(lessons){
+        function convertDateToTimeStamp(lessons) {
             // Recherche toutes les dates des leçons réalisées par le user,
             // les place dans un tableau, incrémente lorsqu'une date apparaît
             // plus d'une fois, et place le résultat dans data
 
             var timestamps = {};
             var dateAux = new Date();
-            for(var i = 0; i<lessons.length; i++){
+            for (var i = 0; i < lessons.length; i++) {
                 dateAux = new Date(lessons[i].date);
                 console.log(dateAux.getTime());
-                if(timestamps[dateAux.getTime()/1000.0] != null){
-                    timestamps[dateAux.getTime()/1000.0] ++;
+                if (timestamps[dateAux.getTime() / 1000.0] != null) {
+                    timestamps[dateAux.getTime() / 1000.0]++;
                 }
-                else{
-                    timestamps[dateAux.getTime()/1000.0] = 1;
+                else {
+                    timestamps[dateAux.getTime() / 1000.0] = 1;
                 }
             }
 
-            return(timestamps);
+            return (timestamps);
 
         }
 
 
-        function earliestDateFromLessonDone(lessons){
+        function earliestDateFromLessonDone(lessons) {
             // Recherche de la date de la première leçon effectuée
             var dateAux = new Date();
             var dateBeginning = 9999999999000;
             var dateMilli = 0;
             var indexOfBeginning = 0;
 
-            for(var i = 0; i<lessons.length; i++){
+            for (var i = 0; i < lessons.length; i++) {
                 dateAux = new Date(lessons[i].date);
                 dateMilli = dateAux.getTime();
-                if(dateMilli < dateBeginning){
+                if (dateMilli < dateBeginning) {
                     dateBeginning = dateMilli;
                     indexOfBeginning = i;
                 }
@@ -79,8 +79,8 @@
             vm.user = data.user;
 
             // Request to get the lessons
-            Lesson_doneWid.query({},function(lessons){
-                vm.lessonDones=lessons;
+            Lesson_doneWid.query({}, function (lessons) {
+                vm.lessonDones = lessons;
 
                 // data displayed on the heatmap calendar
                 var d = convertDateToTimeStamp(lessons);
@@ -92,27 +92,28 @@
                 // heatmap calendar
                 // itemSelector important to bind the data
                 var cal = new CalHeatMap();
-                cal.init({itemSelector:"#cal-heatmap",
-                 data: d,
-                  start: new Date(dateOfBeginning),
-                   domain: 'month',
+                cal.init({
+                    itemSelector: "#cal-heatmap",
+                    data: d,
+                    start: new Date(dateOfBeginning),
+                    domain: 'month',
                     subDomain: 'day',
-                     range: 12,
-                      cellSize : 15,
-                       domainMargin : [0, 1, 1, 1],
-                        legend: [1, 2, 3, 4],
-                         legendColors: {min:"#f5f5f5",
-                                        max:"#87102c",
-                                         empty:"white"}
-                                                        });
+                    range: 12,
+                    cellSize: 15,
+                    domainMargin: [0, 1, 1, 1],
+                    legend: [1, 2, 3, 4],
+                    legendColors: {
+                        min: "#f5f5f5",
+                        max: "#87102c",
+                        empty: "white"
+                    }
+                });
 
                 // Regroupe les leçons par bloc
                 Bloc_done(lessons);
             });
 
         });
-
-
 
 
         function Bloc_done(lessons) {
@@ -131,7 +132,6 @@
                 var lesson_done = lessons[i].lessons[0].id;
 
 
-
                 IsBlocInBlocs(bloc.id, Blocs, function (isIn) {
                     if (!(isIn.res)) {
                         var res = {
@@ -147,22 +147,21 @@
                 });
             }
 
-            IsBlocInBlocs(vm.student.todo_lesson.bloc.id,Blocs,function(isIn){
-                if(!(isIn.res)){
-                    var res={
-                        bloc:vm.student.todo_lesson.bloc,
-                        lesson_done:[]
+            IsBlocInBlocs(vm.student.todo_lesson.bloc.id, Blocs, function (isIn) {
+                if (!(isIn.res)) {
+                    var res = {
+                        bloc: vm.student.todo_lesson.bloc,
+                        lesson_done: []
                     };
                     Blocs.push(res);
                 }
             })
-    }
-
+        }
 
 
         //regarde si un bloc du même identifiant existe deja dans le tableau de blocs.
 
-        function IsBlocInBlocs(Id,Array,callback) {
+        function IsBlocInBlocs(Id, Array, callback) {
             var res = false;
             var num = -1;
             var done = false;
@@ -189,7 +188,7 @@
 
         //partie entière
 
-        function floor(value){
+        function floor(value) {
             return Math.floor(value);
         }
 
@@ -198,31 +197,28 @@
             var isDis = (lesson_done.indexOf(lessonId) === -1) && (!isTodo);
             if (!isDis) {
                 var index = findByLessonId(lessonId);
-                var score=vm.lessonDones[index].note_max;
+                var score = vm.lessonDones[index].note_max;
             }
 
-            return{isDisabled:isDis,score:score}
+            return {isDisabled: isDis, score: score}
         }
 
-            function findByLessonId(id){
-                var done=false;
-                for(var i=0;i<vm.lessonDones.length;i++) {
-                    if(vm.lessonDones[i].lessons[0].id === id){
-                        var num=i;
-                    }
-
-                    done = (i === vm.lessonDones.length-1);
-                    if(done){
-                        return num
-                    }
+        function findByLessonId(id) {
+            var done = false;
+            for (var i = 0; i < vm.lessonDones.length; i++) {
+                if (vm.lessonDones[i].lessons[0].id === id) {
+                    var num = i;
                 }
 
-
-
+                done = (i === vm.lessonDones.length - 1);
+                if (done) {
+                    return num
+                }
             }
 
 
         }
+
         // changement de page
 
 
@@ -245,59 +241,62 @@
                 if (i === Array.length - 1) {
                     done = true
                 }
-                if(done){return Array}
+                if (done) {
+                    return Array
+                }
             }
         }
 
         //value : bloc
 
-        function isCurrent(value){
-            return vm.current.bloc.id===value.bloc.id;
+        function isCurrent(value) {
+            return vm.current.bloc.id === value.bloc.id;
         }
 
-        function setCurrent(value){
-            vm.current=value;
+        function setCurrent(value) {
+            vm.current = value;
             console.log(value)
         }
 
         //conversion score en etoiles
 
-    function convertScore(score) {
+        function convertScore(score) {
 
-        var Note = 0;
+            var Note = 0;
 
-        switch (Math.floor((score) / 20)) {
+            switch (Math.floor((score) / 20)) {
 
 
-            case 0 :
-                Note = 0;
-                break;
-            case 1 :
-                Note = 1;
-                break;
-            case 2 :
-                Note = 2;
-                break;
-            case 3 :
-                Note = 3;
-                break;
-            case 4 :
-                Note = 4;
-                break;
-            case 5 :
-                Note = 5;
-                break;
+                case 0 :
+                    Note = 0;
+                    break;
+                case 1 :
+                    Note = 1;
+                    break;
+                case 2 :
+                    Note = 2;
+                    break;
+                case 3 :
+                    Note = 3;
+                    break;
+                case 4 :
+                    Note = 4;
+                    break;
+                case 5 :
+                    Note = 5;
+                    break;
+            }
+            var etoile = "";
+
+            for (var i = 0; i < Note; i++) {
+                etoile = etoile + "&#9733;";
+            }
+            for (var j = 0; j < 5 - Note; j++) {
+                etoile = etoile + "&#9734;";
+            }
+
+            return etoile;
         }
-        var etoile = "";
-
-        for (var i = 0; i < Note; i++) {
-            etoile = etoile + "&#9733;";
-        }
-        for (var j = 0; j < 5 - Note; j++) {
-            etoile = etoile + "&#9734;";
-        }
-
-        return etoile;
     }
 
 })();

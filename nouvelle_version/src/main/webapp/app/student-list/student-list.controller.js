@@ -13,7 +13,7 @@
        Statistics.getStudents().then(function(data){
            vm.student=data;
 
-           Statistics.LessonDones(vm.student[0].id)
+           console.log(Statistics.Assiduity(data[0].id))
        })
     }
 })();

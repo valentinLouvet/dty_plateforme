@@ -9,7 +9,7 @@ Stats.$inject=['$q','Lesson_doneWid','AllStudent'];
         var _students;
         return {
             'getStudents': getStudents,
-            //'Assiduity':Assiduity,
+            'Assiduity':Assiduity,
             'LessonDones':LessonDones,
             //'lastLesson':LastLesson,
             //'ConnexionDate':ConnexionDate
@@ -44,15 +44,68 @@ Stats.$inject=['$q','Lesson_doneWid','AllStudent'];
             return deferred.promise
         }
 
-        function assiduity(id) {
+        function Assiduity(id){
             Lesson_doneWid.get(id).$promise.then(function(data) {
-                var Dates=[];
-                var done=false;
-                for(var i=0;i<data.length;i++){
-                    Dates.push(data[i].date.getTime());
-                    if(i===data.length-1){done=true}
+
+                buildDates(data.sort(function (a, b) {
+                    return (Date.parse(a.date)- Date.parse(b.date))
+                })
+                );
+            })
+    }
+
+        function buildDates(dateArray) {
+            var dates = [];
+            var done = false;
+            var currentDate = new Date(Date.parse(dateArray[0].date));
+            var joursOn = 0;
+            var index = 1;
+            var assidu = 0;
+
+
+            for (var i = 1; i < dateArray.length; i++) {
+                var date =  new Date(Date.parse(dateArray[i].date));
+                var diff = dayDiff(date, currentDate);
+                console.log(diff);
+                if (diff >= 1) {
+                    currentDate = date;
+                    for (var j = index; j < j + diff; j++)
+                        dates[j] = 0;
+                    dates[index + diff] = 1;
+                    index = index + diff;
+                    joursOn++;
                 }
-            });
+
+                if (i === dateArray.length - 1) {
+                    done = true;
+                }
+
+            }
+            if (done === true) {
+                if (dates.length > 0) {
+                    assidu = joursOn / dates.length;
+                }
+                console.log(dates);
+                console.log(assidu);
+
+                return assidu;
+            }
         }
+
+    function dayDiff(Date1,Date2){
+        var Day1={day:Date1.getDate,month:Date1.getMonth,year:Date1.getFullYear};
+        var Day2={day:Date2.getDate,month:Date2.getMonth,year:Date1.getFullYear};
+
+        if(Day1.month===Day2.month){
+            console.log(Day1.day-Day2.day)
+                return Day1.day-Day2.day;
+            }else{
+                return Day2.day+daysInMonth(Day1.month,Day1.year)-Day1.days
+            }
+
+            function daysInMonth(month,year){
+                return new Date(year,month,0).getDate();
+            }
+    }
     }
 })();

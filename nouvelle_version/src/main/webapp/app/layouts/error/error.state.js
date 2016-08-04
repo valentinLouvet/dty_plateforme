@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular
@@ -31,6 +31,19 @@
                 views: {
                     'content@': {
                         templateUrl: 'app/layouts/error/accessdenied.html'
+                    }
+                }
+            })
+            .state('tooMuchLesson', {
+                parent: 'app',
+                url: '/tooMuchLesson',
+                data: {
+                    authorities: [],
+                    pageTitle: 'too Much Lesson done!'
+                },
+                views: {
+                    'content@': {
+                        templateUrl: 'app/layouts/error/tooMuchLessonDone.html'
                     }
                 }
             });

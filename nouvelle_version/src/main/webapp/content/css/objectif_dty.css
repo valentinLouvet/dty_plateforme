@@ -2,11 +2,45 @@
     display: inline-block;
 }
 
-@media (max-width : 1199px) and (min-width: 992px) {
-  .colMD { margin-left:8.33333333%;}
+.blocDescript{
+    background-color: red;
+    display :none;
+}
+
+.fixView:hover + span{
+    display : bock;
+
+}
+
+@media (max-width : 767px){
+  .colXS { margin-left:8.33333333%;}
     .fixView{
+
         max-width:100%;
         height:auto;
+        max-height :270px !important;
+
+    }
+}
+
+@media (max-width : 991px) and (min-width : 768px) {
+  .colSM { margin-left:7.33333333%;}
+    .fixView{
+
+        max-width:100%;
+        height:auto;
+        max-height :270px !important;
+
+    }
+}
+
+@media (max-width : 1199px) and (min-width : 992px) {
+  .colMD { margin-left:8.33333333%;}
+    .fixView{
+
+        max-width:100%;
+        height:auto;
+        max-height :270px !important;
 
     }
 }
@@ -14,15 +48,19 @@
 @media (min-width : 1200px) {
   .colLG { margin-left:8.33333333%;}
     .fixView{
+
         max-width:100%;
-        heigth:auto;
+        height:auto;
+        max-height:270px !important;
     }
 }
 
 @media (max-width : 360px) {
-  .fixView {display:block;
+  .fixView {
             max-width:100%;
-            height:auto;}
+            height:auto;
+             max-height:270px !important;
+             }
 }
 
 #ImgScore {
@@ -829,7 +867,7 @@ img {
   right: -2em;
   text-align: center;
   text-transform: uppercase;
-  top: 17em;
+  top: 19em;
 }
 
 /*** Media queries for adjusting to different screen sizes ***/
@@ -855,6 +893,6 @@ img {
 }
 
 .edit-properties{
-    padding-right: 5%;
+    margin-right: 2%;
 }
 

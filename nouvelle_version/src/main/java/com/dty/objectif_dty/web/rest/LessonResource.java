@@ -2,7 +2,11 @@ package com.dty.objectif_dty.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import com.dty.objectif_dty.domain.Lesson;
+import com.dty.objectif_dty.domain.Question;
+import com.dty.objectif_dty.domain.Response;
 import com.dty.objectif_dty.repository.LessonRepository;
+import com.dty.objectif_dty.repository.QuestionRepository;
+import com.dty.objectif_dty.repository.ResponseRepository;
 import com.dty.objectif_dty.web.rest.util.HeaderUtil;
 import com.dty.objectif_dty.web.rest.util.PaginationUtil;
 import org.slf4j.Logger;
@@ -18,6 +22,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.inject.Inject;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 import java.lang.Integer;
@@ -33,6 +38,12 @@ public class LessonResource {
 
     @Inject
     private LessonRepository lessonRepository;
+
+    @Inject
+    private QuestionRepository questionRepository;
+
+    @Inject
+    private ResponseRepository responseRepository;
 
     /**
      * POST  /lessons : Create a new lesson.
@@ -131,6 +142,21 @@ public class LessonResource {
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
     public ResponseEntity<Void> deleteLesson(@PathVariable Long id) {
+        Lesson lesson = lessonRepository.findOne(id);
+        for(Iterator<Question> it = lesson.getQuestions().iterator(); it.hasNext();){
+            Question question = it.next();
+
+            for(Iterator<Response> itR = question.getResponses().iterator(); itR.hasNext();){
+                Response response = itR.next();
+                log.debug("REST request to delete Response : {}", response.getId());
+                responseRepository.delete(response.getId());
+            }
+
+            log.debug("REST request to delete Question : {}", question.getId());
+            questionRepository.delete(question.getId());
+
+        }
+
         log.debug("REST request to delete Lesson : {}", id);
         lessonRepository.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert("lesson", id.toString())).build();

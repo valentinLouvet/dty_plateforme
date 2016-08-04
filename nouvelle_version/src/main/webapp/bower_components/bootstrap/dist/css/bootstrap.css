@@ -5901,9 +5901,15 @@ button.close {
   overflow-y: auto;
 }
 .modal-dialog {
-  position: relative;
-  width: auto;
-  margin: 10px;
+      position : relative !important;
+      /*center the element */
+      right: 0 !important;
+      left: 0 !important;
+      margin-right: auto !important;
+      margin-left: auto !important;
+      /* give it dimensions */
+      min-height: 10em !important;
+
 }
 .modal-content {
   position: relative;
@@ -5946,8 +5952,9 @@ button.close {
   line-height: 1.42857143;
 }
 .modal-body {
-  position: relative;
-  padding: 15px;
+  position : relative !important;
+  max-height: calc(100vh - 210px) !important;
+      overflow-y: auto !important;
 }
 .modal-footer {
   padding: 15px;

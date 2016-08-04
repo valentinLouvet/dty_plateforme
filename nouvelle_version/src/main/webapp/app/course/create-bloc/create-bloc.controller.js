@@ -3,7 +3,7 @@
 
     angular
         .module('objectifDtyApp')
-        .controller('blocCreationController',['$state','flow','$stateParams','Bloc', function ($state,flow,$stateParams,Bloc) {
+        .controller('blocCreationController',['$state','flow','$stateParams','Bloc','AlertService' function ($state,flow,$stateParams,Bloc,AlertService) {
             var vm = this;
             var edit=$stateParams.edit==='edit';
             vm.edit=edit;
@@ -33,12 +33,18 @@
             }
 
             vm.saveBloc = function () {
-                console.log(vm.newBloc);
-                if(!edit) {
-                    Bloc.save(vm.newBloc, onSaveBlocSuccess, onSaveBlocError)
+                // On teste d'abord si il y a des champs vides
+                if(vm.newBloc.name != null && vm.newBloc.name != "" && vm.newBloc.description != null && vm.newBloc.description != ""){
+                    console.log(vm.newBloc);
+                    if(!edit) {
+                        Bloc.save(vm.newBloc, onSaveBlocSuccess, onSaveBlocError)
+                    }else{
+                        Bloc.update(vm.newBloc,onSaveBlocSuccess,onSaveBlocError)
+                    }
                 }else{
-                    Bloc.update(vm.newBloc,onSaveBlocSuccess,onSaveBlocError)
+                    AlertService.error("You must fill all the fields before submitting a bloc !");
                 }
+
             };
 
             function onSaveBlocSuccess() {
@@ -47,7 +53,7 @@
             }
 
             function onSaveBlocError(){
-                console.log('Bloc creation failed')
+                console.log('Bloc creation failed');
             }
 
             function loadAll(){

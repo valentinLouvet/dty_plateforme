@@ -2,7 +2,9 @@ package com.dty.objectif_dty.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import com.dty.objectif_dty.domain.Question;
+import com.dty.objectif_dty.domain.Response;
 import com.dty.objectif_dty.repository.QuestionRepository;
+import com.dty.objectif_dty.repository.ResponseRepository;
 import com.dty.objectif_dty.web.rest.util.HeaderUtil;
 import com.dty.objectif_dty.web.rest.util.PaginationUtil;
 import org.slf4j.Logger;
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.inject.Inject;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,10 +32,13 @@ import java.util.Optional;
 public class QuestionResource {
 
     private final Logger log = LoggerFactory.getLogger(QuestionResource.class);
-        
+
     @Inject
     private QuestionRepository questionRepository;
-    
+
+    @Inject
+    private ResponseRepository responseRepository;
+
     /**
      * POST  /questions : Create a new question.
      *
@@ -93,7 +99,7 @@ public class QuestionResource {
     public ResponseEntity<List<Question>> getAllQuestions(Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to get a page of Questions");
-        Page<Question> page = questionRepository.findAll(pageable); 
+        Page<Question> page = questionRepository.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/questions");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
@@ -129,6 +135,14 @@ public class QuestionResource {
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
     public ResponseEntity<Void> deleteQuestion(@PathVariable Long id) {
+        Question question = questionRepository.findOne(id);
+        for(Iterator<Response> it = question.getResponses().iterator(); it.hasNext();){
+            Response response = it.next();
+
+            log.debug("REST request to delete Response : {}", response.getId());
+            responseRepository.delete(response.getId());
+
+        }
         log.debug("REST request to delete Question : {}", id);
         questionRepository.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert("question", id.toString())).build();

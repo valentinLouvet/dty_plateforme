@@ -5901,7 +5901,7 @@ button.close {
   overflow-y: auto;
 }
 .modal-dialog {
-      position : relative !important;
+
       /*center the element */
       right: 0 !important;
       left: 0 !important;
@@ -5909,6 +5909,7 @@ button.close {
       margin-left: auto !important;
       /* give it dimensions */
       min-height: 10em !important;
+
 
 }
 .modal-content {
@@ -5952,7 +5953,6 @@ button.close {
   line-height: 1.42857143;
 }
 .modal-body {
-  position : relative !important;
   max-height: calc(100vh - 210px) !important;
       overflow-y: auto !important;
 }

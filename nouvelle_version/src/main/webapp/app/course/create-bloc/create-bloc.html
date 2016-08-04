@@ -11,7 +11,7 @@
 
     <div class="form-group">
         <label>Enter your bloc description</label>
-        <textarea placeholder="Enter Lesson here..." rows="10" class="form-control" ng-model="vm.newBloc.description"></textarea>
+        <textarea placeholder="Enter Bloc Description here..." rows="10" class="form-control" ng-model="vm.newBloc.description"></textarea>
     </div>
 
     <div class="form-group">
@@ -22,9 +22,31 @@
         </select>
     </div>
 
+    <div class="form-group" flow-init="{target: '/content/images/upload'}" flow-files-submitted="$flow.upload()" flow-file-success="$file.msg= $message">
+        <span ng-hide="$flow.files.length" class="btn btn-primary-dty" flow-btn flow-attrs="{accept:'image/*'}">Upload Bloc Image</span>
+        <span ng-show="$flow.files.length" class="btn btn-primary-dty" flow-btn ng-click="$flow.cancel()">Change Bloc Image</span>
+        <div ng-show="$flow.files.length" class="thumbnail">
+            <img flow-img="$flow.files[0]">
+        </div>
+        <table>
+        <tr ng-repeat="file in $flow.files">
+            <td>{{$index+1}}</td>
+            <td>{{file.name}}</td>
+            <td>{{file.msg}}</td>
+        </tr>
+    </table>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label" for="field_logo">Logo</label>
+        <input type="text" class="form-control" name="logo" id="field_logo"
+               ng-model="vm.newBloc.logo"
+        />
+    </div>
+
     <div class="form-group">
         <button class="btn btn-primary-dty-inverse" ng-click="vm.saveBloc()">Validate bloc</button>
-        <button class="btn btn btn-primary-dty" ui-sref="editCourse"> Back </button>
+        <button class="btn btn btn-primary-dty" ui-sref="editCourse" ng-show="vm.edit"> Back </button>
     </div>
 
 </div>

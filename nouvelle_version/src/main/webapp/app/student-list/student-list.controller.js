@@ -5,15 +5,15 @@
         .module('objectifDtyApp')
         .controller('studentListController', studentListController);
 
-    studentListController.$inject = ['AllStudent','$scope', 'Principal', 'LoginService', '$state','Student','Lesson_doneWid'];
+    studentListController.$inject = ['AllStudent','$state','Statistics'];
 
-    function studentListController (AllStudent,$scope, Principal, LoginService, $state, Student,Lesson_doneWid) {
+    function studentListController (AllStudent,$state,Statistics) {
         var vm = this;
 
-        AllStudent.query().$promise.then(function(data){
-            vm.student=data;
-            console.log(data)
-        })
+       Statistics.getStudents().then(function(data){
+           vm.student=data;
 
+           Statistics.LessonDones(vm.student[0].id)
+       })
     }
 })();

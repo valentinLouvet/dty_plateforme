@@ -116,6 +116,8 @@
         });
 
 
+
+
         function Bloc_done(lessons) {
             /**
              fonction bloc_done : parcourt les lessons réalisées par le student - et crée le tableau Blocs
@@ -157,6 +159,7 @@
                 }
             })
         }
+
 
 
         //regarde si un bloc du même identifiant existe deja dans le tableau de blocs.
@@ -260,43 +263,45 @@
 
         //conversion score en etoiles
 
-        function convertScore(score) {
+    function convertScore(score) {
+        var etoile = "";
+
+
 
             var Note = 0;
 
             switch (Math.floor((score) / 20)) {
 
 
-                case 0 :
-                    Note = 0;
-                    break;
-                case 1 :
-                    Note = 1;
-                    break;
-                case 2 :
-                    Note = 2;
-                    break;
-                case 3 :
-                    Note = 3;
-                    break;
-                case 4 :
-                    Note = 4;
-                    break;
-                case 5 :
-                    Note = 5;
-                    break;
-            }
-            var etoile = "";
-
-            for (var i = 0; i < Note; i++) {
-                etoile = etoile + "&#9733;";
-            }
-            for (var j = 0; j < 5 - Note; j++) {
-                etoile = etoile + "&#9734;";
-            }
-
-            return etoile;
+            case 0 :
+                Note = 0;
+                break;
+            case 1 :
+                Note = 1;
+                break;
+            case 2 :
+                Note = 2;
+                break;
+            case 3 :
+                Note = 3;
+                break;
+            case 4 :
+                Note = 4;
+                break;
+            case 5 :
+                Note = 5;
+                break;
         }
+
+
+        for (var i = 0; i < Note; i++) {
+            etoile = etoile + "★";
+        }
+        for (var j = 0; j < 5 - Note; j++) {
+            etoile = etoile + "☆";
+        }
+
+        return etoile;
     }
 
-})();
+}})();

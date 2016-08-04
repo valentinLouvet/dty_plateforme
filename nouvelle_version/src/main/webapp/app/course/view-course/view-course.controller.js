@@ -3,9 +3,9 @@
 
     angular.module('objectifDtyApp').controller('CourseViewController', ViewCourseController);
 
-    ViewCourseController.$inject = ['Principal', 'courseView', '$scope', '$rootScope', '$stateParams', '$state', '$uibModal', 'DataUtils', 'Lesson', 'Coach', 'Bloc', 'Question', 'Lesson_done', 'Student'];
+    ViewCourseController.$inject = ['Principal', 'courseView', '$scope', '$rootScope', '$stateParams', '$state', '$uibModal', 'DataUtils', 'Lesson', 'Coach', 'Bloc', 'Question', 'Lesson_done', 'Student', 'Badge'];
 
-    function ViewCourseController(Principal, courseView, $scope, $rootScope, $stateParams, $state, $uibModal, DataUtils, Lesson, Coach, Bloc, Question, Lesson_done, Student) {
+    function ViewCourseController(Principal, courseView, $scope, $rootScope, $stateParams, $state, $uibModal, DataUtils, Lesson, Coach, Bloc, Question, Lesson_done, Student, Badge) {
         var vm = this;
         vm.id = $stateParams.id;
         vm.lesson = Lesson.get({id: vm.id});
@@ -99,8 +99,52 @@
                 saveLesson_done();
 
 
+
                 if (vm.lesson.last){
-                     console.log(vm.lesson.bloc.name);
+                     /* CHANGE BADGE LOGIC */
+                     var BlocName = vm.lesson.bloc.name;
+                     Badge.query().$promise.then(function (data) {
+                                 //console.log(data.length);
+
+                                 // Reach all the badges possible
+                                 for(var j=0; j< data.length; j++){
+
+                                    // for the badge relative to the current Bloc only
+                                    if (data[j].name == BlocName){
+
+                                        console.log(vm.student[0]);
+                                        console.log(vm.student[0].owned_badges);
+
+                                        var temp3 = vm.student[0].owned_badges;
+                                        if (temp3 == null){
+                                            temp3 = [];
+                                        };
+                                        console.log(temp3);
+                                        var isOwned = temp3.some(function(val){
+                                                                    console.log(val);
+                                                                    console.log(val.name);
+                                                                    return val.name.includes("HTML");
+                                                                    });
+                                        /*console.log(temp3[0].name);
+                                        console.log(temp3[0].name.includes(BlocName));
+                                        console.log(isOwned); */
+
+
+
+                                        temp3.push(data[j]);
+
+                                        vm.student[0].owned_badges = temp3;
+                                        console.log(vm.student[0]);
+                                        //saveStudent();
+
+
+                                     }
+                                 }
+                     });
+
+
+
+                     /* OPEN THE ANIMATION */
                       var fen = $uibModal.open({
                                animation: true,
                                templateUrl: 'app/badge/1-badge.html',
@@ -224,6 +268,7 @@
         }
 
         function saveStudent () {
+            console.log("saveStudentCalled");
             vm.isSaving = true;
             if (vm.student.id !== null) {
                 Student.update(vm.student[0], onSaveStudentSuccess, onSaveError);

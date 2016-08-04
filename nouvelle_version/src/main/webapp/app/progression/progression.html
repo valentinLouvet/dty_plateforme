@@ -81,7 +81,7 @@
                                         ng-repeat="lesson in bloc.bloc.lessons" data-dismiss="modal"
                                         ng-click="vm.goToLesson(lesson.id,vm.isDisabled(lesson.id,bloc.lesson_done).isDisabled)">
                                         <span>{{lesson.num_lesson}} - {{lesson.title}}</span>
-                                        <span class="pull-right" ng-hide="vm.isDisabled(lesson.id,bloc.lesson_done).isDisabled">{{vm.isDisabled(lesson.id,bloc.lesson_done).score}}</span>
+                                        <span class="pull-right" ng-hide="vm.isDisabled(lesson.id,bloc.lesson_done).isDisabled"> {{vm.convertScore(vm.isDisabled(lesson.id,bloc.lesson_done).score)}}</span>
                                     </li>
                                 </ul>
 

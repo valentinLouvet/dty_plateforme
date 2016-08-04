@@ -14,11 +14,14 @@
         vm.noteStars = 1;
         vm.chooseNewBloc = false;
         vm.goCourse = goCourse;
+        vm.nbLessonDoneToday = 0;
+
 
 
         vm.score = null;
         Student.query().$promise.then(function (data) {
             vm.student = data;
+
 
         });
         Lesson_done.query({page: vm.page, size: 10000}).$promise.then(function (data) {
@@ -37,7 +40,15 @@
                     setImgScoreInit(convertScore(temp.note_init));
                     }
                 }
+
+                if(vm.lesson_dones[i].date = Date.now()){
+                    vm.nbLessonDoneToday ++;
+                }
             }
+            if(vm.nbLessonDoneToday>=5){
+                $state.go("tooMuchLesson")
+            }
+
         });
 
         vm.SetNextLessonToDo = function(){

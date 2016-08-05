@@ -28,9 +28,9 @@
         }
 
 
-        vm.setNextBloc = function(bloc){
-            for(var i = 0; i<bloc.lessons.length; i++){
-                if(bloc.lessons[i].num_lesson == 1){
+        vm.setNextBloc = function (bloc) {
+            for (var i = 0; i < bloc.lessons.length; i++) {
+                if (bloc.lessons[i].num_lesson == 1) {
                     vm.student[0].todo_lesson = bloc.lessons[i];
                     saveStudent()
 
@@ -91,18 +91,30 @@
                 console.log(Blocs_dones[i].is_father_offs);
                 for (var j = 0; j < Blocs_dones[i].is_father_offs.length; j++) {
                     IsBlocInBlocs(Blocs_dones[i].is_father_offs[j].id, Blocs_dones, function (isIn) {
-                            if (!(isIn.res)) {
+                        if (!(isIn.res)) {
+                            if (Blocs_dones[i].is_father_offs[j].lessons[0]) {
                                 vm.blocs.push(Blocs_dones[i].is_father_offs[j]);
+
                             }
+                            else {
+                                for (var k = 0; k < Blocs_dones[i].is_father_offs[j].is_father_offs.length; k++) {
+                                    IsBlocInBlocs(Blocs_dones[i].is_father_offs[j].is_father_offs[k].id, Blocs_dones, function (isIn) {
+                                        if (!(isIn.res)) {
+                                            vm.blocs.push(Blocs_dones[i].is_father_offs[j].is_father_offs[k]);
+                                        }
+                                    });
+                                }
+                            }
+
                         }
-                    );
+                    });
 
 
                 }
             }
         }
 
-        function saveStudent () {
+        function saveStudent() {
             vm.isSaving = true;
             if (vm.student.id !== null) {
                 Student.update(vm.student[0], onSaveStudentSuccess, onSaveError);
@@ -111,7 +123,7 @@
             }
         }
 
-        function onSaveStudentSuccess (result) {
+        function onSaveStudentSuccess(result) {
             $scope.$emit('objectifDtyApp:studentUpdate', result);
             vm.isSaving = false;
         }

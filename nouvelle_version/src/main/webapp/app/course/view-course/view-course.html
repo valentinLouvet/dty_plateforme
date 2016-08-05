@@ -1,3 +1,14 @@
+<div>
+    <button type="submit"
+            ng-show="vm.chooseNewBloc || (!vm.lessonDoneNew && vm.isLastLessonDone)"
+            ui-sref="choosecourse"
+            class="btn btn-primary-dty">
+        Choose a new bloc!
+    </button>
+</div>
+
+
+
 <div class="page-header-dty"><h1>1. Course</h1></div>
 <div style="margin-bottom:2%;">
     <div  ng-bind-html="vm.lesson.cours"></div>

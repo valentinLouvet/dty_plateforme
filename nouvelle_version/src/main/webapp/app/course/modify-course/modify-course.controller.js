@@ -83,7 +83,7 @@
                 newQuestion.id = null;
                 newQuestion.intitule = vm.newIntitule;
                 newQuestion.correction = vm.newQuestionCorrection;
-                console.log(newQuestion);
+                //console.log(newQuestion);
                 Question.save(newQuestion, onSaveQuestionResponseSuccess, onSaveQuestionError);
             };
 
@@ -97,19 +97,19 @@
                     newQuestionAnswers[i] = vm.newAnswers[i];
                     newQuestionAnswers[i].id = null;
                     newQuestionAnswers[i].question = newQuestion;
-                    console.log(newQuestionAnswers[i]);
+                    //console.log(newQuestionAnswers[i]);
                     Response.save(newQuestionAnswers[i], onSaveResponseCompteurSuccess, onSaveResponseError)
 
                 }
                 vm.isSaving = false;
-                console.log("Nouvelle Question créée");
+                //console.log("Nouvelle Question créée");
                 $state.go($state.current, {}, {reload: true});
                 vm.initialize()
             }
 
             function onSaveResponseCompteurSuccess(response){
                 vm.compteurQuestion++;
-                console.log(response)
+                //console.log(response)
             }
 
 
@@ -153,22 +153,22 @@
                  console.log("response deleted");
                  $state.go($state.current, {}, {reload: true});
                  vm.initialize()*/
-                console.log('Question deleted')
+                //console.log('Question deleted')
             }
 
             function onDeleteResponseQuestionError() {
                 vm.isSaving = false;
-                console.log("Response not deleted")
+                //console.log("Response not deleted")
             }
 
             function onDeleteQuestionSuccess() {
                 vm.isSaving = false;
-                console.log("Question deleted")
+                //console.log("Question deleted")
             }
 
             function onDeleteQuestionError() {
                 vm.isSaving = false;
-                console.log("Question not deleted")
+                //console.log("Question not deleted")
             }
 
             //supprime la réponse
@@ -177,19 +177,19 @@
                     vm.responses[vm.questions.indexOf(question)][vm.responses[vm.questions.indexOf(question)].indexOf(response)] = null;
                     Response.delete({id: response.id}, onDeleteResponseSuccess, onDeleteResponseError);
                 }
-                console.log(response)
+                //console.log(response)
             };
 
             function onDeleteResponseSuccess() {
                 vm.isSaving = false;
-                console.log("response deleted");
+                //console.log("response deleted");
                 $state.go($state.current, {}, {reload: true});
                 vm.initialize()
             }
 
             function onDeleteResponseError() {
                 vm.isSaving = false;
-                console.log("Response not deleted")
+                //console.log("Response not deleted")
             }
 
             //ajoute le champ pour rentrer une nouvelle réponse
@@ -203,34 +203,34 @@
                 newResponse.text = vm.newText;
                 newResponse.correction = vm.newCorrection;
                 newResponse.id = null;
-                console.log(newResponse);
+                //console.log(newResponse);
                 Response.save(newResponse, onSaveNewResponseSuccess, onSaveNewResponseError)
             };
 
             function onSaveNewResponseSuccess() {
                 vm.isSaving = false;
-                console.log("Nouvelle réponse créée");
+                //console.log("Nouvelle réponse créée");
                 $state.go($state.current, {}, {reload: true});
                 vm.initialize()
             }
 
             function onSaveNewResponseError() {
                 vm.isSaving = false;
-                console.log("error response");
+                //console.log("error response");
             }
 
             //enregistre la lesson dans la BDD
             vm.saveCourse = function () {
                 vm.isSaving = true;
                 if (vm.course.id !== null) {
-                    console.log('vm.course.id !== null');
+                    //console.log('vm.course.id !== null');
                     Lesson.update(vm.course, onSaveLessonSuccess, onSaveLessonError);
 
                 } else {
-                    console.log('vm.course.id == null');
+                    //console.log('vm.course.id == null');
                     Lesson.save(vm.course, onSaveLessonSuccess, onSaveLessonError);
                 }
-                console.log(vm.course);
+                //console.log(vm.course);
                 $window.location.reload();
             };
 
@@ -240,7 +240,7 @@
                     //Question.update(question, onSaveGlobalQuestionSuccess(i), onSaveGlobalQuestionError)
                 }
                 vm.isSaving = false;
-                console.log("onSaveLessonSuccess");
+                //console.log("onSaveLessonSuccess");
                 //$state.go('editCourse')
             }
 
@@ -251,20 +251,20 @@
             }
 
             function onSaveResponseGlobalSuccess() {
-                console.log('Sauvegarde de la question réussie')
+                //console.log('Sauvegarde de la question réussie')
             }
 
             function onSaveResponseGlobalError() {
-                console.log("Sauvegarde de la réponse globale échouée")
+                //console.log("Sauvegarde de la réponse globale échouée")
             }
 
             function onSaveGlobalQuestionError() {
-                console.log('Erreur dans la sauvegarde globale de la question')
+                //console.log('Erreur dans la sauvegarde globale de la question')
             }
 
             function onSaveLessonError() {
                 vm.isSaving = false;
-                console.log("onSaveLessonError");
+                //console.log("onSaveLessonError");
             }
 
             //modifier les questions
@@ -272,15 +272,15 @@
                 vm.isSaving = true;
                 if (vm.course.id !== null) {
                     vm.indexUpdate = vm.questions.indexOf(question);
-                    console.log(vm.questions.indexOf(question));
+                    //console.log(vm.questions.indexOf(question));
                     Question.update(question, onSaveQuestionSuccess, onSaveQuestionError);
 
                 } else {
-                    console.log("question == null");
+                    //console.log("question == null");
                     Question.save(question, onSaveQuestionSuccess, onSaveQuestionError);
                 }
                 vm.editedQuestions[vm.questions.indexOf(question)] = false;
-                console.log(question);
+                //console.log(question);
             };
 
             function onSaveQuestionSuccess(question) {
@@ -288,14 +288,14 @@
                     Response.update(vm.responses[vm.indexUpdate][i], onSaveResponseSuccess, onSaveResponseError)
                 }
                 vm.isSaving = false;
-                console.log("ok question");
+                //console.log("ok question");
                 $state.go($state.current, {}, {reload: true});
                 vm.initialize()
             }
 
             function onSaveQuestionError() {
                 vm.isSaving = false;
-                console.log("error question")
+                //console.log("error question")
             }
 
             //Close the Warning
@@ -307,25 +307,25 @@
             vm.saveResponse = function (response) {
                 vm.isSaving = true;
                 if (response !== null) {
-                    console.log(response);
-                    console.log("response !== null");
+                    //console.log(response);
+                    //console.log("response !== null");
                     Response.update(response, onSaveResponseSuccess, onSaveResponseError);
 
                 } else {
-                    console.log("question == null");
+                    //console.log("question == null");
                     Response.save(response, onSaveResponseSuccess, onSaveResponseError);
                 }
-                console.log(response);
+                //console.log(response);
             };
 
             function onSaveResponseSuccess(response) {
                 vm.isSaving = false;
-                console.log(response)
+                //console.log(response)
             }
 
             function onSaveResponseError() {
                 vm.isSaving = false;
-                console.log("error response")
+                //console.log("error response")
             }
 
         }])

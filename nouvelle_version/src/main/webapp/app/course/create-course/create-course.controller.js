@@ -11,7 +11,8 @@
 
             // Oblige à aller en haut de la page lors du chargement
             // En effet, sans ça, le bouton "add Lesson" de la page
-            // view-courses n'update pas la position du scroll
+            // view-courses n'update pas la position du scroll et on
+            // se retrouve au milieu de la page...
 
             window.onbeforeunload = function(){
             	window.scrollTo(0,0);
@@ -155,14 +156,14 @@
 
                     }
                     else{
-                        console.log("Last answer...");
+                        //console.log("Last answer...");
                     }
                     this.answers[idOfQuestion - 1].splice(idOfAnswer - 1, 1);
                     this.compteurAnswer[idOfQuestion - 1] = this.compteurAnswer[idOfQuestion - 1] - 1;
 
                 }
                 else{
-                    console.log("Can't delete this answer");
+                    //console.log("Can't delete this answer");
                 }
             };
 
@@ -224,13 +225,14 @@
                     if(idOfQuestion != this.compteurQuestion){
                         // il faut changer les id de toutes les questions situées après cette question supprimée
                         // en les décrémentant
-                        console.log("This is not the last question");
+
+                        //console.log("This is not the last question");
                         for(var i = idOfQuestion - 1 ; i<this.compteurQuestion; i++){
                             this.quizz[i].cpt = this.quizz[i].cpt - 1;
                         }
                     }
                     else{
-                        console.log("This is the last question");
+                        //console.log("This is the last question");
                     }
 
                     this.quizz.splice(idOfQuestion - 1, 1);
@@ -238,12 +240,12 @@
                     this.compteurAnswer.splice(idOfQuestion - 1, 1);
                     this.compteurQuestion = this.compteurQuestion - 1;
 
-                    console.log("Question deleted");
+                    //console.log("Question deleted");
 
 
                 }
                 else{
-                    console.log("Can't delete ! At least a question must remain");
+                    //console.log("Can't delete ! At least a question must remain");
                 }
 
             };
@@ -283,13 +285,13 @@
                         // Sauvegarde par la même occasion la leçon
 
                         vm.newLesson = Lesson.save(vm.newLesson, onSaveLessonSuccess, onSaveLessonError);
-                        console.log("Save..");
-                        console.log(vm.newLesson);
+                        //console.log("Save..");
+                        //console.log(vm.newLesson);
                         $state.go('editCourse');
                     }
                     else{
                         AlertService.error("Some questions have no good answers or too many good answers !");
-                        console.log("Problème de véracité");
+                        //console.log("Problème de véracité");
                         vm.isSaving = false;
                     }
                 }else{
@@ -323,6 +325,7 @@
                 vm.isSaving = false;
 
                 // Il faut parcourir tout le tableau answers "sans déborder"
+                // Tant qu'il y a des réponses à sauvegarder, les sauvegarder
                 if(vm.indexOfAnswer < vm.answers[vm.indexOfQuestion].length - 1){
                     vm.indexOfAnswer ++;
                     vm.saveResponse(vm.indexOfQuestion, vm.indexOfAnswer);
@@ -343,6 +346,7 @@
 
             function onSaveLessonSuccess () {
                 vm.isSaving = false;
+                // Sauvegarde la 1ère question (existe forcément)
                 vm.saveQuestion(0);
             }
 
@@ -354,10 +358,12 @@
             function onSaveQuestionSuccess(){
                 vm.isSaving = false;
                 vm.compteurQuestionSaved ++;
+                // Tant qu'il y a des questions à sauvegarder, les sauvegarder
                 if(vm.compteurQuestionSaved != vm.quizz.length){
                     vm.saveQuestion(vm.compteurQuestionSaved);
                 }
                 else{
+                    // Sauvegarde la 1ère réponse de la première question
                     vm.saveResponse(0, 0);
                 }
             }
@@ -379,7 +385,7 @@
                 vm.blocs=data;
                 // Si il n'y a aucun bloc, il va d'abord falloir créer un bloc avant de créer une leçon
                 if(vm.blocs.length == 0){
-                    console.log("Il n'y a aucun bloc ! Il faut d'abord créer un bloc avant de réaliser une leçon !");
+                    //console.log("Il n'y a aucun bloc ! Il faut d'abord créer un bloc avant de réaliser une leçon !");
                     $state.go('createBloc');
                 }else{
                     // charge toutes les lessons déjà existantes (pour incrémenter num_lesson)
@@ -405,8 +411,8 @@
 
             function onSuccessLoadAllLessons(data){
                 vm.lessons=data;
-                console.log('LESSONS : ');
-                console.log(data);
+                //console.log('LESSONS : ');
+                //console.log(data);
             }
 
             function onErrorLoadAllLessons(error){

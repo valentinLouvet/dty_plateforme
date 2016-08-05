@@ -166,7 +166,7 @@ public class Lesson_doneResource {
         method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<List<Lesson_done>> getLesson_donesWid(@PathVariable Long studentId)
+    public ResponseEntity<List<Lesson_done>> getLesson_doneswid(@PathVariable Long studentId)
         throws URISyntaxException {
         log.debug("REST request to get a page of Lesson_dones");
         List<Lesson_done> list = lesson_doneRepository.findAllFromStudentWithEagerRelationShips(studentId);
@@ -177,7 +177,6 @@ public class Lesson_doneResource {
                 itemLesson.setQuestions(null);
             }
         }
-
         return new ResponseEntity<>(list,HttpStatus.OK);
 
     }

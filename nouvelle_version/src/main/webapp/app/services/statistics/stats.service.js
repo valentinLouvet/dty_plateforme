@@ -10,10 +10,7 @@ Stats.$inject=['$q','Lesson_doneWid','AllStudent'];
         return {
             'getStudents': getStudents,
             'Assiduity':Assiduity,
-            'LessonDones':LessonDones,
-            //'lastLesson':LastLesson,
-            //'ConnexionDate':ConnexionDate
-
+            'LessonDones':LessonDones
         };
 
 
@@ -44,36 +41,57 @@ Stats.$inject=['$q','Lesson_doneWid','AllStudent'];
             return deferred.promise
         }
 
-        function Assiduity(id){
-            Lesson_doneWid.get(id).$promise.then(function(data) {
+        function Assiduity(Studentid){
+            var deferred=$q.defer();
+            Lesson_doneWid.get(Studentid).$promise.then(function(data) {
+                console.log(data);
 
-                buildDates(data.sort(function (a, b) {
+                var res=buildDates(data.sort(function (a, b){
                     return (Date.parse(a.date)- Date.parse(b.date))
                 })
                 );
-            })
+                deferred.resolve(res)
+
+            });
+            return deferred.promise;
     }
 
+    //fonction BuildDates renvoie un tableau représentant chaque jour entre la premiere lesson de l'élève juqu'a aujd, avec 1 s'il a fait au moins 1 lesson ce jour la et 0 sinon.
+        //parametre dateArray : tableau des lesson done de l'eleve, date sous format string.
+
         function buildDates(dateArray) {
-            var dates = [];
-            var done = false;
-            var currentDate = new Date(Date.parse(dateArray[0].date));
-            var joursOn = 0;
-            var index = 1;
+
+            var untilToday=toDays(Date.now())-toDays(Date.parse(dateArray[0].date))+1;
+            console.log(Date.parse(dateArray[0].date));
+            console.log(untilToday);
+
+            if(dateArray==[]){
+                var dates=[];
+                var done=true;
+
+            }else {
+                var dates = [1];
+                var done=false;
+                var currentDate = Date.parse(dateArray[0].date);
+                var joursOn = 1;
+            }
+
             var assidu = 0;
 
 
+
             for (var i = 1; i < dateArray.length; i++) {
-                var date =  new Date(Date.parse(dateArray[i].date));
+                var date = Date.parse(dateArray[i].date);
                 var diff = dayDiff(date, currentDate);
-                console.log(diff);
                 if (diff >= 1) {
                     currentDate = date;
-                    for (var j = index; j < j + diff; j++)
-                        dates[j] = 0;
-                    dates[index + diff] = 1;
-                    index = index + diff;
+                    for (var j = 0; j < diff-1; j++) {
+                        dates.push(0);
+                    }
+
+                    dates.push(1);
                     joursOn++;
+
                 }
 
                 if (i === dateArray.length - 1) {
@@ -81,31 +99,29 @@ Stats.$inject=['$q','Lesson_doneWid','AllStudent'];
                 }
 
             }
-            if (done === true) {
+            if (done) {
+                console.log("done");
                 if (dates.length > 0) {
+                    if(dates.length<untilToday){
+                        for(var k=0;k<(untilToday-(dates.length-1));k++){
+                            dates.push(0)
+                        }
+                    }
+
                     assidu = joursOn / dates.length;
                 }
                 console.log(dates);
                 console.log(assidu);
-
-                return assidu;
+               return {'assiduity':assidu,'lastConnexion':dateArray[dateArray.length-1].date};
             }
         }
 
     function dayDiff(Date1,Date2){
-        var Day1={day:Date1.getDate,month:Date1.getMonth,year:Date1.getFullYear};
-        var Day2={day:Date2.getDate,month:Date2.getMonth,year:Date1.getFullYear};
+        return toDays(Date1)-toDays(Date2);
+    }
 
-        if(Day1.month===Day2.month){
-            console.log(Day1.day-Day2.day)
-                return Day1.day-Day2.day;
-            }else{
-                return Day2.day+daysInMonth(Day1.month,Day1.year)-Day1.days
-            }
-
-            function daysInMonth(month,year){
-                return new Date(year,month,0).getDate();
-            }
+    function toDays(date){
+        return Math.floor(date/(3600*1000*24))
     }
     }
 })();

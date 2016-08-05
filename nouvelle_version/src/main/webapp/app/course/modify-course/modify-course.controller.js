@@ -3,11 +3,12 @@
 
     angular
         .module('objectifDtyApp')
-        .controller('courseModifyController', ['Principal', 'DataUtils', 'courseView', '$state', 'Lesson', 'Question', 'Response', function (Principal, DataUtils, courseView, $state, Lesson, Question, Response) {
+        .controller('courseModifyController', ['Principal', 'DataUtils', 'courseView', '$state', 'Lesson', 'Question', 'Response', '$window', function (Principal, DataUtils, courseView, $state, Lesson, Question, Response, $window) {
 
             var vm = this;
             vm.modifyCourse = false;
             vm.addingQuestion = false;
+            vm.WarClosed = false;
 
             //savoir quelles leçons sont éditées
             vm.editedQuestions = [];
@@ -230,7 +231,7 @@
                     Lesson.save(vm.course, onSaveLessonSuccess, onSaveLessonError);
                 }
                 console.log(vm.course);
-                $state.go($state.current, {}, {reload: true})
+                $window.location.reload();
             };
 
             function onSaveLessonSuccess() {
@@ -295,6 +296,11 @@
             function onSaveQuestionError() {
                 vm.isSaving = false;
                 console.log("error question")
+            }
+
+            //Close the Warning
+            vm.closeWarning = function () {
+                vm.WarClosed = true;
             }
 
             //modifier les réponses

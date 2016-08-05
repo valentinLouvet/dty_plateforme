@@ -3,13 +3,16 @@
 
     angular
         .module('objectifDtyApp')
-        .controller('blocCreationController',['$state','$stateParams','Bloc','AlertService', function ($state,$stateParams,Bloc,AlertService) {
+        .controller('blocCreationController',['$state','$stateParams','Bloc','AlertService','$scope', function ($state,$stateParams,Bloc,AlertService,$scope) {
             var vm = this;
             var edit=$stateParams.edit==='edit';
             vm.edit=edit;
+            $scope.uploader={};
+            vm.imageBloc ="";
             console.log(edit);
 
             vm.blocs = [];
+
             if(edit) {
                 var id=$stateParams.id;
                 Bloc.get({id:id}).$promise.then(function(data) {
@@ -32,9 +35,15 @@
                     }
             }
 
+            vm.testBloc = function () {
+                vm.imageBloc = $scope.uploader.flow.files[0];
+                console.log(vm.imageBloc)
+            };
+
             vm.saveBloc = function () {
                 // On teste d'abord si il y a des champs vides
                 if(vm.newBloc.name != null && vm.newBloc.name != "" && vm.newBloc.description != null && vm.newBloc.description != ""){
+                    vm.newBloc.logo = $scope.uploader.flow.files[0];
                     console.log(vm.newBloc);
                     if(!edit) {
                         Bloc.save(vm.newBloc, onSaveBlocSuccess, onSaveBlocError)

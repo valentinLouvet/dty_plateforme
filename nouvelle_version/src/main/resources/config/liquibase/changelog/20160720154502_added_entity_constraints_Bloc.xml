@@ -14,5 +14,11 @@
                                  referencedColumnNames="id"
                                  referencedTableName="bloc"/>
 
+        <addForeignKeyConstraint baseColumnNames="image_id"
+                                 baseTableName="bloc"
+                                 constraintName="fk_bloc_image_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="image"/>
+
     </changeSet>
 </databaseChangeLog>

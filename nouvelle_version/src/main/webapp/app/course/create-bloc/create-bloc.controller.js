@@ -35,15 +35,17 @@
                     }
             }
 
-            vm.testBloc = function () {
-                vm.imageBloc = $scope.uploader.flow.files[0];
-                console.log(vm.imageBloc)
+            vm.resetLogo = function () {
+                vm.newBloc.logo = null;
+                console.log(vm.newBloc.logo)
             };
 
             vm.saveBloc = function () {
                 // On teste d'abord si il y a des champs vides
                 if(vm.newBloc.name != null && vm.newBloc.name != "" && vm.newBloc.description != null && vm.newBloc.description != ""){
-                    vm.newBloc.logo = $scope.uploader.flow.files[0];
+                    if($scope.uploader.flow.files.length) {
+                        vm.newBloc.logo = '/content/images/upload/'+$scope.uploader.flow.files[0].name;
+                    }
                     console.log(vm.newBloc);
                     if(!edit) {
                         Bloc.save(vm.newBloc, onSaveBlocSuccess, onSaveBlocError)

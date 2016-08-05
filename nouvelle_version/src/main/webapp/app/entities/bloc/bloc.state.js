@@ -13,7 +13,7 @@
             parent: 'entity',
             url: '/bloc',
             data: {
-                authorities: ['ROLE_ADMIN', 'ROLE_USER', 'ROLE_COACH'],
+                authorities: ['ROLE_USER'],
                 pageTitle: 'Blocs'
             },
             views: {
@@ -30,7 +30,7 @@
             parent: 'entity',
             url: '/bloc/{id}',
             data: {
-                authorities: ['ROLE_ADMIN'],
+                authorities: ['ROLE_USER'],
                 pageTitle: 'Bloc'
             },
             views: {
@@ -50,7 +50,7 @@
             parent: 'bloc',
             url: '/new',
             data: {
-                authorities: ['ROLE_ADMIN']
+                authorities: ['ROLE_USER']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -80,7 +80,7 @@
             parent: 'bloc',
             url: '/{id}/edit',
             data: {
-                authorities: ['ROLE_ADMIN']
+                authorities: ['ROLE_USER']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -105,7 +105,7 @@
             parent: 'bloc',
             url: '/{id}/delete',
             data: {
-                authorities: ['ROLE_ADMIN']
+                authorities: ['ROLE_USER']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({

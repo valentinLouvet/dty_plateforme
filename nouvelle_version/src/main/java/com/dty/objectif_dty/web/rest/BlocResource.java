@@ -2,13 +2,7 @@ package com.dty.objectif_dty.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import com.dty.objectif_dty.domain.Bloc;
-import com.dty.objectif_dty.domain.Lesson;
-import com.dty.objectif_dty.domain.Question;
-import com.dty.objectif_dty.domain.Response;
 import com.dty.objectif_dty.repository.BlocRepository;
-import com.dty.objectif_dty.repository.LessonRepository;
-import com.dty.objectif_dty.repository.QuestionRepository;
-import com.dty.objectif_dty.repository.ResponseRepository;
 import com.dty.objectif_dty.web.rest.util.HeaderUtil;
 import com.dty.objectif_dty.web.rest.util.PaginationUtil;
 import org.slf4j.Logger;
@@ -22,12 +16,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
+import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 /**
  * REST controller for managing Bloc.
@@ -37,19 +30,10 @@ import java.util.Set;
 public class BlocResource {
 
     private final Logger log = LoggerFactory.getLogger(BlocResource.class);
-
+        
     @Inject
     private BlocRepository blocRepository;
-    @Inject
-    private LessonRepository lessonRepository;
-
-    @Inject
-    private QuestionRepository questionRepository;
-
-    @Inject
-    private ResponseRepository responseRepository;
-
-
+    
     /**
      * POST  /blocs : Create a new bloc.
      *
@@ -61,7 +45,7 @@ public class BlocResource {
         method = RequestMethod.POST,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<Bloc> createBloc(@RequestBody Bloc bloc) throws URISyntaxException {
+    public ResponseEntity<Bloc> createBloc(@Valid @RequestBody Bloc bloc) throws URISyntaxException {
         log.debug("REST request to save Bloc : {}", bloc);
         if (bloc.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("bloc", "idexists", "A new bloc cannot already have an ID")).body(null);
@@ -85,7 +69,7 @@ public class BlocResource {
         method = RequestMethod.PUT,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<Bloc> updateBloc(@RequestBody Bloc bloc) throws URISyntaxException {
+    public ResponseEntity<Bloc> updateBloc(@Valid @RequestBody Bloc bloc) throws URISyntaxException {
         log.debug("REST request to update Bloc : {}", bloc);
         if (bloc.getId() == null) {
             return createBloc(bloc);
@@ -110,40 +94,10 @@ public class BlocResource {
     public ResponseEntity<List<Bloc>> getAllBlocs(Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to get a page of Blocs");
-        Page<Bloc> page = blocRepository.findAll(pageable);
+        Page<Bloc> page = blocRepository.findAll(pageable); 
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/blocs");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
-    /**
-     * GET  /blocswid : get all the blocswid.
-     *
-     * @param pageable the pagination information
-     * @return the ResponseEntity with status 200 (OK) and the list of blocs in body
-     * @throws URISyntaxException if there is an error to generate the pagination HTTP headers
-     */
-    @RequestMapping(value = "/blocswid",
-        method = RequestMethod.GET,
-        produces = MediaType.APPLICATION_JSON_VALUE)
-    @Timed
-    public ResponseEntity<List<Bloc>> getAllBlocswid(Pageable pageable)
-        throws URISyntaxException {
-        log.debug("REST request to get a page of Blocs");
-        Page<Bloc> page = blocRepository.findAll(pageable);
-        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/blocs");
-        List<Bloc> pageContent = page.getContent();
-        for (Bloc item: pageContent){
-            Set<Lesson> lessons = item.getLessons();
-            for(Lesson itemlesson: lessons){
-                itemlesson.setCreated_by(null);
-                itemlesson.setCours(null);
-                itemlesson.setQuestions(null);
-                itemlesson.setUpdated_by(null);
-            }
-        }
-        ResponseEntity response = new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
-        return response;
-    }
-
 
     /**
      * GET  /blocs/:id : get the "id" bloc.
@@ -176,34 +130,9 @@ public class BlocResource {
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
     public ResponseEntity<Void> deleteBloc(@PathVariable Long id) {
-        Bloc bloc = blocRepository.findOne(id);
-        for(Iterator<Lesson> itL = bloc.getLessons().iterator(); itL.hasNext();){
-            Lesson lesson = itL.next();
-            for(Iterator<Question> it = lesson.getQuestions().iterator(); it.hasNext();){
-                Question question = it.next();
-
-                for(Iterator<Response> itR = question.getResponses().iterator(); itR.hasNext();){
-                    Response response = itR.next();
-                    log.debug("REST request to delete Response : {}", response.getId());
-                    responseRepository.delete(response.getId());
-                }
-
-                log.debug("REST request to delete Question : {}", question.getId());
-                questionRepository.delete(question.getId());
-
-            }
-            log.debug("REST request to delete Lesson : {}", lesson.getId());
-            lessonRepository.delete(lesson.getId());
-
-        }
-
-
-
-
         log.debug("REST request to delete Bloc : {}", id);
         blocRepository.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert("bloc", id.toString())).build();
     }
-
 
 }

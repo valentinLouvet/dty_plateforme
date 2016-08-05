@@ -17,7 +17,8 @@
             'angular-loading-bar',
             'ngSanitize',
             'ngCkeditor',
-            'calHeatmap'
+            'calHeatmap',
+            'flow'
         ])
         .run(run);
 

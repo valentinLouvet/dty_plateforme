@@ -23,6 +23,7 @@
                     <th jh-sort-by="logo"><span>Logo</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="description"><span>Description</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="is_son_of.name"><span translate="objectifDtyApp.bloc.is_son_of">Is Son Of</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="image.id"><span>Image</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -34,6 +35,9 @@
                     <td>{{bloc.description}}</td>
                     <td>
                         <a ui-sref="bloc-detail({id:bloc.is_son_of.id})">{{bloc.is_son_of.name}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="image-detail({id:bloc.image.id})">{{bloc.image.id}}</a>
                     </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">

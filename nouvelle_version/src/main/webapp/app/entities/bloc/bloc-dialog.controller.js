@@ -5,9 +5,9 @@
         .module('objectifDtyApp')
         .controller('BlocDialogController', BlocDialogController);
 
-    BlocDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Bloc', 'Lesson'];
+    BlocDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', '$q', 'entity', 'Bloc', 'Lesson', 'Image'];
 
-    function BlocDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Bloc, Lesson) {
+    function BlocDialogController ($timeout, $scope, $stateParams, $uibModalInstance, $q, entity, Bloc, Lesson, Image) {
         var vm = this;
 
         vm.bloc = entity;
@@ -15,6 +15,15 @@
         vm.save = save;
         vm.lessons = Lesson.query();
         vm.blocs = Bloc.query();
+        vm.images = Image.query({filter: 'bloc-is-null'});
+        $q.all([vm.bloc.$promise, vm.images.$promise]).then(function() {
+            if (!vm.bloc.image || !vm.bloc.image.id) {
+                return $q.reject();
+            }
+            return Image.get({id : vm.bloc.image.id}).$promise;
+        }).then(function(image) {
+            vm.images.push(image);
+        });
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

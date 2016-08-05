@@ -1,11 +1,11 @@
 package com.dty.objectif_dty.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -16,7 +16,7 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "bloc")
-//@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class Bloc implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -34,18 +34,23 @@ public class Bloc implements Serializable {
     @Column(name = "description")
     private String description;
 
-    @OneToMany(mappedBy = "bloc", fetch = FetchType.EAGER)
-    @JsonIgnoreProperties({"bloc"})
-    //@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    @OneToMany(mappedBy = "bloc")
+    @JsonIgnore
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Lesson> lessons = new HashSet<>();
 
-    @OneToMany(mappedBy = "is_son_of",fetch = FetchType.EAGER)
-    @JsonIgnoreProperties({"is_son_of"})
+    @OneToMany(mappedBy = "is_son_of")
+    @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Bloc> is_father_offs = new HashSet<>();
 
     @ManyToOne
     private Bloc is_son_of;
+
+    @OneToOne
+    @NotNull
+    @JoinColumn(unique = true)
+    private Image image;
 
     public Long getId() {
         return id;
@@ -101,6 +106,14 @@ public class Bloc implements Serializable {
 
     public void setIs_son_of(Bloc bloc) {
         this.is_son_of = bloc;
+    }
+
+    public Image getImage() {
+        return image;
+    }
+
+    public void setImage(Image image) {
+        this.image = image;
     }
 
     @Override

@@ -5,9 +5,9 @@
         .module('objectifDtyApp')
         .controller('BlocDetailController', BlocDetailController);
 
-    BlocDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'entity', 'Bloc', 'Lesson'];
+    BlocDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'entity', 'Bloc', 'Lesson', 'Image'];
 
-    function BlocDetailController($scope, $rootScope, $stateParams, entity, Bloc, Lesson) {
+    function BlocDetailController($scope, $rootScope, $stateParams, entity, Bloc, Lesson, Image) {
         var vm = this;
 
         vm.bloc = entity;

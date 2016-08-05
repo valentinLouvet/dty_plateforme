@@ -36,7 +36,9 @@
             <column name="is_son_of_id" type="bigint">
                 <constraints nullable="true" />
             </column>
-
+            <column name="image_id" type="bigint">
+                <constraints unique="true" nullable="false" />
+            </column>
             <!-- jhipster-needle-liquibase-add-column - Jhipster will add columns here, do not remove-->
         </createTable>
         

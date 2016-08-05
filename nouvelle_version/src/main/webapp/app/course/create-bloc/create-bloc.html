@@ -23,10 +23,13 @@
     </div>
 
     <div class="form-group">
-        <span ng-hide="uploader.flow.files.length" class="btn btn-primary-dty" flow-btn flow-attrs="{accept:'image/*'}">Upload Bloc Image</span>
-        <span ng-show="uploader.flow.files.length" class="btn btn-primary-dty" flow-btn ng-click="uploader.flow.cancel()">Change Bloc Image</span>
+        <span ng-hide="uploader.flow.files.length || vm.newBloc.logo" class="btn btn-primary-dty" flow-btn flow-attrs="{accept:'image/*'}">Upload Bloc Image</span>
+        <span ng-show="uploader.flow.files.length || vm.newBloc.logo" class="btn btn-primary-dty" flow-btn ng-click="uploader.flow.cancel() || vm.resetLogo()">Change Bloc Image</span>
         <div ng-show="uploader.flow.files.length" class="thumbnail">
             <img flow-img="uploader.flow.files[0]">
+        </div>
+        <div ng-show="vm.newBloc.logo" class="thumbnail">
+            <img ng-src="{{vm.newBloc.logo}}">
         </div>
     </div>
     <div class="form-group" ng-repeat="file in uploader.flow.files">
@@ -40,7 +43,6 @@
     </div>
 
     <div class="form-group">
-        <button class="btn btn-primary-dty-inverse" ng-click="vm.testBloc()">Test bloc</button>
         <button class="btn btn-primary-dty-inverse" ng-click="vm.saveBloc()">Validate bloc</button>
         <button class="btn btn btn-primary-dty" ui-sref="editCourse" ng-show="vm.edit"> Back </button>
     </div>

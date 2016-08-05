@@ -17,6 +17,17 @@
             "otherEntityName": "bloc",
             "relationshipType": "many-to-one",
             "otherEntityField": "name"
+        },
+        {
+            "relationshipName": "image",
+            "otherEntityName": "image",
+            "relationshipType": "one-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "bloc"
         }
     ],
     "fields": [

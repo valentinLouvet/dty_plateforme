@@ -3,9 +3,9 @@
 
     angular.module('objectifDtyApp').controller('CourseViewController', ViewCourseController);
 
-    ViewCourseController.$inject = ['Principal', 'courseView', '$scope', '$rootScope', '$stateParams', '$state', '$uibModal', 'DataUtils', 'Lesson', 'Coach', 'Bloc', 'Question', 'Lesson_done', 'Student', 'Badge','orderByFilter'];
+    ViewCourseController.$inject = ['Principal', 'courseView', '$scope', '$rootScope', '$stateParams', '$state', '$uibModal', 'DataUtils', 'Lesson', 'Coach', 'Bloc', 'Question', 'Lesson_done', 'Student', 'Badge','orderByFilter','$filter'];
 
-    function ViewCourseController(Principal, courseView, $scope, $rootScope, $stateParams, $state, $uibModal, DataUtils, Lesson, Coach, Bloc, Question, Lesson_done, Student, Badge, orderBy) {
+    function ViewCourseController(Principal, courseView, $scope, $rootScope, $stateParams, $state, $uibModal, DataUtils, Lesson, Coach, Bloc, Question, Lesson_done, Student, Badge, orderBy,$filter) {
         var vm = this;
         vm.id = $stateParams.id;
         Lesson.get({id: vm.id}).$promise.then(function (data) {
@@ -21,6 +21,8 @@
         vm.goCourse = goCourse;
         vm.nbLessonDoneToday = 0;
         vm.isLastLessonDone = false;
+        vm.dateNow = new Date();
+
 
 
         vm.score = null;
@@ -47,8 +49,8 @@
                         setImgScoreInit(convertScore(temp.note_init));
                     }
                 }
-
-                if (vm.lesson_dones[i].date = Date.now()) {
+                vm.dateLesson = new Date(vm.lesson_dones[i].date);
+                if (vm.dateNow.getYear() == vm.dateLesson.getYear() && vm.dateNow.getMonth() == vm.dateLesson.getMonth() && vm.dateNow.getDate() == vm.dateLesson.getDate()) {
                     vm.nbLessonDoneToday++;
                 }
             }
@@ -92,7 +94,7 @@
                 note_max: vm.score,
                 student: vm.student[0],
                 lessons: [vm.lesson],
-                date: Date.now()
+                date: new Date()
             };
             for (var i = 0; i < vm.lesson_dones.length; i++) {
                 if (vm.lesson_dones[i].lessons[0].id == vm.lesson.id) {

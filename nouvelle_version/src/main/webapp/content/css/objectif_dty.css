@@ -7,6 +7,37 @@
     display :none;
 }
 
+.btnModify{
+    min-width : 150px;
+}
+
+#Glissay:focus {
+     opacity: 0;
+      -webkit-transition: opacity .45s linear;
+           -o-transition: opacity .45s linear;
+              transition: opacity .45s linear;
+}
+
+@media (max-width : 991px){
+    .btnModify{
+         margin-top :2%;
+         margin-bottom : 2%;
+    }
+}
+
+.subTitle{
+    font-size : 25px;
+    color : grey;
+
+}
+
+.courseContainer{
+    border : 1px solid #87102c;
+    border-radius : 5px;
+    background-color : #efeff5;
+    padding : 20px 20px 20px 20px;
+}
+
 .fixView:hover + span{
     display : bock;
 

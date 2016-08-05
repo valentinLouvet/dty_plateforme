@@ -1,30 +1,39 @@
 <div class="form-group">
-    <div class="form-group">Here is the actual lesson:
+    <div class="page-header-dty"><h1>1. Course</h1></div>
+    <div class="form-group subTitle"> The current course : </div>
+        <div class="courseContainer">
         <p ng-bind-html="vm.course.cours">
         </p>
-        <button class="btn btn-primary-dty" ng-click="vm.changeCourse()">
+        </div>
+        <button style="margin-top:1%" class="btn btn-primary-dty" ng-click="vm.changeCourse()">
             Modify Course
         </button>
-    </div>
 
     <div ng-show="vm.modifyCourse">
         <textarea data-ck-editor class="form-control" ng-model="vm.newContent"></textarea>
         <button class="btn btn-primary-dty-inverse" ng-click="vm.saveChanges()">Save changes</button>
     </div>
 </div>
+<div class="page-header-dty"><h1>2. Exercise</h1></div>
+<div class="subTitle">
+    The current questions :
+</div>
+<hr>
+
 
 <div ng-repeat="question in vm.questions" class="form-group">
     <div ng-show="question.intitule">
-        <div class="form-group">
-            <span>
-                Question: {{question.intitule}}
+
+        <div class="form-group container">
+            <span class="col-xs-12 col-sm-12 col-md-10 col-lg-10" style ="font-weight:bold; font-size : 20px;">
+                Question n°{{$index +1}} : {{question.intitule}}
             </span>
-            <button class="btn btn-primary-dty" ng-click="vm.editQuestion(vm.questions.indexOf(question))">
+            <button class="col-xs-6 col-sm-6 col-md-2 col-lg-2 btn btn-primary-dty btnModify" ng-click="vm.editQuestion(vm.questions.indexOf(question))">
                 Edit question
             </button>
         </div>
-        <div style="color: blue" class="form-group" ng-show="!vm.editedQuestions[vm.questions.indexOf(question)]">
-            Question global correction: {{question.correction}}
+        <div style="color:grey;" class="form-group" ng-show="!vm.editedQuestions[vm.questions.indexOf(question)]">
+            <b> Question global correction: </b> {{question.correction}}
         </div>
         <div class="input-group form-group" ng-show="vm.editedQuestions[vm.questions.indexOf(question)]">
             <span class="input-group-btn">
@@ -38,14 +47,14 @@
                         class="btn btn-md btn-primary-dty pull-right btn-two-lines" style="padding-top: 23px; padding-bottom: 23px">Remove question</button>
             </span>
         </div>
-        <div class="form-group">
+        <div ng-show="vm.editedQuestions[vm.questions.indexOf(question)]" class="form-group">
             All the answers:
         </div>
         <div ng-repeat="response in vm.responses[vm.questions.indexOf(question)]">
-            <div ng-hide="vm.editedQuestions[vm.questions.indexOf(question)]">
+            <!-- <div ng-hide="vm.editedQuestions[vm.questions.indexOf(question)]">
                 Response: {{response.text}}<br>
                 <div ng-class="{correctAnswer: response.veracity, incorrectAnswer: !response.veracity}">Answer correction: {{response.correction}}</div>
-            </div>
+            </div> -->
             <div class="input-group" ng-show="vm.editedQuestions[vm.questions.indexOf(question)]">
                 <span class="input-group-addon">
                     <input type="checkbox" ng-click="" ng-model="response.veracity" style="padding-top: 23px; padding-bottom: 23px">
@@ -62,14 +71,15 @@
         <div class="input-group" ng-show="vm.addingAnswer[vm.questions.indexOf(question)]" >
             <span class="input-group-addon">
                     <input type="checkbox" ng-click="" ng-model="vm.newVeracity" style="padding-top: 23px; padding-bottom: 23px">
-            </span>
-            <input type="text" placeholder="Enter answer here..." class="form-control" ng-model="vm.newText">
-            <input type="text" placeholder="Enter correction here..." class="form-control" ng-model="vm.newCorrection">
+                </span>
+            <input type="text" placeholder="Enter question here..." class="form-control" ng-model="vm.newText">
+            <input type="text" placeholder="Enter answer here..." class="form-control" ng-model="vm.newCorrection">
             <span class="input-group-btn">
                 <button type="button" ng-click="vm.addResponse(question)"
-                        class="btn btn-md btn-two-lines btn-primary-dty-inverse pull-right" style="padding-top: 23px; padding-bottom: 23px">Save new Answer</button>
+                        class="btn btn-md btn-two-lines btn-primary-dty pull-right" style="padding-top: 23px; padding-bottom: 23px">Save new Answer</button>
             </span>
         </div>
+        <hr>
     </div>
 </div>
 
@@ -80,34 +90,29 @@
         </button>
     </span>
     <div ng-show="vm.addingQuestion">
-        <div class="input-group form-group">
+        <div class="input-group">
+            <input type="text" placeholder="Enter question here..." class="form-control" ng-model="vm.newIntitule">
             <span class="input-group-btn">
             <button type="button" ng-click="vm.registerQuestion()"
-                    class="btn btn-md btn-primary-dty-inverse pull-right btn-two-lines" style="padding-top: 23px; padding-bottom: 23px" style="margin-bottom: 15px">Add Question</button>
+                    class="btn btn-md btn-primary-dty pull-right" style="margin-bottom: 15px">Add Question</button>
             </span>
-            <input type="text" placeholder="Enter question here..." class="form-control" ng-model="vm.newIntitule">
-            <input type="text" placeholder="Enter question correction here..." class="form-control" ng-model="vm.newQuestionCorrection">
         </div>
         <div class="form-group">
             Add answers :
         </div>
         <div ng-repeat="newAnswer in vm.newAnswers">
-            <div class="input-group">
-                <span class="input-group-addon">
-                    <input type="checkbox" ng-click="" ng-model="newAnswer.veracity" style="padding-top: 23px; padding-bottom: 23px">
-                </span>
-                <input type="text" placeholder="Enter answer here..." class="form-control" ng-model="newAnswer.text">
-                <input type="text" placeholder="Enter correction here..." class="form-control" ng-model="newAnswer.correction">
-                <span class="input-group-btn">
-                <button type="button" ng-click="vm.addResponse(question)"
-                        class="btn btn-md btn-two-lines btn-primary-dty pull-right" style="padding-top: 23px; padding-bottom: 23px">Save new Answer</button>
-            </span>
-            </div>
+            <input type="text" placeholder="Enter answer here..." class="form-control" ng-model="newAnswer.text">
         </div>
     </div>
 </div>
 
-
-<button ng-click="vm.saveCourse()" class="btn btn-primary-dty-inverse" ng-disabled="vm.isSaving || vm.addingQuestion">
+<div>
+<button ng-click="vm.saveCourse()" class="btn btn-primary-dty-inverse" ng-disabled="vm.isSaving">
     Save the modifications
 </button>
+
+    <div class="alert alert-warning" ng-style="myStyle" style="margin-top: 2%;" >
+        <a class="close"  ng-click="myStyle={'opacity':'0', '-webkit-transition':'opacity .45s linear', '-o-transition': 'opacity .45s linear', 'transition':'opacity .45s linear'}" data-dismiss="alert" aria-label="close" >&times;</a>
+        <strong>Warning !</strong> Don't forget to save your modifications !
+    </div>
+</div>

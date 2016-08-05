@@ -11,9 +11,6 @@ Stats.$inject=['$q','Lesson_doneWid','AllStudent'];
             'getStudents': getStudents,
             'Assiduity':Assiduity,
             'LessonDones':LessonDones
-            //'lastLesson':LastLesson,
-            //'ConnexionDate':ConnexionDate
-
         };
 
 
@@ -44,28 +41,41 @@ Stats.$inject=['$q','Lesson_doneWid','AllStudent'];
             return deferred.promise
         }
 
-        function Assiduity(id){
-            Lesson_doneWid.get(id).$promise.then(function(data) {
+        function Assiduity(Studentid){
+            var deferred=$q.defer();
+            Lesson_doneWid.get(Studentid).$promise.then(function(data) {
+                console.log(data);
 
-                buildDates(data.sort(function (a, b){
+                var res=buildDates(data.sort(function (a, b){
                     return (Date.parse(a.date)- Date.parse(b.date))
                 })
                 );
-            })
+                deferred.resolve(res)
+
+            });
+            return deferred.promise;
     }
 
+    //fonction BuildDates renvoie un tableau représentant chaque jour entre la premiere lesson de l'élève juqu'a aujd, avec 1 s'il a fait au moins 1 lesson ce jour la et 0 sinon.
+        //parametre dateArray : tableau des lesson done de l'eleve, date sous format string.
+
         function buildDates(dateArray) {
-            console.log(dateArray);
 
             var untilToday=toDays(Date.now())-toDays(Date.parse(dateArray[0].date))+1;
-            console.log(Date.now());
             console.log(Date.parse(dateArray[0].date));
             console.log(untilToday);
 
-            var dates = [1];
-            var done = false;
-            var currentDate = Date.parse(dateArray[0].date);
-            var joursOn = 1;
+            if(dateArray==[]){
+                var dates=[];
+                var done=true;
+
+            }else {
+                var dates = [1];
+                var done=false;
+                var currentDate = Date.parse(dateArray[0].date);
+                var joursOn = 1;
+            }
+
             var assidu = 0;
 
 
@@ -73,7 +83,6 @@ Stats.$inject=['$q','Lesson_doneWid','AllStudent'];
             for (var i = 1; i < dateArray.length; i++) {
                 var date = Date.parse(dateArray[i].date);
                 var diff = dayDiff(date, currentDate);
-                console.log(diff);
                 if (diff >= 1) {
                     currentDate = date;
                     for (var j = 0; j < diff-1; j++) {
@@ -84,8 +93,6 @@ Stats.$inject=['$q','Lesson_doneWid','AllStudent'];
                     joursOn++;
 
                 }
-
-                console.log(dates);
 
                 if (i === dateArray.length - 1) {
                     done = true;
@@ -103,10 +110,9 @@ Stats.$inject=['$q','Lesson_doneWid','AllStudent'];
 
                     assidu = joursOn / dates.length;
                 }
-                console.log(done);
                 console.log(dates);
                 console.log(assidu);
-                return assidu;
+               return {'assiduity':assidu,'lastConnexion':dateArray[dateArray.length-1].date};
             }
         }
 

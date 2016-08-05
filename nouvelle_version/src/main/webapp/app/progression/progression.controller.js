@@ -32,7 +32,6 @@
             var dateAux = new Date();
             for (var i = 0; i < lessons.length; i++) {
                 dateAux = new Date(lessons[i].date);
-                console.log(dateAux.getTime());
                 if (timestamps[dateAux.getTime() / 1000.0] != null) {
                     timestamps[dateAux.getTime() / 1000.0]++;
                 }
@@ -124,13 +123,10 @@
              qui contient des elements de la forme { bloc : bloc, lesson_dones : array contenant les id des lesson dones.
              Regroupe les leçons par bloc.
             */
-            console.log(lessons);
 
             for (var i = 0; i < lessons.length; i++) {
-                console.log("Blocs :", Blocs);
 
                 var bloc = lessons[i].lessons[0].bloc;
-                console.log("lesson_done:", lessons[i]);
                 var lesson_done = lessons[i].lessons[0].id;
 
 
@@ -183,7 +179,6 @@
 
             }
             if (done) {
-                console.log(res, num);
                 var result = {res: res, num: num};
                 callback(result);
             }
@@ -227,7 +222,6 @@
 
         function goToLesson(id, bool) {
             if (bool === false) {
-                console.log(id);
                 $state.go('viewCourse', {id: id});
             } else {
             }
@@ -258,7 +252,6 @@
 
         function setCurrent(value) {
             vm.current = value;
-            console.log(value)
         }
 
         //conversion score en etoiles

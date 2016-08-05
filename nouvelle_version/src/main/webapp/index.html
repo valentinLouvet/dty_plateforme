@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="content/css/objectif_dty.css">
     <!-- endbuild -->
 </head>
-<body ng-app="objectifDtyApp" ng-strict-di flow-init="{target: ''}" flow-files-submitted="$flow.upload()">
+<body ng-app="objectifDtyApp" ng-strict-di>
 <!--[if lt IE 9]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
@@ -28,7 +28,6 @@
     <div ui-view="content">
         <!-- Angular views -->
     </div>
-
     <div class="footer" ng-cloak>
         <dty-footer></dty-footer>
     </div>
@@ -65,6 +64,7 @@
 <script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
 <script src="bower_components/ng-ckeditor/ng-ckeditor.js"></script>
 <script src="bower_components/ng-flow/dist/ng-flow.js"></script>
+<script src="bower_components/ng-flow/dist/ng-flow-standalone.min.js"></script>
 
 <!-- endinject -->
 <!-- endbuild -->

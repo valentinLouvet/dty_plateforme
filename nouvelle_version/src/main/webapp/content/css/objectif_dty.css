@@ -911,3 +911,9 @@ img {
     /*max-height: 150px;*/
 }
 
+#cal-heatmap{
+    /*width: 30em;*/
+    overflow-x: auto;
+    white-space: nowrap;
+}
+

@@ -25,7 +25,7 @@
             'update': { method:'PUT' }
         });
 
-    };
+    }
 
     function BlocsWid($resource) {
         return $resource('api/blocswid',{},{

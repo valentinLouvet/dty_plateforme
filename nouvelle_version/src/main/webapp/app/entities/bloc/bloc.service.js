@@ -24,7 +24,6 @@
             },
             'update': { method:'PUT' }
         });
-
     }
 
     function BlocsWid($resource) {
@@ -33,9 +32,7 @@
                 method:'GET', isArray:true
             }
         });
-
     }
-
 
 })();
 

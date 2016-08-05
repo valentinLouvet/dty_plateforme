@@ -1,5 +1,5 @@
 (function() {
-    'use strict';
+
 
     var jhiAlert2 = {
         template: '<div class="alerts" ng-cloak="">' +

@@ -1,9 +1,6 @@
 package com.dty.objectif_dty.service;
 
-import com.dty.objectif_dty.domain.Authority;
-import com.dty.objectif_dty.domain.Coach;
-import com.dty.objectif_dty.domain.Student;
-import com.dty.objectif_dty.domain.User;
+import com.dty.objectif_dty.domain.*;
 import com.dty.objectif_dty.repository.*;
 import com.dty.objectif_dty.security.AuthoritiesConstants;
 import com.dty.objectif_dty.security.SecurityUtils;
@@ -42,8 +39,12 @@ public class UserService {
 
     @Inject
     private  StudentRepository studentRepository;
+
     @Inject
     private CoachRepository coachRepository;
+
+    @Inject
+    private BlocRepository blocRepository;
 
 
     @Inject
@@ -123,6 +124,20 @@ public class UserService {
         if (authoritys.contains("ROLE_USER")){
             Student newStudent = new Student();
             newStudent.setUser(newUser);
+            List<Bloc> listBloc = blocRepository.findAll();
+            for(Iterator<Bloc> it = listBloc.iterator(); it.hasNext();){
+                Bloc bloc = it.next();
+                Bloc blocPere = bloc.getIs_son_of();
+                if(blocPere == null){
+                    for(Iterator<Lesson> LessonIt = bloc.getLessons().iterator(); LessonIt.hasNext();){
+                        Lesson lesson = LessonIt.next();
+                        if(lesson.getNum_lesson() == 1){
+                            newStudent.setTodo_lesson(lesson);
+                        }
+                    }
+                }
+            }
+
             studentRepository.save(newStudent);
         }else if (authoritys.contains("ROLE_COACH")){
             Coach newCoach = new Coach();

@@ -27,7 +27,6 @@
                 vm.newText = "";
                 vm.newCorrection = "";
                 vm.newVeracity = false;
-                vm.compteurQuestion = 0;
 
                 vm.course = courseView;
 
